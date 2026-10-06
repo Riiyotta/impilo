@@ -1,0 +1,914 @@
+{
+  "$description": "Usage histograms computed from the clone source (src/**/*.{jsx,js,css}) by the build-time extractor. Each value records its total occurrence count and the first file:line where it occurs (anchor = the exact matched text). Tokens in tokens/00-foundation cite these counts; values below the stated thresholds were not promoted to tokens.",
+  "filesScanned": 106,
+  "histograms": {
+    "spacing": {
+      "24": {
+        "count": 55,
+        "firstRef": "src/components/Articles.jsx:48",
+        "anchor": "mob:u-gap-[24]"
+      },
+      "16": {
+        "count": 40,
+        "firstRef": "src/components/Articles.jsx:57",
+        "anchor": "mob:u-px-[16]"
+      },
+      "32": {
+        "count": 31,
+        "firstRef": "src/components/WhiteGlove.jsx:30",
+        "anchor": "u-px-[32]"
+      },
+      "40": {
+        "count": 28,
+        "firstRef": "src/components/Header.jsx:126",
+        "anchor": "u-gap-[40]"
+      },
+      "50": {
+        "count": 26,
+        "firstRef": "src/components/Articles.jsx:40",
+        "anchor": "u-px-[50]"
+      },
+      "20": {
+        "count": 23,
+        "firstRef": "src/components/Footer.jsx:36",
+        "anchor": "mob:u-px-[20]"
+      },
+      "8": {
+        "count": 22,
+        "firstRef": "src/components/Articles.jsx:57",
+        "anchor": "mob:u-py-[8]"
+      },
+      "100": {
+        "count": 21,
+        "firstRef": "src/components/Trusted.jsx:19",
+        "anchor": "u-pt-[100]"
+      },
+      "12": {
+        "count": 19,
+        "firstRef": "src/components/Articles.jsx:57",
+        "anchor": "u-py-[12]"
+      },
+      "60": {
+        "count": 19,
+        "firstRef": "src/components/about/Careers.jsx:9",
+        "anchor": "mob:u-py-[60]"
+      },
+      "10": {
+        "count": 18,
+        "firstRef": "src/components/Focus.jsx:29",
+        "anchor": "u-mr-[10]"
+      },
+      "15": {
+        "count": 14,
+        "firstRef": "src/components/Articles.jsx:40",
+        "anchor": "mob:u-px-[15]"
+      },
+      "28": {
+        "count": 14,
+        "firstRef": "src/components/WhiteGlove.jsx:21",
+        "anchor": "mob:u-my-[28]"
+      },
+      "48": {
+        "count": 11,
+        "firstRef": "src/components/Articles.jsx:48",
+        "anchor": "u-gap-[48]"
+      },
+      "22": {
+        "count": 11,
+        "firstRef": "src/components/Footer.jsx:36",
+        "anchor": "mob:u-gap-[22]"
+      },
+      "80": {
+        "count": 9,
+        "firstRef": "src/components/Footer.jsx:36",
+        "anchor": "u-pb-[80]"
+      },
+      "26": {
+        "count": 9,
+        "firstRef": "src/components/Footer.jsx:37",
+        "anchor": "mob:u-gap-[26]"
+      },
+      "44": {
+        "count": 9,
+        "firstRef": "src/components/about/AboutHero.jsx:15",
+        "anchor": "u-pt-[44]"
+      },
+      "18": {
+        "count": 9,
+        "firstRef": "src/components/about/Founded.jsx:38",
+        "anchor": "u-mt-[18]"
+      },
+      "30": {
+        "count": 9,
+        "firstRef": "src/components/blog/EmailInput.jsx:41",
+        "anchor": "u-py-[30]"
+      },
+      "21": {
+        "count": 8,
+        "firstRef": "src/components/Footer.jsx:47",
+        "anchor": "tab:u-mb-[21]"
+      },
+      "42": {
+        "count": 7,
+        "firstRef": "src/components/integrations/IntegrationsHero.jsx:11",
+        "anchor": "u-mb-[42]"
+      },
+      "17": {
+        "count": 7,
+        "firstRef": "src/components/shared/LaptopShowcase.jsx:34",
+        "anchor": "u-gap-[17]"
+      },
+      "9": {
+        "count": 7,
+        "firstRef": "src/index.css:439",
+        "anchor": "margin-top: calc(var(--u) * 9)"
+      },
+      "25": {
+        "count": 6,
+        "firstRef": "src/components/Cta.jsx:14",
+        "anchor": "u-gap-[25]"
+      },
+      "200": {
+        "count": 6,
+        "firstRef": "src/components/Cta.jsx:14",
+        "anchor": "tab:u-pb-[200]"
+      },
+      "36": {
+        "count": 6,
+        "firstRef": "src/components/HowItWorks.jsx:184",
+        "anchor": "u-gap-[36]"
+      },
+      "14": {
+        "count": 6,
+        "firstRef": "src/components/about/Careers.jsx:8",
+        "anchor": "u-mb-[14]"
+      },
+      "6": {
+        "count": 6,
+        "firstRef": "src/components/about/Leadership.jsx:53",
+        "anchor": "u-mt-[6]"
+      },
+      "150": {
+        "count": 5,
+        "firstRef": "src/components/Cta.jsx:14",
+        "anchor": "mob:u-pt-[150]"
+      },
+      "78": {
+        "count": 5,
+        "firstRef": "src/components/Trusted.jsx:18",
+        "anchor": "u-pb-[78]"
+      },
+      "46": {
+        "count": 5,
+        "firstRef": "src/components/Trusted.jsx:19",
+        "anchor": "mob:u-pb-[46]"
+      },
+      "27": {
+        "count": 5,
+        "firstRef": "src/components/about/Careers.jsx:15",
+        "anchor": "u-mt-[27]"
+      },
+      "232": {
+        "count": 5,
+        "firstRef": "src/components/integrations/Devices.jsx:44",
+        "anchor": "u-pt-[232]"
+      },
+      "94": {
+        "count": 5,
+        "firstRef": "src/components/integrations/Devices.jsx:61",
+        "anchor": "mob:u-mt-[94]"
+      },
+      "58": {
+        "count": 4,
+        "firstRef": "src/components/Focus.jsx:15",
+        "anchor": "mob:u-pb-[58]"
+      },
+      "64": {
+        "count": 4,
+        "firstRef": "src/components/Footer.jsx:36",
+        "anchor": "mob:u-pt-[64]"
+      },
+      "90": {
+        "count": 4,
+        "firstRef": "src/components/about/Founded.jsx:36",
+        "anchor": "u-mb-[90]"
+      },
+      "52": {
+        "count": 4,
+        "firstRef": "src/components/about/Founded.jsx:36",
+        "anchor": "mob:u-mb-[52]"
+      },
+      "35": {
+        "count": 4,
+        "firstRef": "src/components/integrations/IntegrationsHero.jsx:11",
+        "anchor": "mob:u-mb-[35]"
+      },
+      "66": {
+        "count": 4,
+        "firstRef": "src/components/integrations/Sdk.jsx:53",
+        "anchor": "u-pt-[66]"
+      },
+      "250": {
+        "count": 3,
+        "firstRef": "src/components/Cta.jsx:14",
+        "anchor": "tab:u-pt-[250]"
+      },
+      "115": {
+        "count": 3,
+        "firstRef": "src/components/Cta.jsx:14",
+        "anchor": "mob:u-pb-[115]"
+      },
+      "38": {
+        "count": 3,
+        "firstRef": "src/components/Focus.jsx:15",
+        "anchor": "mob:u-pt-[38]"
+      },
+      "67": {
+        "count": 3,
+        "firstRef": "src/components/Footer.jsx:46",
+        "anchor": "tab:u-gap-[67]"
+      },
+      "4": {
+        "count": 3,
+        "firstRef": "src/components/Header.jsx:195",
+        "anchor": "u-gap-[4]"
+      },
+      "95": {
+        "count": 3,
+        "firstRef": "src/components/Integrations.jsx:27",
+        "anchor": "u-px-[95]"
+      },
+      "43": {
+        "count": 3,
+        "firstRef": "src/components/Trusted.jsx:19",
+        "anchor": "u-pb-[43]"
+      },
+      "56": {
+        "count": 3,
+        "firstRef": "src/components/about/AboutHero.jsx:20",
+        "anchor": "u-p-[56]"
+      },
+      "86": {
+        "count": 3,
+        "firstRef": "src/components/about/AboutHero.jsx:26",
+        "anchor": "u-gap-[86]"
+      },
+      "140": {
+        "count": 3,
+        "firstRef": "src/components/about/Careers.jsx:8",
+        "anchor": "u-mt-[140]"
+      },
+      "120": {
+        "count": 3,
+        "firstRef": "src/components/content/ContentHero.jsx:21",
+        "anchor": "u-py-[120]"
+      },
+      "53": {
+        "count": 3,
+        "firstRef": "src/components/integrations/IntegrationsHero.jsx:14",
+        "anchor": "u-mt-[53]"
+      },
+      "151": {
+        "count": 3,
+        "firstRef": "src/components/integrations/Sdk.jsx:30",
+        "anchor": "tab:u-pt-[151]"
+      },
+      "-2": {
+        "count": 3,
+        "firstRef": "src/components/shared/LaptopShowcase.jsx:32",
+        "anchor": "u-mt-[-2]"
+      },
+      "0": {
+        "count": 3,
+        "firstRef": "src/components/solutions/SolutionsHero.jsx:67",
+        "anchor": "mob:u-pt-[0]"
+      },
+      "220": {
+        "count": 2,
+        "firstRef": "src/components/Cta.jsx:14",
+        "anchor": "u-pb-[220]"
+      },
+      "34": {
+        "count": 2,
+        "firstRef": "src/components/Focus.jsx:15",
+        "anchor": "u-gap-[34]"
+      },
+      "116": {
+        "count": 2,
+        "firstRef": "src/components/Focus.jsx:15",
+        "anchor": "u-px-[116]"
+      },
+      "135": {
+        "count": 2,
+        "firstRef": "src/components/WhiteGlove.jsx:12",
+        "anchor": "u-pt-[135]"
+      },
+      "141": {
+        "count": 2,
+        "firstRef": "src/components/WhiteGlove.jsx:12",
+        "anchor": "tab:u-pt-[141]"
+      },
+      "59": {
+        "count": 2,
+        "firstRef": "src/components/WhiteGlove.jsx:21",
+        "anchor": "u-my-[59]"
+      },
+      "83": {
+        "count": 2,
+        "firstRef": "src/components/about/Anywhere.jsx:19",
+        "anchor": "u-mt-[83]"
+      },
+      "65": {
+        "count": 2,
+        "firstRef": "src/components/about/Careers.jsx:8",
+        "anchor": "mob:u-mt-[65]"
+      },
+      "13": {
+        "count": 2,
+        "firstRef": "src/components/blog/EmailInput.jsx:68",
+        "anchor": "u-px-[13]"
+      },
+      "148": {
+        "count": 2,
+        "firstRef": "src/components/integrations/Devices.jsx:44",
+        "anchor": "tab:u-pb-[148]"
+      },
+      "187": {
+        "count": 2,
+        "firstRef": "src/components/integrations/Devices.jsx:61",
+        "anchor": "tab:u-mt-[187]"
+      },
+      "23": {
+        "count": 2,
+        "firstRef": "src/components/integrations/IntegrationsHero.jsx:10",
+        "anchor": "mob:u-px-[23]"
+      },
+      "62": {
+        "count": 2,
+        "firstRef": "src/components/integrations/IntegrationsHero.jsx:14",
+        "anchor": "tab:u-mt-[62]"
+      },
+      "-15": {
+        "count": 2,
+        "firstRef": "src/components/integrations/IntegrationsHero.jsx:14",
+        "anchor": "mob:u-mt-[-15]"
+      },
+      "22.5": {
+        "count": 2,
+        "firstRef": "src/components/integrations/Sdk.jsx:53",
+        "anchor": "mob:u-px-[22.5]"
+      },
+      "33": {
+        "count": 2,
+        "firstRef": "src/components/requestDemo/DemoForm.jsx:81",
+        "anchor": "tab:u-mb-[33]"
+      },
+      "-173": {
+        "count": 2,
+        "firstRef": "src/components/shared/LaptopShowcase.jsx:34",
+        "anchor": "u-mt-[-173]"
+      },
+      "11": {
+        "count": 2,
+        "firstRef": "src/components/shared/form/Select.jsx:101",
+        "anchor": "u-py-[11]"
+      },
+      "45": {
+        "count": 2,
+        "firstRef": "src/components/solutions/Explore.jsx:14",
+        "anchor": "mob:u-mt-[45]"
+      },
+      "41": {
+        "count": 2,
+        "firstRef": "src/components/solutions/Explore.jsx:14",
+        "anchor": "mob:u-mb-[41]"
+      },
+      "39": {
+        "count": 2,
+        "firstRef": "src/components/solutions/Explore.jsx:27",
+        "anchor": "mob:u-mb-[39]"
+      },
+      "180": {
+        "count": 2,
+        "firstRef": "src/components/solutions/Explore.jsx:53",
+        "anchor": "u-pt-[180]"
+      },
+      "2": {
+        "count": 2,
+        "firstRef": "src/index.css:717",
+        "anchor": "margin-left: calc(var(--u) * 2)"
+      },
+      "61": {
+        "count": 2,
+        "firstRef": "src/styles/pages.css:68",
+        "anchor": "gap: calc(var(--u) * 61)"
+      },
+      "114": {
+        "count": 1,
+        "firstRef": "src/components/Articles.jsx:40",
+        "anchor": "u-pt-[114]"
+      },
+      "244": {
+        "count": 1,
+        "firstRef": "src/components/Cta.jsx:14",
+        "anchor": "u-pt-[244]"
+      },
+      "137": {
+        "count": 1,
+        "firstRef": "src/components/Cta.jsx:14",
+        "anchor": "u-px-[137]"
+      },
+      "130": {
+        "count": 1,
+        "firstRef": "src/components/Focus.jsx:15",
+        "anchor": "u-py-[130]"
+      },
+      "439": {
+        "count": 1,
+        "firstRef": "src/components/Focus.jsx:15",
+        "anchor": "tab:u-pb-[439]"
+      },
+      "142": {
+        "count": 1,
+        "firstRef": "src/components/Focus.jsx:15",
+        "anchor": "tab:u-pt-[142]"
+      },
+      "104": {
+        "count": 1,
+        "firstRef": "src/components/Footer.jsx:36",
+        "anchor": "u-pt-[104]"
+      },
+      "19": {
+        "count": 1,
+        "firstRef": "src/components/Footer.jsx:36",
+        "anchor": "mob:u-pb-[19]"
+      },
+      "55": {
+        "count": 1,
+        "firstRef": "src/components/Integrations.jsx:39",
+        "anchor": "u-my-[55]"
+      },
+      "139": {
+        "count": 1,
+        "firstRef": "src/components/Trusted.jsx:27",
+        "anchor": "u-mb-[139]"
+      },
+      "173": {
+        "count": 1,
+        "firstRef": "src/components/WhiteGlove.jsx:12",
+        "anchor": "u-pb-[173]"
+      },
+      "82": {
+        "count": 1,
+        "firstRef": "src/components/WhiteGlove.jsx:12",
+        "anchor": "tab:u-pb-[82]"
+      },
+      "84": {
+        "count": 1,
+        "firstRef": "src/components/WhiteGlove.jsx:12",
+        "anchor": "mob:u-pb-[84]"
+      },
+      "400": {
+        "count": 1,
+        "firstRef": "src/components/about/Anywhere.jsx:7",
+        "anchor": "u-pb-[400]"
+      },
+      "227": {
+        "count": 1,
+        "firstRef": "src/components/about/Anywhere.jsx:7",
+        "anchor": "mob:u-pb-[227]"
+      },
+      "77": {
+        "count": 1,
+        "firstRef": "src/components/about/Anywhere.jsx:7",
+        "anchor": "mob:u-pt-[77]"
+      },
+      "205": {
+        "count": 1,
+        "firstRef": "src/components/about/Careers.jsx:8",
+        "anchor": "tab:u-mt-[205]"
+      },
+      "147": {
+        "count": 1,
+        "firstRef": "src/components/about/Founded.jsx:27",
+        "anchor": "u-pb-[147]"
+      },
+      "345": {
+        "count": 1,
+        "firstRef": "src/components/about/Founded.jsx:36",
+        "anchor": "u-ml-[345]"
+      },
+      "278": {
+        "count": 1,
+        "firstRef": "src/components/about/Founded.jsx:36",
+        "anchor": "u-mt-[278]"
+      },
+      "111": {
+        "count": 1,
+        "firstRef": "src/components/about/Leadership.jsx:28",
+        "anchor": "u-pt-[111]"
+      },
+      "51": {
+        "count": 1,
+        "firstRef": "src/components/about/Leadership.jsx:34",
+        "anchor": "tab:u-gap-[51]"
+      },
+      "7": {
+        "count": 1,
+        "firstRef": "src/components/blog/FileDownload.jsx:80",
+        "anchor": "mob:u-mx-[7]"
+      },
+      "-4": {
+        "count": 1,
+        "firstRef": "src/components/blog/SmallCard.jsx:21",
+        "anchor": "u-my-[-4]"
+      },
+      "68": {
+        "count": 1,
+        "firstRef": "src/components/solutions/Explore.jsx:14",
+        "anchor": "u-mt-[68]"
+      },
+      "106": {
+        "count": 1,
+        "firstRef": "src/components/solutions/Explore.jsx:20",
+        "anchor": "u-mt-[106]"
+      },
+      "79": {
+        "count": 1,
+        "firstRef": "src/components/solutions/Explore.jsx:20",
+        "anchor": "mob:u-mb-[79]"
+      },
+      "87": {
+        "count": 1,
+        "firstRef": "src/components/solutions/Explore.jsx:27",
+        "anchor": "u-mt-[87]"
+      },
+      "73": {
+        "count": 1,
+        "firstRef": "src/components/solutions/Explore.jsx:40",
+        "anchor": "u-mt-[73]"
+      },
+      "-24": {
+        "count": 1,
+        "firstRef": "src/components/solutions/Explore.jsx:53",
+        "anchor": "u-mb-[-24]"
+      },
+      "204": {
+        "count": 1,
+        "firstRef": "src/components/solutions/Explore.jsx:53",
+        "anchor": "u-pb-[204]"
+      },
+      "105": {
+        "count": 1,
+        "firstRef": "src/components/solutions/Explore.jsx:66",
+        "anchor": "u-mt-[105]"
+      },
+      "215": {
+        "count": 1,
+        "firstRef": "src/components/solutions/Explore.jsx:66",
+        "anchor": "tab:u-mt-[215]"
+      },
+      "-35": {
+        "count": 1,
+        "firstRef": "src/components/solutions/SolutionsHero.jsx:70",
+        "anchor": "mob:u-mb-[-35]"
+      },
+      "57": {
+        "count": 1,
+        "firstRef": "src/index.css:419",
+        "anchor": "padding-top: calc(var(--u) * 57)"
+      },
+      "-400": {
+        "count": 1,
+        "firstRef": "src/index.css:462",
+        "anchor": "margin: calc(var(--u) * -400)"
+      },
+      "3": {
+        "count": 1,
+        "firstRef": "src/index.css:478",
+        "anchor": "padding-right: calc(var(--u) * 3)"
+      },
+      "-9": {
+        "count": 1,
+        "firstRef": "src/index.css:487",
+        "anchor": "margin-left: calc(var(--u) * -9)"
+      },
+      "3.75": {
+        "count": 1,
+        "firstRef": "src/index.css:487",
+        "anchor": "margin-right: calc(var(--u) * 3.75)"
+      },
+      "11.25": {
+        "count": 1,
+        "firstRef": "src/index.css:488",
+        "anchor": "margin-left: calc(var(--u) * 11.25)"
+      },
+      "-4.25": {
+        "count": 1,
+        "firstRef": "src/index.css:489",
+        "anchor": "margin-left: calc(var(--u) * -4.25)"
+      },
+      "-166": {
+        "count": 1,
+        "firstRef": "src/index.css:493",
+        "anchor": "margin-left: calc(var(--u) * -166)"
+      },
+      "-56": {
+        "count": 1,
+        "firstRef": "src/index.css:507",
+        "anchor": "margin-left: calc(var(--u) * -56)"
+      },
+      "-30": {
+        "count": 1,
+        "firstRef": "src/index.css:559",
+        "anchor": "margin-bottom: calc(var(--u) * -30)"
+      },
+      "-200": {
+        "count": 1,
+        "firstRef": "src/index.css:637",
+        "anchor": "margin: calc(var(--u) * -200)"
+      },
+      "171": {
+        "count": 1,
+        "firstRef": "src/index.css:710",
+        "anchor": "margin-top: calc(var(--u) * 171)"
+      },
+      "275": {
+        "count": 1,
+        "firstRef": "src/index.css:711",
+        "anchor": "margin-left: calc(var(--u) * 275)"
+      },
+      "96": {
+        "count": 1,
+        "firstRef": "src/pages/Legal.jsx:40",
+        "anchor": "u-py-[96]"
+      },
+      "85": {
+        "count": 1,
+        "firstRef": "src/pages/blog/BlogPost.jsx:33",
+        "anchor": "mob:u-pb-[85]"
+      },
+      "5": {
+        "count": 1,
+        "firstRef": "src/styles/pages.css:228",
+        "anchor": "padding-left: calc(var(--u) * 5)"
+      },
+      "110": {
+        "count": 1,
+        "firstRef": "src/styles/solutions.css:76",
+        "anchor": "padding: 0 calc(var(--u) * 110)"
+      },
+      "-50": {
+        "count": 1,
+        "firstRef": "src/styles/solutions.css:83",
+        "anchor": "margin: calc(var(--u) * -50)"
+      },
+      "-120": {
+        "count": 1,
+        "firstRef": "src/styles/solutions.css:151",
+        "anchor": "margin: calc(var(--u) * -120)"
+      }
+    },
+    "radius": {
+      "24": {
+        "count": 31,
+        "firstRef": "src/components/Cta.jsx:13",
+        "anchor": "u-rounded-b-[24]"
+      },
+      "12": {
+        "count": 9,
+        "firstRef": "src/components/blog/SearchBar.jsx:15",
+        "anchor": "u-rounded-[12]"
+      },
+      "16": {
+        "count": 8,
+        "firstRef": "src/components/blog/LargeCard.jsx:23",
+        "anchor": "u-rounded-[16]"
+      },
+      "7": {
+        "count": 4,
+        "firstRef": "src/index.css:655",
+        "anchor": "border-radius: calc(var(--u) * 7)"
+      },
+      "6": {
+        "count": 3,
+        "firstRef": "src/components/blog/EmailInput.jsx:54",
+        "anchor": "u-rounded-[6]"
+      },
+      "11": {
+        "count": 2,
+        "firstRef": "src/components/shared/LaptopShowcase.jsx:57",
+        "anchor": "u-rounded-[11]"
+      },
+      "10": {
+        "count": 2,
+        "firstRef": "src/components/shared/LaptopShowcase.jsx:64",
+        "anchor": "u-rounded-[10]"
+      },
+      "18": {
+        "count": 1,
+        "firstRef": "src/components/about/Leadership.jsx:47",
+        "anchor": "u-rounded-[18]"
+      },
+      "15": {
+        "count": 1,
+        "firstRef": "src/components/blog/EmailInput.jsx:41",
+        "anchor": "u-rounded-[15]"
+      },
+      "14": {
+        "count": 1,
+        "firstRef": "src/components/blog/EmailInput.jsx:41",
+        "anchor": "u-rounded-[14]"
+      },
+      "0": {
+        "count": 1,
+        "firstRef": "src/components/integrations/Sdk.jsx:30",
+        "anchor": "u-rounded-b-[0]"
+      },
+      "2": {
+        "count": 1,
+        "firstRef": "src/index.css:360",
+        "anchor": "border-radius: calc(var(--u) * 2)"
+      },
+      "32": {
+        "count": 1,
+        "firstRef": "src/index.css:600",
+        "anchor": "border-radius: calc(var(--u) * 32)"
+      },
+      "52": {
+        "count": 1,
+        "firstRef": "src/index.css:621",
+        "anchor": "border-radius: calc(var(--u) * 52)"
+      }
+    },
+    "typeStyle": {
+      "body-r": {
+        "count": 55,
+        "firstRef": "src/components/Articles.jsx:57",
+        "anchor": "type-body-r"
+      },
+      "body-m": {
+        "count": 43,
+        "firstRef": "src/components/Header.jsx:78",
+        "anchor": "type-body-m"
+      },
+      "h3": {
+        "count": 41,
+        "firstRef": "src/components/Articles.jsx:49",
+        "anchor": "type-h3"
+      },
+      "h4": {
+        "count": 38,
+        "firstRef": "src/components/Articles.jsx:49",
+        "anchor": "type-h4"
+      },
+      "h2": {
+        "count": 28,
+        "firstRef": "src/components/Cta.jsx:15",
+        "anchor": "type-h2"
+      },
+      "h1": {
+        "count": 8,
+        "firstRef": "src/components/Focus.jsx:17",
+        "anchor": "type-h1"
+      },
+      "body-xs": {
+        "count": 8,
+        "firstRef": "src/components/Footer.jsx:42",
+        "anchor": "type-body-xs"
+      },
+      "body-l": {
+        "count": 7,
+        "firstRef": "src/components/Articles.jsx:52",
+        "anchor": "type-body-l"
+      },
+      "kicker-s": {
+        "count": 6,
+        "firstRef": "src/components/Focus.jsx:29",
+        "anchor": "type-kicker-s"
+      },
+      "body-xl": {
+        "count": 5,
+        "firstRef": "src/components/about/Anywhere.jsx:19",
+        "anchor": "type-body-xl"
+      },
+      "kicker-r": {
+        "count": 2,
+        "firstRef": "src/components/blog/Categories.jsx:41",
+        "anchor": "type-kicker-r"
+      },
+      "body-s": {
+        "count": 1,
+        "firstRef": "src/index.css:143",
+        "anchor": "type-body-s"
+      }
+    },
+    "color": {
+      "silver05": {
+        "count": 77,
+        "firstRef": "src/components/Articles.jsx:39",
+        "anchor": "bg-silver05"
+      },
+      "blue01": {
+        "count": 68,
+        "firstRef": "src/components/Articles.jsx:49",
+        "anchor": "text-blue01"
+      },
+      "blue02": {
+        "count": 48,
+        "firstRef": "src/components/Focus.jsx:41",
+        "anchor": "text-blue02"
+      },
+      "blue03": {
+        "count": 17,
+        "firstRef": "src/components/Header.jsx:153",
+        "anchor": "text-blue03"
+      },
+      "blue07": {
+        "count": 15,
+        "firstRef": "src/components/about/Leadership.jsx:61",
+        "anchor": "text-blue07"
+      },
+      "blue05": {
+        "count": 12,
+        "firstRef": "src/components/Footer.jsx:33",
+        "anchor": "bg-blue05"
+      },
+      "brightGreen": {
+        "count": 11,
+        "firstRef": "src/components/HowItWorks.jsx:185",
+        "anchor": "text-brightGreen"
+      },
+      "brightBlue": {
+        "count": 11,
+        "firstRef": "src/components/HowItWorks.jsx:185",
+        "anchor": "text-brightBlue"
+      },
+      "brightTurquoise": {
+        "count": 10,
+        "firstRef": "src/components/Hero.jsx:76",
+        "anchor": "text-brightTurquoise"
+      },
+      "lavender05": {
+        "count": 9,
+        "firstRef": "src/components/blog/Categories.jsx:41",
+        "anchor": "border-lavender05"
+      },
+      "silver04": {
+        "count": 9,
+        "firstRef": "src/components/content/Grids.jsx:30",
+        "anchor": "bg-silver04"
+      },
+      "blue04": {
+        "count": 8,
+        "firstRef": "src/components/Focus.jsx:29",
+        "anchor": "text-blue04"
+      },
+      "lavender04": {
+        "count": 8,
+        "firstRef": "src/components/about/Anywhere.jsx:19",
+        "anchor": "text-lavender04"
+      },
+      "lavender01": {
+        "count": 7,
+        "firstRef": "src/components/Header.jsx:181",
+        "anchor": "text-lavender01"
+      },
+      "silver01": {
+        "count": 5,
+        "firstRef": "src/components/WhiteGlove.jsx:26",
+        "anchor": "border-silver01"
+      },
+      "lavender02": {
+        "count": 3,
+        "firstRef": "src/components/about/Leadership.jsx:40",
+        "anchor": "border-lavender02"
+      },
+      "lavender06": {
+        "count": 3,
+        "firstRef": "src/components/blog/SearchBar.jsx:15",
+        "anchor": "bg-lavender06"
+      },
+      "blue06": {
+        "count": 3,
+        "firstRef": "src/pages/blog/BlogPost.jsx:35",
+        "anchor": "text-blue06"
+      },
+      "lavender03": {
+        "count": 2,
+        "firstRef": "src/index.css:188",
+        "anchor": "var(--lavender03)"
+      },
+      "silver02": {
+        "count": 1,
+        "firstRef": "src/components/HowItWorks.jsx:190",
+        "anchor": "text-silver02"
+      },
+      "silver03": {
+        "count": 1,
+        "firstRef": "src/pages/Home.jsx:27",
+        "anchor": "bg-silver03"
+      }
+    }
+  }
+}

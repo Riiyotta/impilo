@@ -1,0 +1,119 @@
+{
+  "$description": "Closed assetRole enum. Wired through schema (definitions.media.assetRole enum), section contracts (assets/allowed roles), the allowlist and the example. Impilo is a real, live company: homepage copy, illustrations, logos, partner logos, compliance badges, staff photos and blog cover photos are third-party material. Non-homepage body copy in the clone is original placeholder text.",
+  "generationPolicies": {
+    "must-reuse-exact": "Use the existing file unchanged, only where allowed.",
+    "may-generate-new": "New original artwork in the documented style is allowed.",
+    "placeholder-only": "Never reproduce; render a neutral placeholder (media.placeholder = true, no asset).",
+    "must-not-fabricate": "Only existing files; never invent new instances or claims."
+  },
+  "pinnedPolicies": {
+    "partner.logo": "must-reuse-exact",
+    "photo.person": "placeholder-only",
+    "photo.editorial-cover": "placeholder-only",
+    "compliance.badge": "must-not-fabricate",
+    "product.ui-mock": "must-reuse-exact",
+    "icon.social-mark": "must-reuse-exact",
+    "font.typeface": "must-reuse-exact"
+  },
+  "roles": {
+    "brand.logo": {
+      "generationPolicy": "must-reuse-exact",
+      "licensing": "third-party-impilo-trademark",
+      "description": "Impilo wordmark / pulse marks / favicons / og image.",
+      "aiGuidance": "Reuse the existing files exactly (no recolouring beyond the documented fill variants). Never redraw, distort or generate a new Impilo logo."
+    },
+    "partner.logo": {
+      "generationPolicy": "must-reuse-exact",
+      "licensing": "third-party-partner-trademark",
+      "restrictedTo": [
+        "home.trusted"
+      ],
+      "interactive": false,
+      "description": "Customer/partner logos (Brook, Firefly Health, Penn Medicine, Dreem Health).",
+      "aiGuidance": "FORBIDDEN in generated output outside the home.trusted section of route '/'. Never generate, imitate, add or link partner/customer logos; never imply an endorsement. Logos are non-clickable."
+    },
+    "compliance.badge": {
+      "generationPolicy": "must-not-fabricate",
+      "licensing": "third-party-certification-mark",
+      "description": "HIPAA / SOC2 / ISO / HQAA / FDA badges.",
+      "aiGuidance": "Only the existing badge files, only where the section contract allows them. Never invent a certification, accreditation or regulatory claim, and never generate a lookalike badge."
+    },
+    "photo.person": {
+      "generationPolicy": "placeholder-only",
+      "licensing": "real-person-likeness",
+      "description": "Team photos and leadership headshots of real people.",
+      "aiGuidance": "FORBIDDEN to reproduce or generate photos of real people. Generated pages must use placeholder:true (neutral box at the contract size) and invented placeholder names. The existing files are source-site evidence only."
+    },
+    "photo.editorial-cover": {
+      "generationPolicy": "placeholder-only",
+      "licensing": "third-party-stock-or-news",
+      "description": "Blog cover photos copied from the original (iStock/Unsplash stock and news imagery).",
+      "aiGuidance": "FORBIDDEN to reuse in generated pages or to generate photo-real lookalikes. Use new illustration.placeholder art or placeholder:true."
+    },
+    "illustration.line-art": {
+      "generationPolicy": "may-generate-new",
+      "licensing": "third-party-impilo-artwork",
+      "description": "Impilo isometric/line illustrations (hero art, step art, explore boxes, thermometer, glucose meter, stethoscope, pulses, laptop frame).",
+      "aiGuidance": "Existing files may only be reused in the section they were extracted from. New pages may use NEW original line art in the same style (1px lavender/brightBlue strokes, no fills beyond the palette); never trace, recombine or modify the originals."
+    },
+    "product.ui-mock": {
+      "generationPolicy": "must-reuse-exact",
+      "licensing": "third-party-impilo-artwork",
+      "description": "Dashboard/laptop screens and step illustrations containing fictional patient data rendered as SVG text.",
+      "aiGuidance": "Reuse exactly in the original section only. Never generate realistic patient data (names, DOB, phone, address, readings) — no PHI-like content, even fictional."
+    },
+    "icon.ui": {
+      "generationPolicy": "may-generate-new",
+      "licensing": "third-party-impilo-artwork",
+      "description": "Arrows, chevrons, search/clear/category icons, step icons, feature icons.",
+      "aiGuidance": "May create new simple icons in the same stroke style; prefer existing files."
+    },
+    "icon.social-mark": {
+      "generationPolicy": "must-reuse-exact",
+      "licensing": "third-party-social-trademark",
+      "interactive": false,
+      "description": "X / LinkedIn / Facebook glyphs (blog share buttons, leader LinkedIn glyph).",
+      "aiGuidance": "Never link to the platform (no outbound links); share buttons stay non-navigating. Do not add new social marks."
+    },
+    "illustration.placeholder": {
+      "generationPolicy": "may-generate-new",
+      "licensing": "clone-original",
+      "description": "On-brand generated placeholder covers/inline art. Currently 0 files in the source: the clone's public/assets/blog/*.svg placeholders were removed while this design-repo was being built (posts now use cover-*.webp copied from the original). The role remains the ONLY legal cover source for generated pages.",
+      "aiGuidance": "Free to reuse or generate new on-brand placeholder art."
+    },
+    "decorative.raster": {
+      "generationPolicy": "must-reuse-exact",
+      "licensing": "third-party-impilo-artwork",
+      "description": "Raster decorations (illustration-three background, request-demo paper plane).",
+      "aiGuidance": "Reuse only in the original section; do not generate photographic lookalikes."
+    },
+    "font.typeface": {
+      "generationPolicy": "must-reuse-exact",
+      "licensing": "commercial-third-party-font",
+      "description": "Gilroy woff2/woff files (commercial font licensed to Impilo).",
+      "aiGuidance": "Not a PageSpec media role (no section allows it). Redistribution outside this clone requires a Gilroy licence; substitute a licensed font when re-hosting."
+    }
+  },
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:606",
+      "anchor": "- 3 leadership headshots (`josh.webp`, `pat.webp`, `david.webp`)"
+    },
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:139",
+      "anchor": "**The images are people photos.**"
+    },
+    {
+      "ref": "specs/BLOG_SPEC.md:465",
+      "anchor": "Article cover photos were deliberately not downloaded"
+    },
+    {
+      "ref": "src/components/about/Leadership.jsx:7",
+      "anchor": "photo: '/assets/images/about/leader-josh.webp',"
+    },
+    {
+      "ref": "src/data/posts.js:45",
+      "anchor": "mainImage: { src: '/assets/images/blog/cover-1.webp'"
+    }
+  ]
+}

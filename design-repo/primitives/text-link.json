@@ -1,0 +1,41 @@
+{
+  "id": "text-link",
+  "name": "TextLink",
+  "purpose": "Arrow-first text link used in header, footer and the mobile menu.",
+  "implementedBy": [
+    {
+      "ref": "src/components/shared/TextLink.jsx:6",
+      "anchor": "export default function TextLink"
+    }
+  ],
+  "tokens": [
+    "semantic.color.text.navOnBrand",
+    "semantic.color.action.linkHover",
+    "iconSize.linkArrow",
+    "iconSize.menuArrow",
+    "typography.style.body-m",
+    "fixedPx.hoverNudge"
+  ],
+  "props": {
+    "label": "string",
+    "href": "LinkHref",
+    "variant": "'default' | 'blue' | 'menu'"
+  },
+  "states": {
+    "hover": "colour brightGreen (menu: blue03), arrow translateX(4px)"
+  },
+  "evidence": [
+    {
+      "ref": "src/index.css:193",
+      "anchor": ".text-link {"
+    },
+    {
+      "ref": "src/index.css:217",
+      "anchor": ".text-link--menu { color: var(--blue02); }"
+    }
+  ],
+  "kind": "primitive",
+  "variants": [],
+  "motion": [],
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

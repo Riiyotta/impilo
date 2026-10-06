@@ -1,0 +1,28 @@
+{
+  "id": "field-message",
+  "name": "FieldMessage",
+  "purpose": "'Required' / 'Invalid' message rendered INSIDE the field, right-aligned.",
+  "implementedBy": [
+    {
+      "ref": "src/components/shared/form/FieldMessage.jsx:2",
+      "anchor": "export default function FieldMessage"
+    }
+  ],
+  "tokens": [
+    "typography.style.kicker-s",
+    "color.brightTurquoise"
+  ],
+  "props": {
+    "kind": "'Required' | 'Invalid'"
+  },
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:415",
+      "anchor": "A message element appears **inside the field, right-aligned after the input**"
+    }
+  ],
+  "kind": "primitive",
+  "variants": [],
+  "motion": [],
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

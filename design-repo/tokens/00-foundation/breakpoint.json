@@ -1,0 +1,110 @@
+{
+  "breakpoint": {
+    "tabup": {
+      "$type": "mediaQuery",
+      "$value": "(min-width: 501px)",
+      "$description": "Tablet and up.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "tailwind.config.js:63",
+            "anchor": "tabup: { raw: '(min-width: 501px)' }"
+          }
+        ]
+      }
+    },
+    "desk": {
+      "$type": "mediaQuery",
+      "$value": "(min-width: 1025px)",
+      "$description": "Desktop and up.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "tailwind.config.js:64",
+            "anchor": "desk: { raw: '(min-width: 1025px)' }"
+          }
+        ]
+      }
+    },
+    "tabdown": {
+      "$type": "mediaQuery",
+      "$value": "(max-width: 1024px)",
+      "$description": "Tablet and below.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "tailwind.config.js:65",
+            "anchor": "tabdown: { raw: '(max-width: 1024px)' }"
+          }
+        ]
+      }
+    },
+    "tab": {
+      "$type": "mediaQuery",
+      "$value": "(min-width: 501px) and (max-width: 1024px)",
+      "$description": "Tablet band (1024 design base).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "tailwind.config.js:66",
+            "anchor": "tab: { raw: '(min-width: 501px) and (max-width: 1024px)' }"
+          }
+        ]
+      }
+    },
+    "mob": {
+      "$type": "mediaQuery",
+      "$value": "(max-width: 500px)",
+      "$description": "Mobile band (375 design base).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "tailwind.config.js:67",
+            "anchor": "mob: { raw: '(max-width: 500px)' }"
+          }
+        ]
+      }
+    },
+    "designWidth": {
+      "desktop": {
+        "$type": "number",
+        "$value": 1440,
+        "$description": "Desktop design width.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "CLONE_SPEC.md:27",
+              "anchor": "`N / 1440 * 100vw`"
+            }
+          ]
+        }
+      },
+      "tablet": {
+        "$type": "number",
+        "$value": 1024,
+        "$description": "Tablet design width.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "CLONE_SPEC.md:28",
+              "anchor": "`N / 1024 * 100vw`"
+            }
+          ]
+        }
+      },
+      "mobile": {
+        "$type": "number",
+        "$value": 375,
+        "$description": "Mobile design width.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "CLONE_SPEC.md:29",
+              "anchor": "`N / 375 * 100vw`"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

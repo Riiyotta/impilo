@@ -1,0 +1,119 @@
+{
+  "semantic": {
+    "typography": {
+      "display": {
+        "$type": "typography",
+        "$value": "{typography.style.h1}",
+        "$description": "Hero titles (template-B hero, integrations hero, request-demo title, focus title).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/components/content/ContentHero.jsx:27",
+              "anchor": "type-h1 text-silver05"
+            }
+          ]
+        }
+      },
+      "sectionTitle": {
+        "$type": "typography",
+        "$value": "{typography.style.h2}",
+        "$description": "Section titles; drops to h3 on mobile.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/components/content/ContentSection.jsx:16",
+              "anchor": "type-h2 mob:type-h3"
+            }
+          ]
+        }
+      },
+      "cardTitle": {
+        "$type": "typography",
+        "$value": "{typography.style.h4}",
+        "$description": "Card/item titles; drops to body-m on mobile.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/components/content/Grids.jsx:31",
+              "anchor": "type-h4 u-mb-[16] tab:mb-[16px] mob:type-body-m"
+            }
+          ]
+        }
+      },
+      "body": {
+        "$type": "typography",
+        "$value": "{typography.style.body-r}",
+        "$description": "Default paragraph.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:113",
+              "anchor": "font-size: calc(var(--u) * 18);"
+            }
+          ]
+        }
+      },
+      "label": {
+        "$type": "typography",
+        "$value": "{typography.style.body-m}",
+        "$description": "Nav links, small descriptions, buttons in blog.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "CLONE_SPEC.md:63",
+              "anchor": "| bodyM / h5 | 14"
+            }
+          ]
+        }
+      },
+      "button": {
+        "$type": "typography",
+        "$value": "{typography.style.body-l}",
+        "$description": "Primary button label.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "CLONE_SPEC.md:111",
+              "anchor": "Text: bodyL, i.e. 17px / 600"
+            }
+          ]
+        }
+      },
+      "kicker": {
+        "$type": "typography",
+        "$value": "{typography.style.kicker-s}",
+        "$description": "Uppercase labels and form messages.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "specs/COMPANY_PAGES_SPEC.md:415",
+              "anchor": "kickerS (13/600/144%/+0.26, uppercase), brightTurquoise"
+            }
+          ]
+        }
+      },
+      "mobileStepDown": {
+        "$type": "other",
+        "$value": {
+          "h1": "h3",
+          "h2": "h3",
+          "h3": "h4",
+          "h4": "body-m"
+        },
+        "$description": "Mobile drops titles about one level (exceptions are listed per section, e.g. DHL hero stays h2).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "CLONE_SPEC.md:69",
+              "anchor": "Mobile titles generally drop one level."
+            },
+            {
+              "ref": "src/data/contentPages.js:691",
+              "anchor": "heroMobileTitle: 'h2'"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

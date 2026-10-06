@@ -1,0 +1,28 @@
+{
+  "id": "icon",
+  "name": "InlineSvg",
+  "purpose": "Inline SVG icon/illustration host (keeps GSAP hook classes inside SVGs).",
+  "implementedBy": [
+    {
+      "ref": "src/components/shared/InlineSvg.jsx:27",
+      "anchor": "export default function InlineSvg"
+    }
+  ],
+  "tokens": [
+    "iconSize.ui18",
+    "iconSize.linkArrow"
+  ],
+  "props": {
+    "assetRole": "icon.ui | illustration.line-art | product.ui-mock | brand.logo"
+  },
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:10",
+      "anchor": "`recon/svgs/*.svg`: 29 inline SVGs"
+    }
+  ],
+  "kind": "primitive",
+  "variants": [],
+  "motion": [],
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

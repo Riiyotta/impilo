@@ -1,0 +1,32 @@
+{
+  "id": "solutions-laptop",
+  "name": "SolutionsLaptop (/solutions/)",
+  "composes": [
+    "auto-animate",
+    "round-arrow-button",
+    "icon"
+  ],
+  "purpose": "CONTROLLED laptop (slides/active/onPrev/onNext props, state owned by Platform). Kept separate from laptop-showcase on purpose (see that entry).",
+  "implementedBy": [
+    {
+      "ref": "src/components/solutions/SolutionsLaptop.jsx:11",
+      "anchor": "export default function SolutionsLaptop"
+    }
+  ],
+  "tokens": [
+    "typography.style.body-xl",
+    "color.blue07",
+    "radius.11"
+  ],
+  "motion": [
+    "laptop-lid-scrub",
+    "autoanimate-swap"
+  ],
+  "evidence": [
+    {
+      "ref": "src/components/solutions/SolutionsLaptop.jsx:11",
+      "anchor": "export default function SolutionsLaptop({ slides, active, onPrev, onNext })"
+    }
+  ],
+  "kind": "component"
+}

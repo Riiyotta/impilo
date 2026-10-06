@@ -1,0 +1,37 @@
+{
+  "id": "file-download-form",
+  "name": "FileDownload",
+  "composes": [
+    "text-input",
+    "textarea",
+    "field-message",
+    "primary-button",
+    "auto-animate"
+  ],
+  "purpose": "Gated-download form embedded in posts. AUDITED: fields are NOT required; only a non-empty malformed email shows 'Invalid', inside the field. Submission faked locally.",
+  "implementedBy": [
+    {
+      "ref": "src/components/blog/FileDownload.jsx:38",
+      "anchor": "export default function FileDownload"
+    }
+  ],
+  "tokens": [
+    "component.field",
+    "color.blue01"
+  ],
+  "formPolicy": {
+    "submission": "local-fake",
+    "evidence": {
+      "ref": "src/components/blog/FileDownload.jsx:47",
+      "anchor": "Measured: the original fields are not required"
+    }
+  },
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:328",
+      "anchor": "### B2.5 FileDownload"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

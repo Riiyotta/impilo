@@ -1,0 +1,305 @@
+{
+  "$description": "Headless Chromium probe of the running clone (dev server, 1440x900, networkidle + 600ms) over every route pattern (6 blog slugs, 1 unknown path). externalHrefs = <a href> not starting with '/', 'mailto:', 'tel:' or '#'; externalRequests = request hosts other than localhost.",
+  "results": [
+    {
+      "route": "/",
+      "h1": 2,
+      "sections": 8,
+      "anchors": 23,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 6
+    },
+    {
+      "route": "/solutions/",
+      "h1": 1,
+      "sections": 5,
+      "anchors": 24,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 3
+    },
+    {
+      "route": "/solutions/impilo-platform/",
+      "h1": 1,
+      "sections": 5,
+      "anchors": 20,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 5
+    },
+    {
+      "route": "/solutions/digital-health-logistics/",
+      "h1": 1,
+      "sections": 4,
+      "anchors": 20,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 7
+    },
+    {
+      "route": "/solutions/tech-enabled-services/",
+      "h1": 1,
+      "sections": 5,
+      "anchors": 20,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 4
+    },
+    {
+      "route": "/solutions/direct-to-patient/",
+      "h1": 1,
+      "sections": 5,
+      "anchors": 20,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 4
+    },
+    {
+      "route": "/solutions/clinic-rpm/",
+      "h1": 1,
+      "sections": 4,
+      "anchors": 20,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 5
+    },
+    {
+      "route": "/solutions/support-crm/",
+      "h1": 1,
+      "sections": 5,
+      "anchors": 20,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 6
+    },
+    {
+      "route": "/use-cases/virtual-care-companies/",
+      "h1": 1,
+      "sections": 5,
+      "anchors": 22,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 5
+    },
+    {
+      "route": "/use-cases/physicians-and-provider-groups/",
+      "h1": 1,
+      "sections": 5,
+      "anchors": 22,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 6
+    },
+    {
+      "route": "/use-cases/health-plans-and-payers/",
+      "h1": 1,
+      "sections": 5,
+      "anchors": 22,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 6
+    },
+    {
+      "route": "/use-cases/health-systems-and-msos/",
+      "h1": 1,
+      "sections": 5,
+      "anchors": 22,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 6
+    },
+    {
+      "route": "/use-cases/value-based-care/",
+      "h1": 1,
+      "sections": 5,
+      "anchors": 22,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 4
+    },
+    {
+      "route": "/use-cases/oems/",
+      "h1": 1,
+      "sections": 4,
+      "anchors": 21,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 3
+    },
+    {
+      "route": "/about/",
+      "h1": 5,
+      "sections": 4,
+      "anchors": 19,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 4
+    },
+    {
+      "route": "/integrations/",
+      "h1": 3,
+      "sections": 3,
+      "anchors": 22,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 3
+    },
+    {
+      "route": "/request-demo/",
+      "h1": 1,
+      "sections": 1,
+      "anchors": 18,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 5
+    },
+    {
+      "route": "/terms/",
+      "h1": 1,
+      "sections": 1,
+      "anchors": 20,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 5
+    },
+    {
+      "route": "/privacy/",
+      "h1": 1,
+      "sections": 1,
+      "anchors": 19,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 4
+    },
+    {
+      "route": "/app-privacy/",
+      "h1": 1,
+      "sections": 1,
+      "anchors": 18,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 4
+    },
+    {
+      "route": "/blog/",
+      "h1": 1,
+      "sections": 0,
+      "anchors": 24,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 3
+    },
+    {
+      "route": "/blog/partnering-for-better-at-home-care/",
+      "h1": 3,
+      "sections": 0,
+      "anchors": 24,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 11
+    },
+    {
+      "route": "/blog/remote-monitoring-programs-that-scale/",
+      "h1": 3,
+      "sections": 0,
+      "anchors": 24,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 10
+    },
+    {
+      "route": "/blog/five-lessons-from-shipping-connected-devices/",
+      "h1": 1,
+      "sections": 0,
+      "anchors": 22,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 12
+    },
+    {
+      "route": "/blog/remote-monitoring-for-rural-and-community-clinics/",
+      "h1": 2,
+      "sections": 0,
+      "anchors": 24,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 10
+    },
+    {
+      "route": "/blog/device-data-decoded/",
+      "h1": 2,
+      "sections": 0,
+      "anchors": 22,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 3
+    },
+    {
+      "route": "/blog/before-launching-a-remote-patient-monitoring-program/",
+      "h1": 3,
+      "sections": 0,
+      "anchors": 22,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 21
+    },
+    {
+      "route": "/developers/",
+      "h1": 2,
+      "sections": 3,
+      "anchors": 19,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 3
+    },
+    {
+      "route": "/careers/",
+      "h1": 2,
+      "sections": 3,
+      "anchors": 19,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 3
+    },
+    {
+      "route": "/this-route-does-not-exist/",
+      "h1": 1,
+      "sections": 1,
+      "anchors": 19,
+      "externalHrefs": [],
+      "externalRequests": [],
+      "pageErrors": [],
+      "titleWords": 3
+    }
+  ]
+}

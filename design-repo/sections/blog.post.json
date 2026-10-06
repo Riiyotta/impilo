@@ -1,0 +1,437 @@
+{
+  "id": "blog.post",
+  "category": "editorial",
+  "purpose": "Post article: breadcrumb, cover, meta row, h1 (h3 token, blue01), category pills, rich-text body on a 28u grid gap, sticky share column (non-navigating share buttons).",
+  "implementedBy": [
+    {
+      "ref": "src/pages/blog/BlogPost.jsx:20",
+      "anchor": "export default function BlogPost"
+    }
+  ],
+  "templates": [
+    "blog-post"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "$ref": "#/definitions/postSlug"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "type": "string",
+          "pattern": "^(January|February|March|April|May|June|July|August|September|October|November|December) [0-9]{1,2}(st|nd|rd|th), [0-9]{4}$"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "maxItems": 5
+        },
+        "cover": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/media"
+            },
+            {
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "photo.editorial-cover",
+                    "illustration.placeholder"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "body": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/definitions/rich_paragraph"
+              },
+              {
+                "$ref": "#/definitions/rich_heading_1"
+              },
+              {
+                "$ref": "#/definitions/rich_heading_2"
+              },
+              {
+                "$ref": "#/definitions/rich_blockquote"
+              },
+              {
+                "$ref": "#/definitions/rich_unordered_list"
+              },
+              {
+                "$ref": "#/definitions/rich_ordered_list"
+              },
+              {
+                "$ref": "#/definitions/rich_hr"
+              },
+              {
+                "$ref": "#/definitions/rich_embedded_asset"
+              },
+              {
+                "$ref": "#/definitions/rich_embedded_entry"
+              }
+            ]
+          },
+          "minItems": 1
+        },
+        "share": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "buttons": {
+              "const": [
+                "x",
+                "linkedin",
+                "facebook",
+                "copy-link"
+              ]
+            },
+            "navigates": {
+              "const": false
+            }
+          },
+          "required": [
+            "buttons",
+            "navigates"
+          ]
+        }
+      },
+      "required": [
+        "slug",
+        "title",
+        "author",
+        "date",
+        "categories",
+        "cover",
+        "body",
+        "share"
+      ]
+    },
+    "richSchemas": {
+      "paragraph": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "paragraph"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "type",
+          "text"
+        ]
+      },
+      "heading-1": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "heading-1"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "type",
+          "text"
+        ]
+      },
+      "heading-2": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "heading-2"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "type",
+          "text"
+        ]
+      },
+      "blockquote": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "blockquote"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "type",
+          "text"
+        ]
+      },
+      "unordered-list": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "unordered-list"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "maxItems": 8
+          }
+        },
+        "required": [
+          "type",
+          "items"
+        ]
+      },
+      "ordered-list": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "ordered-list"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "maxItems": 8
+          }
+        },
+        "required": [
+          "type",
+          "items"
+        ]
+      },
+      "hr": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "hr"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "embedded-asset": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "embedded-asset"
+          },
+          "media": {
+            "allOf": [
+              {
+                "$ref": "#/definitions/media"
+              },
+              {
+                "properties": {
+                  "assetRole": {
+                    "enum": [
+                      "illustration.placeholder",
+                      "photo.editorial-cover"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "media"
+        ]
+      },
+      "embedded-entry": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "embedded-entry"
+          },
+          "entry": {
+            "const": "fileDownload"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "submission": {
+            "const": "local-fake"
+          }
+        },
+        "required": [
+          "type",
+          "entry",
+          "title",
+          "submission"
+        ]
+      }
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 17,
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:52",
+          "anchor": "- Title: 3–17 words, median 10."
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "author": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:56",
+          "anchor": "- Byline: `By {author}`."
+        },
+        "method": "author string"
+      },
+      "body[type=paragraph].text": {
+        "maxWords": 56,
+        "evidence": {
+          "ref": "src/data/posts.js:38",
+          "anchor": "export const POSTS = ["
+        },
+        "method": "longest placeholder paragraph measured from the clone data (56w)"
+      },
+      "body[type=heading-1].text": {
+        "maxWords": 6,
+        "evidence": {
+          "ref": "src/data/posts.js:59",
+          "anchor": "h1(b('What changes when fulfillment is shared'))"
+        },
+        "method": "longest heading-1 in clone data (6w)"
+      },
+      "body[type=heading-2].text": {
+        "maxWords": 6,
+        "evidence": {
+          "ref": "src/data/posts.js:113",
+          "anchor": "h2(b('Keep the device experience boring'))"
+        },
+        "method": "heading-2 max in clone data"
+      },
+      "body[type=blockquote].text": {
+        "maxWords": 15,
+        "evidence": {
+          "ref": "src/data/posts.js:31",
+          "anchor": "const quote = (...content)"
+        },
+        "method": "blockquote max in clone data (15w)"
+      },
+      "body[type=unordered-list].items[]": {
+        "maxWords": 18,
+        "evidence": {
+          "ref": "src/data/posts.js:32",
+          "anchor": "const ul = (...items)"
+        },
+        "method": "list item max in clone data (18w)"
+      },
+      "body[type=ordered-list].items[]": {
+        "maxWords": 18,
+        "evidence": {
+          "ref": "src/data/posts.js:33",
+          "anchor": "const ol = (...items)"
+        },
+        "method": "list item max in clone data (18w)"
+      },
+      "body[type=embedded-entry].title": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "src/data/posts.js:193",
+          "anchor": "download('Download the White Paper')"
+        },
+        "method": "FileDownload title"
+      }
+    }
+  },
+  "assets": [
+    "photo.editorial-cover",
+    "illustration.placeholder",
+    "icon.ui"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "sticky-pin",
+      "image-fade",
+      "autoanimate-swap"
+    ],
+    "reducedMotionFallback": "sticky-unchanged"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Columns 94|510|95.",
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:271",
+          "anchor": "Measured at 768: Wrapper 753 wide"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Breadcrumb hidden; share row after the article; title h4.",
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:280",
+          "anchor": "- **Hidden on mobile.**"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "layout.articleColumn",
+    "semantic.color.text.link",
+    "typography.style.h3",
+    "iconSize.share36"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:251",
+      "anchor": "## B2. Blog post `/blog/:slug/`"
+    },
+    {
+      "ref": "src/components/blog/Share.jsx:11",
+      "anchor": "Facebook do NOT open external share URLs"
+    }
+  ],
+  "variants": []
+}

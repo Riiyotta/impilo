@@ -1,0 +1,28 @@
+{
+  "id": "wide-pulse",
+  "name": "WidePulse",
+  "composes": [
+    "animated-paths"
+  ],
+  "purpose": "Full-bleed ECG pulse with a travelling bright-blue dash (/solutions/ Explore).",
+  "implementedBy": [
+    {
+      "ref": "src/components/solutions/WidePulse.jsx:25",
+      "anchor": "export default function WidePulse"
+    }
+  ],
+  "tokens": [
+    "color.brightBlue",
+    "color.blue02"
+  ],
+  "motion": [
+    "path-travel-loop"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:199",
+      "anchor": "**WidePulse** svg:"
+    }
+  ],
+  "kind": "component"
+}

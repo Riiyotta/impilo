@@ -1,0 +1,33 @@
+{
+  "id": "page-transition",
+  "name": "TransitionOverlay",
+  "composes": [
+    "icon"
+  ],
+  "purpose": "Fixed blue02 overlay with pulse; slides in (power3.out .5s) / out (power3.in) on internal navigation.",
+  "implementedBy": [
+    {
+      "ref": "src/components/PageTransition.jsx:94",
+      "anchor": "export function TransitionOverlay"
+    },
+    {
+      "ref": "src/animations/transition.js:35",
+      "anchor": "export function playTransitionIn"
+    }
+  ],
+  "tokens": [
+    "motion.duration.pageTransition",
+    "zIndex.pageTransition",
+    "color.blue02"
+  ],
+  "motion": [
+    "page-transition"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:382",
+      "anchor": "**Page transition \"slide\"**"
+    }
+  ],
+  "kind": "component"
+}

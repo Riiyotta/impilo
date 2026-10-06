@@ -1,0 +1,325 @@
+{
+  "spacing": {
+    "24": {
+      "$type": "dimension",
+      "$value": 24,
+      "$description": "Fluid spacing 24 design px (padding/margin/gap). Count 55 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Articles.jsx:48",
+            "anchor": "mob:u-gap-[24]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 55,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": 16,
+      "$description": "Fluid spacing 16 design px (padding/margin/gap). Count 40 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Articles.jsx:57",
+            "anchor": "mob:u-px-[16]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 40,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": 32,
+      "$description": "Fluid spacing 32 design px (padding/margin/gap). Count 31 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/WhiteGlove.jsx:30",
+            "anchor": "u-px-[32]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 31,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": 40,
+      "$description": "Fluid spacing 40 design px (padding/margin/gap). Count 28 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Header.jsx:126",
+            "anchor": "u-gap-[40]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 28,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "50": {
+      "$type": "dimension",
+      "$value": 50,
+      "$description": "Fluid spacing 50 design px (padding/margin/gap). Count 26 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Articles.jsx:40",
+            "anchor": "u-px-[50]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 26,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": 20,
+      "$description": "Fluid spacing 20 design px (padding/margin/gap). Count 23 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Footer.jsx:36",
+            "anchor": "mob:u-px-[20]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 23,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": 8,
+      "$description": "Fluid spacing 8 design px (padding/margin/gap). Count 22 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Articles.jsx:57",
+            "anchor": "mob:u-py-[8]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 22,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "100": {
+      "$type": "dimension",
+      "$value": 100,
+      "$description": "Fluid spacing 100 design px (padding/margin/gap). Count 21 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Trusted.jsx:19",
+            "anchor": "u-pt-[100]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 21,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": 12,
+      "$description": "Fluid spacing 12 design px (padding/margin/gap). Count 19 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Articles.jsx:57",
+            "anchor": "u-py-[12]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 19,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "60": {
+      "$type": "dimension",
+      "$value": 60,
+      "$description": "Fluid spacing 60 design px (padding/margin/gap). Count 19 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/about/Careers.jsx:9",
+            "anchor": "mob:u-py-[60]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 19,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "10": {
+      "$type": "dimension",
+      "$value": 10,
+      "$description": "Fluid spacing 10 design px (padding/margin/gap). Count 18 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Focus.jsx:29",
+            "anchor": "u-mr-[10]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 18,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "15": {
+      "$type": "dimension",
+      "$value": 15,
+      "$description": "Fluid spacing 15 design px (padding/margin/gap). Count 14 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Articles.jsx:40",
+            "anchor": "mob:u-px-[15]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 14,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "28": {
+      "$type": "dimension",
+      "$value": 28,
+      "$description": "Fluid spacing 28 design px (padding/margin/gap). Count 14 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/WhiteGlove.jsx:21",
+            "anchor": "mob:u-my-[28]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 14,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": 48,
+      "$description": "Fluid spacing 48 design px (padding/margin/gap). Count 11 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Articles.jsx:48",
+            "anchor": "u-gap-[48]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 11,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "22": {
+      "$type": "dimension",
+      "$value": 22,
+      "$description": "Fluid spacing 22 design px (padding/margin/gap). Count 11 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Footer.jsx:36",
+            "anchor": "mob:u-gap-[22]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 11,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "80": {
+      "$type": "dimension",
+      "$value": 80,
+      "$description": "Fluid spacing 80 design px (padding/margin/gap). Count 9 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Footer.jsx:36",
+            "anchor": "u-pb-[80]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 9,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "26": {
+      "$type": "dimension",
+      "$value": 26,
+      "$description": "Fluid spacing 26 design px (padding/margin/gap). Count 9 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Footer.jsx:37",
+            "anchor": "mob:u-gap-[26]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 9,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "44": {
+      "$type": "dimension",
+      "$value": 44,
+      "$description": "Fluid spacing 44 design px (padding/margin/gap). Count 9 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/about/AboutHero.jsx:15",
+            "anchor": "u-pt-[44]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 9,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "18": {
+      "$type": "dimension",
+      "$value": 18,
+      "$description": "Fluid spacing 18 design px (padding/margin/gap). Count 9 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/about/Founded.jsx:38",
+            "anchor": "u-mt-[18]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 9,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "30": {
+      "$type": "dimension",
+      "$value": 30,
+      "$description": "Fluid spacing 30 design px (padding/margin/gap). Count 9 in source.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/blog/EmailInput.jsx:41",
+            "anchor": "u-py-[30]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 9,
+        "histogram": "extraction/histograms.json"
+      }
+    }
+  },
+  "$description": "Values with >= 9 occurrences in the spacing histogram. Section-specific large paddings (120, 232, 244 ...) live in 30-layout."
+}

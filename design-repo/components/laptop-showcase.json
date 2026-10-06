@@ -1,0 +1,36 @@
+{
+  "id": "laptop-showcase",
+  "name": "LaptopShowcase (/integrations/)",
+  "composes": [
+    "auto-animate",
+    "round-arrow-button",
+    "icon"
+  ],
+  "purpose": "UNCONTROLLED 3-slide laptop (own useState). Deliberately separate from solutions-laptop: different title wrapping (PanelTitle nowrap), heading level, screen-size animation, mobile layout and animation hooks (data-anim='laptop-top').",
+  "implementedBy": [
+    {
+      "ref": "src/components/shared/LaptopShowcase.jsx:12",
+      "anchor": "export default function LaptopShowcase"
+    }
+  ],
+  "tokens": [
+    "typography.style.body-xl",
+    "color.blue07",
+    "radius.11"
+  ],
+  "motion": [
+    "laptop-lid-scrub",
+    "autoanimate-swap"
+  ],
+  "evidence": [
+    {
+      "ref": "src/components/shared/LaptopShowcase.jsx:5",
+      "anchor": "COMPANY_PAGES_SPEC I.4 Laptop showcase"
+    },
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:325",
+      "anchor": "PanelTitle: bodyXL (42/500/130%), `white-space: nowrap`"
+    }
+  ],
+  "kind": "component"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "two-column-grid",
+  "name": "TwoColumnGrid",
+  "composes": [],
+  "purpose": "Two headline columns with items; white text only (dark sections).",
+  "implementedBy": [
+    {
+      "ref": "src/components/content/Grids.jsx:87",
+      "anchor": "export function TwoColumnGrid"
+    }
+  ],
+  "tokens": [
+    "typography.style.h3",
+    "color.silver05"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:576",
+      "anchor": "| **TwoColumnGrid**"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

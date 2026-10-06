@@ -1,0 +1,174 @@
+{
+  "id": "about.leadership",
+  "category": "proof",
+  "purpose": "Leadership: white pill, title, 3 person cards (photo, name, role, bio), details paragraph. LinkedIn icon is visual only (no link).",
+  "implementedBy": [
+    {
+      "ref": "src/components/about/Leadership.jsx:26",
+      "anchor": "export default function Leadership"
+    }
+  ],
+  "templates": [
+    "about"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "people": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "bio": {
+                "type": "string",
+                "minLength": 1
+              },
+              "photo": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "photo.person"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "role",
+              "bio",
+              "photo"
+            ]
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "details": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "title",
+        "people",
+        "details"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:170",
+          "anchor": "3w, 1 line. Topic: \"leadership team\""
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "people[].name": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:177",
+          "anchor": "- Name: h4 token, silver05"
+        },
+        "method": "placeholder person name"
+      },
+      "people[].role": {
+        "maxWords": 1,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:178",
+          "anchor": "Role titles are \"CEO\", \"COO\", \"CTO\"."
+        },
+        "method": "role label"
+      },
+      "people[].bio": {
+        "maxWords": 33,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:180",
+          "anchor": "24w/5L, 26w/4L and 33w/6L"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "details": {
+        "maxWords": 34,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:188",
+          "anchor": "- Details paragraph: margin-top 46"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      }
+    }
+  },
+  "assets": [
+    "photo.person",
+    "icon.ui"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal",
+      "text-fade",
+      "stagger-entrance",
+      "pill-wipe-loop"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "People column; card row layout 925 wide.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:182",
+          "anchor": "- People column, gap 51."
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "People column, photo 312x329.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:186",
+          "anchor": "- People column, `gap: 40; margin-top: 38`"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.lavender02",
+    "color.blue07",
+    "radius.24"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:168",
+      "anchor": "### A.4 Leadership (`sc-04-Leadership__Wrapper`)"
+    },
+    {
+      "ref": "src/components/about/Leadership.jsx:55",
+      "anchor": "LinkedIn icon kept as a visual only"
+    }
+  ],
+  "variants": []
+}

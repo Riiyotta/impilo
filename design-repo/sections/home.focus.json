@@ -1,0 +1,142 @@
+{
+  "id": "home.focus",
+  "category": "feature",
+  "purpose": "Big centred statement + 'keep scrolling' marquee pill; white panel grows and the Request Demo button docks top-right through How It Works.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Focus.jsx:8",
+      "anchor": "export default function Focus"
+    }
+  ],
+  "templates": [
+    "home"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "homeRouteOnly": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "marqueeLabel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lead": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tail": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cta": {
+          "$ref": "#/definitions/link"
+        }
+      },
+      "required": [
+        "title",
+        "marqueeLabel",
+        "lead",
+        "tail",
+        "cta"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 8,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:389",
+          "anchor": "- Text: \"Allowing you to focus\""
+        },
+        "method": "word count of quoted string #2 on the cited spec line"
+      },
+      "marqueeLabel": {
+        "maxWords": 2,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:394",
+          "anchor": "`span` \"KEEP SCROLLING\""
+        },
+        "method": "UI label word count"
+      },
+      "lead": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:405",
+          "anchor": "`<span>Let's show you</span>`"
+        },
+        "method": "word count of the lead span"
+      },
+      "tail": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:405",
+          "anchor": "`<span>how we do it</span>`"
+        },
+        "method": "word count of the tail span"
+      },
+      "cta.label": {
+        "maxWords": 2,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:405",
+          "anchor": "then a primary button \"Request Demo\""
+        },
+        "method": "button label"
+      }
+    }
+  },
+  "assets": [
+    "brand.logo"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal",
+      "marquee-loop",
+      "panel-grow-scrub",
+      "dock-pin"
+    ],
+    "reducedMotionFallback": "static-inline"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Bottom title becomes a column with the button between spans.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:423",
+          "anchor": "BottomTitle is a column"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Marquee hidden; no pin and no dock.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:429",
+          "anchor": "the button sits between the spans (191.9×65.5). No pin and no dock."
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "typography.style.h1",
+    "typography.style.kicker-s",
+    "motion.duration.marqueeItem"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:380",
+      "anchor": "## 3. Section 2: Focus"
+    },
+    {
+      "ref": "src/animations/focus.js:38",
+      "anchor": "export function initFocus"
+    }
+  ],
+  "variants": []
+}

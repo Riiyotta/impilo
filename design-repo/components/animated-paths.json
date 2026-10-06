@@ -1,0 +1,27 @@
+{
+  "id": "animated-paths",
+  "name": "AnimatedPaths",
+  "composes": [
+    "icon"
+  ],
+  "purpose": "DrawSVG dashes travelling along .animate paths (random length/speed), while in view.",
+  "implementedBy": [
+    {
+      "ref": "src/animations/paths.js:14",
+      "anchor": "export function animatedPaths"
+    }
+  ],
+  "tokens": [
+    "motion.ease.linear"
+  ],
+  "motion": [
+    "path-travel-loop"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:340",
+      "anchor": "**Line-art travellers (AnimatedPaths).**"
+    }
+  ],
+  "kind": "component"
+}

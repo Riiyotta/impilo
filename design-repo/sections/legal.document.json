@@ -1,0 +1,234 @@
+{
+  "id": "legal.document",
+  "category": "content",
+  "purpose": "White rounded legal card: h3 title, address block (h2 in body type), intro paragraphs, numbered sections (lower-alpha nested) or a flat numbered list. Placeholder text only; no motion.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/Legal.jsx:30",
+      "anchor": "export default function Legal"
+    }
+  ],
+  "templates": [
+    "legal"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "page": {
+          "enum": [
+            "terms",
+            "privacy",
+            "app-privacy"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "addressLines": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "intro": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "maxItems": 2
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "maxItems": 4
+              }
+            },
+            "required": [
+              "title",
+              "items"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 13
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sub": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "maxItems": 3
+              },
+              "list": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "maxItems": 3
+              }
+            },
+            "required": [
+              "text"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 9
+        }
+      },
+      "required": [
+        "page",
+        "title",
+        "addressLines",
+        "intro"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 5,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:515",
+          "anchor": "- h1 5w"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "addressLines[]": {
+        "maxWords": 8,
+        "evidence": {
+          "ref": "src/data/legal.js:76",
+          "anchor": "address: ['Attention: Privacy Office, Impilo Placeholder, Inc.'"
+        },
+        "method": "longest address line in the placeholder data"
+      },
+      "intro[]": {
+        "maxWords": 42,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:485",
+          "anchor": "- p: 42w/2L and 33w/2L."
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "sections[].title": {
+        "maxWords": 6,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:486",
+          "anchor": "Each has a 1–6w title li"
+        },
+        "method": "range max 6w"
+      },
+      "sections[].items[]": {
+        "maxWords": 58,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:507",
+          "anchor": "3. 3 items (58/3, 30/2, 32/2)"
+        },
+        "method": "largest item (58w)"
+      },
+      "items[].text": {
+        "maxWords": 58,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:521",
+          "anchor": "5. 58w with a 3-item `ul`"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "items[].sub[]": {
+        "maxWords": 18,
+        "evidence": {
+          "ref": "src/data/legal.js:101",
+          "anchor": "sub: [t(14), t(18)]"
+        },
+        "method": "placeholder sub-item max"
+      },
+      "items[].list[]": {
+        "maxWords": 7,
+        "evidence": {
+          "ref": "src/data/legal.js:102",
+          "anchor": "list: [t(6), t(7), t(6)]"
+        },
+        "method": "placeholder list item max"
+      }
+    }
+  },
+  "assets": [],
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "none"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Content width 697.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:470",
+          "anchor": "Tablet width 697 (522.7 at 768)"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Margin-top 0; width 344; h1 stays 46 design.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:473",
+          "anchor": "It stays 46 design on mobile"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "layout.legalColumn",
+    "semantic.color.text.link",
+    "typography.style.h3",
+    "typography.style.body-r"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:460",
+      "anchor": "## L. Legal template"
+    },
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:461",
+      "anchor": "Confirmed: one shared template"
+    }
+  ],
+  "variants": []
+}

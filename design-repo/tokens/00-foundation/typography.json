@@ -1,0 +1,385 @@
+{
+  "typography": {
+    "fontFamily": {
+      "sans": {
+        "$type": "fontFamily",
+        "$value": "Gilroy, sans-serif",
+        "$description": "Gilroy (commercial font licensed to Impilo; self-hosted woff2/woff). See licensing note in assets/asset-roles.json.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "tailwind.config.js:101",
+              "anchor": "sans: ['Gilroy', 'sans-serif']"
+            },
+            {
+              "ref": "src/index.css:9",
+              "anchor": "font-family: 'Gilroy';"
+            },
+            {
+              "ref": "CLONE_SPEC.md:45",
+              "anchor": "Family: **Gilroy**"
+            }
+          ],
+          "license": "commercial-third-party"
+        }
+      }
+    },
+    "fontWeight": {
+      "400": {
+        "$type": "fontWeight",
+        "$value": 400,
+        "$description": "Gilroy weight 400 (Gilroy-Regular).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:10",
+              "anchor": "font-weight: 400;"
+            },
+            {
+              "ref": "src/index.css:13",
+              "anchor": "/assets/fonts/Gilroy-Regular-"
+            }
+          ]
+        }
+      },
+      "500": {
+        "$type": "fontWeight",
+        "$value": 500,
+        "$description": "Gilroy weight 500 (Gilroy-Medium).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:18",
+              "anchor": "font-weight: 500;"
+            },
+            {
+              "ref": "src/index.css:21",
+              "anchor": "/assets/fonts/Gilroy-Medium-"
+            }
+          ]
+        }
+      },
+      "600": {
+        "$type": "fontWeight",
+        "$value": 600,
+        "$description": "Gilroy weight 600 (Gilroy-SemiBold).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:26",
+              "anchor": "font-weight: 600;"
+            },
+            {
+              "ref": "src/index.css:29",
+              "anchor": "/assets/fonts/Gilroy-SemiBold-"
+            }
+          ]
+        }
+      }
+    },
+    "style": {
+      "h1": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": 124,
+          "fontSizeUnit": "u",
+          "fontWeight": 600,
+          "lineHeight": "92%",
+          "letterSpacing": "-0.04em"
+        },
+        "$description": "Type token h1 (design px x --u). Mobile titles generally drop one level.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:135",
+              "anchor": ".type-h1 {"
+            },
+            {
+              "ref": "CLONE_SPEC.md:56",
+              "anchor": "| h1 | 124"
+            }
+          ],
+          "usageCount": 8,
+          "cssClass": "type-h1"
+        }
+      },
+      "h2": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": 92,
+          "fontSizeUnit": "u",
+          "fontWeight": 600,
+          "lineHeight": "92%",
+          "letterSpacing": "-0.04em"
+        },
+        "$description": "Type token h2 (design px x --u). Mobile titles generally drop one level.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:136",
+              "anchor": ".type-h2 {"
+            },
+            {
+              "ref": "CLONE_SPEC.md:57",
+              "anchor": "| h2 | 92"
+            }
+          ],
+          "usageCount": 28,
+          "cssClass": "type-h2"
+        }
+      },
+      "h3": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": 46,
+          "fontSizeUnit": "u",
+          "fontWeight": 600,
+          "lineHeight": "92%",
+          "letterSpacing": "-0.04em"
+        },
+        "$description": "Type token h3 (design px x --u). Mobile titles generally drop one level.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:137",
+              "anchor": ".type-h3 {"
+            },
+            {
+              "ref": "CLONE_SPEC.md:58",
+              "anchor": "| h3 | 46"
+            }
+          ],
+          "usageCount": 41,
+          "cssClass": "type-h3"
+        }
+      },
+      "h4": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": 24,
+          "fontSizeUnit": "u",
+          "fontWeight": 500,
+          "lineHeight": "92%",
+          "letterSpacing": "-0.04em"
+        },
+        "$description": "Type token h4 (design px x --u). Mobile titles generally drop one level.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:138",
+              "anchor": ".type-h4 {"
+            },
+            {
+              "ref": "CLONE_SPEC.md:59",
+              "anchor": "| h4 | 24"
+            }
+          ],
+          "usageCount": 38,
+          "cssClass": "type-h4"
+        }
+      },
+      "body-xl": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": 42,
+          "fontSizeUnit": "u",
+          "fontWeight": 500,
+          "lineHeight": "130%",
+          "letterSpacing": "-0.04em"
+        },
+        "$description": "Type token body-xl (design px x --u). Mobile titles generally drop one level.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:139",
+              "anchor": ".type-body-xl {"
+            },
+            {
+              "ref": "CLONE_SPEC.md:60",
+              "anchor": "| bodyXL | 42"
+            }
+          ],
+          "usageCount": 5,
+          "cssClass": "type-body-xl"
+        }
+      },
+      "body-l": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": 17,
+          "fontSizeUnit": "u",
+          "fontWeight": 600,
+          "lineHeight": "100%",
+          "letterSpacing": "-0.03em"
+        },
+        "$description": "Type token body-l (design px x --u). Mobile titles generally drop one level.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:140",
+              "anchor": ".type-body-l {"
+            },
+            {
+              "ref": "CLONE_SPEC.md:61",
+              "anchor": "| bodyL | 17"
+            }
+          ],
+          "usageCount": 7,
+          "cssClass": "type-body-l"
+        }
+      },
+      "body-r": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": 18,
+          "fontSizeUnit": "u",
+          "fontWeight": 500,
+          "lineHeight": "144%",
+          "letterSpacing": "-0.04em"
+        },
+        "$description": "Type token body-r (design px x --u). Mobile titles generally drop one level.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:141",
+              "anchor": ".type-body-r {"
+            },
+            {
+              "ref": "CLONE_SPEC.md:62",
+              "anchor": "| bodyR | 18"
+            }
+          ],
+          "usageCount": 55,
+          "cssClass": "type-body-r"
+        }
+      },
+      "body-m": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": 14,
+          "fontSizeUnit": "u",
+          "fontWeight": 600,
+          "lineHeight": "144%",
+          "letterSpacing": "-0.04em"
+        },
+        "$description": "Type token body-m (design px x --u). Mobile titles generally drop one level.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:142",
+              "anchor": ".type-body-m {"
+            },
+            {
+              "ref": "CLONE_SPEC.md:63",
+              "anchor": "| bodyM / h5 | 14"
+            }
+          ],
+          "usageCount": 43,
+          "cssClass": "type-body-m"
+        }
+      },
+      "body-s": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": 14,
+          "fontSizeUnit": "u",
+          "fontWeight": 400,
+          "lineHeight": "144%",
+          "letterSpacing": "-0.04em"
+        },
+        "$description": "Type token body-s (design px x --u). Mobile titles generally drop one level.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:143",
+              "anchor": ".type-body-s {"
+            },
+            {
+              "ref": "CLONE_SPEC.md:64",
+              "anchor": "| bodyS | 14"
+            }
+          ],
+          "usageCount": 1,
+          "cssClass": "type-body-s"
+        }
+      },
+      "body-xs": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": 12,
+          "fontSizeUnit": "u",
+          "fontWeight": 600,
+          "lineHeight": "92%",
+          "letterSpacing": "-0.04em"
+        },
+        "$description": "Type token body-xs (design px x --u). Mobile titles generally drop one level.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:144",
+              "anchor": ".type-body-xs {"
+            },
+            {
+              "ref": "CLONE_SPEC.md:65",
+              "anchor": "| bodyXS | 12"
+            }
+          ],
+          "usageCount": 8,
+          "cssClass": "type-body-xs"
+        }
+      },
+      "kicker-r": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": 15,
+          "fontSizeUnit": "u",
+          "fontWeight": 500,
+          "lineHeight": "144%",
+          "letterSpacing": "0.02em",
+          "textTransform": "uppercase"
+        },
+        "$description": "Type token kicker-r (design px x --u). Mobile titles generally drop one level.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:145",
+              "anchor": ".type-kicker-r {"
+            },
+            {
+              "ref": "CLONE_SPEC.md:66",
+              "anchor": "| kickerR | 15"
+            }
+          ],
+          "usageCount": 2,
+          "cssClass": "type-kicker-r"
+        }
+      },
+      "kicker-s": {
+        "$type": "typography",
+        "$value": {
+          "fontSize": 13,
+          "fontSizeUnit": "u",
+          "fontWeight": 600,
+          "lineHeight": "144%",
+          "letterSpacing": "0.02em",
+          "textTransform": "uppercase"
+        },
+        "$description": "Type token kicker-s (design px x --u). Mobile titles generally drop one level.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:146",
+              "anchor": ".type-kicker-s {"
+            },
+            {
+              "ref": "CLONE_SPEC.md:67",
+              "anchor": "| kickerS | 13"
+            }
+          ],
+          "usageCount": 6,
+          "cssClass": "type-kicker-s"
+        }
+      }
+    }
+  }
+}

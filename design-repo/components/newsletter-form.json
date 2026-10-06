@@ -1,0 +1,34 @@
+{
+  "id": "newsletter-form",
+  "name": "EmailInput",
+  "composes": [
+    "icon"
+  ],
+  "purpose": "Newsletter form; submission is faked locally (no network request).",
+  "implementedBy": [
+    {
+      "ref": "src/components/blog/EmailInput.jsx:19",
+      "anchor": "export default function EmailInput"
+    }
+  ],
+  "tokens": [
+    "color.blue02",
+    "color.errorEmail",
+    "radius.6"
+  ],
+  "formPolicy": {
+    "submission": "local-fake",
+    "evidence": {
+      "ref": "src/components/blog/EmailInput.jsx:33",
+      "anchor": "window.setTimeout(() => setStatus('success'), 600)"
+    }
+  },
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:200",
+      "anchor": "**The clone should only fake the submission**"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

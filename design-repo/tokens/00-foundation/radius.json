@@ -1,0 +1,161 @@
+{
+  "radius": {
+    "24": {
+      "$type": "dimension",
+      "$value": 24,
+      "$description": "Fluid radius 24 design px (x --u). Promoted from the radius histogram (count 31 >= 2).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Cta.jsx:13",
+            "anchor": "u-rounded-b-[24]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 31,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": 12,
+      "$description": "Fluid radius 12 design px (x --u). Promoted from the radius histogram (count 9 >= 2).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/blog/SearchBar.jsx:15",
+            "anchor": "u-rounded-[12]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 9,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": 16,
+      "$description": "Fluid radius 16 design px (x --u). Promoted from the radius histogram (count 8 >= 2).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/blog/LargeCard.jsx:23",
+            "anchor": "u-rounded-[16]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 8,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "7": {
+      "$type": "dimension",
+      "$value": 7,
+      "$description": "Fluid radius 7 design px (x --u). Promoted from the radius histogram (count 4 >= 2).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:655",
+            "anchor": "border-radius: calc(var(--u) * 7)"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 4,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": 6,
+      "$description": "Fluid radius 6 design px (x --u). Promoted from the radius histogram (count 3 >= 2).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/blog/EmailInput.jsx:54",
+            "anchor": "u-rounded-[6]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 3,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "11": {
+      "$type": "dimension",
+      "$value": 11,
+      "$description": "Fluid radius 11 design px (x --u). Promoted from the radius histogram (count 2 >= 2).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/shared/LaptopShowcase.jsx:57",
+            "anchor": "u-rounded-[11]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 2,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "10": {
+      "$type": "dimension",
+      "$value": 10,
+      "$description": "Fluid radius 10 design px (x --u). Promoted from the radius histogram (count 2 >= 2).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/shared/LaptopShowcase.jsx:64",
+            "anchor": "u-rounded-[10]"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 2,
+        "histogram": "extraction/histograms.json"
+      }
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": 32,
+      "$description": "How-It-Works image box radius (single use, kept: defines the framed illustration window).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:600",
+            "anchor": "border-radius: calc(var(--u) * 32)"
+          }
+        ],
+        "unit": "u",
+        "usageCount": 1
+      }
+    },
+    "pill": {
+      "$type": "dimension",
+      "$value": "99vw",
+      "$description": "Fully rounded pill (buttons, Pill, TextArrowButton, category pills).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:158",
+            "anchor": "border-radius: 99vw;"
+          },
+          {
+            "ref": "CLONE_SPEC.md:129",
+            "anchor": "`border-radius: 99vw`"
+          }
+        ]
+      }
+    },
+    "circle": {
+      "$type": "dimension",
+      "$value": "50%",
+      "$description": "Carousel dot.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "specs/SOLUTIONS_USECASES_SPEC.md:639",
+            "anchor": "Dot `<button>`: 12x12, `border-radius: 50%"
+          }
+        ]
+      }
+    }
+  }
+}

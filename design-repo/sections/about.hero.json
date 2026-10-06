@@ -1,0 +1,111 @@
+{
+  "id": "about.hero",
+  "category": "hero",
+  "purpose": "Pinned hero: blue02 rounded box with a headline whose lines fill white on scroll; row of 5 compliance badges.",
+  "implementedBy": [
+    {
+      "ref": "src/components/about/AboutHero.jsx:12",
+      "anchor": "export default function AboutHero"
+    }
+  ],
+  "templates": [
+    "about"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "headline": {
+          "type": "string",
+          "minLength": 1
+        },
+        "badges": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/definitions/media"
+              },
+              {
+                "properties": {
+                  "assetRole": {
+                    "enum": [
+                      "compliance.badge"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 5,
+          "maxItems": 5
+        }
+      },
+      "required": [
+        "headline",
+        "badges"
+      ]
+    },
+    "maxWords": {
+      "headline": {
+        "maxWords": 15,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:83",
+          "anchor": "- Copy: one headline, 15w"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      }
+    }
+  },
+  "assets": [
+    "compliance.badge"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "hero-entrance",
+      "line-fill-scrub",
+      "hero-pin"
+    ],
+    "reducedMotionFallback": "static-filled"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Box 925x895; height queries scale .9.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:91",
+          "anchor": "- Box 925×895."
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "No pin; box h3, 9 lines; logos wrap.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:96",
+          "anchor": "- Wrapper: `gap 30; padding 36 0 30; height auto; margin-bottom 0; scale: 1 !important`. No pin."
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.blue02",
+    "color.blue04",
+    "radius.24"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:69",
+      "anchor": "### A.1 Hero (`sc-01-Hero__Wrapper`)"
+    },
+    {
+      "ref": "src/animations/pages/about.js:6",
+      "anchor": "export function initAbout"
+    }
+  ],
+  "variants": []
+}

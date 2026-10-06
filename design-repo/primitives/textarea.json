@@ -1,0 +1,29 @@
+{
+  "id": "textarea",
+  "name": "TextArea",
+  "purpose": "Multi-line field (249 tall on request-demo, 176 in FileDownload).",
+  "implementedBy": [
+    {
+      "ref": "src/components/shared/form/TextArea.jsx:4",
+      "anchor": "export default function TextArea"
+    }
+  ],
+  "tokens": [
+    "component.field",
+    "typography.style.body-m"
+  ],
+  "props": {
+    "name": "string",
+    "placeholder": "string"
+  },
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:432",
+      "anchor": "**TextArea__Field:**"
+    }
+  ],
+  "kind": "primitive",
+  "variants": [],
+  "motion": [],
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

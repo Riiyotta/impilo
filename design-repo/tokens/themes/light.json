@@ -1,0 +1,106 @@
+{
+  "$description": "The only theme. The site has no light/dark mode switch; dark SECTIONS are surface variants (semantic.color.surface.dark), not a theme. Resolution order: foundation -> semantic -> component -> responsive.",
+  "theme": "light",
+  "resolved": {
+    "semantic.color.text.primary": {
+      "alias": "{color.blue01}",
+      "value": "#161658"
+    },
+    "semantic.color.text.headingPanel": {
+      "alias": "{color.blue02}",
+      "value": "#232265"
+    },
+    "semantic.color.text.onDark": {
+      "alias": "{color.silver05}",
+      "value": "#ffffff"
+    },
+    "semantic.color.text.onDarkMuted": {
+      "alias": "{color.blue07}",
+      "value": "#b1c3fc"
+    },
+    "semantic.color.text.meta": {
+      "alias": "{color.silver01}",
+      "value": "#9494a7"
+    },
+    "semantic.color.text.link": {
+      "alias": "{color.blue06}",
+      "value": "#2f6bee"
+    },
+    "semantic.color.text.navOnBrand": {
+      "alias": "{color.silver04}",
+      "value": "#f4f4fb"
+    },
+    "semantic.color.text.accentHighlight": {
+      "alias": "{color.brightBlue}",
+      "value": "#3faeff"
+    },
+    "semantic.color.text.accentHighlightAlt": {
+      "alias": "{color.brightGreen}",
+      "value": "#5cffb1"
+    },
+    "semantic.color.text.accentLabel": {
+      "alias": "{color.brightTurquoise}",
+      "value": "#72e6ff"
+    },
+    "semantic.color.surface.page": {
+      "alias": "{color.blue05}",
+      "value": "#3f3ccd"
+    },
+    "semantic.color.surface.panel": {
+      "alias": "{color.silver05}",
+      "value": "#ffffff"
+    },
+    "semantic.color.surface.panelSubtle": {
+      "alias": "{color.silver03}",
+      "value": "#f4f4f6"
+    },
+    "semantic.color.surface.card": {
+      "alias": "{color.silver04}",
+      "value": "#f4f4fb"
+    },
+    "semantic.color.surface.dark": {
+      "alias": "{color.blue01}",
+      "value": "#161658"
+    },
+    "semantic.color.surface.darkRaised": {
+      "alias": "{color.blue02}",
+      "value": "#232265"
+    },
+    "semantic.color.border.card": {
+      "alias": "{color.lavender04}",
+      "value": "#b1a6f6"
+    },
+    "semantic.color.border.divider": {
+      "alias": "{color.lavender05}",
+      "value": "#e6e4fb"
+    },
+    "semantic.color.border.field": {
+      "alias": "{color.blue03}",
+      "value": "#4846bf"
+    },
+    "semantic.color.border.fieldHover": {
+      "alias": "{color.blue04}",
+      "value": "#524fd9"
+    },
+    "semantic.color.border.fieldInvalid": {
+      "alias": "{color.brightTurquoise}",
+      "value": "#72e6ff"
+    },
+    "semantic.color.action.primaryOuter": {
+      "alias": "{color.lavender01}",
+      "value": "#5250c5"
+    },
+    "semantic.color.action.primaryOuterHover": {
+      "alias": "{color.lavender03}",
+      "value": "#876eec"
+    },
+    "semantic.color.action.primaryInnerHover": {
+      "alias": "{color.lavender05}",
+      "value": "#e6e4fb"
+    },
+    "semantic.color.action.linkHover": {
+      "alias": "{color.brightGreen}",
+      "value": "#5cffb1"
+    }
+  }
+}

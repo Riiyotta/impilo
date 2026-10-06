@@ -1,0 +1,126 @@
+{
+  "id": "home.trusted",
+  "category": "proof",
+  "purpose": "Partner proof card on blue02: title, text, 4-cell partner logo grid (grayscale, colour + ovals on hover). Logos are NOT links.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Trusted.jsx:15",
+      "anchor": "export default function Trusted"
+    }
+  ],
+  "templates": [
+    "home"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "homeRouteOnly": true,
+    "insideGroup": "white-container"
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "logos": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/definitions/media"
+              },
+              {
+                "properties": {
+                  "assetRole": {
+                    "enum": [
+                      "partner.logo"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "title",
+        "text",
+        "logos"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 5,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:581",
+          "anchor": "- Text: \"Trusted by digital\" / \"health leaders\""
+        },
+        "method": "sum of the two quoted title lines (3 + 2)"
+      },
+      "text": {
+        "maxWords": 30,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:584",
+          "anchor": "- Text: \"Impilo is trusted by medical"
+        },
+        "method": "word count of quoted string #0 on the cited spec line"
+      }
+    }
+  },
+  "assets": [
+    "partner.logo"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal",
+      "text-fade",
+      "hover-reveal"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Logos 2 columns.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:608",
+          "anchor": "logos `width: 61.523vw` (472.5), 2 columns"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Logos 1 column.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:613",
+          "anchor": "logos in 1 column"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.blue02",
+    "color.lavender01",
+    "radius.24"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:573",
+      "anchor": "## 7. Section 5: Trusted"
+    },
+    {
+      "ref": "src/components/Trusted.jsx:36",
+      "anchor": "role=\"img\""
+    }
+  ],
+  "variants": []
+}

@@ -1,0 +1,26 @@
+{
+  "id": "auto-animate",
+  "name": "AutoAnimate",
+  "composes": [],
+  "purpose": "Two-slot content swapper: tweens wrapper size and slides/fades old vs new child (1s power3.inOut).",
+  "implementedBy": [
+    {
+      "ref": "src/components/shared/AutoAnimate.jsx:14",
+      "anchor": "export default function AutoAnimate"
+    }
+  ],
+  "tokens": [
+    "motion.duration.autoAnimate",
+    "motion.ease.power3InOut"
+  ],
+  "motion": [
+    "autoanimate-swap"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:436",
+      "anchor": "### 1.5 AutoAnimate"
+    }
+  ],
+  "kind": "component"
+}

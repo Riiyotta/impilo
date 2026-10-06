@@ -1,0 +1,78 @@
+{
+  "id": "shell.footer",
+  "category": "shell",
+  "purpose": "Fixed reveal footer (z 1) uncovered by a 727px spacer: big logo, link row, Request Demo, PIXI line canvas with cursor pill, info row.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Footer.jsx:29",
+      "anchor": "export default function Footer"
+    }
+  ],
+  "templates": "*",
+  "constraints": {
+    "onePerPage": true,
+    "mustBeLast": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {},
+      "required": []
+    },
+    "maxWords": {},
+    "notes": "No per-page content. Footer links: Docs -> /developers/, Careers -> /careers/; LinkedIn removed (no outbound links)."
+  },
+  "assets": [
+    "brand.logo",
+    "icon.ui"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "footer-lines-pointer",
+      "pill-wipe-loop"
+    ],
+    "reducedMotionFallback": "static-lines"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Links become a column; button bottom-aligned right.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:731",
+          "anchor": "links become a column (`flex-direction: column"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Column layout; lines canvas hidden; info becomes a grid (privacy, terms, address, phone).",
+        "evidence": {
+          "ref": "src/index.css:842",
+          "anchor": "grid-template-areas: 'privacy' 'terms' 'address' 'phone';"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.footerLine",
+    "layout.footerSpacer",
+    "zIndex.fixedFooter",
+    "motion.ease.footerElastic"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:695",
+      "anchor": "## 11. Footer"
+    },
+    {
+      "ref": "src/components/Footer.jsx:13",
+      "anchor": "{ label: 'Careers', href: '/careers/' },"
+    },
+    {
+      "ref": "src/index.css:841",
+      "anchor": "the LinkedIn link was removed by request"
+    }
+  ],
+  "variants": []
+}

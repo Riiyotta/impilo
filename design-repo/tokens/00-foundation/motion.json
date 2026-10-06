@@ -1,0 +1,311 @@
+{
+  "motion": {
+    "duration": {
+      "hoverColor": {
+        "$type": "duration",
+        "$value": "0.5s",
+        "$description": "Button/link colour transitions.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:160",
+              "anchor": "transition: background-color 0.5s;"
+            }
+          ]
+        }
+      },
+      "labelRoll": {
+        "$type": "duration",
+        "$value": "0.25s",
+        "$description": "Primary button label roll (translateY -200%).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:186",
+              "anchor": "transition: transform 0.25s;"
+            }
+          ]
+        }
+      },
+      "textLine": {
+        "$type": "duration",
+        "$value": "0.5s",
+        "$description": "TextAnimation per-line tween (GSAP default .5 power1.out).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/animations/text.js:8",
+              "anchor": "(default .5s power1.out)"
+            }
+          ]
+        }
+      },
+      "autoAnimate": {
+        "$type": "duration",
+        "$value": "1s",
+        "$description": "AutoAnimate swap and size morph.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/components/shared/AutoAnimate.jsx:23",
+              "anchor": "duration = 1,"
+            }
+          ]
+        }
+      },
+      "pageTransition": {
+        "$type": "duration",
+        "$value": "0.5s",
+        "$description": "Page transition in/out.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/animations/transition.js:5",
+              "anchor": "duration constant 0.5s"
+            }
+          ]
+        }
+      },
+      "dropdownOpen": {
+        "$type": "duration",
+        "$value": "0.15s",
+        "$description": "Desktop dropdown slide-down.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:316",
+              "anchor": "animation: slide-down 0.15s ease-out;"
+            }
+          ]
+        }
+      },
+      "menu": {
+        "$type": "duration",
+        "$value": "0.4s",
+        "$description": "Mobile menu / hamburger / overlay.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:354",
+              "anchor": "transition: translate 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);"
+            }
+          ]
+        }
+      },
+      "fieldBorder": {
+        "$type": "duration",
+        "$value": "0.2s",
+        "$description": "Form field border-color.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "specs/COMPANY_PAGES_SPEC.md:403",
+              "anchor": "transition: border-color .2s ease"
+            }
+          ]
+        }
+      },
+      "floatLoop": {
+        "$type": "duration",
+        "$value": "5s",
+        "$description": "Integrations illustration float (yoyo).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/animations/loops.js:27",
+              "anchor": "duration 5,"
+            }
+          ]
+        }
+      },
+      "marqueeItem": {
+        "$type": "duration",
+        "$value": "10s",
+        "$description": "Focus marquee: one item width per 10s, linear.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "CLONE_SPEC.md:397",
+              "anchor": "duration: 10, ease: \"none\""
+            }
+          ]
+        }
+      }
+    },
+    "ease": {
+      "power1Out": {
+        "$type": "cubicBezier",
+        "$value": "power1.out",
+        "$description": "GSAP default ease (text reveals, pill wipe).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "CLONE_SPEC.md:131",
+              "anchor": "Each step uses the default 0.5s duration with ease power1.out."
+            }
+          ]
+        }
+      },
+      "power3InOut": {
+        "$type": "cubicBezier",
+        "$value": "power3.inOut",
+        "$description": "AutoAnimate swaps, preloader exit.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/components/shared/AutoAnimate.jsx:24",
+              "anchor": "ease = 'power3.inOut',"
+            }
+          ]
+        }
+      },
+      "power2InOut": {
+        "$type": "cubicBezier",
+        "$value": "power2.inOut",
+        "$description": "Floats, hero Flip zoom.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/animations/loops.js:40",
+              "anchor": "ease: 'power2.inOut'"
+            }
+          ]
+        }
+      },
+      "power3Out": {
+        "$type": "cubicBezier",
+        "$value": "power3.out",
+        "$description": "Entrances (y 400->0), transition in.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/animations/transition.js:51",
+              "anchor": "ease: 'power3.out'"
+            }
+          ]
+        }
+      },
+      "linear": {
+        "$type": "cubicBezier",
+        "$value": "linear",
+        "$description": "Scrubbed slide-ups, line fill, marquee.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/animations/pages/solutions.js:18",
+              "anchor": "ease: 'linear'"
+            }
+          ]
+        }
+      },
+      "menuInOut": {
+        "$type": "cubicBezier",
+        "$value": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+        "$description": "Hamburger/overlay.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:354",
+              "anchor": "cubic-bezier(0.645, 0.045, 0.355, 1)"
+            }
+          ]
+        }
+      },
+      "menuIn": {
+        "$type": "cubicBezier",
+        "$value": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        "$description": "Mobile menu open.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:398",
+              "anchor": "cubic-bezier(0.215, 0.61, 0.355, 1)"
+            }
+          ]
+        }
+      },
+      "menuOut": {
+        "$type": "cubicBezier",
+        "$value": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+        "$description": "Mobile menu close.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:399",
+              "anchor": "cubic-bezier(0.55, 0.055, 0.675, 0.19)"
+            }
+          ]
+        }
+      },
+      "footerElastic": {
+        "$type": "cubicBezier",
+        "$value": "elastic.out(1.5,0.3)",
+        "$description": "Footer line bending on hover devices (3s).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/animations/footer.js:11",
+              "anchor": "elastic.out(1.5,0.3)"
+            }
+          ]
+        }
+      }
+    },
+    "stagger": {
+      "textLines": {
+        "$type": "number",
+        "$value": 0.25,
+        "$description": "Per-line stagger for multi-line reveals.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/animations/text.js:113",
+              "anchor": "stagger: 0.25"
+            }
+          ]
+        }
+      }
+    },
+    "trigger": {
+      "textReveal": {
+        "$type": "other",
+        "$value": "top 75%",
+        "$description": "ScrollTrigger start for TextAnimation, plays once.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/animations/text.js:118",
+              "anchor": "start: 'top 75%'"
+            }
+          ]
+        }
+      },
+      "illustrationIntro": {
+        "$type": "other",
+        "$value": "center 75%",
+        "$description": "How-It-Works illustration intros, once.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "CLONE_SPEC.md:501",
+              "anchor": "`start: \"center 75%\"`"
+            }
+          ]
+        }
+      }
+    },
+    "reducedMotion": {
+      "$type": "other",
+      "$value": "not-implemented-in-source",
+      "$description": "The clone has no prefers-reduced-motion handling (no match for prefers-reduced-motion in src/). Every PageSpec node must still declare the reducedMotionFallback fixed by its section contract; that fallback is a design-repo requirement for generated pages, not an observed behaviour.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/animations/utils.js:48",
+            "anchor": "export const canHover"
+          }
+        ]
+      }
+    }
+  }
+}

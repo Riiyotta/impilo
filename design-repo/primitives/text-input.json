@@ -1,0 +1,34 @@
+{
+  "id": "text-input",
+  "name": "TextInput",
+  "purpose": "Dark 66px form field with in-field message.",
+  "implementedBy": [
+    {
+      "ref": "src/components/shared/form/TextInput.jsx:8",
+      "anchor": "export default function TextInput"
+    }
+  ],
+  "tokens": [
+    "component.field",
+    "motion.duration.fieldBorder"
+  ],
+  "states": {
+    "hover": "border blue04",
+    "invalid": "border brightTurquoise + kickerS message inside the field"
+  },
+  "props": {
+    "name": "string",
+    "placeholder": "string (required fields append *)",
+    "type": "'text' | 'email'"
+  },
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:402",
+      "anchor": "**Input__Field** (wrapper):"
+    }
+  ],
+  "kind": "primitive",
+  "variants": [],
+  "motion": [],
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

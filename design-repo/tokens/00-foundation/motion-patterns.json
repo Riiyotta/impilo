@@ -1,0 +1,373 @@
+{
+  "$description": "Closed motion-pattern vocabulary. pinsScroll=true patterns count toward the SCROLL_PIN_BUDGET rule. Reduced-motion fallbacks are a design-repo requirement: the clone source has no prefers-reduced-motion handling.",
+  "patterns": {
+    "none": {
+      "pinsScroll": false,
+      "description": "No motion.",
+      "evidence": [
+        {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:461",
+          "anchor": "There is no motion."
+        }
+      ]
+    },
+    "text-reveal": {
+      "pinsScroll": false,
+      "description": "SplitText lines y 100%->0, stagger .25, .5s power1.out, start 'top 75%', once.",
+      "evidence": [
+        {
+          "ref": "src/animations/text.js:113",
+          "anchor": "tl.set(el, { opacity: 1 }).to(lines, { y: 0, stagger: 0.25 })"
+        }
+      ]
+    },
+    "text-fade": {
+      "pinsScroll": false,
+      "description": "Paragraph opacity 0->1 .5s at 'top 75%', once.",
+      "evidence": [
+        {
+          "ref": "src/animations/text.js:137",
+          "anchor": "start: 'top 75%'"
+        }
+      ]
+    },
+    "pill-wipe-loop": {
+      "pinsScroll": false,
+      "description": "Pill logo clip-path wipe in, hold 3s, wipe out; infinite.",
+      "evidence": [
+        {
+          "ref": "src/animations/loops.js:11",
+          "anchor": "export function initPills"
+        }
+      ]
+    },
+    "path-travel-loop": {
+      "pinsScroll": false,
+      "description": "DrawSVG dashes travel along .animate paths while in view (linear, infinite).",
+      "evidence": [
+        {
+          "ref": "src/animations/paths.js:14",
+          "anchor": "export function animatedPaths"
+        }
+      ]
+    },
+    "dropdown-slide": {
+      "pinsScroll": false,
+      "description": "Desktop dropdown slide-down .15s ease-out.",
+      "evidence": [
+        {
+          "ref": "src/index.css:316",
+          "anchor": "animation: slide-down 0.15s ease-out;"
+        }
+      ]
+    },
+    "mobile-menu-slide": {
+      "pinsScroll": false,
+      "description": "Mobile dialog translateY(-100lvh)->0 .4s; overlay fade.",
+      "evidence": [
+        {
+          "ref": "src/index.css:398",
+          "anchor": ".mobile-menu[data-state='open'] { animation: menu-in"
+        }
+      ]
+    },
+    "footer-lines-pointer": {
+      "pinsScroll": false,
+      "description": "PIXI lines bend around a cursor-following pill (elastic.out(1.5,.3) 3s on hover devices).",
+      "evidence": [
+        {
+          "ref": "src/animations/footer.js:15",
+          "anchor": "export function initFooterLines"
+        }
+      ]
+    },
+    "hero-zoom-pin": {
+      "pinsScroll": true,
+      "description": "Flip.fit dashboard 862->1340 wide, scrub 1, soft-pinned.",
+      "evidence": [
+        {
+          "ref": "src/animations/hero.js:48",
+          "anchor": "Flip.fit(toEl, state, {"
+        }
+      ]
+    },
+    "scroll-fade": {
+      "pinsScroll": false,
+      "description": "Hero + illustration opacity 1->0 scrub .5.",
+      "evidence": [
+        {
+          "ref": "src/animations/hero.js:107",
+          "anchor": "start: 'clamp(center center+=400px)', end: 'center center', scrub: 0.5"
+        }
+      ]
+    },
+    "word-rotator": {
+      "pinsScroll": false,
+      "description": "AutoAnimate word swap every 3000ms, yPercent +-100, 1s power3.inOut.",
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:294",
+          "anchor": "Words cycle every 3000ms"
+        }
+      ]
+    },
+    "pointer-parallax": {
+      "pinsScroll": false,
+      "description": "Mouse parallax on illustration groups (1s power3.out); virtual pointer on non-hover devices.",
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:345",
+          "anchor": "**Mouse parallax** (devices with hover)"
+        }
+      ]
+    },
+    "counter-roll": {
+      "pinsScroll": false,
+      "description": "Digit-column yPercent rolls (dashboard/weight/illustration counters).",
+      "evidence": [
+        {
+          "ref": "src/animations/hero.js:19",
+          "anchor": "c.timeScale(0.75)"
+        }
+      ]
+    },
+    "marquee-loop": {
+      "pinsScroll": false,
+      "description": "Constant linear marquee (focus pill; about photo marquee ramps timeScale 0->1 with scrub 4).",
+      "evidence": [
+        {
+          "ref": "src/animations/focus.js:17",
+          "anchor": "ease: 'none',"
+        },
+        {
+          "ref": "src/animations/pages/about.js:77",
+          "anchor": ".to(groups, { xPercent: -100, duration: 3.5 * 3, repeat: -1, ease: 'linear' })"
+        }
+      ]
+    },
+    "panel-grow-scrub": {
+      "pinsScroll": false,
+      "description": "Focus white panel height 45%->100%, scrub.",
+      "evidence": [
+        {
+          "ref": "src/animations/focus.js:84",
+          "anchor": ".fromTo(panel, { height: '45%' }, { height: '100%', ease: 'power1.out' })"
+        }
+      ]
+    },
+    "dock-pin": {
+      "pinsScroll": true,
+      "description": "Request Demo button pinned and docked top-right for ~8 viewport heights.",
+      "evidence": [
+        {
+          "ref": "src/animations/focus.js:53",
+          "anchor": "pin: btn,"
+        }
+      ]
+    },
+    "step-pin-sequence": {
+      "pinsScroll": true,
+      "description": "How-It-Works text/image parts soft-pinned per step; images fade over +-25vh.",
+      "evidence": [
+        {
+          "ref": "src/animations/howItWorks.js:151",
+          "anchor": "gsap.from(part, { opacity: 0, scrollTrigger: { trigger: part, start: () => st.start - KP(25), end: () => st.start, scrub: true } })"
+        }
+      ]
+    },
+    "illustration-intro": {
+      "pinsScroll": false,
+      "description": "Illustration layers from {opacity 0, y 400} 2s power3.out at 'center 75%', then float.",
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:501",
+          "anchor": "**Illustration intros** (each fires once"
+        }
+      ]
+    },
+    "float-loop": {
+      "pinsScroll": false,
+      "description": "yPercent yoyo float (power1/2.inOut, 4-7s, infinite).",
+      "evidence": [
+        {
+          "ref": "src/animations/loops.js:40",
+          "anchor": "gsap.fromTo(el, { yPercent: -A }, { yPercent: A, yoyo: true, ease: 'power2.inOut', repeat: -1, duration: D, delay: i * D * 0.3 })"
+        }
+      ]
+    },
+    "hover-reveal": {
+      "pinsScroll": false,
+      "description": "Hover-only reveal (badge gray layer opacity .5s; logo ovals + colour .5s).",
+      "evidence": [
+        {
+          "ref": "src/index.css:757",
+          "anchor": ".logo-hover:not(:hover) .logo-hover__ovals { top: 100%; }"
+        }
+      ]
+    },
+    "autoanimate-swap": {
+      "pinsScroll": false,
+      "description": "AutoAnimate content swap with size morph, 1s power3.inOut.",
+      "evidence": [
+        {
+          "ref": "src/components/shared/AutoAnimate.jsx:69",
+          "anchor": "defaults: { duration, ease },"
+        }
+      ]
+    },
+    "intro-timeline": {
+      "pinsScroll": false,
+      "description": "/solutions/ hero intro played after the preloader/transition 'anyEnd'.",
+      "evidence": [
+        {
+          "ref": "src/animations/pages/solutions.js:57",
+          "anchor": "tl.fromTo(ills, from, { ...to, ease: 'power2.out', stagger: { from: 'random', each: 0.025 }, onComplete: startBob }, 0)"
+        }
+      ]
+    },
+    "stacked-pin-slide-up": {
+      "pinsScroll": true,
+      "description": "Section pinned at bottom-bottom while the next rounded panel slides over; children drift -40vh linear.",
+      "evidence": [
+        {
+          "ref": "src/animations/pages/solutions.js:15",
+          "anchor": "ScrollTrigger.create({ trigger: section, pin: true, start: 'bottom bottom', end: 'bottom top', pinSpacing: false })"
+        }
+      ]
+    },
+    "hover-bounce": {
+      "pinsScroll": false,
+      "description": "Explore cart box bounce on mouseenter (bounce.out .8s).",
+      "evidence": [
+        {
+          "ref": "src/animations/pages/solutions.js:103",
+          "anchor": "/* 1.2 Cart hover bounce (box 4)."
+        }
+      ]
+    },
+    "card-stack-pin": {
+      "pinsScroll": true,
+      "description": "4 cards pinned at centre; earlier cards scale 1-.1(n-i), yPercent -11(n-i).",
+      "evidence": [
+        {
+          "ref": "src/animations/pages/solutions.js:147",
+          "anchor": "scrollTrigger: { trigger: card, start: 'center center', endTrigger: last, end: 'center center', scrub: true },"
+        }
+      ]
+    },
+    "scroll-parallax": {
+      "pinsScroll": false,
+      "description": "Thermometer translateY = 0.5 x scroll delta (clamped).",
+      "evidence": [
+        {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:266",
+          "anchor": "translateY = clamp(-858.5, 0.5*(scrollY - 1921), +858.5)"
+        }
+      ]
+    },
+    "horizontal-snap-scrub": {
+      "pinsScroll": false,
+      "description": "Touch mobile: horizontal snap carousel with per-card scale/x scrub + nudge hint.",
+      "evidence": [
+        {
+          "ref": "src/animations/pages/solutions.js:157",
+          "anchor": "/* 1.3 Support cards, touch mobile:"
+        }
+      ]
+    },
+    "laptop-lid-scrub": {
+      "pinsScroll": false,
+      "description": "Laptop lid from rotateX(-80) open on scroll, scrub 3.",
+      "evidence": [
+        {
+          "ref": "src/animations/pages/solutions.js:277",
+          "anchor": "rotateX: -80,"
+        }
+      ]
+    },
+    "hero-entrance": {
+      "pinsScroll": false,
+      "description": "About hero: wrapper scale .5->1, box y 200lvh->0, lines yPercent 100 stagger .2.",
+      "evidence": [
+        {
+          "ref": "src/animations/pages/about.js:31",
+          "anchor": ".from(lines, { yPercent: 100, clipPath: 'inset(0 0 100% 0)', duration: 1, stagger: 0.2, ease: 'power2.out' }, 0.3)"
+        }
+      ]
+    },
+    "line-fill-scrub": {
+      "pinsScroll": false,
+      "description": "Per-line gradient text fill scrubbed with scroll (.8/N stagger, linear).",
+      "evidence": [
+        {
+          "ref": "src/animations/pages/lineFill.js:59",
+          "anchor": ".to(lines, { '--lf-p': '100%', ease: 'linear', duration: 0.8 / n, stagger: 0.8 / n })"
+        }
+      ]
+    },
+    "hero-pin": {
+      "pinsScroll": true,
+      "description": "About hero pinned 0->135vh (yPercent -50, scrub .1) while Founded slides over.",
+      "evidence": [
+        {
+          "ref": "src/animations/pages/about.js:61",
+          "anchor": "scrub: 0.1,"
+        }
+      ]
+    },
+    "stagger-entrance": {
+      "pinsScroll": false,
+      "description": "Leadership cards from yPercent 40 / opacity 0, stagger .1, at 'top 75%'.",
+      "evidence": [
+        {
+          "ref": "src/animations/pages/about.js:104",
+          "anchor": "stagger: 0.1,"
+        }
+      ]
+    },
+    "pulse-draw-loop": {
+      "pinsScroll": false,
+      "description": "Careers large pulse drawSVG 0->100%, hold, erase; infinite.",
+      "evidence": [
+        {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:198",
+          "anchor": "- Motion: `timeline({repeat: -1}).fromTo(\"path\", {drawSVG: \"0 0\"}"
+        }
+      ]
+    },
+    "sticky-pin": {
+      "pinsScroll": false,
+      "description": "CSS position: sticky equivalent of the original ScrollTrigger pin (blog sidebar top 40u, share column top 120u).",
+      "evidence": [
+        {
+          "ref": "src/pages/blog/BlogIndex.jsx:26",
+          "anchor": "Sidebar pin: CSS sticky top 40"
+        }
+      ]
+    },
+    "image-fade": {
+      "pinsScroll": false,
+      "description": "Image opacity 0->1 250ms linear on load.",
+      "evidence": [
+        {
+          "ref": "specs/BLOG_SPEC.md:407",
+          "anchor": "**Image load fade**"
+        }
+      ]
+    }
+  },
+  "reducedMotionFallbacks": {
+    "none": "No motion to reduce.",
+    "static-visible": "Render every element in its final, visible state; no reveal, fade or loop.",
+    "static-final-frame": "Render the end state of scroll-driven sequences (e.g. dashboard at natural size, counters at final value); no pin, no zoom.",
+    "static-inline": "Keep pinned/docking elements in their inline position.",
+    "static-stacked": "Render pinned/stacked parts as an ordinary vertical stack, fully visible.",
+    "static-paused": "Show the first frame of loops (marquees, floats) without movement.",
+    "static-filled": "Render line-fill text fully filled (final colour).",
+    "static-open": "Render the laptop lid open; carousel swaps are instant.",
+    "instant-swap": "Swap carousel/form states instantly without tweening.",
+    "instant-open-close": "Open/close menus without slide animations.",
+    "static-lines": "Footer lines drawn straight; no pointer-driven bending.",
+    "sticky-unchanged": "Keep CSS sticky positioning (not an animation); disable image fades."
+  }
+}

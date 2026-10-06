@@ -1,0 +1,64 @@
+{
+  "elevation": {
+    "buttonPrimaryInner": {
+      "$type": "shadow",
+      "$value": "rgba(0,0,0,.45) 0 1u 4u 0, rgb(178,176,255) 0 -1u 3u 0 inset, rgb(60,57,185) 0 0 0 1u",
+      "$description": "Primary button inner bevel (u = --u).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:173",
+            "anchor": "rgba(0, 0, 0, 0.45) 0 calc(var(--u) * 1)"
+          },
+          {
+            "ref": "CLONE_SPEC.md:112",
+            "anchor": "`box-shadow: rgba(0,0,0,.45) 0 1px 4px 0"
+          }
+        ]
+      }
+    },
+    "roundControl": {
+      "$type": "shadow",
+      "$value": "rgb(251,250,255) 0 -1u 1u 1u inset, rgba(212,209,242,.68) 0 2u 5u 0, rgba(133,143,172,.25) 0 0 0 1u",
+      "$description": "Round white arrow buttons, TextArrowButton, category pills (3-layer).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:801",
+            "anchor": "rgb(251, 250, 255) 0 calc(var(--u) * -1)"
+          },
+          {
+            "ref": "specs/BLOG_SPEC.md:146",
+            "anchor": "`box-shadow: 0 -1px 1px 1px #FBFAFF inset"
+          }
+        ]
+      }
+    },
+    "dropdown": {
+      "$type": "shadow",
+      "$value": "0 4px 12px rgba(0,0,0,.15)",
+      "$description": "Desktop nav dropdown panel.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:314",
+            "anchor": "box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);"
+          }
+        ]
+      }
+    },
+    "stepIcon": {
+      "$type": "shadow",
+      "$value": "drop-shadow(rgb(14,14,78) 0 0 0) drop-shadow(rgba(0,0,0,.19) 0 1u 9u)",
+      "$description": "How-It-Works step icon filter.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:657",
+            "anchor": "filter: drop-shadow(var(--step-border) 0 0 0)"
+          }
+        ]
+      }
+    }
+  }
+}

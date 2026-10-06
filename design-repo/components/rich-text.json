@@ -1,0 +1,28 @@
+{
+  "id": "rich-text",
+  "name": "RichText",
+  "composes": [
+    "file-download-form",
+    "blog-image"
+  ],
+  "purpose": "Renders post body nodes on a 28u grid gap; no h3-h6, no tables, no code blocks.",
+  "implementedBy": [
+    {
+      "ref": "src/components/blog/RichText.jsx:104",
+      "anchor": "export default function RichText"
+    }
+  ],
+  "tokens": [
+    "semantic.color.text.link",
+    "typography.style.body-r",
+    "typography.style.h4"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:301",
+      "anchor": "### B2.4 Rich-text styles"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

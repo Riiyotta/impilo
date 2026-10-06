@@ -1,0 +1,211 @@
+{
+  "fixedPx": {
+    "layoutMainBackdropInsetBottom": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$description": "main::before blue05 backdrop inset bottom.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:273",
+            "anchor": "inset: 0 0 24px; /* fixed px"
+          }
+        ]
+      }
+    },
+    "navTriggerGap": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$description": "Header dropdown trigger label-chevron gap.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:284",
+            "anchor": "gap: 8px; /* fixed px"
+          }
+        ]
+      }
+    },
+    "navChevronWidth": {
+      "$type": "dimension",
+      "$value": "13px",
+      "$description": "Header dropdown chevron width.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:296",
+            "anchor": "width: 13px; /* fixed px"
+          }
+        ]
+      }
+    },
+    "navDropdownRadius": {
+      "$type": "dimension",
+      "$value": "12px",
+      "$description": "Desktop dropdown panel radius (whole panel is fixed px).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:313",
+            "anchor": "border-radius: 12px;"
+          },
+          {
+            "ref": "CLONE_SPEC.md:204",
+            "anchor": "Items are `<button>`s"
+          }
+        ]
+      }
+    },
+    "navDropdownItemPadding": {
+      "$type": "dimension",
+      "$value": "12px 20px",
+      "$description": "Desktop dropdown item padding; item font fixed 18px.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:321",
+            "anchor": "padding: 12px 20px;"
+          }
+        ]
+      }
+    },
+    "heroWordBoxRadius": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$description": "Homepage hero rotating-word dashed box radius.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:442",
+            "anchor": "border-radius: 16px; /* fixed px"
+          }
+        ]
+      }
+    },
+    "stepTopbarPaddingBottom": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$description": "How-It-Works step top bar padding-bottom.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:646",
+            "anchor": "padding-bottom: 24px; /* fixed px"
+          }
+        ]
+      }
+    },
+    "readArticleRadius": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$description": "Homepage articles 'Read Full Article' outlined button radius.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Articles.jsx:57",
+            "anchor": "rounded-[8px]"
+          }
+        ]
+      }
+    },
+    "outcomesBulletIndent": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$description": "OutcomesList li padding-left (bullet indent) stays raw px at every width.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/content/Grids.jsx:110",
+            "anchor": "pl-[24px]"
+          }
+        ]
+      }
+    },
+    "contentGridTabletTitleMargins": {
+      "$type": "dimension",
+      "$value": {
+        "itemTitle": "16px",
+        "columnHeadline": "32px",
+        "itemTitleTwoColumn": "12px"
+      },
+      "$description": "Template-B grids: on tablet the original leaves item-title/column margins as raw px while paddings/gaps/fonts scale.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/content/Grids.jsx:5",
+            "anchor": "the original leaves item-title / column margins as raw px"
+          },
+          {
+            "ref": "src/components/content/Grids.jsx:92",
+            "anchor": "tab:mb-[32px]"
+          }
+        ]
+      }
+    },
+    "mobileMenuSubLinks": {
+      "$type": "dimension",
+      "$value": {
+        "gap": "16px",
+        "subGap": "12px",
+        "subIndent": "16px"
+      },
+      "$description": "Mobile menu group gaps/indent (raw px).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Header.jsx:146",
+            "anchor": "gap-[16px]"
+          },
+          {
+            "ref": "src/components/Header.jsx:148",
+            "anchor": "pl-[16px]"
+          }
+        ]
+      }
+    },
+    "hoverNudge": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$description": "Arrow translateX on link/TextArrowButton hover.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:209",
+            "anchor": "transform: translateX(4px)"
+          },
+          {
+            "ref": "src/styles/blog.css:37",
+            "anchor": "transform: translateX(4px)"
+          }
+        ]
+      }
+    },
+    "pseudoBoxPadding": {
+      "$type": "dimension",
+      "$value": "200px",
+      "$description": "How-It-Works PseudoBox --padding frame overflow.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:603",
+            "anchor": "--padding: 200px;"
+          }
+        ]
+      }
+    },
+    "hairline": {
+      "$type": "dimension",
+      "$value": "1px",
+      "$description": "Borders are 1px (design 1px may render 0.5px on DPR2 if fluid; build as 1px or calc(1*var(--u)) per component).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "specs/SOLUTIONS_USECASES_SPEC.md:25",
+            "anchor": "**Border rendering:**"
+          }
+        ]
+      }
+    }
+  },
+  "$description": "Values the original deliberately keeps in raw px (not multiplied by --u). A generator must not convert these to fluid units."
+}

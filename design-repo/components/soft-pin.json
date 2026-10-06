@@ -1,0 +1,28 @@
+{
+  "id": "soft-pin",
+  "name": "softPin",
+  "composes": [],
+  "purpose": "ScrollTrigger pin with +-smoothLevel/4 drift (native-scroll replacement for the original's ScrollSmoother).",
+  "implementedBy": [
+    {
+      "ref": "src/animations/utils.js:63",
+      "anchor": "export function softPin"
+    }
+  ],
+  "tokens": [],
+  "motion": [
+    "hero-zoom-pin",
+    "step-pin-sequence"
+  ],
+  "evidence": [
+    {
+      "ref": "src/animations/utils.js:55",
+      "anchor": "scrubbed y-drift tweens of +-smoothLevel/4"
+    },
+    {
+      "ref": "CLONE_SPEC.md:160",
+      "anchor": "You can skip it and use native scroll with ScrollTrigger."
+    }
+  ],
+  "kind": "component"
+}

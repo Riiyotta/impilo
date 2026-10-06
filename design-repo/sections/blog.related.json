@@ -1,0 +1,85 @@
+{
+  "id": "blog.related",
+  "category": "editorial",
+  "purpose": "'Related Articles' (post has relatedArticles) or 'Recent Articles' (2 newest others) as SmallCards in a 2-column 680 grid.",
+  "implementedBy": [
+    {
+      "ref": "src/data/posts.js:305",
+      "anchor": "export function getRelated"
+    }
+  ],
+  "templates": [
+    "blog-post"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustPrecedeFooter": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "enum": [
+            "Related Articles",
+            "Recent Articles"
+          ]
+        },
+        "posts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/postSlug"
+          },
+          "minItems": 1,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "heading",
+        "posts"
+      ]
+    },
+    "maxWords": {}
+  },
+  "assets": [
+    "photo.editorial-cover",
+    "illustration.placeholder"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "image-fade"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Cards keep 290/210 at tablet (audited; index grid uses 246/196).",
+        "evidence": {
+          "ref": "src/components/blog/SmallCard.jsx:6",
+          "anchor": "the post's related cards keep"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "1 column, gap 44.",
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:372",
+          "anchor": "Mobile: 1 col, gap 44."
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "component.card.blogSmall"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:369",
+      "anchor": "### B2.7 Related / Recent articles"
+    }
+  ],
+  "variants": []
+}

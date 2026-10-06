@@ -10,6 +10,6 @@ recon/
 Impilo _ Remote Patient Monitoring Devices.html
 Impilo _ Remote Patient Monitoring Devices_files/
 
-# Built by a separate pass; committed on its own once verified.
-design-repo/
+# Regenerated from design-repo/ with the CLI zip tool; never committed alongside the live folder.
 design-repo.zip
+__pycache__/

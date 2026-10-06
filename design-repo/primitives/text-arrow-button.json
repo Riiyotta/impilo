@@ -1,0 +1,30 @@
+{
+  "id": "text-arrow-button",
+  "name": "TextArrowButton",
+  "purpose": "Blog 'Read Article' pill button (text turns brightGreen on white on hover, faithful to the original).",
+  "implementedBy": [
+    {
+      "ref": "src/components/blog/TextArrowButton.jsx:6",
+      "anchor": "export default function TextArrowButton"
+    }
+  ],
+  "tokens": [
+    "component.button.textArrow",
+    "elevation.roundControl",
+    "iconSize.linkArrow"
+  ],
+  "props": {
+    "label": "string",
+    "href": "LinkHref"
+  },
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:150",
+      "anchor": "**Hover (measured):** text and arrow path"
+    }
+  ],
+  "kind": "primitive",
+  "variants": [],
+  "motion": [],
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

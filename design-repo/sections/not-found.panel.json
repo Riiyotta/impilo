@@ -1,0 +1,98 @@
+{
+  "id": "not-found.panel",
+  "category": "error",
+  "purpose": "silver04 rounded 404 panel: pill, 2-part heading (forced break), 'Take You Back Home' button to /.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/NotFound.jsx:8",
+      "anchor": "export default function NotFound"
+    }
+  ],
+  "templates": [
+    "not-found"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "headingLines": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "cta": {
+          "$ref": "#/definitions/link"
+        }
+      },
+      "required": [
+        "headingLines",
+        "cta"
+      ]
+    },
+    "maxWords": {
+      "headingLines[]": {
+        "maxWords": 8,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:540",
+          "anchor": "10w in 4 lines (722×338.6), with a forced `<br>` after the first 2 words"
+        },
+        "method": "10w total with a break after word 2 -> second line max 8"
+      },
+      "cta.label": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:541",
+          "anchor": "- Primary **\"Take You Back Home\"**"
+        },
+        "method": "button label"
+      }
+    }
+  },
+  "assets": [],
+  "motion": {
+    "allowedPatterns": [
+      "pill-wipe-loop"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Pure fluid.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:542",
+          "anchor": "- No motion other than the Pill loop and the button hover."
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Padding 80 0; h3.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:537",
+          "anchor": "- Mobile: `padding: 80 0`, h3 token"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.silver04",
+    "color.blue02",
+    "radius.24"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:530",
+      "anchor": "## E. 404 page"
+    }
+  ],
+  "variants": []
+}

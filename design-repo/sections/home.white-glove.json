@@ -1,0 +1,136 @@
+{
+  "id": "home.white-glove",
+  "category": "proof",
+  "purpose": "Compliance proof: pill, title, large text, two hover-reveal compliance badges, small regulatory note. Opens the white container.",
+  "implementedBy": [
+    {
+      "ref": "src/components/WhiteGlove.jsx:9",
+      "anchor": "export default function WhiteGlove"
+    }
+  ],
+  "templates": [
+    "home"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "homeRouteOnly": true,
+    "insideGroup": "white-container"
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "largeText": {
+          "type": "string",
+          "minLength": 1
+        },
+        "badges": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/definitions/media"
+              },
+              {
+                "properties": {
+                  "assetRole": {
+                    "enum": [
+                      "compliance.badge"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "smallText": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "title",
+        "largeText",
+        "badges",
+        "smallText"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:552",
+          "anchor": "- Text: \"End-to-end white glove service\""
+        },
+        "method": "word count of quoted string #0 on the cited spec line"
+      },
+      "largeText": {
+        "maxWords": 18,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:555",
+          "anchor": "- Text: \"Our team is here to provide"
+        },
+        "method": "word count of quoted string #0 on the cited spec line"
+      },
+      "smallText": {
+        "maxWords": 19,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:562",
+          "anchor": "- Text: \"We pride ourselves"
+        },
+        "method": "word count of quoted string #0 on the cited spec line"
+      }
+    }
+  },
+  "assets": [
+    "compliance.badge"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal",
+      "text-fade",
+      "pill-wipe-loop",
+      "hover-reveal"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Title 87.891vw; badges 237x107.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:565",
+          "anchor": "**Tablet:** `padding: 13.77vw 0 8.008vw`"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Large text becomes bodyR; badges 24.533vw.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:569",
+          "anchor": "large text becomes bodyR"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "typography.style.h2",
+    "typography.style.h4",
+    "color.silver01"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:545",
+      "anchor": "## 6. Section 4: White Glove"
+    }
+  ],
+  "variants": []
+}

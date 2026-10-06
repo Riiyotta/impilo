@@ -1,0 +1,30 @@
+{
+  "id": "logo-hover",
+  "name": "LogoHover (Trusted)",
+  "composes": [
+    "icon"
+  ],
+  "purpose": "Partner logo cell: grayscale at rest, ovals rise + colour on hover. NON-CLICKABLE in the clone (div role=img).",
+  "implementedBy": [
+    {
+      "ref": "src/components/Trusted.jsx:36",
+      "anchor": "role=\"img\" aria-label={logo.name} className=\"logo-hover\""
+    }
+  ],
+  "tokens": [
+    "color.blue01",
+    "color.blue03",
+    "color.lavender01"
+  ],
+  "linkPolicy": {
+    "clickable": false
+  },
+  "evidence": [
+    {
+      "ref": "src/index.css:739",
+      "anchor": ".logo-hover {"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

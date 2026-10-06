@@ -1,0 +1,34 @@
+{
+  "id": "line-fill-text",
+  "name": "LineFillText",
+  "composes": [
+    "text-reveal"
+  ],
+  "purpose": "Scrubbed per-line gradient text fill (base colour -> white).",
+  "implementedBy": [
+    {
+      "ref": "src/components/shared/LineFillText.jsx:6",
+      "anchor": "export default function LineFillText"
+    },
+    {
+      "ref": "src/animations/pages/lineFill.js:54",
+      "anchor": "export function lineFillTimeline"
+    }
+  ],
+  "tokens": [
+    "color.silver05",
+    "color.blue04",
+    "color.lavender04",
+    "motion.ease.linear"
+  ],
+  "motion": [
+    "line-fill-scrub"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:48",
+      "anchor": "| **LineFillText** (SplitText lines"
+    }
+  ],
+  "kind": "component"
+}

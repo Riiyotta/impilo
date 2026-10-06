@@ -1,0 +1,175 @@
+{
+  "id": "request-demo.panel",
+  "category": "form",
+  "purpose": "blue01 panel: pulse mark, 'Schedule a Demo' title, subtitle, demo form (local fake submission) with success and error swaps. No reCAPTCHA note.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/RequestDemo.jsx:12",
+      "anchor": "export default function RequestDemo"
+    },
+    {
+      "ref": "src/components/requestDemo/DemoForm.jsx:38",
+      "anchor": "export default function DemoForm"
+    }
+  ],
+  "templates": [
+    "request-demo"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subtitle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "form": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "submission": {
+              "const": "local-fake"
+            },
+            "submitLabel": {
+              "type": "string",
+              "minLength": 1
+            },
+            "referralOptions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 6,
+              "maxItems": 6
+            }
+          },
+          "required": [
+            "submission",
+            "submitLabel",
+            "referralOptions"
+          ]
+        },
+        "successMessage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "errorMessage": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "title",
+        "subtitle",
+        "form",
+        "successMessage",
+        "errorMessage"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:374",
+          "anchor": "- Label \"Schedule a Demo\", 2 lines, 500×261"
+        },
+        "method": "UI label"
+      },
+      "subtitle": {
+        "maxWords": 14,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:375",
+          "anchor": "- Subtitle `p`: h4 token (24/500/92%/-0.96), blue07, max-width 500. 14w"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "form.submitLabel": {
+        "maxWords": 2,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:434",
+          "anchor": "\"Submit Information\""
+        },
+        "method": "button label"
+      },
+      "form.referralOptions[]": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:427",
+          "anchor": "- Labels: \"LinkedIn\", \"Conference\", \"Word of Mouth/Referral\""
+        },
+        "method": "longest option"
+      },
+      "successMessage": {
+        "maxWords": 11,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:438",
+          "anchor": "- Then a one-line confirmation (11w"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "errorMessage": {
+        "maxWords": 21,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:440",
+          "anchor": "- **Error state:** ErrorMessage above the form"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      }
+    }
+  },
+  "assets": [
+    "brand.logo",
+    "decorative.raster"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "autoanimate-swap"
+    ],
+    "reducedMotionFallback": "instant-swap"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Panel 924 block layout; legal note moves into the submit row (clone omits the note).",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:444",
+          "anchor": "- Wrapper `width: 924; display: block; padding: 60 36 78; min-height: 1074`"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Panel 345; submit row column-reverse, full-width button.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:455",
+          "anchor": "- SubmitRow `flex-direction: column-reverse; gap: 32"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "component.field",
+    "color.blue01",
+    "radius.24"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:351",
+      "anchor": "## R. `/request-demo/`"
+    },
+    {
+      "ref": "src/pages/RequestDemo.jsx:10",
+      "anchor": "The reCAPTCHA / Google policy note is intentionally omitted"
+    }
+  ],
+  "variants": []
+}

@@ -1,0 +1,156 @@
+{
+  "id": "info.cards",
+  "category": "content",
+  "purpose": "CLONE-ONLY: optional heading, 3 numbered bordered cards; careers adds an open-roles list.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/InfoPage.jsx:12",
+      "anchor": "export function Card"
+    }
+  ],
+  "templates": [
+    "info-page"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "title",
+              "text"
+            ]
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "team": {
+                "type": "string",
+                "minLength": 1
+              },
+              "location": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "title",
+              "team",
+              "location"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 6
+        }
+      },
+      "required": [
+        "cards"
+      ]
+    },
+    "maxWords": {
+      "heading": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "src/pages/Developers.jsx:29",
+          "anchor": "cardsTitle=\"What you can build with\""
+        },
+        "method": "longest heading"
+      },
+      "cards[].title": {
+        "maxWords": 5,
+        "evidence": {
+          "ref": "src/pages/Developers.jsx:11",
+          "anchor": "title: 'SDKs for mobile and web',"
+        },
+        "method": "longest card title"
+      },
+      "cards[].text": {
+        "maxWords": 18,
+        "evidence": {
+          "ref": "src/pages/Developers.jsx:16",
+          "anchor": "text: 'Subscribe to shipment"
+        },
+        "method": "longest card text (17-18w)"
+      },
+      "roles[].title": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "src/pages/Careers.jsx:23",
+          "anchor": "title: 'Software Engineer, Integrations'"
+        },
+        "method": "role title"
+      }
+    }
+  },
+  "assets": [],
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "none"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "2 columns, gap 30.",
+        "evidence": {
+          "ref": "src/pages/InfoPage.jsx:43",
+          "anchor": "tab:grid-cols-2 tab:u-gap-[30]"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "1 column, gap 20.",
+        "evidence": {
+          "ref": "src/pages/InfoPage.jsx:43",
+          "anchor": "mob:grid-cols-1 mob:u-gap-[20]"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.blue04",
+    "radius.24",
+    "typography.style.kicker-s"
+  ],
+  "evidence": [
+    {
+      "ref": "src/pages/Careers.jsx:4",
+      "anchor": "/* /careers/ -- internal replacement for the external careers subdomain. Placeholder copy. */"
+    }
+  ],
+  "variants": []
+}

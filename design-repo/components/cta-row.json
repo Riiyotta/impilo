@@ -1,0 +1,25 @@
+{
+  "id": "cta-row",
+  "name": "CtaRow",
+  "composes": [
+    "primary-button"
+  ],
+  "purpose": "Centered primary button under a grid (mt 64/40) or flush under a title.",
+  "implementedBy": [
+    {
+      "ref": "src/components/content/CtaRow.jsx:8",
+      "anchor": "export default function CtaRow"
+    }
+  ],
+  "tokens": [
+    "component.button.primary"
+  ],
+  "evidence": [
+    {
+      "ref": "src/components/content/CtaRow.jsx:5",
+      "anchor": "`flush` = no margin"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

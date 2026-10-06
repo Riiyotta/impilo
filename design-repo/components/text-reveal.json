@@ -1,0 +1,36 @@
+{
+  "id": "text-reveal",
+  "name": "TextAnimation (text-lines / text-fade / page-text-lines / page-text-fade)",
+  "composes": [],
+  "purpose": "SplitText line reveal (y 100%->0, stagger .25) or opacity fade, ScrollTrigger 'top 75%', once. Route pages use page-text-lines with the SAME per-line padding (0.1em + 9u) as the homepage text-lines.",
+  "implementedBy": [
+    {
+      "ref": "src/animations/text.js:92",
+      "anchor": "export function initTextAnimations"
+    },
+    {
+      "ref": "src/styles/pages.css:40",
+      "anchor": "[data-anim='page-text-lines'] .line-inner {"
+    }
+  ],
+  "tokens": [
+    "motion.trigger.textReveal",
+    "motion.stagger.textLines",
+    "motion.duration.textLine"
+  ],
+  "motion": [
+    "text-reveal",
+    "text-fade"
+  ],
+  "evidence": [
+    {
+      "ref": "src/index.css:888",
+      "anchor": "[data-anim='text-lines'] .line-inner {"
+    },
+    {
+      "ref": "src/styles/pages.css:42",
+      "anchor": "padding-bottom: calc(var(--u) * 9);"
+    }
+  ],
+  "kind": "component"
+}

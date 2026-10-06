@@ -1,0 +1,38 @@
+{
+  "$description": "What is enforced vs convention for token usage.",
+  "rawValueRestrictions": {
+    "color": "Use palette/semantic tokens only; no new colours (all 21 palette colours have usage in the colour histogram).",
+    "spacing": "Use fluid design-px values (x --u); fixedPx tokens must stay raw px.",
+    "radius": "Use radius tokens; 99vw pill and 50% circle only for pills/dots.",
+    "typography": "Use typography.style.* only; mobile step-down per semantic.typography.mobileStepDown.",
+    "motion": "Use tokens/00-foundation/motion-patterns.json patterns only."
+  },
+  "categoriesMustMatchCatalogPrefixes": [
+    "color",
+    "typography",
+    "fluid",
+    "breakpoint",
+    "radius",
+    "spacing",
+    "fixedPx",
+    "elevation",
+    "zIndex",
+    "iconSize",
+    "motion",
+    "semantic",
+    "component",
+    "layout"
+  ],
+  "overrides": "PageSpec instances carry NO per-instance style/token override field: styling is owned by section/component contracts. There is therefore nothing token-shaped to validate inside a PageSpec; token drift is checked at the catalog/contract layer (verify_all.py: contract token refs resolve in the catalog).",
+  "enforcement": {
+    "machineChecked": [
+      "catalog == flattened token files",
+      "every tokens[] ref in primitives/components/sections resolves in the catalog",
+      "policy categories are real catalog prefixes"
+    ],
+    "convention": [
+      "choice between equivalent spacing values",
+      "mobile step-down exceptions"
+    ]
+  }
+}

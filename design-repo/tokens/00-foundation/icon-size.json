@@ -1,0 +1,118 @@
+{
+  "iconSize": {
+    "linkArrow": {
+      "$type": "dimension",
+      "$value": 13,
+      "$description": "Text-link / TextArrowButton / list arrow width (design px).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:202",
+            "anchor": "width: calc(var(--u) * 13);"
+          },
+          {
+            "ref": "specs/BLOG_SPEC.md:147",
+            "anchor": "Arrow `text-arrow.svg`: 13 wide"
+          }
+        ],
+        "unit": "u"
+      }
+    },
+    "menuArrow": {
+      "$type": "dimension",
+      "$value": 24,
+      "$description": "Mobile menu link arrow.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:218",
+            "anchor": ".text-link--menu .text-link__arrow { width: calc(var(--u) * 24); }"
+          }
+        ],
+        "unit": "u"
+      }
+    },
+    "ui18": {
+      "$type": "dimension",
+      "$value": 18,
+      "$description": "Search / clear-filter / category-arrow / select chevron icons.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "specs/BLOG_SPEC.md:178",
+            "anchor": "Icon `search.svg`: 18×18"
+          }
+        ],
+        "unit": "u"
+      }
+    },
+    "share36": {
+      "$type": "dimension",
+      "$value": 36,
+      "$description": "Share buttons and leader LinkedIn glyph.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "specs/BLOG_SPEC.md:353",
+            "anchor": "Button: 36×36 `<a>`"
+          }
+        ],
+        "unit": "u"
+      }
+    },
+    "cardIcon48": {
+      "$type": "dimension",
+      "$value": 48,
+      "$description": "Icon-card svg inside an 80x80 box (mobile 36 in 60).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/content/Grids.jsx:47",
+            "anchor": "u-h-[80] u-mb-[24] u-w-[80]"
+          },
+          {
+            "ref": "specs/SOLUTIONS_USECASES_SPEC.md:574",
+            "anchor": "IconWrapper 80x80 with svg 48"
+          }
+        ],
+        "unit": "u"
+      }
+    },
+    "pill": {
+      "$type": "dimension",
+      "$value": {
+        "width": 64,
+        "height": 28,
+        "logo": 38
+      },
+      "$description": "Pill wrapper and pulse logo.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:229",
+            "anchor": "width: calc(var(--u) * 64);"
+          },
+          {
+            "ref": "src/index.css:232",
+            "anchor": ".pill__logo {"
+          }
+        ],
+        "unit": "u"
+      }
+    },
+    "complianceBadge": {
+      "$type": "dimension",
+      "$value": 100,
+      "$description": "Compliance badges in rows (about hero, solutions explore); homepage webp badges 92.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "specs/COMPANY_PAGES_SPEC.md:84",
+            "anchor": "Five `<img>` at 100×100"
+          }
+        ],
+        "unit": "u"
+      }
+    }
+  }
+}

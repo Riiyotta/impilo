@@ -1,0 +1,96 @@
+{
+  "id": "info.intro",
+  "category": "hero",
+  "purpose": "CLONE-ONLY (/developers/, /careers/): white panel intro with pill, h2 title (text-lines) and h4 intro (text-fade).",
+  "implementedBy": [
+    {
+      "ref": "src/pages/InfoPage.jsx:22",
+      "anchor": "export default function InfoPage"
+    }
+  ],
+  "templates": [
+    "info-page"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "intro": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "title",
+        "intro"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 7,
+        "evidence": {
+          "ref": "src/pages/Careers.jsx:33",
+          "anchor": "title=\"Help us build the future of connected care\""
+        },
+        "method": "longest clone-only title (7w)"
+      },
+      "intro": {
+        "maxWords": 20,
+        "evidence": {
+          "ref": "src/pages/Developers.jsx:28",
+          "anchor": "intro=\"One set of tools"
+        },
+        "method": "longest clone-only intro (20w)"
+      }
+    }
+  },
+  "assets": [],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal",
+      "text-fade",
+      "pill-wipe-loop"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Title full width.",
+        "evidence": {
+          "ref": "src/pages/InfoPage.jsx:32",
+          "anchor": "tabdown:w-full"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Title h3; intro body-r.",
+        "evidence": {
+          "ref": "src/pages/InfoPage.jsx:37",
+          "anchor": "mob:w-full mob:type-body-r"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "typography.style.h2",
+    "typography.style.h4",
+    "color.blue02"
+  ],
+  "evidence": [
+    {
+      "ref": "src/pages/Developers.jsx:4",
+      "anchor": "/* /developers/ -- internal replacement for the external \"Docs\" link. Placeholder copy. */"
+    }
+  ],
+  "variants": []
+}

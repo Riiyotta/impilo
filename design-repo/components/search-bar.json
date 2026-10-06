@@ -1,0 +1,27 @@
+{
+  "id": "search-bar",
+  "name": "SearchBar",
+  "composes": [
+    "icon"
+  ],
+  "purpose": "Blog search input; updates ?query= on every keystroke.",
+  "implementedBy": [
+    {
+      "ref": "src/components/blog/SearchBar.jsx:5",
+      "anchor": "export default function SearchBar"
+    }
+  ],
+  "tokens": [
+    "color.lavender06",
+    "color.lavender04",
+    "radius.12"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:176",
+      "anchor": "**SearchBar** (`SearchBar__Row`"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

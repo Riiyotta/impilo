@@ -1,0 +1,133 @@
+{
+  "categories": [
+    "Partnerships",
+    "Company News",
+    "Digital Health Programs",
+    "Patient Devices",
+    "Rural Health/ FQHC",
+    "White Papers",
+    "Built on Impilo"
+  ],
+  "order": [
+    "partnering-for-better-at-home-care",
+    "remote-monitoring-programs-that-scale",
+    "five-lessons-from-shipping-connected-devices",
+    "remote-monitoring-for-rural-and-community-clinics",
+    "device-data-decoded",
+    "before-launching-a-remote-patient-monitoring-program"
+  ],
+  "posts": [
+    {
+      "slug": "partnering-for-better-at-home-care",
+      "createdAt": "2026-09-21T14:00:00Z",
+      "categories": [
+        "Partnerships",
+        "Company News"
+      ],
+      "relatedArticles": [
+        "five-lessons-from-shipping-connected-devices",
+        "device-data-decoded"
+      ],
+      "titleWords": 11,
+      "cover": "/assets/images/blog/cover-1.webp",
+      "blockTypes": [
+        "paragraph",
+        "heading-1",
+        "unordered-list"
+      ]
+    },
+    {
+      "slug": "remote-monitoring-programs-that-scale",
+      "createdAt": "2026-08-30T15:00:00Z",
+      "categories": [
+        "Digital Health Programs",
+        "Patient Devices"
+      ],
+      "relatedArticles": [],
+      "titleWords": 10,
+      "cover": "/assets/images/blog/cover-2.webp",
+      "blockTypes": [
+        "paragraph",
+        "heading-1",
+        "ordered-list",
+        "heading-2",
+        "unordered-list"
+      ]
+    },
+    {
+      "slug": "five-lessons-from-shipping-connected-devices",
+      "createdAt": "2026-08-12T13:30:00Z",
+      "categories": [
+        "Patient Devices"
+      ],
+      "relatedArticles": [],
+      "titleWords": 12,
+      "cover": "/assets/images/blog/cover-3.webp",
+      "blockTypes": [
+        "paragraph",
+        "blockquote",
+        "ordered-list",
+        "hr",
+        "embedded-asset"
+      ]
+    },
+    {
+      "slug": "remote-monitoring-for-rural-and-community-clinics",
+      "createdAt": "2026-07-24T16:00:00Z",
+      "categories": [
+        "Rural Health/ FQHC",
+        "White Papers"
+      ],
+      "relatedArticles": [],
+      "titleWords": 10,
+      "cover": "/assets/images/blog/cover-4.webp",
+      "blockTypes": [
+        "paragraph",
+        "embedded-entry"
+      ]
+    },
+    {
+      "slug": "device-data-decoded",
+      "createdAt": "2026-07-02T12:00:00Z",
+      "categories": [
+        "Built on Impilo"
+      ],
+      "relatedArticles": [],
+      "titleWords": 3,
+      "cover": "/assets/images/blog/cover-5.webp",
+      "blockTypes": [
+        "paragraph",
+        "heading-1",
+        "unordered-list"
+      ]
+    },
+    {
+      "slug": "before-launching-a-remote-patient-monitoring-program",
+      "createdAt": "2026-06-10T14:00:00Z",
+      "categories": [],
+      "relatedArticles": [],
+      "titleWords": 21,
+      "cover": "/assets/images/blog/cover-6.webp",
+      "blockTypes": [
+        "paragraph",
+        "heading-1",
+        "unordered-list"
+      ]
+    }
+  ],
+  "$description": "Blog IA registry (slugs/categories/related/order only; no post copy). Deliberate scope reduction: 6 placeholder posts (original 147 indexed + 1 schema post) and 7 categories (original 10). Do not recreate the full set.",
+  "evidence": [
+    {
+      "ref": "src/data/posts.js:38",
+      "anchor": "export const POSTS = ["
+    },
+    {
+      "ref": "specs/BLOG_SPEC.md:45",
+      "anchor": "The sitemap lists 148 posts."
+    },
+    {
+      "ref": "specs/BLOG_SPEC.md:72",
+      "anchor": "10. White Papers"
+    }
+  ]
+}

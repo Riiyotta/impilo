@@ -1,0 +1,26 @@
+{
+  "id": "icon-card-grid",
+  "name": "IconCardGrid",
+  "composes": [
+    "icon"
+  ],
+  "purpose": "Centered cards with an 80x80 icon box.",
+  "implementedBy": [
+    {
+      "ref": "src/components/content/Grids.jsx:42",
+      "anchor": "export function IconCardGrid"
+    }
+  ],
+  "tokens": [
+    "component.card.bordered",
+    "iconSize.cardIcon48"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:574",
+      "anchor": "| **IconCardGrid**"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

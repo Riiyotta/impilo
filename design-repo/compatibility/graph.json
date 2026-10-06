@@ -1,0 +1,334 @@
+{
+  "$description": "Rhythm/adjacency/position rules JSON Schema cannot express. Every rule id here is implemented in schema/semantic_validate.py (verify_all.py checks the two lists are identical); severity is read from this file at validation time.",
+  "rules": [
+    {
+      "id": "SHELL_HEADER_FIRST",
+      "severity": "error",
+      "description": "shell.header is the first node.",
+      "evidence": [
+        {
+          "ref": "src/components/Layout.jsx:41",
+          "anchor": "<Header />"
+        }
+      ]
+    },
+    {
+      "id": "SHELL_FOOTER_LAST",
+      "severity": "error",
+      "description": "shell.footer is the last node.",
+      "evidence": [
+        {
+          "ref": "src/components/Layout.jsx:47",
+          "anchor": "<Footer />"
+        }
+      ]
+    },
+    {
+      "id": "TEMPLATE_NODE_SEQUENCE",
+      "severity": "error",
+      "description": "The PageSpec's nodes must match its DECLARED template's node list: same order, every required node present, repeatable counts within min/max, no extra sections.",
+      "evidence": [
+        {
+          "ref": "src/pages/ContentPage.jsx:62",
+          "anchor": "{page.sections.map((s, i) => ("
+        }
+      ]
+    },
+    {
+      "id": "ROUTE_TEMPLATE_BINDING",
+      "severity": "error",
+      "description": "route must exist in templates/routes.json and be bound to the declared template ('/blog/<slug>/' matches '/blog/:slug/' when the slug is registered; unknown paths only for not-found).",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:20",
+          "anchor": "export const routes = ["
+        }
+      ]
+    },
+    {
+      "id": "ONE_HERO",
+      "severity": "error",
+      "description": "At most one hero-category node; exactly one unless the template is a named no-hero template.",
+      "exceptions": {
+        "noHeroTemplates": [
+          "request-demo",
+          "legal",
+          "not-found",
+          "blog-index",
+          "blog-post"
+        ]
+      },
+      "evidence": [
+        {
+          "ref": "src/pages/Legal.jsx:30",
+          "anchor": "export default function Legal"
+        }
+      ]
+    },
+    {
+      "id": "SECTION_TEMPLATE_LOCK",
+      "severity": "error",
+      "description": "A section may only appear in templates listed in its contract (bespoke sections are template-locked).",
+      "evidence": [
+        {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:31",
+          "anchor": "Two templates were found by comparing styled-component names"
+        }
+      ]
+    },
+    {
+      "id": "HOME_ROUTE_ONLY",
+      "severity": "error",
+      "description": "Sections with constraints.homeRouteOnly may only appear on route '/'.",
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:3",
+          "anchor": "# Impilo homepage – Clone Spec (route `/`)"
+        }
+      ]
+    },
+    {
+      "id": "NO_OUTBOUND_LINKS",
+      "severity": "error",
+      "description": "Every href in a PageSpec is an internal route that resolves in templates/routes.json, a mailto: or a tel:. No external domains (user requirement; the clone has 0 external hrefs on all 30 probed URLs).",
+      "evidence": [
+        {
+          "ref": "src/components/shared/UniversalLink.jsx:4",
+          "anchor": "export const isInternal"
+        },
+        {
+          "ref": "src/components/Header.jsx:37",
+          "anchor": "{ label: 'Docs', href: '/developers/' },"
+        }
+      ]
+    },
+    {
+      "id": "FORMS_LOCAL_ONLY",
+      "severity": "error",
+      "description": "Every form-bearing node declares submission 'local-fake' (no network requests: request-demo, newsletter, file-download).",
+      "evidence": [
+        {
+          "ref": "src/components/requestDemo/DemoForm.jsx:34",
+          "anchor": "Submit: preventDefault -> client-side validation"
+        }
+      ]
+    },
+    {
+      "id": "HEADER_CTA_VARIANT",
+      "severity": "error",
+      "description": "shell.header.cta is 'hidden' iff the template is request-demo.",
+      "evidence": [
+        {
+          "ref": "src/styles/pages.css:157",
+          "anchor": "[data-route='request-demo'] header nav > .btn-primary { display: none; }"
+        }
+      ]
+    },
+    {
+      "id": "CONTENT_SURFACE_ALTERNATION",
+      "severity": "warn",
+      "description": "Adjacent content.section nodes alternate light/dark.",
+      "exceptions": {
+        "darkCarouselThenDarkCta": "A dark section whose only block is a carousel may be followed by a dark section whose only block is cta/callToAction (/use-cases/oems/)."
+      },
+      "evidence": [
+        {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:663",
+          "anchor": "OEMs has no WhyChoose and no second outcomes section; the two dark sections are adjacent."
+        }
+      ]
+    },
+    {
+      "id": "FIRST_CONTENT_SECTION_LIGHT",
+      "severity": "warn",
+      "description": "The first content.section after content.hero is light (all 12 routes).",
+      "evidence": [
+        {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:652",
+          "anchor": "2. L: title, then WhyChooseGrid"
+        }
+      ]
+    },
+    {
+      "id": "CAROUSEL_DARK_ONLY",
+      "severity": "error",
+      "description": "carousel blocks only inside dark content.section (component is styled for dark only).",
+      "evidence": [
+        {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:602",
+          "anchor": "### 2.2 CapabilitiesCarousel (use-case pages, always `dark`)"
+        }
+      ]
+    },
+    {
+      "id": "OUTCOMES_LIGHT_ONLY",
+      "severity": "error",
+      "description": "outcomes blocks only inside light sections (OutcomesList hard-codes blue01 text).",
+      "evidence": [
+        {
+          "ref": "src/components/content/Grids.jsx:110",
+          "anchor": "className=\"relative type-body-r text-blue01 u-mb-[16] pl-[24px]"
+        }
+      ]
+    },
+    {
+      "id": "TWO_COLUMN_DARK_ONLY",
+      "severity": "error",
+      "description": "twoColumn blocks only inside dark sections (TwoColumnGrid hard-codes white text).",
+      "evidence": [
+        {
+          "ref": "src/components/content/Grids.jsx:91",
+          "anchor": "<div key={col.headline} className=\"text-left text-silver05\">"
+        }
+      ]
+    },
+    {
+      "id": "CALL_TO_ACTION_LAST",
+      "severity": "error",
+      "description": "callToAction is the only block of the LAST content.section.",
+      "evidence": [
+        {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:681",
+          "anchor": "| `/solutions/digital-health-logistics/`"
+        }
+      ]
+    },
+    {
+      "id": "CALL_TO_ACTION_TEXT_ON_DARK",
+      "severity": "error",
+      "description": "A callToAction with text inside a dark section must set light:true (otherwise blue01 text on blue01).",
+      "evidence": [
+        {
+          "ref": "src/components/content/CallToAction.jsx:12",
+          "anchor": "light ? 'text-silver05' : 'text-blue01'"
+        }
+      ]
+    },
+    {
+      "id": "CAROUSEL_LAST_CARD_TITLE_ONLY",
+      "severity": "error",
+      "description": "The last carousel card is the title-only 'And Much More' card (no text); every other card has text.",
+      "evidence": [
+        {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:629",
+          "anchor": "The last card (\"And Much More\") has an empty description"
+        }
+      ]
+    },
+    {
+      "id": "SUBTITLE_WITH_TWO_COLUMN",
+      "severity": "warn",
+      "description": "A section subtitle (with tight title) only accompanies a twoColumn block (impilo-platform).",
+      "evidence": [
+        {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:561",
+          "anchor": "**SectionSubtitle** (impilo-platform dark section only)"
+        }
+      ]
+    },
+    {
+      "id": "STEP_ACCENT_ALTERNATION",
+      "severity": "error",
+      "description": "home.how-it-works steps alternate accent blue, green, blue, green; only step 2 carries a link.",
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:454",
+          "anchor": "color brightBlue for steps 01 and 03, brightGreen for 02 and 04"
+        }
+      ]
+    },
+    {
+      "id": "ASSET_ROLE_POLICY",
+      "severity": "error",
+      "description": "media.assetRole must be allowed by the section; placeholder-only roles must set placeholder:true and no asset; must-reuse-exact / must-not-fabricate roles must reference a registered file of that role; partner.logo only in home.trusted.",
+      "evidence": [
+        {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:139",
+          "anchor": "**The images are people photos.**"
+        }
+      ]
+    },
+    {
+      "id": "BLOG_REFERENCES",
+      "severity": "error",
+      "description": "Post slugs exist in data/blog-posts.json; blog.related heading is 'Related Articles' iff the post has relatedArticles, and lists those slugs (else the 2 newest other posts).",
+      "evidence": [
+        {
+          "ref": "src/data/posts.js:305",
+          "anchor": "export function getRelated"
+        }
+      ]
+    },
+    {
+      "id": "LEGAL_PAGE_ROUTE",
+      "severity": "error",
+      "description": "legal.document.page equals the route's legalPage.",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:30",
+          "anchor": "{ path: '/privacy', element: <Legal page=\"privacy\" /> },"
+        }
+      ]
+    },
+    {
+      "id": "SCROLL_PIN_BUDGET",
+      "severity": "warn",
+      "description": "At most 3 nodes per page use a pinsScroll motion pattern (max observed: home and /solutions/ = 3).",
+      "evidence": [
+        {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:342",
+          "anchor": "Measured pin ranges at 1440x900: 5357→8351"
+        }
+      ]
+    },
+    {
+      "id": "REDUCED_MOTION_FALLBACK",
+      "severity": "error",
+      "description": "Each node's motion.reducedMotionFallback equals its section contract's fallback and motion.patterns are within the section's allowed set.",
+      "evidence": [
+        {
+          "ref": "src/animations/utils.js:48",
+          "anchor": "export const canHover"
+        }
+      ]
+    },
+    {
+      "id": "MAX_WORDS",
+      "severity": "error",
+      "description": "Every text field respects its section contract maxWords (copy budget).",
+      "evidence": [
+        {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:28",
+          "anchor": "**Content rule:** body copy is not transcribed."
+        }
+      ]
+    }
+  ],
+  "adjacency": {
+    "recommendedAfter": {
+      "content.section": [
+        "content.hero",
+        "content.section"
+      ],
+      "blog.related": [
+        "blog.post"
+      ],
+      "shared.cta-band": [
+        "home.integrations",
+        "info.cards"
+      ]
+    },
+    "mustPrecedeFooter": [
+      "shared.cta-band",
+      "solutions.api-platform",
+      "about.careers",
+      "integrations.devices",
+      "blog.related",
+      "content.section",
+      "request-demo.panel",
+      "legal.document",
+      "not-found.panel",
+      "blog.index"
+    ]
+  }
+}

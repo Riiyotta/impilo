@@ -1,0 +1,73 @@
+{
+  "zIndex": {
+    "pageTransition": {
+      "$type": "number",
+      "$value": 100,
+      "$description": "Transition overlay and preloader.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:901",
+            "anchor": "z-index: 100;"
+          },
+          {
+            "ref": "CLONE_SPEC.md:166",
+            "anchor": "`Preloader__Wrapper`: fixed full-screen"
+          }
+        ]
+      }
+    },
+    "navDropdown": {
+      "$type": "number",
+      "$value": 1000,
+      "$description": "Desktop dropdown panel.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:315",
+            "anchor": "z-index: 1000;"
+          }
+        ]
+      }
+    },
+    "mobileMenu": {
+      "$type": "number",
+      "$value": 11,
+      "$description": "Mobile menu panel (overlay 10, hamburger 12).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:391",
+            "anchor": "z-index: 11;"
+          }
+        ]
+      }
+    },
+    "scrollIndex": {
+      "$type": "number",
+      "$value": 2,
+      "$description": "Scrolling content above the fixed footer.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Layout.jsx:40",
+            "anchor": "className=\"relative z-[2]\""
+          }
+        ]
+      }
+    },
+    "fixedFooter": {
+      "$type": "number",
+      "$value": 1,
+      "$description": "Fixed reveal footer.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "CLONE_SPEC.md:696",
+            "anchor": "`position: fixed; bottom: 0; left: 0; width: 100%; height: 727px; z-index: 1"
+          }
+        ]
+      }
+    }
+  }
+}

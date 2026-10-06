@@ -1,0 +1,104 @@
+{
+  "fluid": {
+    "u": {
+      "fullWidth": {
+        "$type": "dimension",
+        "$value": "1px",
+        "$description": "--u at >=1441px (containers cap at 1440 and centre).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:65",
+              "anchor": "--u: 1px;"
+            },
+            {
+              "ref": "CLONE_SPEC.md:26",
+              "anchor": "| fullWidth | `min-width: 1441px`"
+            }
+          ]
+        }
+      },
+      "desktop": {
+        "$type": "dimension",
+        "$value": "calc(100vw / 1440)",
+        "$description": "--u at 1025-1440px.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:96",
+              "anchor": "--u: calc(100vw / 1440)"
+            },
+            {
+              "ref": "CLONE_SPEC.md:27",
+              "anchor": "| desktop | `1025px–1440px`"
+            }
+          ]
+        }
+      },
+      "tablet": {
+        "$type": "dimension",
+        "$value": "calc(100vw / 1024)",
+        "$description": "--u at 501-1024px.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:99",
+              "anchor": "--u: calc(100vw / 1024)"
+            },
+            {
+              "ref": "CLONE_SPEC.md:28",
+              "anchor": "| tablet | `501px–1024px`"
+            }
+          ]
+        }
+      },
+      "mobile": {
+        "$type": "dimension",
+        "$value": "calc(100vw / 375)",
+        "$description": "--u at <=500px.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:102",
+              "anchor": "--u: calc(100vw / 375)"
+            },
+            {
+              "ref": "CLONE_SPEC.md:29",
+              "anchor": "| mobile | `max-width: 500px`"
+            }
+          ]
+        }
+      }
+    },
+    "rule": {
+      "$type": "other",
+      "$value": "calc(var(--u) * N)",
+      "$description": "Every fluid length is authored as N design px and emitted as calc(var(--u) * N) by the u-* Tailwind plugin. Values flagged unit=px-fixed in fixed-px.json are the deliberate exceptions.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "tailwind.config.js:50",
+            "anchor": "Object.fromEntries(props.map((p) => [p, `calc(var(--u) * ${value})`]))"
+          },
+          {
+            "ref": "CLONE_SPEC.md:21",
+            "anchor": "### 0.1 Fluid scaling model"
+          }
+        ]
+      }
+    },
+    "jsHelper": {
+      "$type": "other",
+      "$value": "ci(px)",
+      "$description": "JS equivalent: returns px above 1440, else px * innerWidth / designWidth (1440|1024|375).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/animations/utils.js:30",
+            "anchor": "export function ci"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "blog-image",
+  "name": "BlogImage / FadeImage",
+  "purpose": "Cover/inline image with 250ms opacity fade on load and the max(aspect, natural) box quirk.",
+  "implementedBy": [
+    {
+      "ref": "src/components/blog/BlogImage.jsx:8",
+      "anchor": "export default function BlogImage"
+    },
+    {
+      "ref": "src/components/about/FadeImage.jsx:8",
+      "anchor": "export default function FadeImage"
+    }
+  ],
+  "tokens": [
+    "radius.16"
+  ],
+  "props": {
+    "assetRole": "photo.editorial-cover | illustration.placeholder | photo.person"
+  },
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:407",
+      "anchor": "**Image load fade**"
+    }
+  ],
+  "kind": "primitive",
+  "variants": [],
+  "motion": [],
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

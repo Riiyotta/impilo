@@ -1,0 +1,37 @@
+{
+  "id": "demo-form",
+  "name": "DemoForm",
+  "composes": [
+    "text-input",
+    "select",
+    "textarea",
+    "field-message",
+    "primary-button",
+    "auto-animate"
+  ],
+  "purpose": "Request-demo form: rows 1-5 required, conditional conference/other rows; submission faked locally with success/error swap.",
+  "implementedBy": [
+    {
+      "ref": "src/components/requestDemo/DemoForm.jsx:38",
+      "anchor": "export default function DemoForm"
+    }
+  ],
+  "tokens": [
+    "component.field"
+  ],
+  "formPolicy": {
+    "submission": "local-fake",
+    "evidence": {
+      "ref": "src/components/requestDemo/DemoForm.jsx:34",
+      "anchor": "Submit: preventDefault -> client-side validation"
+    }
+  },
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:355",
+      "anchor": "**The clone must render a static look-alike:**"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

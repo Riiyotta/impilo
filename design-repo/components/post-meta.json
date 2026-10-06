@@ -1,0 +1,24 @@
+{
+  "id": "post-meta",
+  "name": "PostMeta",
+  "composes": [],
+  "purpose": "'{date} | By {author}' meta row (date format MMMM Do, YYYY).",
+  "implementedBy": [
+    {
+      "ref": "src/components/blog/PostMeta.jsx:4",
+      "anchor": "export default function PostMeta"
+    }
+  ],
+  "tokens": [
+    "typography.style.body-xs",
+    "color.silver01"
+  ],
+  "evidence": [
+    {
+      "ref": "src/data/posts.js:299",
+      "anchor": "export function formatDate"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

@@ -1,0 +1,115 @@
+{
+  "id": "about.anywhere",
+  "category": "content",
+  "purpose": "On-blue statement: white pill, title, bodyXL paragraph with scrubbed line fill, floating stethoscope line art.",
+  "implementedBy": [
+    {
+      "ref": "src/components/about/Anywhere.jsx:5",
+      "anchor": "export default function Anywhere"
+    }
+  ],
+  "templates": [
+    "about"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "illustration": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/media"
+            },
+            {
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "illustration.line-art"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "illustration"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:158",
+          "anchor": "4w, 2 lines (878×187)"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "description": {
+        "maxWords": 48,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:160",
+          "anchor": "48w, 7 lines (1074 wide"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      }
+    }
+  },
+  "assets": [
+    "illustration.line-art"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal",
+      "line-fill-scrub",
+      "float-loop",
+      "pill-wipe-loop"
+    ],
+    "reducedMotionFallback": "static-filled"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Width 925; stethoscope right 171.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:155",
+          "anchor": "- Tablet width 925; mobile width 345"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Paragraph h4, 13 lines.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:161",
+          "anchor": "- Mobile: h4 (24.96px at 390), margin-top 43, 13 lines."
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "typography.style.body-xl",
+    "color.lavender04"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:151",
+      "anchor": "### A.3 Anywhere (`sc-03-Anywhere__Wrapper`)"
+    }
+  ],
+  "variants": []
+}

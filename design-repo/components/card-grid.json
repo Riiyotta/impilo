@@ -1,0 +1,25 @@
+{
+  "id": "card-grid",
+  "name": "CardGrid",
+  "composes": [
+    "small-card"
+  ],
+  "purpose": "Blog grid 3/2/1 columns. AUDITED: row gap 28 design px at every breakpoint (spec said 44 desktop), column gap 25.",
+  "implementedBy": [
+    {
+      "ref": "src/components/blog/CardGrid.jsx:8",
+      "anchor": "export default function CardGrid"
+    }
+  ],
+  "tokens": [
+    "spacing.28"
+  ],
+  "evidence": [
+    {
+      "ref": "src/components/blog/CardGrid.jsx:10",
+      "anchor": "u-gap-y-[28]"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

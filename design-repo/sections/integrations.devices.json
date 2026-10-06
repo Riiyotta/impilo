@@ -1,0 +1,288 @@
+{
+  "id": "integrations.devices",
+  "category": "feature",
+  "purpose": "blue02 panel: logo, title, description, two device lists, UNCONTROLLED LaptopShowcase, SDK how-to list, call + demo button, docs description + docs button (-> /developers/).",
+  "implementedBy": [
+    {
+      "ref": "src/components/integrations/Devices.jsx:42",
+      "anchor": "export default function Devices"
+    }
+  ],
+  "templates": [
+    "integrations"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustPrecedeFooter": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deviceLists": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "maxItems": 31
+              }
+            },
+            "required": [
+              "title",
+              "items"
+            ]
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "slides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "screen": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "product.ui-mock"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "screen",
+              "title",
+              "text"
+            ]
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "sdkTitle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sdkUses": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "callTitle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cta": {
+          "$ref": "#/definitions/link"
+        },
+        "docsDescription": {
+          "type": "string",
+          "minLength": 1
+        },
+        "docsCta": {
+          "$ref": "#/definitions/link"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "deviceLists",
+        "slides",
+        "sdkTitle",
+        "sdkUses",
+        "callTitle",
+        "cta",
+        "docsDescription",
+        "docsCta"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 6,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:298",
+          "anchor": "2. Title: h2, margin-top 16. 6w"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "description": {
+        "maxWords": 40,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:299",
+          "anchor": "3. Description: bodyR, `width: 436; margin-top: 32; margin-bottom: 50`. 40w"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "deviceLists[].title": {
+        "maxWords": 2,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:303",
+          "anchor": "Titles \"Bluetooth Devices\" and \"LTE Devices\"."
+        },
+        "method": "UI label"
+      },
+      "deviceLists[].items[]": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:305",
+          "anchor": "Use placeholder brand names with the same counts."
+        },
+        "method": "brand-name placeholder"
+      },
+      "slides[].title": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:334",
+          "anchor": "\"Medical Device Manufactures\" (sic)"
+        },
+        "method": "slide label"
+      },
+      "slides[].text": {
+        "maxWords": 45,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:335",
+          "anchor": "3. `solutions-laptop-screen-dashboard.svg` / \"Health Tech Startups\" / 45w"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "sdkTitle": {
+        "maxWords": 6,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:307",
+          "anchor": "6. Title3: h3"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "sdkUses[]": {
+        "maxWords": 6,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:308",
+          "anchor": "7. Description list: a 2-item `ul`"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "callTitle": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:309",
+          "anchor": "8. Call: h2"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "docsDescription": {
+        "maxWords": 24,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:311",
+          "anchor": "10. Description: bodyR, width 436"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "cta.label": {
+        "maxWords": 2,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:310",
+          "anchor": "9. Primary **\"Request Demo\"**"
+        },
+        "method": "button label"
+      },
+      "docsCta.label": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:312",
+          "anchor": "11. Primary **\"SDK & API Documentation\"**"
+        },
+        "method": "button label"
+      }
+    }
+  },
+  "assets": [
+    "brand.logo",
+    "product.ui-mock",
+    "icon.ui"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "laptop-lid-scrub",
+      "autoanimate-swap",
+      "text-reveal"
+    ],
+    "reducedMotionFallback": "static-open"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Snippets 2x217.5; laptop still shown (lid 656).",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:347",
+          "anchor": "- Laptop still shown (lid 656 wide)."
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "No laptop: 3 stacked panels.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:338",
+          "anchor": "- No laptop or arrows. Render 3 stacked `Laptop__Panel`s"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.blue02",
+    "color.brightTurquoise",
+    "radius.11"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:291",
+      "anchor": "### I.3 Devices (`sc-04-Devices__Wrapper`)"
+    },
+    {
+      "ref": "src/components/integrations/Devices.jsx:69",
+      "anchor": "PrimaryAction to=\"/developers/\""
+    }
+  ],
+  "variants": []
+}

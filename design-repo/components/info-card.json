@@ -1,0 +1,25 @@
+{
+  "id": "info-card",
+  "name": "InfoPage Card",
+  "composes": [],
+  "purpose": "Numbered bordered card on clone-only info pages (/developers/, /careers/).",
+  "implementedBy": [
+    {
+      "ref": "src/pages/InfoPage.jsx:12",
+      "anchor": "export function Card"
+    }
+  ],
+  "tokens": [
+    "color.blue04",
+    "radius.24",
+    "typography.style.kicker-s"
+  ],
+  "evidence": [
+    {
+      "ref": "src/pages/InfoPage.jsx:7",
+      "anchor": "Shared shell for simple on-brand content pages"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

@@ -1,0 +1,162 @@
+{
+  "id": "content.hero",
+  "category": "hero",
+  "purpose": "Template-B hero on blue01: h1 title, subtitle (variant a = bodyM, b = h4), optional description, primary CTA, optional 3 stats.",
+  "implementedBy": [
+    {
+      "ref": "src/components/content/ContentHero.jsx:9",
+      "anchor": "export default function ContentHero"
+    }
+  ],
+  "templates": [
+    "content-page"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subtitle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subtitleVariant": {
+          "enum": [
+            "a",
+            "b"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cta": {
+          "$ref": "#/definitions/link"
+        },
+        "stats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "contentWidth": {
+          "enum": [
+            1000,
+            800
+          ]
+        },
+        "mobileTitle": {
+          "enum": [
+            "h3",
+            "h2"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "subtitle",
+        "subtitleVariant",
+        "cta",
+        "contentWidth",
+        "mobileTitle"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 11,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:671",
+          "anchor": "| value-based-care | 11w / 6l"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "subtitle": {
+        "maxWords": 35,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:668",
+          "anchor": "| physicians-and-provider-groups | 8w / 5l"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "description": {
+        "maxWords": 24,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:685",
+          "anchor": "Description (h5, opacity .8) 24w / 2l"
+        },
+        "method": "support-crm description 24w"
+      },
+      "cta.label": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:681",
+          "anchor": "CTA \"Schedule a Demo\""
+        },
+        "method": "button label"
+      },
+      "stats[]": {
+        "maxWords": 5,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:668",
+          "anchor": "| physicians-and-provider-groups |"
+        },
+        "method": "longest stat label ('Healthcare-Grade Logistics & Support' = 4 words + '&')"
+      }
+    }
+  },
+  "assets": [],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal",
+      "text-fade"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Pure fluid scaling.",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:710",
+          "anchor": "Pure fluid scaling (1024 base)."
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Title h3 except DHL (stays h2-size: mobileTitle 'h2', audited); stats become a column.",
+        "evidence": {
+          "ref": "src/data/contentPages.js:691",
+          "anchor": "heroMobileTitle: 'h2', // hero title stays h2-size (92) on mobile, measured"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "semantic.typography.display",
+    "color.blue01",
+    "layout.sectionPadding.contentSection"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:519",
+      "anchor": "**Hero** (`__Hero`)"
+    },
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:534",
+      "anchor": "**Subtitle**"
+    }
+  ],
+  "variants": []
+}

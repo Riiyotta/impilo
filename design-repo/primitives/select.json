@@ -1,0 +1,29 @@
+{
+  "id": "select",
+  "name": "Select",
+  "purpose": "Radix-style select styled as a field; popper list under the trigger.",
+  "implementedBy": [
+    {
+      "ref": "src/components/shared/form/Select.jsx:12",
+      "anchor": "export default function Select"
+    }
+  ],
+  "tokens": [
+    "component.field",
+    "color.selectHighlight",
+    "fixedPx.navChevronWidth"
+  ],
+  "props": {
+    "options": "array of {value,label}"
+  },
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:417",
+      "anchor": "**Select trigger** (`ReferralDropdown__Trigger`"
+    }
+  ],
+  "kind": "primitive",
+  "variants": [],
+  "motion": [],
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

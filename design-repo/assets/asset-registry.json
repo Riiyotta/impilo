@@ -1,0 +1,948 @@
+{
+  "$description": "Every media file in the clone (public/** and src/assets/**) with its assetRole. verify_all.py checks coverage both ways when the sibling source tree is present.",
+  "count": 157,
+  "files": [
+    {
+      "file": "public/assets/fonts/Gilroy-Medium-4abcd1e45598b1247446aa7db1e7f16c.woff2",
+      "url": "/assets/fonts/Gilroy-Medium-4abcd1e45598b1247446aa7db1e7f16c.woff2",
+      "assetRole": "font.typeface",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/fonts/Gilroy-Medium-55796bc0064ff9f7c6f4dd8719e98c14.woff",
+      "url": "/assets/fonts/Gilroy-Medium-55796bc0064ff9f7c6f4dd8719e98c14.woff",
+      "assetRole": "font.typeface",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/fonts/Gilroy-Regular-1af44b448054042ea20a94d2fb819058.woff",
+      "url": "/assets/fonts/Gilroy-Regular-1af44b448054042ea20a94d2fb819058.woff",
+      "assetRole": "font.typeface",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/fonts/Gilroy-Regular-2b06ef9a7149fe75bec70640ff338aae.woff2",
+      "url": "/assets/fonts/Gilroy-Regular-2b06ef9a7149fe75bec70640ff338aae.woff2",
+      "assetRole": "font.typeface",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/fonts/Gilroy-SemiBold-3fe1415afa09c564daaf778f8a3e5d30.woff2",
+      "url": "/assets/fonts/Gilroy-SemiBold-3fe1415afa09c564daaf778f8a3e5d30.woff2",
+      "assetRole": "font.typeface",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/fonts/Gilroy-SemiBold-d9c70b94550e8897c4e1ea2a4133a0dc.woff",
+      "url": "/assets/fonts/Gilroy-SemiBold-d9c70b94550e8897c4e1ea2a4133a0dc.woff",
+      "assetRole": "font.typeface",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/images/about/founded-1.webp",
+      "url": "/assets/images/about/founded-1.webp",
+      "assetRole": "photo.person",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/about/founded-2.webp",
+      "url": "/assets/images/about/founded-2.webp",
+      "assetRole": "photo.person",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/about/founded-3.webp",
+      "url": "/assets/images/about/founded-3.webp",
+      "assetRole": "photo.person",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/about/leader-david.webp",
+      "url": "/assets/images/about/leader-david.webp",
+      "assetRole": "photo.person",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/about/leader-josh.webp",
+      "url": "/assets/images/about/leader-josh.webp",
+      "assetRole": "photo.person",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/about/leader-pat.webp",
+      "url": "/assets/images/about/leader-pat.webp",
+      "assetRole": "photo.person",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/blog/cover-1.webp",
+      "url": "/assets/images/blog/cover-1.webp",
+      "assetRole": "photo.editorial-cover",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/blog/cover-2.webp",
+      "url": "/assets/images/blog/cover-2.webp",
+      "assetRole": "photo.editorial-cover",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/blog/cover-3.webp",
+      "url": "/assets/images/blog/cover-3.webp",
+      "assetRole": "photo.editorial-cover",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/blog/cover-4.webp",
+      "url": "/assets/images/blog/cover-4.webp",
+      "assetRole": "photo.editorial-cover",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/blog/cover-5.webp",
+      "url": "/assets/images/blog/cover-5.webp",
+      "assetRole": "photo.editorial-cover",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/blog/cover-6.webp",
+      "url": "/assets/images/blog/cover-6.webp",
+      "assetRole": "photo.editorial-cover",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/blog/cover-7.webp",
+      "url": "/assets/images/blog/cover-7.webp",
+      "assetRole": "photo.editorial-cover",
+      "generationPolicy": "placeholder-only"
+    },
+    {
+      "file": "public/assets/images/hipaa-gray.webp",
+      "url": "/assets/images/hipaa-gray.webp",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/images/hipaa.webp",
+      "url": "/assets/images/hipaa.webp",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/images/ill3-background.png",
+      "url": "/assets/images/ill3-background.png",
+      "assetRole": "decorative.raster",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/images/request-demo-form-plane.webp",
+      "url": "/assets/images/request-demo-form-plane.webp",
+      "assetRole": "decorative.raster",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/images/soc2-gray.webp",
+      "url": "/assets/images/soc2-gray.webp",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/images/soc2.webp",
+      "url": "/assets/images/soc2.webp",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/svg/about-cert-fda.svg",
+      "url": "/assets/svg/about-cert-fda.svg",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/svg/about-cert-hipaa.svg",
+      "url": "/assets/svg/about-cert-hipaa.svg",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/svg/about-cert-hqaa.svg",
+      "url": "/assets/svg/about-cert-hqaa.svg",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/svg/about-cert-iso.svg",
+      "url": "/assets/svg/about-cert-iso.svg",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/svg/about-cert-soc2.svg",
+      "url": "/assets/svg/about-cert-soc2.svg",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/svg/about-glucose-meter.svg",
+      "url": "/assets/svg/about-glucose-meter.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/about-large-pulse.svg",
+      "url": "/assets/svg/about-large-pulse.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/about-linkedin.svg",
+      "url": "/assets/svg/about-linkedin.svg",
+      "assetRole": "icon.social-mark",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/about-location-pin.svg",
+      "url": "/assets/svg/about-location-pin.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/about-stethoscope.svg",
+      "url": "/assets/svg/about-stethoscope.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/hero-illustration.svg",
+      "url": "/assets/svg/hero-illustration.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/hero-interface.svg",
+      "url": "/assets/svg/hero-interface.svg",
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/icon-arrow-chevron.svg",
+      "url": "/assets/svg/icon-arrow-chevron.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/icon-chevron-down.svg",
+      "url": "/assets/svg/icon-chevron-down.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/icon-link-arrow.svg",
+      "url": "/assets/svg/icon-link-arrow.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/ill1-background.svg",
+      "url": "/assets/svg/ill1-background.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/ill1-foreground.svg",
+      "url": "/assets/svg/ill1-foreground.svg",
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/ill1-row.svg",
+      "url": "/assets/svg/ill1-row.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/ill2-illustration.svg",
+      "url": "/assets/svg/ill2-illustration.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/ill3-illustration.svg",
+      "url": "/assets/svg/ill3-illustration.svg",
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/ill4-illustration.svg",
+      "url": "/assets/svg/ill4-illustration.svg",
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/integration-1.svg",
+      "url": "/assets/svg/integration-1.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/integration-2.svg",
+      "url": "/assets/svg/integration-2.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/integration-3.svg",
+      "url": "/assets/svg/integration-3.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/logo-footer.svg",
+      "url": "/assets/svg/logo-footer.svg",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/logo-header.svg",
+      "url": "/assets/svg/logo-header.svg",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/logo-mobile-header.svg",
+      "url": "/assets/svg/logo-mobile-header.svg",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/marquee-logo.svg",
+      "url": "/assets/svg/marquee-logo.svg",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/pill-logo.svg",
+      "url": "/assets/svg/pill-logo.svg",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/preloader-graphic.svg",
+      "url": "/assets/svg/preloader-graphic.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-explore-box.svg",
+      "url": "/assets/svg/solutions-explore-box.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-explore-cart.svg",
+      "url": "/assets/svg/solutions-explore-cart.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-explore-logo-fda.svg",
+      "url": "/assets/svg/solutions-explore-logo-fda.svg",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/svg/solutions-explore-logo-hipaa.svg",
+      "url": "/assets/svg/solutions-explore-logo-hipaa.svg",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/svg/solutions-explore-logo-hqaa.svg",
+      "url": "/assets/svg/solutions-explore-logo-hqaa.svg",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/svg/solutions-explore-logo-iso.svg",
+      "url": "/assets/svg/solutions-explore-logo-iso.svg",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/svg/solutions-explore-logo-soc.svg",
+      "url": "/assets/svg/solutions-explore-logo-soc.svg",
+      "assetRole": "compliance.badge",
+      "generationPolicy": "must-not-fabricate"
+    },
+    {
+      "file": "public/assets/svg/solutions-explore-ordering.svg",
+      "url": "/assets/svg/solutions-explore-ordering.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-explore-white-label.svg",
+      "url": "/assets/svg/solutions-explore-white-label.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-hero-billing-report.svg",
+      "url": "/assets/svg/solutions-hero-billing-report.svg",
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/solutions-hero-glucose.svg",
+      "url": "/assets/svg/solutions-hero-glucose.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-hero-kits-overview.svg",
+      "url": "/assets/svg/solutions-hero-kits-overview.svg",
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/solutions-hero-patient-info.svg",
+      "url": "/assets/svg/solutions-hero-patient-info.svg",
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/solutions-hero-pill-container.svg",
+      "url": "/assets/svg/solutions-hero-pill-container.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-hero-pill.svg",
+      "url": "/assets/svg/solutions-hero-pill.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-hero-readings-overview-tablet.svg",
+      "url": "/assets/svg/solutions-hero-readings-overview-tablet.svg",
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/solutions-hero-readings-overview.svg",
+      "url": "/assets/svg/solutions-hero-readings-overview.svg",
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/solutions-hero-tablet.svg",
+      "url": "/assets/svg/solutions-hero-tablet.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-hero-watch.svg",
+      "url": "/assets/svg/solutions-hero-watch.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-icon-api.svg",
+      "url": "/assets/svg/solutions-icon-api.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-icon-box.svg",
+      "url": "/assets/svg/solutions-icon-box.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-icon-data.svg",
+      "url": "/assets/svg/solutions-icon-data.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-icon-integration.svg",
+      "url": "/assets/svg/solutions-icon-integration.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-icon-security.svg",
+      "url": "/assets/svg/solutions-icon-security.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-icon-truck.svg",
+      "url": "/assets/svg/solutions-icon-truck.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-icon-warehouse.svg",
+      "url": "/assets/svg/solutions-icon-warehouse.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-laptop-arrow.svg",
+      "url": "/assets/svg/solutions-laptop-arrow.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-laptop-bottom.svg",
+      "url": "/assets/svg/solutions-laptop-bottom.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-laptop-screen-dashboard.svg",
+      "url": "/assets/svg/solutions-laptop-screen-dashboard.svg",
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/solutions-laptop-screen-details.svg",
+      "url": "/assets/svg/solutions-laptop-screen-details.svg",
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/solutions-laptop-screen-readings.svg",
+      "url": "/assets/svg/solutions-laptop-screen-readings.svg",
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/solutions-laptop-top.svg",
+      "url": "/assets/svg/solutions-laptop-top.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-support-chat.svg",
+      "url": "/assets/svg/solutions-support-chat.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-support-document.svg",
+      "url": "/assets/svg/solutions-support-document.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-support-heart.svg",
+      "url": "/assets/svg/solutions-support-heart.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-support-lightbulb.svg",
+      "url": "/assets/svg/solutions-support-lightbulb.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/solutions-support-thermo.svg",
+      "url": "/assets/svg/solutions-support-thermo.svg",
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/step-icon-01.svg",
+      "url": "/assets/svg/step-icon-01.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/step-icon-02.svg",
+      "url": "/assets/svg/step-icon-02.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/step-icon-03.svg",
+      "url": "/assets/svg/step-icon-03.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/step-icon-04.svg",
+      "url": "/assets/svg/step-icon-04.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/assets/svg/transition-pulse.svg",
+      "url": "/assets/svg/transition-pulse.svg",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/trusted-brook.svg",
+      "url": "/assets/svg/trusted-brook.svg",
+      "assetRole": "partner.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/trusted-dreem.svg",
+      "url": "/assets/svg/trusted-dreem.svg",
+      "assetRole": "partner.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/trusted-firefly.svg",
+      "url": "/assets/svg/trusted-firefly.svg",
+      "assetRole": "partner.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/trusted-pennmedicine.svg",
+      "url": "/assets/svg/trusted-pennmedicine.svg",
+      "assetRole": "partner.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/assets/svg/usecases-carousel-chevron.svg",
+      "url": "/assets/svg/usecases-carousel-chevron.svg",
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "public/favicon-32x32.png",
+      "url": "/favicon-32x32.png",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/icon-144x144.png",
+      "url": "/icon-144x144.png",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/icon-192x192.png",
+      "url": "/icon-192x192.png",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/icon-256x256.png",
+      "url": "/icon-256x256.png",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/icon-384x384.png",
+      "url": "/icon-384x384.png",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/icon-48x48.png",
+      "url": "/icon-48x48.png",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/icon-512x512.png",
+      "url": "/icon-512x512.png",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/icon-72x72.png",
+      "url": "/icon-72x72.png",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/icon-96x96.png",
+      "url": "/icon-96x96.png",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "public/og-image.png",
+      "url": "/og-image.png",
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/about-large-pulse.svg",
+      "url": null,
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/blog/breadcrumb-arrow.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/blog/categories.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/blog/category-arrow.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/blog/clear-filter.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/blog/email-logo.svg",
+      "url": null,
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/blog/email-submit.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/blog/filedownload-pulse.svg",
+      "url": null,
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/blog/list-arrow.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/blog/search.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/blog/share-bit.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/blog/share-copylink.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/blog/share-facebook.svg",
+      "url": null,
+      "assetRole": "icon.social-mark",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/blog/share-linkedin.svg",
+      "url": null,
+      "assetRole": "icon.social-mark",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/blog/share-x.svg",
+      "url": null,
+      "assetRole": "icon.social-mark",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/blog/text-arrow.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/hero-illustration.svg",
+      "url": null,
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/hero-interface.svg",
+      "url": null,
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/icon-arrow-chevron.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/icon-chevron-down.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/icon-link-arrow.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/ill1-background.svg",
+      "url": null,
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/ill1-foreground.svg",
+      "url": null,
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/ill1-row.svg",
+      "url": null,
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/ill2-illustration.svg",
+      "url": null,
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/ill3-illustration.svg",
+      "url": null,
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/ill4-illustration.svg",
+      "url": null,
+      "assetRole": "product.ui-mock",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/integration-1.svg",
+      "url": null,
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/integration-2.svg",
+      "url": null,
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/integration-3.svg",
+      "url": null,
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/logo-footer.svg",
+      "url": null,
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/logo-header.svg",
+      "url": null,
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/logo-mobile-header.svg",
+      "url": null,
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/marquee-logo.svg",
+      "url": null,
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/pill-logo.svg",
+      "url": null,
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/preloader-graphic.svg",
+      "url": null,
+      "assetRole": "illustration.line-art",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/step-icon-01.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/step-icon-02.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/step-icon-03.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/step-icon-04.svg",
+      "url": null,
+      "assetRole": "icon.ui",
+      "generationPolicy": "may-generate-new"
+    },
+    {
+      "file": "src/assets/svg/transition-pulse.svg",
+      "url": null,
+      "assetRole": "brand.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/trusted-brook.svg",
+      "url": null,
+      "assetRole": "partner.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/trusted-dreem.svg",
+      "url": null,
+      "assetRole": "partner.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/trusted-firefly.svg",
+      "url": null,
+      "assetRole": "partner.logo",
+      "generationPolicy": "must-reuse-exact"
+    },
+    {
+      "file": "src/assets/svg/trusted-pennmedicine.svg",
+      "url": null,
+      "assetRole": "partner.logo",
+      "generationPolicy": "must-reuse-exact"
+    }
+  ]
+}

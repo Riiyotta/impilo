@@ -1,0 +1,138 @@
+{
+  "id": "blog.index",
+  "category": "editorial",
+  "purpose": "White blog panel: featured LargeCard + 'Previous Articles' grid on the left; sticky sidebar (search, newsletter, categories) on the right; ?query= / ?category= filtered states.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/blog/BlogIndex.jsx:28",
+      "anchor": "export default function BlogIndex"
+    }
+  ],
+  "templates": [
+    "blog-index"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "featuredPost": {
+          "$ref": "#/definitions/postSlug"
+        },
+        "listHeading": {
+          "const": "Previous Articles"
+        },
+        "listedPosts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/postSlug"
+          },
+          "minItems": 0
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "maxItems": 10
+        },
+        "newsletter": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "submission": {
+              "const": "local-fake"
+            }
+          },
+          "required": [
+            "title",
+            "submission"
+          ]
+        }
+      },
+      "required": [
+        "featuredPost",
+        "listHeading",
+        "listedPosts",
+        "categories",
+        "newsletter"
+      ]
+    },
+    "maxWords": {
+      "categories[]": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:68",
+          "anchor": "6. Built on Impilo"
+        },
+        "method": "longest category label"
+      },
+      "newsletter.title": {
+        "maxWords": 9,
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:190",
+          "anchor": "- Text: \"Get Impilo News and Updates right to your inbox.\""
+        },
+        "method": "UI copy word count"
+      }
+    }
+  },
+  "assets": [
+    "photo.editorial-cover",
+    "illustration.placeholder",
+    "icon.ui",
+    "brand.logo"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "sticky-pin",
+      "image-fade"
+    ],
+    "reducedMotionFallback": "sticky-unchanged"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "2-column grid; sidebar 20 padding.",
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:117",
+          "anchor": "Tablet (768): InnerWrapper 751.5 wide"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Sidebar hidden; search on top; newsletter + categories after the featured card.",
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:216",
+          "anchor": "### B1.4 Mobile (≤500) order"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "spacing.28",
+    "component.card.blogSmall",
+    "radius.24"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:94",
+      "anchor": "## B1. Blog index `/blog/`"
+    },
+    {
+      "ref": "src/components/blog/CardGrid.jsx:10",
+      "anchor": "u-gap-y-[28]"
+    }
+  ],
+  "variants": []
+}

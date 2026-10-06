@@ -1,0 +1,114 @@
+{
+  "id": "about.careers",
+  "category": "conversion",
+  "purpose": "White careers card: drawing pulse line, title, description, button to the clone-only /careers/ route.",
+  "implementedBy": [
+    {
+      "ref": "src/components/about/Careers.jsx:6",
+      "anchor": "export default function Careers"
+    }
+  ],
+  "templates": [
+    "about"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustPrecedeFooter": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cta": {
+          "$ref": "#/definitions/link"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "cta"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:200",
+          "anchor": "3w, 1L. Topic: \"careers heading\""
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "description": {
+        "maxWords": 18,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:201",
+          "anchor": "18w, 2L. Topic: \"diverse team"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "cta.label": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "src/components/about/Careers.jsx:20",
+          "anchor": "See Open Positions"
+        },
+        "method": "button label"
+      }
+    }
+  },
+  "assets": [
+    "illustration.line-art"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal",
+      "text-fade",
+      "pulse-draw-loop"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Width 924, margin-top 205.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:194",
+          "anchor": "Tablet `margin: 205 auto 0; width: 924`"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Width 344; description bodyM 270 wide.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:201",
+          "anchor": "Mobile `width: 270`, bodyM."
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.lavender03",
+    "radius.24"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:191",
+      "anchor": "### A.5 Careers (`sc-05-Careers__Wrapper`)"
+    },
+    {
+      "ref": "src/components/about/Careers.jsx:20",
+      "anchor": "PrimaryAction to=\"/careers/\""
+    }
+  ],
+  "variants": []
+}

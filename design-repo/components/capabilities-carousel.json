@@ -1,0 +1,30 @@
+{
+  "id": "capabilities-carousel",
+  "name": "CapabilitiesCarousel",
+  "composes": [
+    "auto-animate",
+    "round-arrow-button"
+  ],
+  "purpose": "Dark card carousel (slide xPercent +-110 + fade, dots, no autoplay, no swipe).",
+  "implementedBy": [
+    {
+      "ref": "src/components/content/CapabilitiesCarousel.jsx:18",
+      "anchor": "export default function CapabilitiesCarousel"
+    }
+  ],
+  "tokens": [
+    "component.card.capability",
+    "component.carouselDot",
+    "color.brightTurquoise"
+  ],
+  "motion": [
+    "autoanimate-swap"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:602",
+      "anchor": "### 2.2 CapabilitiesCarousel"
+    }
+  ],
+  "kind": "component"
+}

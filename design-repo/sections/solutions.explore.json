@@ -1,0 +1,239 @@
+{
+  "id": "solutions.explore",
+  "category": "feature",
+  "purpose": "Dark rounded panel: white pill, title, description, WidePulse, services subtitle, 4 illustration boxes, CTA, 5 compliance logos, compliance note.",
+  "implementedBy": [
+    {
+      "ref": "src/components/solutions/Explore.jsx:50",
+      "anchor": "export default function Explore"
+    }
+  ],
+  "templates": [
+    "solutions-overview"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subtitle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subDescription": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boxes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "titleLines": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "art": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "illustration.line-art"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "titleLines",
+              "description",
+              "art"
+            ]
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "cta": {
+          "$ref": "#/definitions/link"
+        },
+        "badges": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/definitions/media"
+              },
+              {
+                "properties": {
+                  "assetRole": {
+                    "enum": [
+                      "compliance.badge"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "subtitle",
+        "subDescription",
+        "boxes",
+        "cta",
+        "badges",
+        "note"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:193",
+          "anchor": "- 3 words, 1 line (797 wide)."
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "description": {
+        "maxWords": 21,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:197",
+          "anchor": "- 21 words, 4 lines (5 at 390)"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "subtitle": {
+        "maxWords": 2,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:219",
+          "anchor": "- 2 words: \"Tech-Enabled Services\""
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "subDescription": {
+        "maxWords": 21,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:222",
+          "anchor": "- 21 words, 3 lines"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "boxes[].titleLines[]": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:257",
+          "anchor": "two lines with a `<br>`; ≤4 words each."
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "boxes[].description": {
+        "maxWords": 28,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:263",
+          "anchor": "- 25–28 words, 4 lines"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "note": {
+        "maxWords": 18,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:233",
+          "anchor": "- 18 words in 2 lines"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "cta.label": {
+        "maxWords": 5,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:225",
+          "anchor": "**Primary \"Discover Our Full Services Layer\"**"
+        },
+        "method": "button label"
+      }
+    }
+  },
+  "assets": [
+    "illustration.line-art",
+    "compliance.badge"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal",
+      "text-fade",
+      "path-travel-loop",
+      "pointer-parallax",
+      "hover-bounce",
+      "stacked-pin-slide-up",
+      "pill-wipe-loop"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Boxes horizontal: art left, text right (924 wide).",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:245",
+          "anchor": "Tablet: `display: grid; grid-template-columns: auto 1fr; min-height: 400"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Boxes 345 wide; logos wrap.",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:246",
+          "anchor": "Mobile: `width: 345; min-height: unset; padding-bottom: 48`."
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.blue01",
+    "color.brightBlue",
+    "color.blue07",
+    "radius.24"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:182",
+      "anchor": "### 1.2 Explore (`sc-02-Explore__Wrapper`)"
+    }
+  ],
+  "variants": []
+}

@@ -1,0 +1,339 @@
+{
+  "semantic": {
+    "color": {
+      "text": {
+        "primary": {
+          "$type": "color",
+          "$value": "{color.blue01}",
+          "$description": "Default body/heading text on light surfaces.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/index.css:110",
+                "anchor": "color: var(--blue01);"
+              }
+            ]
+          }
+        },
+        "headingPanel": {
+          "$type": "color",
+          "$value": "{color.blue02}",
+          "$description": "Headings on white panels (WhiteGlove, 404, LargeCard title).",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/pages/NotFound.jsx:18",
+                "anchor": "type-h2 text-blue02"
+              }
+            ]
+          }
+        },
+        "onDark": {
+          "$type": "color",
+          "$value": "{color.silver05}",
+          "$description": "Text on blue01/blue02/blue05 surfaces.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/components/content/ContentSection.jsx:16",
+                "anchor": "dark ? 'text-silver05' : 'text-blue01'"
+              }
+            ]
+          }
+        },
+        "onDarkMuted": {
+          "$type": "color",
+          "$value": "{color.blue07}",
+          "$description": "Secondary text on dark (descriptions, placeholders).",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "specs/SOLUTIONS_USECASES_SPEC.md:232",
+                "anchor": "bodyM, color blue07 (#B1C3FC)"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "$type": "color",
+          "$value": "{color.silver01}",
+          "$description": "Blog date/byline and role metadata.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "specs/BLOG_SPEC.md:137",
+                "anchor": "color silver01 #9494A7"
+              }
+            ]
+          }
+        },
+        "link": {
+          "$type": "color",
+          "$value": "{color.blue06}",
+          "$description": "Rich-text and legal inline links (underlined).",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "specs/COMPANY_PAGES_SPEC.md:472",
+                "anchor": "`a{text-decoration: underline; color: blue06 (#2F6BEE)}`"
+              }
+            ]
+          }
+        },
+        "navOnBrand": {
+          "$type": "color",
+          "$value": "{color.silver04}",
+          "$description": "Header/footer links on blue05.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/index.css:197",
+                "anchor": "color: var(--silver04);"
+              }
+            ]
+          }
+        },
+        "accentHighlight": {
+          "$type": "color",
+          "$value": "{color.brightBlue}",
+          "$description": "Highlighted words (steps 01/03), preloader counter.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/index.css:671",
+                "anchor": ".step-title span { color: var(--brightBlue); }"
+              }
+            ]
+          }
+        },
+        "accentHighlightAlt": {
+          "$type": "color",
+          "$value": "{color.brightGreen}",
+          "$description": "Highlighted words (steps 02/04), hover state of links.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/index.css:672",
+                "anchor": ".step-title--green span { color: var(--brightGreen); }"
+              }
+            ]
+          }
+        },
+        "accentLabel": {
+          "$type": "color",
+          "$value": "{color.brightTurquoise}",
+          "$description": "Snippet titles, carousel subtitles, form errors on dark.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "specs/SOLUTIONS_USECASES_SPEC.md:420",
+                "anchor": "SnippetTitle: bodyR, brightTurquoise"
+              }
+            ]
+          }
+        }
+      },
+      "surface": {
+        "page": {
+          "$type": "color",
+          "$value": "{color.blue05}",
+          "$description": "html + main::before backdrop on every route.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/index.css:111",
+                "anchor": "background: var(--blue05);"
+              }
+            ]
+          }
+        },
+        "panel": {
+          "$type": "color",
+          "$value": "{color.silver05}",
+          "$description": "White rounded panels (legal, blog, white sections).",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/pages/Legal.jsx:40",
+                "anchor": "bg-silver05 u-mt-[50] u-py-[96] u-rounded-[24]"
+              }
+            ]
+          }
+        },
+        "panelSubtle": {
+          "$type": "color",
+          "$value": "{color.silver03}",
+          "$description": "Homepage white container behind WhiteGlove..CTA.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/pages/Home.jsx:27",
+                "anchor": "bg-silver03"
+              }
+            ]
+          }
+        },
+        "card": {
+          "$type": "color",
+          "$value": "{color.silver04}",
+          "$description": "Bordered cards, 404 panel.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/components/content/Grids.jsx:30",
+                "anchor": "dark ? 'bg-blue02' : 'bg-silver04'"
+              }
+            ]
+          }
+        },
+        "dark": {
+          "$type": "color",
+          "$value": "{color.blue01}",
+          "$description": "Dark sections (template-B dark, How It Works, request-demo panel).",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/components/content/ContentSection.jsx:9",
+                "anchor": "dark ? 'bg-blue01' : 'bg-silver05'"
+              }
+            ]
+          }
+        },
+        "darkRaised": {
+          "$type": "color",
+          "$value": "{color.blue02}",
+          "$description": "Cards on dark, Trusted card, Platform/Devices sections, fields.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/components/content/CapabilitiesCarousel.jsx:42",
+                "anchor": "bg-blue02"
+              }
+            ]
+          }
+        }
+      },
+      "border": {
+        "card": {
+          "$type": "color",
+          "$value": "{color.lavender04}",
+          "$description": "Bordered cards (also on dark: the blue03 override loses in the original; replicated).",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/components/content/Grids.jsx:16",
+                "anchor": "border-solid border-lavender04"
+              }
+            ]
+          }
+        },
+        "divider": {
+          "$type": "color",
+          "$value": "{color.lavender05}",
+          "$description": "Hairline dividers on white (blog, careers list).",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "specs/BLOG_SPEC.md:299",
+                "anchor": "`border-bottom:1px solid lavender05"
+              }
+            ]
+          }
+        },
+        "field": {
+          "$type": "color",
+          "$value": "{color.blue03}",
+          "$description": "Form field default border.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/styles/pages.css:164",
+                "anchor": "border: 1px solid var(--blue03);"
+              }
+            ]
+          }
+        },
+        "fieldHover": {
+          "$type": "color",
+          "$value": "{color.blue04}",
+          "$description": "Form field hover border.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "specs/COMPANY_PAGES_SPEC.md:412",
+                "anchor": "**Hover:** border blue04 (#524FD9)"
+              }
+            ]
+          }
+        },
+        "fieldInvalid": {
+          "$type": "color",
+          "$value": "{color.brightTurquoise}",
+          "$description": "Form field invalid border.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "specs/COMPANY_PAGES_SPEC.md:414",
+                "anchor": "border brightTurquoise (#72E6FF)"
+              }
+            ]
+          }
+        }
+      },
+      "action": {
+        "primaryOuter": {
+          "$type": "color",
+          "$value": "{color.lavender01}",
+          "$description": "Primary button outer ring.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/index.css:157",
+                "anchor": "background-color: var(--lavender01);"
+              }
+            ]
+          }
+        },
+        "primaryOuterHover": {
+          "$type": "color",
+          "$value": "{color.lavender03}",
+          "$description": "Primary button outer ring on hover.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/index.css:188",
+                "anchor": ".btn-primary:hover { background-color: var(--lavender03); }"
+              }
+            ]
+          }
+        },
+        "primaryInnerHover": {
+          "$type": "color",
+          "$value": "{color.lavender05}",
+          "$description": "Primary button inner on hover.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/index.css:189",
+                "anchor": ".btn-primary:hover .btn-primary__inner { background-color: var(--lavender05); }"
+              }
+            ]
+          }
+        },
+        "linkHover": {
+          "$type": "color",
+          "$value": "{color.brightGreen}",
+          "$description": "Text-link hover colour.",
+          "$extensions": {
+            "evidence": [
+              {
+                "ref": "src/index.css:208",
+                "anchor": ".text-link:hover { color: var(--brightGreen); }"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

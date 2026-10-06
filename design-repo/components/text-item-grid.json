@@ -1,0 +1,25 @@
+{
+  "id": "text-item-grid",
+  "name": "TextItemGrid",
+  "composes": [],
+  "purpose": "Card-less title+text items; light (desc .8) or dark (desc .9).",
+  "implementedBy": [
+    {
+      "ref": "src/components/content/Grids.jsx:63",
+      "anchor": "export function TextItemGrid"
+    }
+  ],
+  "tokens": [
+    "typography.style.h4",
+    "typography.style.body-r",
+    "fixedPx.contentGridTabletTitleMargins"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:575",
+      "anchor": "| **TextItemGrid**"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

@@ -1,0 +1,23 @@
+{
+  "id": "stats-row",
+  "name": "StatsRow",
+  "composes": [],
+  "purpose": "Up to 3 short stat labels under the template-B hero CTA.",
+  "implementedBy": [
+    {
+      "ref": "src/components/content/StatsRow.jsx:2",
+      "anchor": "export default function StatsRow"
+    }
+  ],
+  "tokens": [
+    "typography.style.body-m"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:544",
+      "anchor": "**Stats** (optional)"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

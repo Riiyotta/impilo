@@ -1,0 +1,97 @@
+{
+  "$description": "Build-time conformance check: the clone's REAL template-B data (src/data/contentPages.js, all 12 routes) converted 1:1 into PageSpecs and run through schema/semantic_validate.py. Only the results are stored (no copy). Shows the contracts and graph rules accept the real, correct structure (incl. the /use-cases/oems/ dark-dark exception).",
+  "evidence": [
+    {
+      "ref": "src/data/contentPages.js:1140",
+      "anchor": "export const contentPageRoutes = ["
+    }
+  ],
+  "results": [
+    {
+      "route": "/solutions/impilo-platform/",
+      "sections": 4,
+      "variants": "LDLD",
+      "errors": 0,
+      "warnings": []
+    },
+    {
+      "route": "/solutions/digital-health-logistics/",
+      "sections": 3,
+      "variants": "LDL",
+      "errors": 0,
+      "warnings": []
+    },
+    {
+      "route": "/solutions/tech-enabled-services/",
+      "sections": 4,
+      "variants": "LDLD",
+      "errors": 0,
+      "warnings": []
+    },
+    {
+      "route": "/solutions/direct-to-patient/",
+      "sections": 4,
+      "variants": "LDLD",
+      "errors": 0,
+      "warnings": []
+    },
+    {
+      "route": "/solutions/clinic-rpm/",
+      "sections": 3,
+      "variants": "LDL",
+      "errors": 0,
+      "warnings": []
+    },
+    {
+      "route": "/solutions/support-crm/",
+      "sections": 4,
+      "variants": "LDLD",
+      "errors": 0,
+      "warnings": []
+    },
+    {
+      "route": "/use-cases/virtual-care-companies/",
+      "sections": 4,
+      "variants": "LDLD",
+      "errors": 0,
+      "warnings": []
+    },
+    {
+      "route": "/use-cases/physicians-and-provider-groups/",
+      "sections": 4,
+      "variants": "LDLD",
+      "errors": 0,
+      "warnings": []
+    },
+    {
+      "route": "/use-cases/health-plans-and-payers/",
+      "sections": 4,
+      "variants": "LDLD",
+      "errors": 0,
+      "warnings": []
+    },
+    {
+      "route": "/use-cases/health-systems-and-msos/",
+      "sections": 4,
+      "variants": "LDLD",
+      "errors": 0,
+      "warnings": []
+    },
+    {
+      "route": "/use-cases/value-based-care/",
+      "sections": 4,
+      "variants": "LDLD",
+      "errors": 0,
+      "warnings": []
+    },
+    {
+      "route": "/use-cases/oems/",
+      "sections": 3,
+      "variants": "LDD",
+      "errors": 0,
+      "warnings": []
+    }
+  ],
+  "totalErrors": 0,
+  "totalWarnings": 0
+}

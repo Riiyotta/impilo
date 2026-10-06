@@ -1,0 +1,181 @@
+{
+  "layout": {
+    "pageMaxWidth": {
+      "$type": "dimension",
+      "$value": 1440,
+      "$description": "Containers cap at 1440 and centre.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "tailwind.config.js:104",
+            "anchor": "maxWidth: { page: '1440px' }"
+          }
+        ]
+      }
+    },
+    "desktopGutter": {
+      "$type": "dimension",
+      "$value": 50,
+      "$description": "Header/footer/trusted horizontal padding at desktop.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "CLONE_SPEC.md:185",
+            "anchor": "padding: 50px 50px 0"
+          }
+        ],
+        "unit": "u"
+      }
+    },
+    "mobileGutter": {
+      "$type": "dimension",
+      "$value": 15,
+      "$description": "Common mobile side padding (u-px-[15]); 4vw at 375 base.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/Trusted.jsx:18",
+            "anchor": "mob:u-px-[15]"
+          }
+        ],
+        "unit": "u"
+      }
+    },
+    "panelInset": {
+      "$type": "dimension",
+      "$value": 10,
+      "$description": "White panels inset from the viewport edge (blog, info pages; mobile 15).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/pages/InfoPage.jsx:28",
+            "anchor": "u-mx-[10]"
+          }
+        ],
+        "unit": "u"
+      }
+    },
+    "contentGridMax": {
+      "$type": "dimension",
+      "$value": 1200,
+      "$description": "Template-B grid max-width.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/components/content/Grids.jsx:9",
+            "anchor": "const MAX = 'u-max-w-[1200]'"
+          }
+        ],
+        "unit": "u"
+      }
+    },
+    "articleColumn": {
+      "$type": "dimension",
+      "$value": 680,
+      "$description": "Blog post article column / related grid width.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "specs/BLOG_SPEC.md:261",
+            "anchor": "PostContent (680)"
+          }
+        ],
+        "unit": "u"
+      }
+    },
+    "legalColumn": {
+      "$type": "dimension",
+      "$value": 1114,
+      "$description": "Legal content width (tablet 697, mobile 344).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/pages/Legal.jsx:41",
+            "anchor": "u-w-[1114]"
+          }
+        ],
+        "unit": "u"
+      }
+    },
+    "sectionPadding": {
+      "contentSection": {
+        "$type": "dimension",
+        "$value": {
+          "desktop": 120,
+          "mobile": 80
+        },
+        "$description": "Template-B section vertical padding.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/components/content/ContentSection.jsx:9",
+              "anchor": "u-py-[120] mob:u-py-[80]"
+            }
+          ],
+          "unit": "u"
+        }
+      },
+      "stackedPanelTop": {
+        "$type": "dimension",
+        "$value": 232,
+        "$description": "Top padding of stacked white/blue panels (Support, Platform, ApiPlatform, SDK, Devices).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "specs/SOLUTIONS_USECASES_SPEC.md:287",
+              "anchor": "`background: #fff; border-radius: 24; padding-top: 232"
+            }
+          ],
+          "unit": "u"
+        }
+      },
+      "ctaBand": {
+        "$type": "dimension",
+        "$value": {
+          "top": 244,
+          "bottom": 220,
+          "x": 137
+        },
+        "$description": "CTA band padding.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/components/Cta.jsx:14",
+              "anchor": "u-pb-[220] u-pt-[244] u-px-[137]"
+            }
+          ],
+          "unit": "u"
+        }
+      }
+    },
+    "footerSpacer": {
+      "$type": "dimension",
+      "$value": {
+        "desktop": 727,
+        "maxHeight": "100lvh"
+      },
+      "$description": "Transparent spacer revealing the fixed footer.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "CLONE_SPEC.md:157",
+            "anchor": "Footer__Spacer (height 727px desktop"
+          }
+        ]
+      }
+    },
+    "panelRadius": {
+      "$type": "dimension",
+      "$value": "{radius.24}",
+      "$description": "Every rounded page panel.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/pages/Legal.jsx:40",
+            "anchor": "u-rounded-[24]"
+          }
+        ]
+      }
+    }
+  }
+}

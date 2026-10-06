@@ -1,0 +1,27 @@
+{
+  "id": "call-to-action",
+  "name": "CallToAction",
+  "composes": [
+    "primary-button",
+    "text-reveal"
+  ],
+  "purpose": "Optional paragraph + button closing a solution page; `light` = white text on dark.",
+  "implementedBy": [
+    {
+      "ref": "src/components/content/CallToAction.jsx:8",
+      "anchor": "export default function CallToAction"
+    }
+  ],
+  "tokens": [
+    "component.button.primary",
+    "typography.style.body-r"
+  ],
+  "evidence": [
+    {
+      "ref": "src/components/content/CallToAction.jsx:5",
+      "anchor": "Text blue01, or silver05 when `light`"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

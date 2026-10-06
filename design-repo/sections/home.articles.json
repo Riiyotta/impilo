@@ -1,0 +1,126 @@
+{
+  "id": "home.articles",
+  "category": "editorial",
+  "purpose": "Article carousel: title, excerpt, outlined 'Read Full Article' link to an internal blog post; prev/next arrows.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Articles.jsx:31",
+      "anchor": "export default function Articles"
+    }
+  ],
+  "templates": [
+    "home"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "homeRouteOnly": true,
+    "insideGroup": "white-container"
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "articles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "excerpt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "link": {
+                "$ref": "#/definitions/link"
+              }
+            },
+            "required": [
+              "title",
+              "excerpt",
+              "link"
+            ]
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "articles"
+      ]
+    },
+    "maxWords": {
+      "articles[].title": {
+        "maxWords": 14,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:625",
+          "anchor": "1. \"Remote Patient Monitoring for Sleep Apnea"
+        },
+        "method": "word count of quoted string #0 on the cited spec line"
+      },
+      "articles[].excerpt": {
+        "maxWords": 21,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:632",
+          "anchor": "- Excerpt: \"Explore how remote patient monitoring"
+        },
+        "method": "word count of quoted string #0 on the cited spec line"
+      },
+      "articles[].link.label": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:621",
+          "anchor": "`a` \"Read Full Article →\""
+        },
+        "method": "button label"
+      }
+    }
+  },
+  "assets": [],
+  "motion": {
+    "allowedPatterns": [
+      "autoanimate-swap"
+    ],
+    "reducedMotionFallback": "instant-swap"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Title 34.5px, width 67.969vw; arrows 26.25px.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:644",
+          "anchor": "title and excerpt width 67.969vw (522)"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Title h4; link 400 weight.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:648",
+          "anchor": "title h4: 24.96px/500/92%, width 74.667vw (291)"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "component.button.readArticle",
+    "component.button.roundArrow",
+    "fixedPx.readArticleRadius"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:615",
+      "anchor": "## 8. Section 6: Quotes / article carousel"
+    },
+    {
+      "ref": "src/components/Articles.jsx:13",
+      "anchor": "Original pointed at impilo.health; now an internal placeholder post"
+    }
+  ],
+  "variants": []
+}

@@ -1,0 +1,611 @@
+{
+  "color": {
+    "blue01": {
+      "$type": "color",
+      "$value": "#161658",
+      "$description": "Palette colour blue01; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:37",
+            "anchor": "--blue01: #161658"
+          },
+          {
+            "ref": "src/index.css:70",
+            "anchor": "--blue01: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:76",
+            "anchor": "| blue01 |"
+          }
+        ],
+        "usageCount": 68,
+        "usageFirstRef": "src/components/Articles.jsx:49",
+        "displayP3": true
+      }
+    },
+    "blue02": {
+      "$type": "color",
+      "$value": "#232265",
+      "$description": "Palette colour blue02; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:38",
+            "anchor": "--blue02: #232265"
+          },
+          {
+            "ref": "src/index.css:71",
+            "anchor": "--blue02: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:77",
+            "anchor": "| blue02 |"
+          }
+        ],
+        "usageCount": 48,
+        "usageFirstRef": "src/components/Focus.jsx:41",
+        "displayP3": true
+      }
+    },
+    "blue03": {
+      "$type": "color",
+      "$value": "#4846bf",
+      "$description": "Palette colour blue03; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:39",
+            "anchor": "--blue03: #4846bf"
+          },
+          {
+            "ref": "src/index.css:72",
+            "anchor": "--blue03: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:78",
+            "anchor": "| blue03 |"
+          }
+        ],
+        "usageCount": 17,
+        "usageFirstRef": "src/components/Header.jsx:153",
+        "displayP3": true
+      }
+    },
+    "blue04": {
+      "$type": "color",
+      "$value": "#524fd9",
+      "$description": "Palette colour blue04; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:40",
+            "anchor": "--blue04: #524fd9"
+          },
+          {
+            "ref": "src/index.css:73",
+            "anchor": "--blue04: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:79",
+            "anchor": "| blue04 |"
+          }
+        ],
+        "usageCount": 8,
+        "usageFirstRef": "src/components/Focus.jsx:29",
+        "displayP3": true
+      }
+    },
+    "blue05": {
+      "$type": "color",
+      "$value": "#3f3ccd",
+      "$description": "Palette colour blue05; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:41",
+            "anchor": "--blue05: #3f3ccd"
+          },
+          {
+            "ref": "src/index.css:74",
+            "anchor": "--blue05: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:80",
+            "anchor": "| blue05 |"
+          }
+        ],
+        "usageCount": 12,
+        "usageFirstRef": "src/components/Footer.jsx:33",
+        "displayP3": true
+      }
+    },
+    "blue06": {
+      "$type": "color",
+      "$value": "#2f6bee",
+      "$description": "Palette colour blue06; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:42",
+            "anchor": "--blue06: #2f6bee"
+          },
+          {
+            "ref": "src/index.css:75",
+            "anchor": "--blue06: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:81",
+            "anchor": "| blue06 |"
+          }
+        ],
+        "usageCount": 3,
+        "usageFirstRef": "src/pages/blog/BlogPost.jsx:35",
+        "displayP3": true
+      }
+    },
+    "blue07": {
+      "$type": "color",
+      "$value": "#b1c3fc",
+      "$description": "Palette colour blue07; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:43",
+            "anchor": "--blue07: #b1c3fc"
+          },
+          {
+            "ref": "src/index.css:76",
+            "anchor": "--blue07: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:82",
+            "anchor": "| blue07 |"
+          }
+        ],
+        "usageCount": 15,
+        "usageFirstRef": "src/components/about/Leadership.jsx:61",
+        "displayP3": true
+      }
+    },
+    "lavender01": {
+      "$type": "color",
+      "$value": "#5250c5",
+      "$description": "Palette colour lavender01; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:44",
+            "anchor": "--lavender01: #5250c5"
+          },
+          {
+            "ref": "src/index.css:77",
+            "anchor": "--lavender01: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:83",
+            "anchor": "| lavender01 |"
+          }
+        ],
+        "usageCount": 7,
+        "usageFirstRef": "src/components/Header.jsx:181",
+        "displayP3": true
+      }
+    },
+    "lavender02": {
+      "$type": "color",
+      "$value": "#6563da",
+      "$description": "Palette colour lavender02; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:45",
+            "anchor": "--lavender02: #6563da"
+          },
+          {
+            "ref": "src/index.css:78",
+            "anchor": "--lavender02: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:84",
+            "anchor": "| lavender02 |"
+          }
+        ],
+        "usageCount": 3,
+        "usageFirstRef": "src/components/about/Leadership.jsx:40",
+        "displayP3": true
+      }
+    },
+    "lavender03": {
+      "$type": "color",
+      "$value": "#876eec",
+      "$description": "Palette colour lavender03; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:46",
+            "anchor": "--lavender03: #876eec"
+          },
+          {
+            "ref": "src/index.css:79",
+            "anchor": "--lavender03: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:85",
+            "anchor": "| lavender03 |"
+          }
+        ],
+        "usageCount": 2,
+        "usageFirstRef": "src/index.css:188",
+        "displayP3": true
+      }
+    },
+    "lavender04": {
+      "$type": "color",
+      "$value": "#b1a6f6",
+      "$description": "Palette colour lavender04; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:47",
+            "anchor": "--lavender04: #b1a6f6"
+          },
+          {
+            "ref": "src/index.css:80",
+            "anchor": "--lavender04: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:86",
+            "anchor": "| lavender04 |"
+          }
+        ],
+        "usageCount": 8,
+        "usageFirstRef": "src/components/about/Anywhere.jsx:19",
+        "displayP3": true
+      }
+    },
+    "lavender05": {
+      "$type": "color",
+      "$value": "#e6e4fb",
+      "$description": "Palette colour lavender05; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:48",
+            "anchor": "--lavender05: #e6e4fb"
+          },
+          {
+            "ref": "src/index.css:81",
+            "anchor": "--lavender05: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:87",
+            "anchor": "| lavender05 |"
+          }
+        ],
+        "usageCount": 9,
+        "usageFirstRef": "src/components/blog/Categories.jsx:41",
+        "displayP3": true
+      }
+    },
+    "lavender06": {
+      "$type": "color",
+      "$value": "#f1f1fd",
+      "$description": "Palette colour lavender06; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:49",
+            "anchor": "--lavender06: #f1f1fd"
+          },
+          {
+            "ref": "src/index.css:82",
+            "anchor": "--lavender06: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:88",
+            "anchor": "| lavender06 |"
+          }
+        ],
+        "usageCount": 3,
+        "usageFirstRef": "src/components/blog/SearchBar.jsx:15",
+        "displayP3": true
+      }
+    },
+    "silver01": {
+      "$type": "color",
+      "$value": "#9494a7",
+      "$description": "Palette colour silver01; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:50",
+            "anchor": "--silver01: #9494a7"
+          },
+          {
+            "ref": "src/index.css:83",
+            "anchor": "--silver01: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:89",
+            "anchor": "| silver01 |"
+          }
+        ],
+        "usageCount": 5,
+        "usageFirstRef": "src/components/WhiteGlove.jsx:26",
+        "displayP3": true
+      }
+    },
+    "silver02": {
+      "$type": "color",
+      "$value": "#d8d8e3",
+      "$description": "Palette colour silver02; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:51",
+            "anchor": "--silver02: #d8d8e3"
+          },
+          {
+            "ref": "src/index.css:84",
+            "anchor": "--silver02: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:90",
+            "anchor": "| silver02 |"
+          }
+        ],
+        "usageCount": 1,
+        "usageFirstRef": "src/components/HowItWorks.jsx:190",
+        "displayP3": true
+      }
+    },
+    "silver03": {
+      "$type": "color",
+      "$value": "#f4f4f6",
+      "$description": "Palette colour silver03; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:52",
+            "anchor": "--silver03: #f4f4f6"
+          },
+          {
+            "ref": "src/index.css:85",
+            "anchor": "--silver03: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:91",
+            "anchor": "| silver03 |"
+          }
+        ],
+        "usageCount": 1,
+        "usageFirstRef": "src/pages/Home.jsx:27",
+        "displayP3": true
+      }
+    },
+    "silver04": {
+      "$type": "color",
+      "$value": "#f4f4fb",
+      "$description": "Palette colour silver04; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:53",
+            "anchor": "--silver04: #f4f4fb"
+          },
+          {
+            "ref": "src/index.css:86",
+            "anchor": "--silver04: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:92",
+            "anchor": "| silver04 |"
+          }
+        ],
+        "usageCount": 9,
+        "usageFirstRef": "src/components/content/Grids.jsx:30",
+        "displayP3": true
+      }
+    },
+    "silver05": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$description": "Palette colour silver05; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:54",
+            "anchor": "--silver05: #ffffff"
+          },
+          {
+            "ref": "src/index.css:87",
+            "anchor": "--silver05: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:93",
+            "anchor": "| silver05 |"
+          }
+        ],
+        "usageCount": 77,
+        "usageFirstRef": "src/components/Articles.jsx:39",
+        "displayP3": true
+      }
+    },
+    "brightTurquoise": {
+      "$type": "color",
+      "$value": "#72e6ff",
+      "$description": "Palette colour brightTurquoise; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:55",
+            "anchor": "--brightTurquoise: #72e6ff"
+          },
+          {
+            "ref": "src/index.css:88",
+            "anchor": "--brightTurquoise: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:94",
+            "anchor": "| brightTurquoise |"
+          }
+        ],
+        "usageCount": 10,
+        "usageFirstRef": "src/components/Hero.jsx:76",
+        "displayP3": true
+      }
+    },
+    "brightBlue": {
+      "$type": "color",
+      "$value": "#3faeff",
+      "$description": "Palette colour brightBlue; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:56",
+            "anchor": "--brightBlue: #3faeff"
+          },
+          {
+            "ref": "src/index.css:89",
+            "anchor": "--brightBlue: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:95",
+            "anchor": "| brightBlue |"
+          }
+        ],
+        "usageCount": 11,
+        "usageFirstRef": "src/components/HowItWorks.jsx:185",
+        "displayP3": true
+      }
+    },
+    "brightGreen": {
+      "$type": "color",
+      "$value": "#5cffb1",
+      "$description": "Palette colour brightGreen; display-p3 override where supported.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:57",
+            "anchor": "--brightGreen: #5cffb1"
+          },
+          {
+            "ref": "src/index.css:90",
+            "anchor": "--brightGreen: color(display-p3"
+          },
+          {
+            "ref": "CLONE_SPEC.md:96",
+            "anchor": "| brightGreen |"
+          }
+        ],
+        "usageCount": 11,
+        "usageFirstRef": "src/components/HowItWorks.jsx:185",
+        "displayP3": true
+      }
+    },
+    "stepBorder": {
+      "$type": "color",
+      "$value": "rgb(14, 14, 78)",
+      "$description": "How-It-Works step icon border (literal, not a palette colour).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:60",
+            "anchor": "--step-border: rgb(14, 14, 78)"
+          },
+          {
+            "ref": "CLONE_SPEC.md:100",
+            "anchor": "Step icon border: `rgb(14,14,78)`"
+          }
+        ]
+      }
+    },
+    "interfaceCounter": {
+      "$type": "color",
+      "$value": "#59b4ff",
+      "$description": "Hero dashboard counter text (p3 0.4411 0.6982 1).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:61",
+            "anchor": "--interface-counter: #59b4ff"
+          },
+          {
+            "ref": "CLONE_SPEC.md:99",
+            "anchor": "Hero interface counter text"
+          }
+        ]
+      }
+    },
+    "footerLine": {
+      "$type": "color",
+      "$value": "#6563ea",
+      "$description": "Footer PIXI canvas line colour.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:62",
+            "anchor": "--footer-line: #6563ea"
+          },
+          {
+            "ref": "CLONE_SPEC.md:101",
+            "anchor": "Footer canvas lines: `#6563EA`"
+          }
+        ]
+      }
+    },
+    "errorEmail": {
+      "$type": "color",
+      "$value": "#f76161",
+      "$description": "Blog newsletter invalid outline + message (only error red in the system).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/styles/blog.css:64",
+            "anchor": "outline: 1px solid #f76161"
+          }
+        ]
+      }
+    },
+    "focusOutline": {
+      "$type": "color",
+      "$value": "#0000ff88",
+      "$description": "Global :focus-visible outline colour (#00f8).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:123",
+            "anchor": "outline: 2px solid #00f8"
+          }
+        ]
+      }
+    },
+    "selectHighlight": {
+      "$type": "color",
+      "$value": "#16165855",
+      "$description": "Request-demo select item hover: blue01 at 33% alpha.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "specs/COMPANY_PAGES_SPEC.md:430",
+            "anchor": "Hover/highlight: `background: #16165855`"
+          }
+        ]
+      }
+    },
+    "menuOverlay": {
+      "$type": "color",
+      "$value": "rgb(0 0 0 / 20%)",
+      "$description": "Mobile menu overlay scrim.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:378",
+            "anchor": "background: rgb(0 0 0 / 20%)"
+          }
+        ]
+      }
+    }
+  }
+}

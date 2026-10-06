@@ -1,0 +1,33 @@
+{
+  "id": "share-column",
+  "name": "Share",
+  "composes": [
+    "icon"
+  ],
+  "purpose": "4 round share buttons. X/LinkedIn/Facebook are NON-NAVIGATING buttons (no outbound links); Copy Link copies location.href.",
+  "implementedBy": [
+    {
+      "ref": "src/components/blog/Share.jsx:32",
+      "anchor": "export default function Share"
+    }
+  ],
+  "tokens": [
+    "iconSize.share36",
+    "color.blue05"
+  ],
+  "linkPolicy": {
+    "outboundShareUrls": false,
+    "evidence": {
+      "ref": "src/components/blog/Share.jsx:11",
+      "anchor": "Facebook do NOT open external share URLs"
+    }
+  },
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:350",
+      "anchor": "### B2.6 Share column (`Socials`)"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

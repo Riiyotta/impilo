@@ -1,0 +1,26 @@
+{
+  "id": "small-card",
+  "name": "SmallCard",
+  "composes": [
+    "blog-image",
+    "universal-link"
+  ],
+  "purpose": "Blog card: image + 3-line clamped title. AUDITED: related cards keep 290/210 at tablet (index grid uses 246/196).",
+  "implementedBy": [
+    {
+      "ref": "src/components/blog/SmallCard.jsx:9",
+      "anchor": "export default function SmallCard"
+    }
+  ],
+  "tokens": [
+    "component.card.blogSmall"
+  ],
+  "evidence": [
+    {
+      "ref": "src/components/blog/SmallCard.jsx:6",
+      "anchor": "the post's related cards keep"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

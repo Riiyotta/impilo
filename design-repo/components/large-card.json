@@ -1,0 +1,28 @@
+{
+  "id": "large-card",
+  "name": "LargeCard",
+  "composes": [
+    "blog-image",
+    "text-arrow-button"
+  ],
+  "purpose": "Featured newest post on /blog/.",
+  "implementedBy": [
+    {
+      "ref": "src/components/blog/LargeCard.jsx:11",
+      "anchor": "export default function LargeCard"
+    }
+  ],
+  "tokens": [
+    "typography.style.h3",
+    "color.blue02",
+    "color.silver01"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:128",
+      "anchor": "**LargeCard** (`LargeCard__Wrapper`, div)"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

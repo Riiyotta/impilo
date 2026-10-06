@@ -1,0 +1,25 @@
+{
+  "id": "outcomes-list",
+  "name": "OutcomesList",
+  "composes": [],
+  "purpose": "Bulleted outcomes (blue03 bullets, raw-px 24 indent), blue01 text only (light sections).",
+  "implementedBy": [
+    {
+      "ref": "src/components/content/Grids.jsx:106",
+      "anchor": "export function OutcomesList"
+    }
+  ],
+  "tokens": [
+    "fixedPx.outcomesBulletIndent",
+    "color.blue03",
+    "color.blue01"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:577",
+      "anchor": "| **OutcomesList** (`ul`)"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

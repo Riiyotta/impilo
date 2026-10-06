@@ -1,0 +1,1250 @@
+{
+  "$description": "Citation ledger. Every 'ref' is path:line[-line] relative to the project root (the folder that contains design-repo/), with an 'anchor' substring that must appear on the cited line(s). verify_all.py resolves them when the sibling source tree is present and degrades to a WARNING (not a failure) when design-repo/ is used standalone.",
+  "sourceRootRelative": "..",
+  "sources": {
+    "CLONE_SPEC.md": "homepage + global system spec (measured live)",
+    "specs/SOLUTIONS_USECASES_SPEC.md": "templates A/B spec",
+    "specs/COMPANY_PAGES_SPEC.md": "about/integrations/request-demo/legal/404 spec",
+    "specs/BLOG_SPEC.md": "blog index/post spec",
+    "src/": "clone source (audited; wins over specs where they disagree)",
+    "tailwind.config.js": "breakpoints, colour vars, u-* plugin",
+    "recon/original-styles.annotated.css": "original stylesheet (reference, not cited line-by-line)",
+    "recon/screens/": "reference screenshots"
+  },
+  "stack": {
+    "react": "^18.3.1",
+    "react-router-dom": "^6.30.6 (data router)",
+    "gsap": "^3.15.0 (ScrollTrigger, Flip, ScrollTo, DrawSVG registered in utils.js; SplitText used by text.js)",
+    "pixi.js": "^8.22.0 (footer canvas)",
+    "tailwindcss": "^3.4.10",
+    "vite": "^5.4.0",
+    "evidence": [
+      {
+        "ref": "package.json:14",
+        "anchor": "\"react\": \"^18.3.1\""
+      },
+      {
+        "ref": "src/animations/utils.js:7",
+        "anchor": "gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Flip, DrawSVGPlugin)"
+      }
+    ]
+  },
+  "copyBudgets": {
+    "shell.header": {},
+    "shell.footer": {},
+    "home.hero": {
+      "titleLines[]": {
+        "maxWords": 3,
+        "method": "word count of quoted string #0 on the cited spec line",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:283",
+          "anchor": "- Text: \"Making at home\""
+        }
+      },
+      "rotatingWords[]": {
+        "maxWords": 1,
+        "method": "each rotating item is one word",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:294",
+          "anchor": "\"manageable.\" → \"powerful.\" → \"easy.\" → \"personalized.\""
+        }
+      },
+      "description": {
+        "maxWords": 10,
+        "method": "word count of quoted string #0 on the cited spec line",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:296",
+          "anchor": "- Text: \"Remote care logistics"
+        }
+      }
+    },
+    "home.focus": {
+      "title": {
+        "maxWords": 8,
+        "method": "word count of quoted string #2 on the cited spec line",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:389",
+          "anchor": "- Text: \"Allowing you to focus\""
+        }
+      },
+      "marqueeLabel": {
+        "maxWords": 2,
+        "method": "UI label word count",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:394",
+          "anchor": "`span` \"KEEP SCROLLING\""
+        }
+      },
+      "lead": {
+        "maxWords": 3,
+        "method": "word count of the lead span",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:405",
+          "anchor": "`<span>Let's show you</span>`"
+        }
+      },
+      "tail": {
+        "maxWords": 4,
+        "method": "word count of the tail span",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:405",
+          "anchor": "`<span>how we do it</span>`"
+        }
+      },
+      "cta.label": {
+        "maxWords": 2,
+        "method": "button label",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:405",
+          "anchor": "then a primary button \"Request Demo\""
+        }
+      }
+    },
+    "home.how-it-works": {
+      "steps[].title": {
+        "maxWords": 13,
+        "method": "max word count over the 4 quoted step titles (lines 462-475)",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:471",
+          "anchor": "- Title: \"Our specialists"
+        }
+      },
+      "steps[].highlights[]": {
+        "maxWords": 3,
+        "method": "longest highlighted span ('data to support')",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:471",
+          "anchor": "**data to support**"
+        }
+      },
+      "steps[].description": {
+        "maxWords": 38,
+        "method": "max word count over the 4 quoted step descriptions",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:472",
+          "anchor": "- Description: \"Our team approaches"
+        }
+      },
+      "steps[].link.label": {
+        "maxWords": 5,
+        "method": "link label",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:468",
+          "anchor": "blue Link \"Learn more about Our Solutions\""
+        }
+      }
+    },
+    "home.white-glove": {
+      "title": {
+        "maxWords": 4,
+        "method": "word count of quoted string #0 on the cited spec line",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:552",
+          "anchor": "- Text: \"End-to-end white glove service\""
+        }
+      },
+      "largeText": {
+        "maxWords": 18,
+        "method": "word count of quoted string #0 on the cited spec line",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:555",
+          "anchor": "- Text: \"Our team is here to provide"
+        }
+      },
+      "smallText": {
+        "maxWords": 19,
+        "method": "word count of quoted string #0 on the cited spec line",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:562",
+          "anchor": "- Text: \"We pride ourselves"
+        }
+      }
+    },
+    "home.trusted": {
+      "title": {
+        "maxWords": 5,
+        "method": "sum of the two quoted title lines (3 + 2)",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:581",
+          "anchor": "- Text: \"Trusted by digital\" / \"health leaders\""
+        }
+      },
+      "text": {
+        "maxWords": 30,
+        "method": "word count of quoted string #0 on the cited spec line",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:584",
+          "anchor": "- Text: \"Impilo is trusted by medical"
+        }
+      }
+    },
+    "home.articles": {
+      "articles[].title": {
+        "maxWords": 14,
+        "method": "word count of quoted string #0 on the cited spec line",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:625",
+          "anchor": "1. \"Remote Patient Monitoring for Sleep Apnea"
+        }
+      },
+      "articles[].excerpt": {
+        "maxWords": 21,
+        "method": "word count of quoted string #0 on the cited spec line",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:632",
+          "anchor": "- Excerpt: \"Explore how remote patient monitoring"
+        }
+      },
+      "articles[].link.label": {
+        "maxWords": 3,
+        "method": "button label",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:621",
+          "anchor": "`a` \"Read Full Article →\""
+        }
+      }
+    },
+    "home.integrations": {
+      "titleLines[]": {
+        "maxWords": 4,
+        "method": "max word count over the quoted labels on the cited line",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:659",
+          "anchor": "- Text: \"Patient care,\" / \"our integrations.\""
+        }
+      },
+      "cards[].label": {
+        "maxWords": 4,
+        "method": "'Data Visualizations and Reporting' (two quoted lines joined by <br>)",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:666",
+          "anchor": "- Labels: \"Comprehensive Integration\""
+        }
+      },
+      "text": {
+        "maxWords": 31,
+        "method": "word count of quoted string #0 on the cited spec line",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:668",
+          "anchor": "- Text: \"Connect popular health devices"
+        }
+      },
+      "cta.label": {
+        "maxWords": 3,
+        "method": "button label",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:670",
+          "anchor": "Primary button \"Explore Our Integrations\""
+        }
+      }
+    },
+    "shared.cta-band": {
+      "title": {
+        "maxWords": 12,
+        "method": "longest observed use (careers info page, 12 words; homepage 8)",
+        "evidence": {
+          "ref": "src/pages/Careers.jsx:38",
+          "anchor": "title: 'Don’t see your role? We would still like to hear from you',"
+        }
+      },
+      "cta.label": {
+        "maxWords": 3,
+        "method": "longest observed button label",
+        "evidence": {
+          "ref": "src/pages/Developers.jsx:31",
+          "anchor": "buttonLabel: 'Explore Our Integrations'"
+        }
+      }
+    },
+    "solutions.hero": {
+      "title": {
+        "maxWords": 7,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:101",
+          "anchor": "- Measured 1094x358, 3 lines, 7 words."
+        }
+      },
+      "paragraph": {
+        "maxWords": 20,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:159",
+          "anchor": "- 20 words; 2 lines at 1440, 4 lines at 390"
+        }
+      },
+      "cta.label": {
+        "maxWords": 2,
+        "method": "button label",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:161",
+          "anchor": "- Primary button **\"See how\"**"
+        }
+      }
+    },
+    "solutions.explore": {
+      "title": {
+        "maxWords": 3,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:193",
+          "anchor": "- 3 words, 1 line (797 wide)."
+        }
+      },
+      "description": {
+        "maxWords": 21,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:197",
+          "anchor": "- 21 words, 4 lines (5 at 390)"
+        }
+      },
+      "subtitle": {
+        "maxWords": 2,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:219",
+          "anchor": "- 2 words: \"Tech-Enabled Services\""
+        }
+      },
+      "subDescription": {
+        "maxWords": 21,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:222",
+          "anchor": "- 21 words, 3 lines"
+        }
+      },
+      "boxes[].titleLines[]": {
+        "maxWords": 4,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:257",
+          "anchor": "two lines with a `<br>`; ≤4 words each."
+        }
+      },
+      "boxes[].description": {
+        "maxWords": 28,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:263",
+          "anchor": "- 25–28 words, 4 lines"
+        }
+      },
+      "note": {
+        "maxWords": 18,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:233",
+          "anchor": "- 18 words in 2 lines"
+        }
+      },
+      "cta.label": {
+        "maxWords": 5,
+        "method": "button label",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:225",
+          "anchor": "**Primary \"Discover Our Full Services Layer\"**"
+        }
+      }
+    },
+    "solutions.support": {
+      "title": {
+        "maxWords": 2,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:296",
+          "anchor": "\"Direct-to-Patient Solutions\" (2 words, 1 line)"
+        }
+      },
+      "description": {
+        "maxWords": 20,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:299",
+          "anchor": "- 20 words, 2 lines (4 at 390)"
+        }
+      },
+      "cards[].title": {
+        "maxWords": 4,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:319",
+          "anchor": "- 3–4 words, 2 lines"
+        }
+      },
+      "cards[].description": {
+        "maxWords": 35,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:323",
+          "anchor": "- 30–35 words, 5 lines (8 at 390)"
+        }
+      },
+      "cta.label": {
+        "maxWords": 4,
+        "method": "button label",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:326",
+          "anchor": "**\"Discover Our Patient-Ready Solutions\"**"
+        }
+      }
+    },
+    "solutions.platform": {
+      "title": {
+        "maxWords": 3,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:365",
+          "anchor": "\"Meet the Platform\" (3 words, 1 line)"
+        }
+      },
+      "description": {
+        "maxWords": 21,
+        "method": "stated 21 words",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:222",
+          "anchor": "- 21 words, 3 lines"
+        }
+      },
+      "slides[].title": {
+        "maxWords": 6,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:384",
+          "anchor": "- PanelTitle: bodyXL white; 4–6 words, 2 lines."
+        }
+      },
+      "slides[].text": {
+        "maxWords": 33,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:385",
+          "anchor": "- PanelText: bodyM blue07, `width: 398`; 31–33 words, 3 lines."
+        }
+      },
+      "snippets[].title": {
+        "maxWords": 4,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:420",
+          "anchor": "- SnippetTitle: bodyR, brightTurquoise"
+        }
+      },
+      "snippets[].text": {
+        "maxWords": 24,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:421",
+          "anchor": "- SnippetText: bodyM white; 14–24 words, 3 lines."
+        }
+      },
+      "callTitle": {
+        "maxWords": 8,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:428",
+          "anchor": "- 8 words, 2 lines (4 at 390)"
+        }
+      },
+      "ctas[].label": {
+        "maxWords": 4,
+        "method": "button label",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:433",
+          "anchor": "Primary **\"Explore DIY RPM Solutions\"**"
+        }
+      }
+    },
+    "solutions.api-platform": {
+      "title": {
+        "maxWords": 3,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:454",
+          "anchor": "\"API-First RPM Platform\" (3 words, 1 line)"
+        }
+      },
+      "description": {
+        "maxWords": 22,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:458",
+          "anchor": "- 22 words, 3 lines"
+        }
+      },
+      "features[].title": {
+        "maxWords": 3,
+        "method": "longest feature label",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:474",
+          "anchor": "\"Unified Device Data\", \"Easy Integration\""
+        }
+      },
+      "features[].description": {
+        "maxWords": 22,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:477",
+          "anchor": "- 15–22 words, 2–3 lines"
+        }
+      }
+    },
+    "content.hero": {
+      "title": {
+        "maxWords": 11,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:671",
+          "anchor": "| value-based-care | 11w / 6l"
+        }
+      },
+      "subtitle": {
+        "maxWords": 35,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:668",
+          "anchor": "| physicians-and-provider-groups | 8w / 5l"
+        }
+      },
+      "description": {
+        "maxWords": 24,
+        "method": "support-crm description 24w",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:685",
+          "anchor": "Description (h5, opacity .8) 24w / 2l"
+        }
+      },
+      "cta.label": {
+        "maxWords": 3,
+        "method": "button label",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:681",
+          "anchor": "CTA \"Schedule a Demo\""
+        }
+      },
+      "stats[]": {
+        "maxWords": 5,
+        "method": "longest stat label ('Healthcare-Grade Logistics & Support' = 4 words + '&')",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:668",
+          "anchor": "| physicians-and-provider-groups |"
+        }
+      }
+    },
+    "content.section": {
+      "title": {
+        "maxWords": 12,
+        "method": "longest section title (VCC section 2: 12w / 3l)",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:667",
+          "anchor": "| virtual-care-companies |"
+        }
+      },
+      "subtitle": {
+        "maxWords": 7,
+        "method": "impilo-platform SectionSubtitle 7w",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:680",
+          "anchor": "SectionSubtitle 7w"
+        }
+      },
+      "blocks[type=borderedCards].items[].title": {
+        "maxWords": 5,
+        "method": "range max 5w",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:680",
+          "anchor": "3 cards (3–5w / 19–23w)"
+        }
+      },
+      "blocks[type=borderedCards].items[].text": {
+        "maxWords": 25,
+        "method": "range max 25w",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:683",
+          "anchor": "4 cards (3–4w / 18–25w"
+        }
+      },
+      "blocks[type=iconCards].items[].title": {
+        "maxWords": 7,
+        "method": "range max 7w",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:682",
+          "anchor": "(icons ISO, warehouse, truck; 4–7w / 15–21w"
+        }
+      },
+      "blocks[type=iconCards].items[].text": {
+        "maxWords": 40,
+        "method": "range max 40w",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:685",
+          "anchor": "(icons api, chat, ISO; 3–5w / 26–40w"
+        }
+      },
+      "blocks[type=textItems].items[].title": {
+        "maxWords": 12,
+        "method": "WhyChoose range max (8–12w)",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:671",
+          "anchor": "| value-based-care |"
+        }
+      },
+      "blocks[type=textItems].items[].text": {
+        "maxWords": 25,
+        "method": "WhyChoose range max (15–25w)",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:668",
+          "anchor": "| physicians-and-provider-groups |"
+        }
+      },
+      "blocks[type=twoColumn].columns[].headline": {
+        "maxWords": 7,
+        "method": "range max 7w",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:680",
+          "anchor": "a headline (6–7w)"
+        }
+      },
+      "blocks[type=twoColumn].columns[].items[].title": {
+        "maxWords": 5,
+        "method": "range max 5w",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:680",
+          "anchor": "+ 2 items (3–5w / 17–24w)"
+        }
+      },
+      "blocks[type=twoColumn].columns[].items[].text": {
+        "maxWords": 24,
+        "method": "range max 24w",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:680",
+          "anchor": "+ 2 items (3–5w / 17–24w)"
+        }
+      },
+      "blocks[type=outcomes].items[]": {
+        "maxWords": 18,
+        "method": "outcomes range max (11–18w)",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:668",
+          "anchor": "| physicians-and-provider-groups |"
+        }
+      },
+      "blocks[type=carousel].cards[].subtitle": {
+        "maxWords": 6,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:622",
+          "anchor": "- 3–6 words; short labels, recorded per route below"
+        }
+      },
+      "blocks[type=carousel].cards[].title": {
+        "maxWords": 17,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:625",
+          "anchor": "- 6–17 words, 2–6 lines"
+        }
+      },
+      "blocks[type=carousel].cards[].text": {
+        "maxWords": 32,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:628",
+          "anchor": "- 15–32 words, 2 lines"
+        }
+      },
+      "blocks[type=cta].label": {
+        "maxWords": 4,
+        "method": "longest CTA label",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:652",
+          "anchor": "(\"See How Impilo Works\" on VCC"
+        }
+      },
+      "blocks[type=callToAction].text": {
+        "maxWords": 23,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:586",
+          "anchor": "- Optional paragraph: bodyR, TextAnimation fade, 19–23 words"
+        }
+      },
+      "blocks[type=callToAction].label": {
+        "maxWords": 3,
+        "method": "button label",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:684",
+          "anchor": "CallToAction (23w paragraph + \"Schedule a Demo\")"
+        }
+      }
+    },
+    "about.hero": {
+      "headline": {
+        "maxWords": 15,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:83",
+          "anchor": "- Copy: one headline, 15w"
+        }
+      }
+    },
+    "about.founded": {
+      "title": {
+        "maxWords": 3,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:130",
+          "anchor": "Verbatim UI label \"Founded in 2020\" (3w)"
+        }
+      },
+      "location": {
+        "maxWords": 2,
+        "method": "UI label",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:134",
+          "anchor": "- Label \"Philadelphia, PA\""
+        }
+      },
+      "description": {
+        "maxWords": 66,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:135",
+          "anchor": "- Description `p`: bodyR, blue01. 66w"
+        }
+      }
+    },
+    "about.anywhere": {
+      "title": {
+        "maxWords": 4,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:158",
+          "anchor": "4w, 2 lines (878×187)"
+        }
+      },
+      "description": {
+        "maxWords": 48,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:160",
+          "anchor": "48w, 7 lines (1074 wide"
+        }
+      }
+    },
+    "about.leadership": {
+      "title": {
+        "maxWords": 3,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:170",
+          "anchor": "3w, 1 line. Topic: \"leadership team\""
+        }
+      },
+      "people[].name": {
+        "maxWords": 3,
+        "method": "placeholder person name",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:177",
+          "anchor": "- Name: h4 token, silver05"
+        }
+      },
+      "people[].role": {
+        "maxWords": 1,
+        "method": "role label",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:178",
+          "anchor": "Role titles are \"CEO\", \"COO\", \"CTO\"."
+        }
+      },
+      "people[].bio": {
+        "maxWords": 33,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:180",
+          "anchor": "24w/5L, 26w/4L and 33w/6L"
+        }
+      },
+      "details": {
+        "maxWords": 34,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:188",
+          "anchor": "- Details paragraph: margin-top 46"
+        }
+      }
+    },
+    "about.careers": {
+      "title": {
+        "maxWords": 3,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:200",
+          "anchor": "3w, 1L. Topic: \"careers heading\""
+        }
+      },
+      "description": {
+        "maxWords": 18,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:201",
+          "anchor": "18w, 2L. Topic: \"diverse team"
+        }
+      },
+      "cta.label": {
+        "maxWords": 3,
+        "method": "button label",
+        "evidence": {
+          "ref": "src/components/about/Careers.jsx:20",
+          "anchor": "See Open Positions"
+        }
+      }
+    },
+    "integrations.hero": {
+      "title": {
+        "maxWords": 8,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:224",
+          "anchor": "- 8w, 3 lines (1094×358)"
+        }
+      },
+      "paragraph": {
+        "maxWords": 39,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:227",
+          "anchor": "39w, 4L. Topic: \"simplifying RPM"
+        }
+      },
+      "ctas[].label": {
+        "maxWords": 2,
+        "method": "button label",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:228",
+          "anchor": "Primary **\"API Documentation\"**"
+        }
+      }
+    },
+    "integrations.sdk": {
+      "title": {
+        "maxWords": 4,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:246",
+          "anchor": "4w, 1L. Topic: \"why choose SDK/API\""
+        }
+      },
+      "description": {
+        "maxWords": 38,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:247",
+          "anchor": "38w, 4L. Topic: \"API + mobile SDK"
+        }
+      },
+      "cards[].title": {
+        "maxWords": 4,
+        "method": "longest card title",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:258",
+          "anchor": "2. \"Real-Time Monitoring & Alerts\""
+        }
+      },
+      "cards[].description": {
+        "maxWords": 31,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:261",
+          "anchor": "28w/3L, 22w/3L, 21w/3L, 31w/4L"
+        }
+      },
+      "closing": {
+        "maxWords": 10,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:262",
+          "anchor": "- Closing line under the cards: bodyR, margin-top 32. 10w"
+        }
+      }
+    },
+    "integrations.devices": {
+      "title": {
+        "maxWords": 6,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:298",
+          "anchor": "2. Title: h2, margin-top 16. 6w"
+        }
+      },
+      "description": {
+        "maxWords": 40,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:299",
+          "anchor": "3. Description: bodyR, `width: 436; margin-top: 32; margin-bottom: 50`. 40w"
+        }
+      },
+      "deviceLists[].title": {
+        "maxWords": 2,
+        "method": "UI label",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:303",
+          "anchor": "Titles \"Bluetooth Devices\" and \"LTE Devices\"."
+        }
+      },
+      "deviceLists[].items[]": {
+        "maxWords": 3,
+        "method": "brand-name placeholder",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:305",
+          "anchor": "Use placeholder brand names with the same counts."
+        }
+      },
+      "slides[].title": {
+        "maxWords": 4,
+        "method": "slide label",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:334",
+          "anchor": "\"Medical Device Manufactures\" (sic)"
+        }
+      },
+      "slides[].text": {
+        "maxWords": 45,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:335",
+          "anchor": "3. `solutions-laptop-screen-dashboard.svg` / \"Health Tech Startups\" / 45w"
+        }
+      },
+      "sdkTitle": {
+        "maxWords": 6,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:307",
+          "anchor": "6. Title3: h3"
+        }
+      },
+      "sdkUses[]": {
+        "maxWords": 6,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:308",
+          "anchor": "7. Description list: a 2-item `ul`"
+        }
+      },
+      "callTitle": {
+        "maxWords": 4,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:309",
+          "anchor": "8. Call: h2"
+        }
+      },
+      "docsDescription": {
+        "maxWords": 24,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:311",
+          "anchor": "10. Description: bodyR, width 436"
+        }
+      },
+      "cta.label": {
+        "maxWords": 2,
+        "method": "button label",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:310",
+          "anchor": "9. Primary **\"Request Demo\"**"
+        }
+      },
+      "docsCta.label": {
+        "maxWords": 4,
+        "method": "button label",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:312",
+          "anchor": "11. Primary **\"SDK & API Documentation\"**"
+        }
+      }
+    },
+    "request-demo.panel": {
+      "title": {
+        "maxWords": 3,
+        "method": "UI label",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:374",
+          "anchor": "- Label \"Schedule a Demo\", 2 lines, 500×261"
+        }
+      },
+      "subtitle": {
+        "maxWords": 14,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:375",
+          "anchor": "- Subtitle `p`: h4 token (24/500/92%/-0.96), blue07, max-width 500. 14w"
+        }
+      },
+      "form.submitLabel": {
+        "maxWords": 2,
+        "method": "button label",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:434",
+          "anchor": "\"Submit Information\""
+        }
+      },
+      "form.referralOptions[]": {
+        "maxWords": 3,
+        "method": "longest option",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:427",
+          "anchor": "- Labels: \"LinkedIn\", \"Conference\", \"Word of Mouth/Referral\""
+        }
+      },
+      "successMessage": {
+        "maxWords": 11,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:438",
+          "anchor": "- Then a one-line confirmation (11w"
+        }
+      },
+      "errorMessage": {
+        "maxWords": 21,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:440",
+          "anchor": "- **Error state:** ErrorMessage above the form"
+        }
+      }
+    },
+    "legal.document": {
+      "title": {
+        "maxWords": 5,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:515",
+          "anchor": "- h1 5w"
+        }
+      },
+      "addressLines[]": {
+        "maxWords": 8,
+        "method": "longest address line in the placeholder data",
+        "evidence": {
+          "ref": "src/data/legal.js:76",
+          "anchor": "address: ['Attention: Privacy Office, Impilo Placeholder, Inc.'"
+        }
+      },
+      "intro[]": {
+        "maxWords": 42,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:485",
+          "anchor": "- p: 42w/2L and 33w/2L."
+        }
+      },
+      "sections[].title": {
+        "maxWords": 6,
+        "method": "range max 6w",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:486",
+          "anchor": "Each has a 1–6w title li"
+        }
+      },
+      "sections[].items[]": {
+        "maxWords": 58,
+        "method": "largest item (58w)",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:507",
+          "anchor": "3. 3 items (58/3, 30/2, 32/2)"
+        }
+      },
+      "items[].text": {
+        "maxWords": 58,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:521",
+          "anchor": "5. 58w with a 3-item `ul`"
+        }
+      },
+      "items[].sub[]": {
+        "maxWords": 18,
+        "method": "placeholder sub-item max",
+        "evidence": {
+          "ref": "src/data/legal.js:101",
+          "anchor": "sub: [t(14), t(18)]"
+        }
+      },
+      "items[].list[]": {
+        "maxWords": 7,
+        "method": "placeholder list item max",
+        "evidence": {
+          "ref": "src/data/legal.js:102",
+          "anchor": "list: [t(6), t(7), t(6)]"
+        }
+      }
+    },
+    "not-found.panel": {
+      "headingLines[]": {
+        "maxWords": 8,
+        "method": "10w total with a break after word 2 -> second line max 8",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:540",
+          "anchor": "10w in 4 lines (722×338.6), with a forced `<br>` after the first 2 words"
+        }
+      },
+      "cta.label": {
+        "maxWords": 4,
+        "method": "button label",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:541",
+          "anchor": "- Primary **\"Take You Back Home\"**"
+        }
+      }
+    },
+    "blog.index": {
+      "categories[]": {
+        "maxWords": 3,
+        "method": "longest category label",
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:68",
+          "anchor": "6. Built on Impilo"
+        }
+      },
+      "newsletter.title": {
+        "maxWords": 9,
+        "method": "UI copy word count",
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:190",
+          "anchor": "- Text: \"Get Impilo News and Updates right to your inbox.\""
+        }
+      }
+    },
+    "blog.post": {
+      "title": {
+        "maxWords": 17,
+        "method": "stated word count (Nw / A–Bw) on the cited spec line",
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:52",
+          "anchor": "- Title: 3–17 words, median 10."
+        }
+      },
+      "author": {
+        "maxWords": 3,
+        "method": "author string",
+        "evidence": {
+          "ref": "specs/BLOG_SPEC.md:56",
+          "anchor": "- Byline: `By {author}`."
+        }
+      },
+      "body[type=paragraph].text": {
+        "maxWords": 56,
+        "method": "longest placeholder paragraph measured from the clone data (56w)",
+        "evidence": {
+          "ref": "src/data/posts.js:38",
+          "anchor": "export const POSTS = ["
+        }
+      },
+      "body[type=heading-1].text": {
+        "maxWords": 6,
+        "method": "longest heading-1 in clone data (6w)",
+        "evidence": {
+          "ref": "src/data/posts.js:59",
+          "anchor": "h1(b('What changes when fulfillment is shared'))"
+        }
+      },
+      "body[type=heading-2].text": {
+        "maxWords": 6,
+        "method": "heading-2 max in clone data",
+        "evidence": {
+          "ref": "src/data/posts.js:113",
+          "anchor": "h2(b('Keep the device experience boring'))"
+        }
+      },
+      "body[type=blockquote].text": {
+        "maxWords": 15,
+        "method": "blockquote max in clone data (15w)",
+        "evidence": {
+          "ref": "src/data/posts.js:31",
+          "anchor": "const quote = (...content)"
+        }
+      },
+      "body[type=unordered-list].items[]": {
+        "maxWords": 18,
+        "method": "list item max in clone data (18w)",
+        "evidence": {
+          "ref": "src/data/posts.js:32",
+          "anchor": "const ul = (...items)"
+        }
+      },
+      "body[type=ordered-list].items[]": {
+        "maxWords": 18,
+        "method": "list item max in clone data (18w)",
+        "evidence": {
+          "ref": "src/data/posts.js:33",
+          "anchor": "const ol = (...items)"
+        }
+      },
+      "body[type=embedded-entry].title": {
+        "maxWords": 4,
+        "method": "FileDownload title",
+        "evidence": {
+          "ref": "src/data/posts.js:193",
+          "anchor": "download('Download the White Paper')"
+        }
+      }
+    },
+    "blog.related": {},
+    "info.intro": {
+      "title": {
+        "maxWords": 7,
+        "method": "longest clone-only title (7w)",
+        "evidence": {
+          "ref": "src/pages/Careers.jsx:33",
+          "anchor": "title=\"Help us build the future of connected care\""
+        }
+      },
+      "intro": {
+        "maxWords": 20,
+        "method": "longest clone-only intro (20w)",
+        "evidence": {
+          "ref": "src/pages/Developers.jsx:28",
+          "anchor": "intro=\"One set of tools"
+        }
+      }
+    },
+    "info.cards": {
+      "heading": {
+        "maxWords": 4,
+        "method": "longest heading",
+        "evidence": {
+          "ref": "src/pages/Developers.jsx:29",
+          "anchor": "cardsTitle=\"What you can build with\""
+        }
+      },
+      "cards[].title": {
+        "maxWords": 5,
+        "method": "longest card title",
+        "evidence": {
+          "ref": "src/pages/Developers.jsx:11",
+          "anchor": "title: 'SDKs for mobile and web',"
+        }
+      },
+      "cards[].text": {
+        "maxWords": 18,
+        "method": "longest card text (17-18w)",
+        "evidence": {
+          "ref": "src/pages/Developers.jsx:16",
+          "anchor": "text: 'Subscribe to shipment"
+        }
+      },
+      "roles[].title": {
+        "maxWords": 4,
+        "method": "role title",
+        "evidence": {
+          "ref": "src/pages/Careers.jsx:23",
+          "anchor": "title: 'Software Engineer, Integrations'"
+        }
+      }
+    }
+  },
+  "routeRenderCheck": "extraction/route-render-check.json"
+}

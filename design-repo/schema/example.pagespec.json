@@ -1,0 +1,105 @@
+{
+  "pageSpecVersion": "1.0.0",
+  "template": "content-page",
+  "route": "/use-cases/value-based-care/",
+  "meta": {
+    "title": "Impilo | Value-Based Care",
+    "description": "Example composition for the use-case flavour of template B. All body copy here is original placeholder text written for this design-repo."
+  },
+  "nodes": [
+    {
+      "section": "shell.header",
+      "content": { "cta": "shown" },
+      "motion": { "patterns": ["dropdown-slide", "mobile-menu-slide"], "reducedMotionFallback": "instant-open-close" }
+    },
+    {
+      "section": "content.hero",
+      "content": {
+        "title": "Remote Monitoring That Moves Value-Based Contracts Forward",
+        "subtitle": "Impilo supplies the connected devices, home logistics, data platform, and patient outreach that value-based teams need to keep members measured, engaged, and supported between visits.",
+        "subtitleVariant": "a",
+        "cta": { "label": "Request a Demo", "href": "/request-demo/" },
+        "stats": ["400k+ Patients Connected", "Healthcare-Grade Logistics", "API-First Platform"],
+        "contentWidth": 1000,
+        "mobileTitle": "h3"
+      },
+      "motion": { "patterns": ["text-reveal", "text-fade"], "reducedMotionFallback": "static-visible" }
+    },
+    {
+      "section": "content.section",
+      "variant": "light",
+      "content": {
+        "title": "Why Risk-Bearing Teams Rely on Impilo",
+        "blocks": [
+          {
+            "type": "textItems",
+            "columns": 2,
+            "items": [
+              { "title": "Members rarely report readings on their own", "text": "Cellular devices send each measurement automatically, so care managers see trends without chasing members for numbers." },
+              { "title": "Outreach teams are stretched thin", "text": "Our specialists handle setup calls, reminders, and troubleshooting, freeing your staff to focus on members who need clinical attention." },
+              { "title": "Supply logistics distract from care goals", "text": "We stock, pack, and ship kits nationwide, then manage returns and replacements without adding work for your operations team." },
+              { "title": "Data from different vendors never lines up", "text": "Readings arrive in one consistent format that feeds your reporting, attribution, and quality workflows." }
+            ]
+          },
+          { "type": "cta", "label": "See How It Works", "href": "/solutions/" }
+        ]
+      },
+      "motion": { "patterns": ["text-reveal"], "reducedMotionFallback": "static-visible" }
+    },
+    {
+      "section": "content.section",
+      "variant": "dark",
+      "content": {
+        "title": "Everything a Value-Based Program Needs to Monitor Members at Home",
+        "blocks": [
+          {
+            "type": "carousel",
+            "cards": [
+              { "subtitle": "Patient-Ready Devices & RPM Setup", "title": "Devices That Arrive Configured and Ready for the First Reading", "text": "Every kit is assembled, tested, and labeled before it ships, so members can start measuring the day it arrives." },
+              { "subtitle": "Monitoring & Patient Coordination Tools", "title": "One Workspace for Alerts, Outreach, and Time Tracking", "text": "Care teams review readings, message members, and log monitoring time in a single place built for program operations." },
+              { "subtitle": "At-Home Labs & Diagnostics", "title": "Lab Collection Kits Delivered and Returned Without Extra Effort", "text": "We coordinate shipping, instructions, and sample returns, then route results back to your team for follow-up." },
+              { "subtitle": "Data Connectivity & Intelligent Insights", "title": "Population Views That Highlight Members Who Need Attention", "text": "Standardized device data rolls up into trend views that help teams prioritize outreach across attributed populations." },
+              { "subtitle": "And Much More", "title": "From branded packaging to custom reporting, we shape services around the goals of your value-based program" }
+            ]
+          }
+        ]
+      },
+      "motion": { "patterns": ["text-reveal", "autoanimate-swap"], "reducedMotionFallback": "static-visible" }
+    },
+    {
+      "section": "content.section",
+      "variant": "light",
+      "content": {
+        "title": "Results Value-Based Teams Can Expect",
+        "blocks": [
+          {
+            "type": "outcomes",
+            "items": [
+              "Higher monitoring adherence through ready-to-use devices and proactive member support.",
+              "Earlier visibility into rising risk with consistent, timely readings from every member.",
+              "Lower operating overhead by consolidating devices, logistics, and outreach with one partner.",
+              "Cleaner reporting for quality programs thanks to standardized data across device vendors.",
+              "More time for clinicians to focus on members who need hands-on care."
+            ]
+          },
+          { "type": "cta", "label": "Talk to Our Team", "href": "mailto:sales@impilo.health" }
+        ]
+      },
+      "motion": { "patterns": ["text-reveal"], "reducedMotionFallback": "static-visible" }
+    },
+    {
+      "section": "content.section",
+      "variant": "dark",
+      "content": {
+        "title": "Ready to Strengthen Your Value-Based Care Program?",
+        "blocks": [{ "type": "cta", "label": "Request a Demo", "href": "/request-demo/" }]
+      },
+      "motion": { "patterns": ["text-reveal"], "reducedMotionFallback": "static-visible" }
+    },
+    {
+      "section": "shell.footer",
+      "content": {},
+      "motion": { "patterns": ["footer-lines-pointer", "pill-wipe-loop"], "reducedMotionFallback": "static-lines" }
+    }
+  ]
+}

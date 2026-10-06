@@ -1,0 +1,234 @@
+{
+  "id": "solutions.platform",
+  "category": "feature",
+  "purpose": "blue02 panel: logo, title, description, CONTROLLED laptop carousel (SolutionsLaptop), 4 snippets, call title + 2 buttons.",
+  "implementedBy": [
+    {
+      "ref": "src/components/solutions/Platform.jsx:54",
+      "anchor": "export default function Platform"
+    }
+  ],
+  "templates": [
+    "solutions-overview"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "slides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "screen": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "product.ui-mock"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "screen",
+              "title",
+              "text"
+            ]
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "snippets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "link": {
+                "$ref": "#/definitions/link"
+              }
+            },
+            "required": [
+              "title",
+              "text"
+            ]
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "callTitle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ctas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "slides",
+        "snippets",
+        "callTitle",
+        "ctas"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:365",
+          "anchor": "\"Meet the Platform\" (3 words, 1 line)"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "description": {
+        "maxWords": 21,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:222",
+          "anchor": "- 21 words, 3 lines"
+        },
+        "method": "stated 21 words"
+      },
+      "slides[].title": {
+        "maxWords": 6,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:384",
+          "anchor": "- PanelTitle: bodyXL white; 4–6 words, 2 lines."
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "slides[].text": {
+        "maxWords": 33,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:385",
+          "anchor": "- PanelText: bodyM blue07, `width: 398`; 31–33 words, 3 lines."
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "snippets[].title": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:420",
+          "anchor": "- SnippetTitle: bodyR, brightTurquoise"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "snippets[].text": {
+        "maxWords": 24,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:421",
+          "anchor": "- SnippetText: bodyM white; 14–24 words, 3 lines."
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "callTitle": {
+        "maxWords": 8,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:428",
+          "anchor": "- 8 words, 2 lines (4 at 390)"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "ctas[].label": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:433",
+          "anchor": "Primary **\"Explore DIY RPM Solutions\"**"
+        },
+        "method": "button label"
+      }
+    }
+  },
+  "assets": [
+    "product.ui-mock",
+    "brand.logo",
+    "icon.ui"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "laptop-lid-scrub",
+      "autoanimate-swap",
+      "text-reveal"
+    ],
+    "reducedMotionFallback": "static-open"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Flex column; laptop shown.",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:359",
+          "anchor": "Tablet: flex column, centered, padding-bottom 148."
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "No laptop: 3 static panels.",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:406",
+          "anchor": "The laptop is not rendered. `Panels` becomes a flex column of 3 static panels."
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.blue02",
+    "color.brightTurquoise",
+    "radius.11"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:354",
+      "anchor": "### 1.4 Platform (`sc-04-Platform__Wrapper`)"
+    },
+    {
+      "ref": "src/components/solutions/Platform.jsx:43",
+      "anchor": "UniversalLink href=\"/developers/\""
+    }
+  ],
+  "variants": []
+}

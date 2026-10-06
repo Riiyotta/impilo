@@ -1,0 +1,90 @@
+{
+  "id": "shell.header",
+  "category": "shell",
+  "purpose": "Global navigation on blue05: logo, two dropdowns (solutions, who-we-serve), internal links, Request Demo CTA; hamburger + dialog menu on mobile. Not sticky.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Header.jsx:270",
+      "anchor": "export default function Header"
+    }
+  ],
+  "templates": "*",
+  "constraints": {
+    "onePerPage": true,
+    "mustBeFirst": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cta": {
+          "enum": [
+            "shown",
+            "hidden"
+          ]
+        }
+      },
+      "required": [
+        "cta"
+      ]
+    },
+    "maxWords": {},
+    "notes": "Nav items are fixed site chrome (not authored per page). 'cta: hidden' only on /request-demo/ (rule HEADER_CTA_VARIANT)."
+  },
+  "assets": [
+    "brand.logo",
+    "icon.ui"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "dropdown-slide",
+      "mobile-menu-slide",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-open-close"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "All items stay on one row; link text 10.5px at 768.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:227",
+          "anchor": "all items still on one row"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Logo + hamburger; links move to a Radix-style dialog menu.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:229",
+          "anchor": "### 1.2 Mobile (≤500px)"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "fixedPx.navTriggerGap",
+    "fixedPx.navChevronWidth",
+    "fixedPx.navDropdownRadius",
+    "elevation.dropdown",
+    "zIndex.navDropdown",
+    "zIndex.mobileMenu"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:183",
+      "anchor": "### 1.1 Desktop and tablet"
+    },
+    {
+      "ref": "src/styles/pages.css:157",
+      "anchor": "[data-route='request-demo'] header nav > .btn-primary { display: none; }"
+    },
+    {
+      "ref": "src/components/Header.jsx:37",
+      "anchor": "{ label: 'Docs', href: '/developers/' },"
+    }
+  ],
+  "variants": []
+}

@@ -1,0 +1,178 @@
+{
+  "id": "home.how-it-works",
+  "category": "feature",
+  "purpose": "Four pinned steps on blue01: numbered text block (alternating blue/green highlights) + framed animated illustration.",
+  "implementedBy": [
+    {
+      "ref": "src/components/HowItWorks.jsx:212",
+      "anchor": "export default function HowItWorks"
+    }
+  ],
+  "templates": [
+    "home"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "homeRouteOnly": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "highlights": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "maxItems": 3
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "accent": {
+                "enum": [
+                  "blue",
+                  "green"
+                ]
+              },
+              "link": {
+                "$ref": "#/definitions/link"
+              },
+              "illustration": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "illustration.line-art",
+                          "product.ui-mock"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "title",
+              "highlights",
+              "description",
+              "accent",
+              "illustration"
+            ]
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "steps"
+      ]
+    },
+    "maxWords": {
+      "steps[].title": {
+        "maxWords": 13,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:471",
+          "anchor": "- Title: \"Our specialists"
+        },
+        "method": "max word count over the 4 quoted step titles (lines 462-475)"
+      },
+      "steps[].highlights[]": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:471",
+          "anchor": "**data to support**"
+        },
+        "method": "longest highlighted span ('data to support')"
+      },
+      "steps[].description": {
+        "maxWords": 38,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:472",
+          "anchor": "- Description: \"Our team approaches"
+        },
+        "method": "max word count over the 4 quoted step descriptions"
+      },
+      "steps[].link.label": {
+        "maxWords": 5,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:468",
+          "anchor": "blue Link \"Learn more about Our Solutions\""
+        },
+        "method": "link label"
+      }
+    }
+  },
+  "assets": [
+    "illustration.line-art",
+    "product.ui-mock",
+    "icon.ui",
+    "decorative.raster"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "step-pin-sequence",
+      "illustration-intro",
+      "float-loop",
+      "counter-roll"
+    ],
+    "reducedMotionFallback": "static-stacked"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Single column; no step pins; whole section pinned at its bottom so the white section slides over.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:531",
+          "anchor": "No step pins. Instead, the whole section is pinned at its bottom"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Single column; illustrations scaled .5/.55/.62/.51 and cropped.",
+        "evidence": {
+          "ref": "src/index.css:680",
+          "anchor": ".scaled-inner { scale: var(--mobile-scale, 1); }"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.blue01",
+    "color.stepBorder",
+    "fixedPx.stepTopbarPaddingBottom",
+    "elevation.stepIcon",
+    "radius.32",
+    "fixedPx.pseudoBoxPadding"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:433",
+      "anchor": "## 4. Section 3: How It Works"
+    },
+    {
+      "ref": "src/animations/howItWorks.js:128",
+      "anchor": "export function initHowItWorks"
+    }
+  ],
+  "variants": []
+}

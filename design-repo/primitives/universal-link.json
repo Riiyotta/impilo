@@ -1,0 +1,41 @@
+{
+  "id": "universal-link",
+  "name": "UniversalLink",
+  "purpose": "Routing primitive and the enforcement point of the NO-OUTBOUND-LINKS rule: '/...' hrefs navigate with the slide page transition; mailto:/tel: render a plain <a>. No other href kind exists in the clone.",
+  "implementedBy": [
+    {
+      "ref": "src/components/shared/UniversalLink.jsx:11",
+      "anchor": "export default function UniversalLink"
+    }
+  ],
+  "tokens": [
+    "motion.duration.pageTransition"
+  ],
+  "props": {
+    "href": "LinkHref",
+    "children": "inline content"
+  },
+  "linkPolicy": {
+    "allowed": [
+      "internal-route",
+      "mailto",
+      "tel"
+    ],
+    "forbidden": [
+      "http(s) to any domain",
+      "protocol-relative //",
+      "javascript:"
+    ],
+    "rule": "NO_OUTBOUND_LINKS"
+  },
+  "evidence": [
+    {
+      "ref": "src/components/shared/UniversalLink.jsx:4",
+      "anchor": "export const isInternal"
+    }
+  ],
+  "kind": "primitive",
+  "variants": [],
+  "motion": [],
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

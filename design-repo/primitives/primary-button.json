@@ -1,0 +1,45 @@
+{
+  "id": "primary-button",
+  "name": "PrimaryButton / PrimaryAction",
+  "purpose": "The single primary call to action: two nested rounded layers, label rolls up on hover.",
+  "implementedBy": [
+    {
+      "ref": "src/components/shared/PrimaryButton.jsx:8",
+      "anchor": "export default function PrimaryButton"
+    },
+    {
+      "ref": "src/components/shared/PrimaryAction.jsx:23",
+      "anchor": "export default function PrimaryAction"
+    }
+  ],
+  "tokens": [
+    "component.button.primary",
+    "semantic.color.action.primaryOuter",
+    "semantic.color.action.primaryOuterHover",
+    "semantic.color.action.primaryInnerHover",
+    "motion.duration.hoverColor",
+    "motion.duration.labelRoll"
+  ],
+  "props": {
+    "label": "string, 1-5 words (UI label)",
+    "href": "LinkHref (internal route | mailto: | tel:)",
+    "type": "'link' | 'submit' (submit only inside a local-fake form)"
+  },
+  "states": {
+    "hover": "outer lavender03, inner lavender05, label translateY(-200%) .25s"
+  },
+  "evidence": [
+    {
+      "ref": "src/index.css:190",
+      "anchor": ".btn-primary:hover .btn-primary__label"
+    },
+    {
+      "ref": "CLONE_SPEC.md:105",
+      "anchor": "**Primary button**"
+    }
+  ],
+  "kind": "primitive",
+  "variants": [],
+  "motion": [],
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

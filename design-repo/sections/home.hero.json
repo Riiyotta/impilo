@@ -1,0 +1,166 @@
+{
+  "id": "home.hero",
+  "category": "hero",
+  "purpose": "Homepage hero: 2-line title with a rotating 1-word box, short description, isometric line art and the dashboard that zoom-pins to full size.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Hero.jsx:91",
+      "anchor": "export default function Hero"
+    }
+  ],
+  "templates": [
+    "home"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "homeRouteOnly": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "titleLines": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "rotatingWords": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "illustration": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/media"
+            },
+            {
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "illustration.line-art"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "interface": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/media"
+            },
+            {
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "product.ui-mock"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "titleLines",
+        "rotatingWords",
+        "description",
+        "illustration",
+        "interface"
+      ]
+    },
+    "maxWords": {
+      "titleLines[]": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:283",
+          "anchor": "- Text: \"Making at home\""
+        },
+        "method": "word count of quoted string #0 on the cited spec line"
+      },
+      "rotatingWords[]": {
+        "maxWords": 1,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:294",
+          "anchor": "\"manageable.\" → \"powerful.\" → \"easy.\" → \"personalized.\""
+        },
+        "method": "each rotating item is one word"
+      },
+      "description": {
+        "maxWords": 10,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:296",
+          "anchor": "- Text: \"Remote care logistics"
+        },
+        "method": "word count of quoted string #0 on the cited spec line"
+      }
+    }
+  },
+  "assets": [
+    "illustration.line-art",
+    "product.ui-mock"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "hero-zoom-pin",
+      "scroll-fade",
+      "word-rotator",
+      "path-travel-loop",
+      "pointer-parallax",
+      "counter-roll"
+    ],
+    "reducedMotionFallback": "static-final-frame"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Columns 1fr 633u; dashboard overflows right; counter scaled .69.",
+        "evidence": {
+          "ref": "src/index.css:492",
+          "anchor": ".hero { gap: calc(var(--u) * 46); grid-template-columns: 1fr calc(var(--u) * 633); }"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "One column (content, illustration, interface); centred h3-size title; no zoom, no fade, counter hidden.",
+        "evidence": {
+          "ref": "src/index.css:503",
+          "anchor": "grid-template-areas: 'content' 'illustration' 'interface';"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "typography.style.h2",
+    "typography.style.h1",
+    "color.brightTurquoise",
+    "fixedPx.heroWordBoxRadius",
+    "color.interfaceCounter"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:271",
+      "anchor": "## 2. Section 1: Hero"
+    },
+    {
+      "ref": "src/animations/hero.js:75",
+      "anchor": "export function initHero"
+    }
+  ],
+  "variants": []
+}

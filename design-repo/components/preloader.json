@@ -1,0 +1,34 @@
+{
+  "id": "preloader",
+  "name": "Preloader",
+  "composes": [
+    "icon"
+  ],
+  "purpose": "First-load counter 00->99 on an isometric graphic, exits with yPercent 120 + rounded top.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Preloader.jsx:9",
+      "anchor": "export default function Preloader"
+    },
+    {
+      "ref": "src/animations/preloader.js:38",
+      "anchor": "export function initPreloader"
+    }
+  ],
+  "tokens": [
+    "zIndex.pageTransition",
+    "color.blue02",
+    "color.brightBlue",
+    "typography.style.kicker-s"
+  ],
+  "motion": [
+    "preloader-exit"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:165",
+      "anchor": "### 0.7 Preloader (first load)"
+    }
+  ],
+  "kind": "component"
+}

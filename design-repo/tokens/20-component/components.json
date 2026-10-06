@@ -1,0 +1,217 @@
+{
+  "component": {
+    "button": {
+      "primary": {
+        "$type": "component",
+        "$value": {
+          "outer": "{semantic.color.action.primaryOuter}",
+          "outerPadding": 8,
+          "inner": "{color.silver05}",
+          "innerPadding": "15 30",
+          "label": "{color.blue02}",
+          "radius": "{radius.pill}",
+          "shadow": "{elevation.buttonPrimaryInner}",
+          "type": "{typography.style.body-l}"
+        },
+        "$description": "Primary button (two rounded layers, label rolls on hover).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:154",
+              "anchor": ".btn-primary {"
+            },
+            {
+              "ref": "src/index.css:162",
+              "anchor": ".btn-primary__inner {"
+            }
+          ]
+        }
+      },
+      "readArticle": {
+        "$type": "component",
+        "$value": {
+          "border": "2px {color.blue01}",
+          "radius": "{fixedPx.readArticleRadius}",
+          "padding": "12 24",
+          "hoverBg": "{color.blue01}",
+          "hoverText": "{color.silver05}"
+        },
+        "$description": "Homepage carousel outlined link button.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/components/Articles.jsx:57",
+              "anchor": "rounded-[8px]"
+            }
+          ]
+        }
+      },
+      "textArrow": {
+        "$type": "component",
+        "$value": {
+          "padding": "11 22",
+          "radius": "{radius.pill}",
+          "shadow": "{elevation.roundControl}",
+          "type": "{typography.style.body-m}",
+          "hoverText": "{color.brightGreen}"
+        },
+        "$description": "Blog TextArrowButton (also the category-pill shape).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "specs/BLOG_SPEC.md:143",
+              "anchor": "**TextArrowButton** (new shared component"
+            }
+          ]
+        }
+      },
+      "roundArrow": {
+        "$type": "component",
+        "$value": {
+          "size": 35,
+          "bg": "{color.silver05}",
+          "shadow": "{elevation.roundControl}",
+          "chevron": 7
+        },
+        "$description": "Round white chevron buttons (quotes, capabilities carousel).",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/index.css:792",
+              "anchor": ".quote-arrow {"
+            },
+            {
+              "ref": "specs/SOLUTIONS_USECASES_SPEC.md:630",
+              "anchor": "**ArrowButton** (`Arrow__Wrapper`"
+            }
+          ]
+        }
+      }
+    },
+    "pill": {
+      "$type": "component",
+      "$value": {
+        "bg": "{color.blue01}",
+        "whiteVariantBg": "{color.silver05}",
+        "size": "{iconSize.pill}"
+      },
+      "$description": "Pulse-logo pill; white variant on blue sections.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "src/index.css:224",
+            "anchor": ".pill {"
+          },
+          {
+            "ref": "specs/COMPANY_PAGES_SPEC.md:47",
+            "anchor": "**Pill, white variant**"
+          }
+        ]
+      }
+    },
+    "field": {
+      "$type": "component",
+      "$value": {
+        "height": 66,
+        "radius": 12,
+        "border": "{semantic.color.border.field}",
+        "borderHover": "{semantic.color.border.fieldHover}",
+        "borderInvalid": "{semantic.color.border.fieldInvalid}",
+        "bg": "{color.blue02}",
+        "text": "{color.silver05}",
+        "placeholder": "{color.blue07}",
+        "type": "{typography.style.h4}",
+        "message": "{typography.style.kicker-s}"
+      },
+      "$description": "Dark form field (request-demo, file-download).",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "specs/COMPANY_PAGES_SPEC.md:402",
+            "anchor": "**Input__Field** (wrapper):"
+          },
+          {
+            "ref": "src/styles/pages.css:164",
+            "anchor": "border: 1px solid var(--blue03);"
+          }
+        ]
+      }
+    },
+    "card": {
+      "bordered": {
+        "$type": "component",
+        "$value": {
+          "bg": "{semantic.color.surface.card}",
+          "border": "{semantic.color.border.card}",
+          "radius": "{radius.24}",
+          "padding": 40
+        },
+        "$description": "Template-B bordered/icon cards.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/components/content/Grids.jsx:16",
+              "anchor": "const CARD ="
+            }
+          ]
+        }
+      },
+      "capability": {
+        "$type": "component",
+        "$value": {
+          "bg": "{color.blue02}",
+          "border": "{color.lavender04}",
+          "radius": "{radius.24}",
+          "padding": 48,
+          "minHeight": 280,
+          "maxWidth": 800
+        },
+        "$description": "Capabilities carousel card.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/components/content/CapabilitiesCarousel.jsx:42",
+              "anchor": "u-max-w-[800] u-min-h-[280] u-p-[48] u-rounded-[24]"
+            }
+          ]
+        }
+      },
+      "blogSmall": {
+        "$type": "component",
+        "$value": {
+          "imageRadius": "{radius.16}",
+          "aspect": "290/210",
+          "title": "{typography.style.body-r}",
+          "lineClamp": 3
+        },
+        "$description": "Blog SmallCard.",
+        "$extensions": {
+          "evidence": [
+            {
+              "ref": "src/components/blog/SmallCard.jsx:19",
+              "anchor": "aspect-[290/210]"
+            }
+          ]
+        }
+      }
+    },
+    "carouselDot": {
+      "$type": "component",
+      "$value": {
+        "size": 12,
+        "radius": "{radius.circle}",
+        "activeOnDark": "{color.silver05}",
+        "inactiveOnDark": "{color.blue03}"
+      },
+      "$description": "Capabilities carousel dots.",
+      "$extensions": {
+        "evidence": [
+          {
+            "ref": "specs/SOLUTIONS_USECASES_SPEC.md:639",
+            "anchor": "Dot `<button>`: 12x12"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "bordered-card-grid",
+  "name": "BorderedCardGrid",
+  "composes": [],
+  "purpose": "Left-aligned bordered cards, 3 or 4 columns, optional dark/compact.",
+  "implementedBy": [
+    {
+      "ref": "src/components/content/Grids.jsx:24",
+      "anchor": "export function BorderedCardGrid"
+    }
+  ],
+  "tokens": [
+    "component.card.bordered",
+    "layout.contentGridMax"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:573",
+      "anchor": "| **BorderedCardGrid** (`CardGrid`, left)"
+    }
+  ],
+  "kind": "component",
+  "motion": []
+}

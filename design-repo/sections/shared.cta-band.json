@@ -1,0 +1,98 @@
+{
+  "id": "shared.cta-band",
+  "category": "conversion",
+  "purpose": "Closing CTA band (big centred title + one primary button). Homepage close; reused by the clone-only info pages with their own title/button.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Cta.jsx:7",
+      "anchor": "export default function Cta"
+    }
+  ],
+  "templates": [
+    "home",
+    "info-page"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustPrecedeFooter": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cta": {
+          "$ref": "#/definitions/link"
+        }
+      },
+      "required": [
+        "title",
+        "cta"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 12,
+        "evidence": {
+          "ref": "src/pages/Careers.jsx:38",
+          "anchor": "title: 'Don’t see your role? We would still like to hear from you',"
+        },
+        "method": "longest observed use (careers info page, 12 words; homepage 8)"
+      },
+      "cta.label": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "src/pages/Developers.jsx:31",
+          "anchor": "buttonLabel: 'Explore Our Integrations'"
+        },
+        "method": "longest observed button label"
+      }
+    }
+  },
+  "assets": [],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Padding 250/50/200.",
+        "evidence": {
+          "ref": "src/components/Cta.jsx:14",
+          "anchor": "tab:u-pb-[200] tab:u-pt-[250] tab:u-px-[50]"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Title h3, 4 lines.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:693",
+          "anchor": "**Mobile:** `padding: 40vw 4vw 30.667vw`; title 47.84px (4 lines)"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "typography.style.h2",
+    "layout.sectionPadding.ctaBand"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:683",
+      "anchor": "## 10. Section 8: CTA"
+    },
+    {
+      "ref": "src/components/Cta.jsx:4",
+      "anchor": "Props default to the homepage copy; other pages reuse the"
+    }
+  ],
+  "variants": []
+}

@@ -1,0 +1,617 @@
+{
+  "id": "content.section",
+  "category": "content",
+  "variants": [
+    "light",
+    "dark"
+  ],
+  "purpose": "Flat full-bleed template-B section: centred h2 title (+ optional subtitle) and 1-2 blocks. Light = silver05/blue01 text; dark = blue01/white text. DELIBERATE DEVIATION: dark titles are white on DHL and clinic-rpm (the original renders an invisible blue-on-blue title there).",
+  "implementedBy": [
+    {
+      "ref": "src/components/content/ContentSection.jsx:7",
+      "anchor": "export function ContentSection"
+    },
+    {
+      "ref": "src/pages/ContentPage.jsx:18",
+      "anchor": "function Block({ block, dark })"
+    }
+  ],
+  "templates": [
+    "content-page"
+  ],
+  "constraints": {
+    "minPerPage": 3,
+    "maxPerPage": 4
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subtitle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tight": {
+          "type": "boolean"
+        },
+        "noPadTitle": {
+          "type": "boolean"
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/definitions/block_borderedCards"
+              },
+              {
+                "$ref": "#/definitions/block_iconCards"
+              },
+              {
+                "$ref": "#/definitions/block_textItems"
+              },
+              {
+                "$ref": "#/definitions/block_twoColumn"
+              },
+              {
+                "$ref": "#/definitions/block_outcomes"
+              },
+              {
+                "$ref": "#/definitions/block_carousel"
+              },
+              {
+                "$ref": "#/definitions/block_cta"
+              },
+              {
+                "$ref": "#/definitions/block_callToAction"
+              }
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "title",
+        "blocks"
+      ]
+    },
+    "blockSchemas": {
+      "borderedCards": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "borderedCards"
+          },
+          "columns": {
+            "enum": [
+              3,
+              4
+            ]
+          },
+          "compact": {
+            "type": "boolean"
+          },
+          "dark": {
+            "type": "boolean"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            },
+            "minItems": 3,
+            "maxItems": 4
+          }
+        },
+        "required": [
+          "type",
+          "columns",
+          "items"
+        ]
+      },
+      "iconCards": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "iconCards"
+          },
+          "columns": {
+            "enum": [
+              2,
+              3
+            ]
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "icon": {
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/media"
+                    },
+                    {
+                      "properties": {
+                        "assetRole": {
+                          "enum": [
+                            "icon.ui",
+                            "illustration.line-art",
+                            "compliance.badge"
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "icon",
+                "title",
+                "text"
+              ]
+            },
+            "minItems": 3,
+            "maxItems": 4
+          }
+        },
+        "required": [
+          "type",
+          "columns",
+          "items"
+        ]
+      },
+      "textItems": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "textItems"
+          },
+          "columns": {
+            "enum": [
+              2,
+              3
+            ]
+          },
+          "maxWidth": {
+            "const": 1000
+          },
+          "centerLast": {
+            "type": "boolean"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            },
+            "minItems": 2,
+            "maxItems": 6
+          }
+        },
+        "required": [
+          "type",
+          "columns",
+          "items"
+        ]
+      },
+      "twoColumn": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "twoColumn"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "headline": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "title",
+                      "text"
+                    ]
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                }
+              },
+              "required": [
+                "headline",
+                "items"
+              ]
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "required": [
+          "type",
+          "columns"
+        ]
+      },
+      "outcomes": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "outcomes"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 5,
+            "maxItems": 7
+          }
+        },
+        "required": [
+          "type",
+          "items"
+        ]
+      },
+      "carousel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "carousel"
+          },
+          "cards": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "subtitle": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "subtitle",
+                "title"
+              ]
+            },
+            "minItems": 4,
+            "maxItems": 5
+          }
+        },
+        "required": [
+          "type",
+          "cards"
+        ]
+      },
+      "cta": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "cta"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "href": {
+            "$ref": "#/definitions/href"
+          },
+          "flush": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "type",
+          "label",
+          "href"
+        ]
+      },
+      "callToAction": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "callToAction"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "href": {
+            "$ref": "#/definitions/href"
+          },
+          "light": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "type",
+          "label",
+          "href"
+        ]
+      }
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 12,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:667",
+          "anchor": "| virtual-care-companies |"
+        },
+        "method": "longest section title (VCC section 2: 12w / 3l)"
+      },
+      "subtitle": {
+        "maxWords": 7,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:680",
+          "anchor": "SectionSubtitle 7w"
+        },
+        "method": "impilo-platform SectionSubtitle 7w"
+      },
+      "blocks[type=borderedCards].items[].title": {
+        "maxWords": 5,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:680",
+          "anchor": "3 cards (3–5w / 19–23w)"
+        },
+        "method": "range max 5w"
+      },
+      "blocks[type=borderedCards].items[].text": {
+        "maxWords": 25,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:683",
+          "anchor": "4 cards (3–4w / 18–25w"
+        },
+        "method": "range max 25w"
+      },
+      "blocks[type=iconCards].items[].title": {
+        "maxWords": 7,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:682",
+          "anchor": "(icons ISO, warehouse, truck; 4–7w / 15–21w"
+        },
+        "method": "range max 7w"
+      },
+      "blocks[type=iconCards].items[].text": {
+        "maxWords": 40,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:685",
+          "anchor": "(icons api, chat, ISO; 3–5w / 26–40w"
+        },
+        "method": "range max 40w"
+      },
+      "blocks[type=textItems].items[].title": {
+        "maxWords": 12,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:671",
+          "anchor": "| value-based-care |"
+        },
+        "method": "WhyChoose range max (8–12w)"
+      },
+      "blocks[type=textItems].items[].text": {
+        "maxWords": 25,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:668",
+          "anchor": "| physicians-and-provider-groups |"
+        },
+        "method": "WhyChoose range max (15–25w)"
+      },
+      "blocks[type=twoColumn].columns[].headline": {
+        "maxWords": 7,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:680",
+          "anchor": "a headline (6–7w)"
+        },
+        "method": "range max 7w"
+      },
+      "blocks[type=twoColumn].columns[].items[].title": {
+        "maxWords": 5,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:680",
+          "anchor": "+ 2 items (3–5w / 17–24w)"
+        },
+        "method": "range max 5w"
+      },
+      "blocks[type=twoColumn].columns[].items[].text": {
+        "maxWords": 24,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:680",
+          "anchor": "+ 2 items (3–5w / 17–24w)"
+        },
+        "method": "range max 24w"
+      },
+      "blocks[type=outcomes].items[]": {
+        "maxWords": 18,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:668",
+          "anchor": "| physicians-and-provider-groups |"
+        },
+        "method": "outcomes range max (11–18w)"
+      },
+      "blocks[type=carousel].cards[].subtitle": {
+        "maxWords": 6,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:622",
+          "anchor": "- 3–6 words; short labels, recorded per route below"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "blocks[type=carousel].cards[].title": {
+        "maxWords": 17,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:625",
+          "anchor": "- 6–17 words, 2–6 lines"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "blocks[type=carousel].cards[].text": {
+        "maxWords": 32,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:628",
+          "anchor": "- 15–32 words, 2 lines"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "blocks[type=cta].label": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:652",
+          "anchor": "(\"See How Impilo Works\" on VCC"
+        },
+        "method": "longest CTA label"
+      },
+      "blocks[type=callToAction].text": {
+        "maxWords": 23,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:586",
+          "anchor": "- Optional paragraph: bodyR, TextAnimation fade, 19–23 words"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "blocks[type=callToAction].label": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:684",
+          "anchor": "CallToAction (23w paragraph + \"Schedule a Demo\")"
+        },
+        "method": "button label"
+      }
+    }
+  },
+  "assets": [
+    "icon.ui",
+    "illustration.line-art",
+    "compliance.badge"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal",
+      "text-fade",
+      "autoanimate-swap"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "3/4-column grids become 2 columns; carousel inner padding 0 80; grid title margins stay raw px.",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:711",
+          "anchor": "3-column grids (`CardGrid`, `Services`/`Benefits`/`Features` with 3 cols"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Grids 1 column (gap 32, padding 0 24); title h3; padding 80 0.",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:568",
+          "anchor": "mobile `grid-template-columns: 1fr; padding: 0 24; gap: 32`"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "semantic.typography.sectionTitle",
+    "semantic.color.surface.dark",
+    "semantic.color.surface.panel",
+    "layout.contentGridMax",
+    "fixedPx.outcomesBulletIndent",
+    "fixedPx.contentGridTabletTitleMargins"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:549",
+      "anchor": "**Section** (`__Section`)"
+    },
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:697",
+      "anchor": "**Bug note:** on DHL and clinic-rpm"
+    },
+    {
+      "ref": "src/components/content/ContentSection.jsx:16",
+      "anchor": "dark ? 'text-silver05' : 'text-blue01'"
+    }
+  ]
+}

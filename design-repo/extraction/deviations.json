@@ -1,0 +1,290 @@
+{
+  "$description": "Structurally unusual facts, documented explicitly instead of normalised away.",
+  "items": [
+    {
+      "id": "NO_OUTBOUND_LINKS",
+      "kind": "user-constraint",
+      "summary": "No link may point to an external domain; only internal routes, mailto: and tel:. Docs -> /developers/, Careers -> /careers/, partner logos non-clickable, LinkedIn removed, blog share buttons non-navigating (Copy Link works). Forms fake submission locally with no network requests.",
+      "enforcedBy": [
+        "schema definitions.href pattern",
+        "rule NO_OUTBOUND_LINKS",
+        "rule FORMS_LOCAL_ONLY",
+        "adversarial cases external_href_*, form_network_submission"
+      ],
+      "evidence": [
+        {
+          "ref": "src/components/Header.jsx:45",
+          "anchor": "{ label: 'Careers', href: '/careers/' },"
+        },
+        {
+          "ref": "src/components/blog/Share.jsx:11",
+          "anchor": "Facebook do NOT open external share URLs"
+        },
+        {
+          "ref": "src/components/Trusted.jsx:36",
+          "anchor": "role=\"img\""
+        },
+        {
+          "ref": "src/index.css:841",
+          "anchor": "the LinkedIn link was removed by request"
+        }
+      ]
+    },
+    {
+      "id": "CLONE_ONLY_ROUTES",
+      "kind": "structural",
+      "summary": "/developers/ and /careers/ do not exist on the original; they replace the external Docs/Careers links. Template info-page is origin 'clone-only'.",
+      "evidence": [
+        {
+          "ref": "src/pages/Developers.jsx:4",
+          "anchor": "internal replacement for the external \"Docs\" link"
+        },
+        {
+          "ref": "src/pages/Careers.jsx:4",
+          "anchor": "internal replacement for the external careers subdomain"
+        }
+      ]
+    },
+    {
+      "id": "BLOG_SCOPE_REDUCTION",
+      "kind": "scope",
+      "summary": "Blog has 6 placeholder posts (original: 148 incl. 1 schema post) and 7 categories (original 10). Deliberate; do not recreate the full set.",
+      "evidence": [
+        {
+          "ref": "specs/BLOG_SPEC.md:45",
+          "anchor": "The sitemap lists 148 posts."
+        },
+        {
+          "ref": "src/data/posts.js:277",
+          "anchor": "export const CATEGORIES"
+        }
+      ]
+    },
+    {
+      "id": "REAL_COMPANY_LICENSING",
+      "kind": "licensing",
+      "summary": "Impilo is a real company. Gilroy is a commercial font licensed to Impilo; homepage copy, illustrations, logos (incl. partner logos and HIPAA/SOC2/ISO/HQAA/FDA badges), staff photos (real people) and blog covers (stock/news imagery) are third-party. Non-homepage body copy is original placeholder text. See assets/asset-roles.json.",
+      "evidence": [
+        {
+          "ref": "src/index.css:9",
+          "anchor": "font-family: 'Gilroy';"
+        },
+        {
+          "ref": "src/data/contentPages.js:2",
+          "anchor": "Copy is original placeholder text written to"
+        }
+      ]
+    },
+    {
+      "id": "DARK_TITLE_WHITE",
+      "kind": "intentional-deviation",
+      "summary": "Dark-section titles on /solutions/digital-health-logistics/ and /solutions/clinic-rpm/ render white; the original renders blue01-on-blue01 (invisible).",
+      "evidence": [
+        {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:697",
+          "anchor": "**Bug note:** on DHL and clinic-rpm"
+        },
+        {
+          "ref": "src/components/content/ContentSection.jsx:16",
+          "anchor": "dark ? 'text-silver05' : 'text-blue01'"
+        }
+      ]
+    },
+    {
+      "id": "TWO_LAPTOP_COMPONENTS",
+      "kind": "structural",
+      "summary": "shared/LaptopShowcase.jsx (/integrations/) and solutions/SolutionsLaptop.jsx (/solutions/) are deliberately separate: title wrapping, heading level, screen-size animation, controlled vs uncontrolled state, mobile layout and animation hooks differ.",
+      "evidence": [
+        {
+          "ref": "src/components/shared/LaptopShowcase.jsx:12",
+          "anchor": "export default function LaptopShowcase({ slides })"
+        },
+        {
+          "ref": "src/components/solutions/SolutionsLaptop.jsx:11",
+          "anchor": "export default function SolutionsLaptop({ slides, active, onPrev, onNext })"
+        }
+      ]
+    },
+    {
+      "id": "NATIVE_SCROLL",
+      "kind": "implementation",
+      "summary": "The original uses ScrollSmoother; the clone uses native scroll with equivalent soft-pin drift (utils.softPin) and CSS sticky for the blog pins.",
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:160",
+          "anchor": "ScrollSmoother is created with `smooth: 0.01`"
+        },
+        {
+          "ref": "src/animations/utils.js:63",
+          "anchor": "export function softPin"
+        }
+      ]
+    },
+    {
+      "id": "REQUEST_DEMO_NO_RECAPTCHA_NOTE",
+      "kind": "intentional-deviation",
+      "summary": "The reCAPTCHA / Google policy note (external links) is omitted on /request-demo/.",
+      "evidence": [
+        {
+          "ref": "src/pages/RequestDemo.jsx:10",
+          "anchor": "The reCAPTCHA / Google policy note is intentionally omitted"
+        }
+      ]
+    },
+    {
+      "id": "LEADERSHIP_REAL_PEOPLE_IN_SOURCE",
+      "kind": "finding",
+      "summary": "COMPANY_PAGES_SPEC A.4 says to use placeholders, but the clone's Leadership renders real names with real headshots (and the about marquee real team photos). The design-repo forbids reproducing them in generated output (photo.person = placeholder-only; names must be placeholders).",
+      "evidence": [
+        {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:172",
+          "anchor": "- **Team grid: 3 people.** Use placeholders, not the real names or photos."
+        },
+        {
+          "ref": "src/components/about/Leadership.jsx:7",
+          "anchor": "photo: '/assets/images/about/leader-josh.webp',"
+        }
+      ]
+    },
+    {
+      "id": "BLOG_PLACEHOLDER_COVERS_REMOVED",
+      "kind": "finding",
+      "summary": "BLOG_SPEC still says generated placeholder covers live in public/assets/blog/ (cover-1..6.svg, inline-1.svg). That directory no longer exists in the source (removed during this build); all 6 posts and the inline image now use cover-*.webp copied from the original site (third-party stock/news imagery -> photo.editorial-cover, placeholder-only for generated pages).",
+      "evidence": [
+        {
+          "ref": "specs/BLOG_SPEC.md:30",
+          "anchor": "Placeholder imagery (generated, on-brand, no original photos)"
+        },
+        {
+          "ref": "src/data/posts.js:45",
+          "anchor": "mainImage: { src: '/assets/images/blog/cover-1.webp'"
+        },
+        {
+          "ref": "src/data/posts.js:170",
+          "anchor": "img('/assets/images/blog/cover-7.webp'"
+        }
+      ]
+    },
+    {
+      "id": "BLOG_LONG_TITLE_TEST_POST",
+      "kind": "finding",
+      "summary": "One placeholder post title is 21 words (deliberate 3-line clamp test) — above the original's measured 3–17 words. blog.post maxWords stays 17 (original evidence).",
+      "evidence": [
+        {
+          "ref": "specs/BLOG_SPEC.md:52",
+          "anchor": "- Title: 3–17 words, median 10."
+        },
+        {
+          "ref": "specs/BLOG_SPEC.md:89",
+          "anchor": "5. Long 3-line title, to show the clamp."
+        }
+      ]
+    }
+  ],
+  "auditedCorrections": [
+    {
+      "claim": "Blog card-row gap",
+      "spec": "44 desktop/tablet, 28 mobile",
+      "source": "28 at every breakpoint",
+      "evidence": [
+        {
+          "ref": "src/components/blog/CardGrid.jsx:10",
+          "anchor": "u-gap-y-[28]"
+        },
+        {
+          "ref": "specs/BLOG_SPEC.md:161",
+          "anchor": "Gap **between rows** (virtualizer): 44 desktop/tablet"
+        }
+      ]
+    },
+    {
+      "claim": "FileDownload fields required",
+      "spec": "'Required' messages",
+      "source": "not required; only non-empty malformed email -> 'Invalid' inside the field",
+      "evidence": [
+        {
+          "ref": "src/components/blog/FileDownload.jsx:47",
+          "anchor": "Measured: the original fields are not required"
+        }
+      ]
+    },
+    {
+      "claim": "Related cards ratio at tablet",
+      "spec": "(index grid 246/196)",
+      "source": "related cards keep 290/210",
+      "evidence": [
+        {
+          "ref": "src/components/blog/SmallCard.jsx:6",
+          "anchor": "the post's related cards keep"
+        }
+      ]
+    },
+    {
+      "claim": "impilo-platform titles",
+      "spec": "title mb 64 except dark section 24",
+      "source": "24/16 below every title; last button flush",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:589",
+          "anchor": "tightTitles: true, // every section title has mb 24 (mobile 16), measured"
+        },
+        {
+          "ref": "src/data/contentPages.js:683",
+          "anchor": "blocks: [{ type: 'cta', flush: true, ...DEMO }],"
+        }
+      ]
+    },
+    {
+      "claim": "DHL hero title on mobile",
+      "spec": "h3",
+      "source": "h2 size",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:691",
+          "anchor": "heroMobileTitle: 'h2'"
+        }
+      ]
+    },
+    {
+      "claim": "Route-page heading line padding",
+      "spec": "(homepage text-lines only)",
+      "source": "page-text-lines uses the same 0.1em + 9u padding",
+      "evidence": [
+        {
+          "ref": "src/styles/pages.css:40",
+          "anchor": "[data-anim='page-text-lines'] .line-inner {"
+        }
+      ]
+    },
+    {
+      "claim": "Stack versions (brief said GSAP 3.13)",
+      "spec": "GSAP 3.13",
+      "source": "package.json gsap ^3.15.0 (installed 3.15.0); pixi.js ^8.22.0; react ^18.3.1; react-router-dom ^6.30.6; tailwindcss ^3.4.10; vite ^5.4.0",
+      "evidence": [
+        {
+          "ref": "package.json:12",
+          "anchor": "\"gsap\": \"^3.15.0\""
+        },
+        {
+          "ref": "package.json:13",
+          "anchor": "\"pixi.js\": \"^8.22.0\""
+        }
+      ]
+    },
+    {
+      "claim": "Route count (brief said 23 + catch-all)",
+      "spec": "23",
+      "source": "24 route patterns + '*' (12 non-content entries incl. /blog/:slug, + 12 data-driven content routes)",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:33",
+          "anchor": "...contentPageRoutes.map(({ path, key })"
+        },
+        {
+          "ref": "src/data/contentPages.js:1140",
+          "anchor": "export const contentPageRoutes = ["
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "pill",
+  "name": "Pill / PagePill",
+  "purpose": "64x28 pill with the looping pulse-logo wipe; marks the start of a panel.",
+  "implementedBy": [
+    {
+      "ref": "src/components/shared/Pill.jsx:5",
+      "anchor": "export default function Pill"
+    },
+    {
+      "ref": "src/components/shared/PagePill.jsx:7",
+      "anchor": "export default function PagePill"
+    }
+  ],
+  "tokens": [
+    "component.pill",
+    "iconSize.pill",
+    "color.blue01",
+    "color.silver05"
+  ],
+  "variants": [
+    "default",
+    "white"
+  ],
+  "props": {
+    "variant": "'default' | 'white' (white on blue sections)"
+  },
+  "motion": [
+    "pill-wipe-loop"
+  ],
+  "evidence": [
+    {
+      "ref": "src/animations/loops.js:11",
+      "anchor": "export function initPills"
+    },
+    {
+      "ref": "CLONE_SPEC.md:129",
+      "anchor": "**Pill** (`Pill__Wrapper`)"
+    }
+  ],
+  "kind": "primitive",
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

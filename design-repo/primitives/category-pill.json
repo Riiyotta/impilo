@@ -1,0 +1,30 @@
+{
+  "id": "category-pill",
+  "name": "CategoryPill",
+  "purpose": "Blog category chip: <button> on the index (sets ?category=), link to /blog?category= on posts. No hover state.",
+  "implementedBy": [
+    {
+      "ref": "src/components/blog/Categories.jsx:11",
+      "anchor": "export function CategoryPill"
+    }
+  ],
+  "tokens": [
+    "elevation.roundControl",
+    "typography.style.body-xs",
+    "color.lavender02",
+    "radius.pill"
+  ],
+  "props": {
+    "label": "category name"
+  },
+  "evidence": [
+    {
+      "ref": "specs/BLOG_SPEC.md:209",
+      "anchor": "Category pill (`<button>` on the index"
+    }
+  ],
+  "kind": "primitive",
+  "variants": [],
+  "motion": [],
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

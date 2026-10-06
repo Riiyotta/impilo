@@ -1,0 +1,156 @@
+{
+  "id": "solutions.api-platform",
+  "category": "feature",
+  "purpose": "White closing panel: pill, title, description, 2x2 feature cards with icons (no CTA section follows).",
+  "implementedBy": [
+    {
+      "ref": "src/components/solutions/ApiPlatform.jsx:27",
+      "anchor": "export default function ApiPlatform"
+    }
+  ],
+  "templates": [
+    "solutions-overview"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustPrecedeFooter": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "icon": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "icon.ui"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "icon",
+              "title",
+              "description"
+            ]
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "features"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:454",
+          "anchor": "\"API-First RPM Platform\" (3 words, 1 line)"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "description": {
+        "maxWords": 22,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:458",
+          "anchor": "- 22 words, 3 lines"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "features[].title": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:474",
+          "anchor": "\"Unified Device Data\", \"Easy Integration\""
+        },
+        "method": "longest feature label"
+      },
+      "features[].description": {
+        "maxWords": 22,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:477",
+          "anchor": "- 15–22 words, 2–3 lines"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      }
+    }
+  },
+  "assets": [
+    "icon.ui"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal",
+      "text-fade",
+      "pill-wipe-loop"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Gap 40, max-width 924.",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:463",
+          "anchor": "- tablet: gap 40, max-width 924"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "1 column, padding 30.",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:464",
+          "anchor": "- mobile: 1 column, gap 40, margin-top 42, max-width 345"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.silver04",
+    "color.lavender04",
+    "iconSize.cardIcon48"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:446",
+      "anchor": "### 1.6 ApiPlatform"
+    }
+  ],
+  "variants": []
+}

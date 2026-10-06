@@ -1,0 +1,462 @@
+{
+  "$description": "Every route in src/routes.jsx (route patterns; '*' = catch-all 404). renderCheck = headless Chromium probe of the running clone at 1440x900 (see extraction/route-render-check.json).",
+  "count": 25,
+  "routes": [
+    {
+      "path": "/",
+      "template": "home",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:21",
+          "anchor": "{ path: '/', element: <Home /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/",
+        "documentTitleWords": 6,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/solutions/",
+      "template": "solutions-overview",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:32",
+          "anchor": "{ path: '/solutions', element: <SolutionsOverview /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/solutions/",
+        "documentTitleWords": 3,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/solutions/impilo-platform/",
+      "template": "content-page",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:1141",
+          "anchor": "{ path: '/solutions/impilo-platform/', key: 'impilo-platform' }"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/solutions/impilo-platform/",
+        "documentTitleWords": 5,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/solutions/digital-health-logistics/",
+      "template": "content-page",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:1142",
+          "anchor": "{ path: '/solutions/digital-health-logistics/', key: 'digital-health-logistics' }"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/solutions/digital-health-logistics/",
+        "documentTitleWords": 7,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/solutions/tech-enabled-services/",
+      "template": "content-page",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:1143",
+          "anchor": "{ path: '/solutions/tech-enabled-services/', key: 'tech-enabled-services' }"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/solutions/tech-enabled-services/",
+        "documentTitleWords": 4,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/solutions/direct-to-patient/",
+      "template": "content-page",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:1144",
+          "anchor": "{ path: '/solutions/direct-to-patient/', key: 'direct-to-patient' }"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/solutions/direct-to-patient/",
+        "documentTitleWords": 4,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/solutions/clinic-rpm/",
+      "template": "content-page",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:1145",
+          "anchor": "{ path: '/solutions/clinic-rpm/', key: 'clinic-rpm' }"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/solutions/clinic-rpm/",
+        "documentTitleWords": 5,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/solutions/support-crm/",
+      "template": "content-page",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:1146",
+          "anchor": "{ path: '/solutions/support-crm/', key: 'support-crm' }"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/solutions/support-crm/",
+        "documentTitleWords": 6,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/use-cases/virtual-care-companies/",
+      "template": "content-page",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:1147",
+          "anchor": "{ path: '/use-cases/virtual-care-companies/', key: 'virtual-care-companies' }"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/use-cases/virtual-care-companies/",
+        "documentTitleWords": 5,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/use-cases/physicians-and-provider-groups/",
+      "template": "content-page",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:1148",
+          "anchor": "{ path: '/use-cases/physicians-and-provider-groups/', key: 'physicians-and-provider-groups' }"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/use-cases/physicians-and-provider-groups/",
+        "documentTitleWords": 6,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/use-cases/health-plans-and-payers/",
+      "template": "content-page",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:1149",
+          "anchor": "{ path: '/use-cases/health-plans-and-payers/', key: 'health-plans-and-payers' }"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/use-cases/health-plans-and-payers/",
+        "documentTitleWords": 6,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/use-cases/health-systems-and-msos/",
+      "template": "content-page",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:1150",
+          "anchor": "{ path: '/use-cases/health-systems-and-msos/', key: 'health-systems-and-msos' }"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/use-cases/health-systems-and-msos/",
+        "documentTitleWords": 6,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/use-cases/value-based-care/",
+      "template": "content-page",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:1151",
+          "anchor": "{ path: '/use-cases/value-based-care/', key: 'value-based-care' }"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/use-cases/value-based-care/",
+        "documentTitleWords": 4,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/use-cases/oems/",
+      "template": "content-page",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/data/contentPages.js:1152",
+          "anchor": "{ path: '/use-cases/oems/', key: 'oems' }"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/use-cases/oems/",
+        "documentTitleWords": 3,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/about/",
+      "template": "about",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:26",
+          "anchor": "{ path: '/about', element: <About /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/about/",
+        "documentTitleWords": 4,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/integrations/",
+      "template": "integrations",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:27",
+          "anchor": "{ path: '/integrations', element: <IntegrationsPage /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/integrations/",
+        "documentTitleWords": 3,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/request-demo/",
+      "template": "request-demo",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:28",
+          "anchor": "{ path: '/request-demo', element: <RequestDemo /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/request-demo/",
+        "documentTitleWords": 5,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/terms/",
+      "template": "legal",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:29",
+          "anchor": "{ path: '/terms', element: <Legal page=\"terms\" /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/terms/",
+        "documentTitleWords": 5,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      },
+      "legalPage": "terms"
+    },
+    {
+      "path": "/privacy/",
+      "template": "legal",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:30",
+          "anchor": "{ path: '/privacy', element: <Legal page=\"privacy\" /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/privacy/",
+        "documentTitleWords": 4,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      },
+      "legalPage": "privacy"
+    },
+    {
+      "path": "/app-privacy/",
+      "template": "legal",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:31",
+          "anchor": "{ path: '/app-privacy', element: <Legal page=\"app-privacy\" /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/app-privacy/",
+        "documentTitleWords": 4,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      },
+      "legalPage": "app-privacy"
+    },
+    {
+      "path": "/blog/",
+      "template": "blog-index",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:22",
+          "anchor": "{ path: '/blog', element: <BlogIndex /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/blog/",
+        "documentTitleWords": 3,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    },
+    {
+      "path": "/blog/:slug/",
+      "template": "blog-post",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:23",
+          "anchor": "{ path: '/blog/:slug', element: <BlogPost /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/blog/partnering-for-better-at-home-care/",
+        "documentTitleWords": 11,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      },
+      "instancesFrom": "data/blog-posts.json"
+    },
+    {
+      "path": "/developers/",
+      "template": "info-page",
+      "origin": "clone-only",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:24",
+          "anchor": "{ path: '/developers', element: <Developers /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/developers/",
+        "documentTitleWords": 3,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      },
+      "note": "Does not exist on the original site; internal replacement for an external link (Docs / Careers)."
+    },
+    {
+      "path": "/careers/",
+      "template": "info-page",
+      "origin": "clone-only",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:25",
+          "anchor": "{ path: '/careers', element: <Careers /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/careers/",
+        "documentTitleWords": 3,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      },
+      "note": "Does not exist on the original site; internal replacement for an external link (Docs / Careers)."
+    },
+    {
+      "path": "*",
+      "template": "not-found",
+      "origin": "original",
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:37",
+          "anchor": "{ path: '*', element: <NotFound /> },"
+        }
+      ],
+      "renderCheck": {
+        "probe": "/this-route-does-not-exist/",
+        "documentTitleWords": 3,
+        "externalHrefs": 0,
+        "externalRequests": 0,
+        "pageErrors": 0
+      }
+    }
+  ]
+}

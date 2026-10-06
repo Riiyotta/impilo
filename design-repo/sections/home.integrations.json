@@ -1,0 +1,166 @@
+{
+  "id": "home.integrations",
+  "category": "feature",
+  "purpose": "Integrations teaser: pill, 3-line title, 3 floating-illustration cards, short text, CTA to /integrations/.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Integrations.jsx:24",
+      "anchor": "export default function Integrations"
+    }
+  ],
+  "templates": [
+    "home"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "homeRouteOnly": true,
+    "insideGroup": "white-container"
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "titleLines": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "cards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "illustration": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "illustration.line-art"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "illustration"
+            ]
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cta": {
+          "$ref": "#/definitions/link"
+        }
+      },
+      "required": [
+        "titleLines",
+        "cards",
+        "text",
+        "cta"
+      ]
+    },
+    "maxWords": {
+      "titleLines[]": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:659",
+          "anchor": "- Text: \"Patient care,\" / \"our integrations.\""
+        },
+        "method": "max word count over the quoted labels on the cited line"
+      },
+      "cards[].label": {
+        "maxWords": 4,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:666",
+          "anchor": "- Labels: \"Comprehensive Integration\""
+        },
+        "method": "'Data Visualizations and Reporting' (two quoted lines joined by <br>)"
+      },
+      "text": {
+        "maxWords": 31,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:668",
+          "anchor": "- Text: \"Connect popular health devices"
+        },
+        "method": "word count of quoted string #0 on the cited spec line"
+      },
+      "cta.label": {
+        "maxWords": 3,
+        "evidence": {
+          "ref": "CLONE_SPEC.md:670",
+          "anchor": "Primary button \"Explore Our Integrations\""
+        },
+        "method": "button label"
+      }
+    }
+  },
+  "assets": [
+    "illustration.line-art"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "text-reveal",
+      "text-fade",
+      "float-loop",
+      "pill-wipe-loop"
+    ],
+    "reducedMotionFallback": "static-paused"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Cards wrap 2 + 1.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:675",
+          "anchor": "cards row wraps (`justify-content: center; flex-wrap: wrap`)"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Cards in a column.",
+        "evidence": {
+          "ref": "CLONE_SPEC.md:679",
+          "anchor": "cards in a column, each 92vw × 74.667vw"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "color.blue04",
+    "radius.24",
+    "motion.duration.floatLoop"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:653",
+      "anchor": "## 9. Section 7: Integrations"
+    },
+    {
+      "ref": "src/animations/loops.js:30",
+      "anchor": "export function initIntegrations"
+    }
+  ],
+  "variants": []
+}

@@ -1,0 +1,159 @@
+{
+  "id": "solutions.hero",
+  "category": "hero",
+  "purpose": "/solutions/ hero: big title (not text-animated), floating isometric line art, 4 dashboard widget cards with a weight counter, paragraph + 'See how'. Stacked-section pin + slide-up.",
+  "implementedBy": [
+    {
+      "ref": "src/components/solutions/SolutionsHero.jsx:60",
+      "anchor": "export default function SolutionsHero"
+    }
+  ],
+  "templates": [
+    "solutions-overview"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paragraph": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cta": {
+          "$ref": "#/definitions/link"
+        },
+        "illustrations": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/definitions/media"
+              },
+              {
+                "properties": {
+                  "assetRole": {
+                    "enum": [
+                      "illustration.line-art"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 1
+        },
+        "widgets": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/definitions/media"
+              },
+              {
+                "properties": {
+                  "assetRole": {
+                    "enum": [
+                      "product.ui-mock"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "title",
+        "paragraph",
+        "cta",
+        "illustrations",
+        "widgets"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 7,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:101",
+          "anchor": "- Measured 1094x358, 3 lines, 7 words."
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "paragraph": {
+        "maxWords": 20,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:159",
+          "anchor": "- 20 words; 2 lines at 1440, 4 lines at 390"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "cta.label": {
+        "maxWords": 2,
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:161",
+          "anchor": "- Primary button **\"See how\"**"
+        },
+        "method": "button label"
+      }
+    }
+  },
+  "assets": [
+    "illustration.line-art",
+    "product.ui-mock"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "intro-timeline",
+      "float-loop",
+      "counter-roll",
+      "stacked-pin-slide-up",
+      "text-fade"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Readings card swaps to the tablet svg on a third row.",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:138",
+          "anchor": "readings-overview is replaced by `solutions-hero-readings-overview-tablet.svg`"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Widgets hidden; title h3; illustrations scale .55.",
+        "evidence": {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:140",
+          "anchor": "- Mobile: `display: none`."
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "typography.style.h1",
+    "color.silver05"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:91",
+      "anchor": "### 1.1 Hero (`sc-01-Hero__Wrapper`"
+    },
+    {
+      "ref": "src/animations/pages/solutions.js:15",
+      "anchor": "ScrollTrigger.create({ trigger: section, pin: true, start: 'bottom bottom', end: 'bottom top', pinSpacing: false })"
+    }
+  ],
+  "variants": []
+}

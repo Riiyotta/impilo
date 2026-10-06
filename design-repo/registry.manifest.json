@@ -1,0 +1,69 @@
+{
+  "repositoryId": "impilo-health-clone.design-repo",
+  "name": "Impilo clone design-repo",
+  "repositoryVersion": "1.0.0",
+  "pageSpecVersion": "1.0.0",
+  "allowlistVersion": "1.0.0",
+  "versionFieldNote": "allowlistVersion and pageSpecVersion are MACHINE-CHECKED by extraction/verify_all.py (allowlistVersion == tokens/llm/component-allowlist.json version; pageSpecVersion == schema pageSpecVersion const). repositoryVersion is documentation-only and hand-maintained; nothing checks it.",
+  "status": "design-review-pending",
+  "productionApproved": false,
+  "defaultTheme": "light",
+  "schemaValidatedThemes": [
+    "light"
+  ],
+  "sourceProject": {
+    "relativeLocation": "..",
+    "description": "React 18 + Vite 5 + Tailwind v3 + GSAP 3.15 + pixi.js 8 + react-router-dom 6 (data router) clone of impilo.health. Evidence sources are cited in extraction/measured-values.json and degrade to warnings when absent."
+  },
+  "counts": {
+    "tokens": 196,
+    "primitives": 13,
+    "components": 31,
+    "sections": 33,
+    "templates": 11,
+    "routes": 25,
+    "assetRoles": 12,
+    "assetFiles": 157,
+    "motionPatterns": 35,
+    "graphRules": 26
+  },
+  "entryPoints": {
+    "readme": "README.md",
+    "changelog": "CHANGELOG.md",
+    "schema": "schema/pagespec.schema.json",
+    "schemaBuilder": "schema/build_schema.py",
+    "example": "schema/example.pagespec.json",
+    "semanticValidator": "schema/semantic_validate.py",
+    "adversarialTests": "schema/tests/adversarial_test.py",
+    "verifyAll": "extraction/verify_all.py",
+    "proveDrift": "extraction/prove_drift.py",
+    "templates": "templates/templates.json",
+    "routes": "templates/routes.json",
+    "compatibilityGraph": "compatibility/graph.json",
+    "allowlist": "tokens/llm/component-allowlist.json",
+    "tokenCatalog": "tokens/llm/token-catalog.json",
+    "tokenPolicy": "tokens/llm/token-policy.json",
+    "theme": "tokens/themes/light.json",
+    "motionPatterns": "tokens/00-foundation/motion-patterns.json",
+    "assetRoles": "assets/asset-roles.json",
+    "assetRegistry": "assets/asset-registry.json",
+    "blogRegistry": "data/blog-posts.json",
+    "measuredValues": "extraction/measured-values.json",
+    "deviations": "extraction/deviations.json",
+    "histograms": "extraction/histograms.json",
+    "routeRenderCheck": "extraction/route-render-check.json",
+    "realRouteConformance": "extraction/real-route-conformance.json"
+  },
+  "verification": [
+    "python3 extraction/verify_all.py",
+    "python3 schema/semantic_validate.py schema/example.pagespec.json",
+    "python3 schema/tests/adversarial_test.py",
+    "python3 extraction/prove_drift.py"
+  ],
+  "requires": {
+    "python": ">=3.9",
+    "pip": [
+      "jsonschema>=4"
+    ]
+  }
+}

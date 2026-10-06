@@ -1,0 +1,520 @@
+{
+  "$description": "One entry per distinct page shape; nodes are structured objects (required/repeatable machine-enforced).",
+  "templates": {
+    "home": {
+      "name": "Homepage",
+      "origin": "original",
+      "evidenceLevel": "measured",
+      "headerCta": "shown",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "home.hero",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "home.focus",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "home.how-it-works",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "home.white-glove",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "home.trusted",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "home.articles",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "home.integrations",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shared.cta-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "groups": [
+        {
+          "wrapper": "white-container",
+          "from": "home.white-glove",
+          "to": "shared.cta-band",
+          "evidence": {
+            "ref": "src/pages/Home.jsx:27",
+            "anchor": "data-anim=\"white\""
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "src/pages/Home.jsx:14",
+          "anchor": "export default function Home"
+        },
+        {
+          "ref": "CLONE_SPEC.md:143",
+          "anchor": "### 0.6 Page skeleton and stacking (desktop)"
+        }
+      ],
+      "id": "home",
+      "routes": [
+        "/"
+      ]
+    },
+    "solutions-overview": {
+      "name": "Solutions overview (template A)",
+      "origin": "original",
+      "evidenceLevel": "measured",
+      "headerCta": "shown",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "solutions.hero",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "solutions.explore",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "solutions.support",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "solutions.platform",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "solutions.api-platform",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "src/pages/SolutionsOverview.jsx:11",
+          "anchor": "export default function SolutionsOverview"
+        },
+        {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:79",
+          "anchor": "There is no CTA section; ApiPlatform is followed directly by the footer spacer."
+        }
+      ],
+      "id": "solutions-overview",
+      "routes": [
+        "/solutions/"
+      ]
+    },
+    "content-page": {
+      "name": "Content page (template B: solution sub-pages + use-cases)",
+      "origin": "original",
+      "evidenceLevel": "measured (VCC + impilo-platform in full; other 10 routes by route recipe)",
+      "headerCta": "shown",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "content.hero",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "content.section",
+          "required": true,
+          "repeatable": true,
+          "min": 3,
+          "max": 4,
+          "variants": [
+            "light",
+            "dark"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "src/pages/ContentPage.jsx:46",
+          "anchor": "export default function ContentPage"
+        },
+        {
+          "ref": "specs/SOLUTIONS_USECASES_SPEC.md:42",
+          "anchor": "**Representatives measured in full:**"
+        }
+      ],
+      "id": "content-page",
+      "routes": [
+        "/solutions/impilo-platform/",
+        "/solutions/digital-health-logistics/",
+        "/solutions/tech-enabled-services/",
+        "/solutions/direct-to-patient/",
+        "/solutions/clinic-rpm/",
+        "/solutions/support-crm/",
+        "/use-cases/virtual-care-companies/",
+        "/use-cases/physicians-and-provider-groups/",
+        "/use-cases/health-plans-and-payers/",
+        "/use-cases/health-systems-and-msos/",
+        "/use-cases/value-based-care/",
+        "/use-cases/oems/"
+      ]
+    },
+    "about": {
+      "name": "About",
+      "origin": "original",
+      "evidenceLevel": "measured",
+      "headerCta": "shown",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "about.hero",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "about.founded",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "about.anywhere",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "about.leadership",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "about.careers",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "src/pages/About.jsx:11",
+          "anchor": "export default function About"
+        }
+      ],
+      "id": "about",
+      "routes": [
+        "/about/"
+      ]
+    },
+    "integrations": {
+      "name": "Integrations",
+      "origin": "original",
+      "evidenceLevel": "measured",
+      "headerCta": "shown",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "integrations.hero",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "integrations.sdk",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "integrations.devices",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "src/pages/IntegrationsPage.jsx:9",
+          "anchor": "export default function IntegrationsPage"
+        }
+      ],
+      "id": "integrations",
+      "routes": [
+        "/integrations/"
+      ]
+    },
+    "request-demo": {
+      "name": "Request demo",
+      "origin": "original",
+      "evidenceLevel": "measured",
+      "headerCta": "hidden",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "request-demo.panel",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "src/pages/RequestDemo.jsx:12",
+          "anchor": "export default function RequestDemo"
+        },
+        {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:36",
+          "anchor": "**The only difference is on `/request-demo/`**"
+        }
+      ],
+      "id": "request-demo",
+      "routes": [
+        "/request-demo/"
+      ]
+    },
+    "legal": {
+      "name": "Legal (shared by terms / privacy / app-privacy)",
+      "origin": "original",
+      "evidenceLevel": "measured",
+      "headerCta": "shown",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legal.document",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:29",
+          "anchor": "{ path: '/terms', element: <Legal page=\"terms\" /> },"
+        }
+      ],
+      "id": "legal",
+      "routes": [
+        "/terms/",
+        "/privacy/",
+        "/app-privacy/"
+      ]
+    },
+    "not-found": {
+      "name": "404",
+      "origin": "original",
+      "evidenceLevel": "measured",
+      "headerCta": "shown",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "not-found.panel",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "src/routes.jsx:37",
+          "anchor": "{ path: '*', element: <NotFound /> },"
+        }
+      ],
+      "id": "not-found",
+      "routes": [
+        "*"
+      ]
+    },
+    "blog-index": {
+      "name": "Blog index",
+      "origin": "original",
+      "evidenceLevel": "measured",
+      "headerCta": "shown",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "blog.index",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "src/pages/blog/BlogIndex.jsx:28",
+          "anchor": "export default function BlogIndex"
+        }
+      ],
+      "id": "blog-index",
+      "routes": [
+        "/blog/"
+      ]
+    },
+    "blog-post": {
+      "name": "Blog post",
+      "origin": "original",
+      "evidenceLevel": "measured",
+      "headerCta": "shown",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "blog.post",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "blog.related",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "src/pages/blog/BlogPost.jsx:20",
+          "anchor": "export default function BlogPost"
+        }
+      ],
+      "id": "blog-post",
+      "routes": [
+        "/blog/:slug/"
+      ]
+    },
+    "info-page": {
+      "name": "Info page (CLONE-ONLY: /developers/, /careers/)",
+      "origin": "clone-only",
+      "evidenceLevel": "source-derived (no original exists)",
+      "headerCta": "shown",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "info.intro",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "info.cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shared.cta-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "src/pages/InfoPage.jsx:7",
+          "anchor": "Shared shell for simple on-brand content pages (/developers/, /careers/)"
+        }
+      ],
+      "id": "info-page",
+      "routes": [
+        "/developers/",
+        "/careers/"
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "round-arrow-button",
+  "name": "ArrowButton / quote arrows",
+  "purpose": "35x35 white round chevron button for prev/next.",
+  "implementedBy": [
+    {
+      "ref": "src/components/content/CapabilitiesCarousel.jsx:5",
+      "anchor": "export function ArrowButton"
+    },
+    {
+      "ref": "src/index.css:792",
+      "anchor": ".quote-arrow {"
+    }
+  ],
+  "tokens": [
+    "component.button.roundArrow",
+    "elevation.roundControl"
+  ],
+  "props": {
+    "direction": "'prev' | 'next'",
+    "ariaLabel": "string (required)"
+  },
+  "evidence": [
+    {
+      "ref": "specs/SOLUTIONS_USECASES_SPEC.md:630",
+      "anchor": "**ArrowButton** (`Arrow__Wrapper`"
+    }
+  ],
+  "kind": "primitive",
+  "variants": [],
+  "motion": [],
+  "contentContract": "none (props only; content contracts start at the section layer)"
+}

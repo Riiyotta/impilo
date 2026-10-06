@@ -1,0 +1,110 @@
+{
+  "id": "integrations.hero",
+  "category": "hero",
+  "purpose": "Transparent-on-blue05 hero: h1 title, paragraph, two primary buttons (docs -> /developers/, demo). Pinned with ParallaxOut.",
+  "implementedBy": [
+    {
+      "ref": "src/components/integrations/IntegrationsHero.jsx:4",
+      "anchor": "export default function IntegrationsHero"
+    }
+  ],
+  "templates": [
+    "integrations"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paragraph": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ctas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "title",
+        "paragraph",
+        "ctas"
+      ]
+    },
+    "maxWords": {
+      "title": {
+        "maxWords": 8,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:224",
+          "anchor": "- 8w, 3 lines (1094×358)"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "paragraph": {
+        "maxWords": 39,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:227",
+          "anchor": "39w, 4L. Topic: \"simplifying RPM"
+        },
+        "method": "stated word count (Nw / A–Bw) on the cited spec line"
+      },
+      "ctas[].label": {
+        "maxWords": 2,
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:228",
+          "anchor": "Primary **\"API Documentation\"**"
+        },
+        "method": "button label"
+      }
+    }
+  },
+  "assets": [],
+  "motion": {
+    "allowedPatterns": [
+      "stacked-pin-slide-up",
+      "text-fade"
+    ],
+    "reducedMotionFallback": "static-visible"
+  },
+  "responsive": {
+    "tablet": [
+      {
+        "change": "Title h2, width 924.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:225",
+          "anchor": "- Tablet h2, width 924; mobile h3"
+        }
+      }
+    ],
+    "mobile": [
+      {
+        "change": "Title h3 width 329, 5 lines.",
+        "evidence": {
+          "ref": "specs/COMPANY_PAGES_SPEC.md:225",
+          "anchor": "mobile h3, width 329, margin-bottom 35 (5 lines at 390)"
+        }
+      }
+    ]
+  },
+  "tokens": [
+    "typography.style.h1"
+  ],
+  "evidence": [
+    {
+      "ref": "specs/COMPANY_PAGES_SPEC.md:217",
+      "anchor": "### I.1 Hero (`section.sc-01-Hero__Wrapper`)"
+    }
+  ],
+  "variants": []
+}
