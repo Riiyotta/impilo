@@ -1,0 +1,281 @@
+/*
+ * Solutions + Use-case templates (specs/SOLUTIONS_USECASES_SPEC.md).
+ * Only what Tailwind utilities can't express cleanly: pseudo-elements, svg child selectors,
+ * hover/touch media queries, the quarter-scale icon trick and the AutoAnimate overflow bleed.
+ * All lengths are design px through the fluid unit (CLONE_SPEC 0.1).
+ */
+
+/* ------------------------------------------------------------------ */
+/* Template A: 1.1 Hero                                                */
+/* ------------------------------------------------------------------ */
+.sol-hero__ill {
+  position: absolute;
+  height: auto;
+  max-width: unset;
+}
+.sol-hero__weight {
+  position: absolute;
+  top: calc(var(--u) * 111.5);
+  left: calc(var(--u) * 761);
+  height: calc(var(--u) * 54);
+  display: flex;
+  align-items: start;
+  overflow: clip;
+  font-size: calc(var(--u) * 62);
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: calc(var(--u) * 1.3);
+  color: #bfbeec;
+  opacity: 0;
+}
+@supports (color: color(display-p3 0 0 0)) {
+  .sol-hero__weight { color: color(display-p3 0.7505 0.747 0.9258); }
+}
+.sol-hero__weight > div > div { height: calc(var(--u) * 54); }
+.sol-hero__weight .sol-hero__tens-col { margin: 0 calc(var(--u) * -2); }
+@media (min-width: 501px) and (max-width: 1024px) {
+  .sol-hero__weight {
+    left: calc(var(--u) * 27);
+    top: calc(var(--u) * 589);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Template A: 1.2 Explore                                             */
+/* ------------------------------------------------------------------ */
+.pill.pill--white { background-color: var(--silver05); }
+.pill.pill--white path { fill: var(--blue01); }
+
+@media (hover: none) {
+  .sol-explore > * {
+    will-change: transform;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
+.sol-explore__ills svg { overflow: visible; }
+.sol-explore__box {
+  width: calc(var(--u) * 620);
+  min-height: calc(var(--u) * 620);
+  border: calc(var(--u) * 1) solid var(--brightBlue);
+  border-radius: calc(var(--u) * 24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sol-explore__art {
+  width: auto;
+  max-width: unset;
+}
+@media (min-width: 501px) and (max-width: 1024px) {
+  .sol-explore__box {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    min-height: calc(var(--u) * 400);
+    width: calc(var(--u) * 924);
+    padding: 0 calc(var(--u) * 110);
+    gap: calc(var(--u) * 24) calc(var(--u) * 75);
+    place-content: center;
+    place-items: center;
+  }
+  .sol-explore__box > :first-child {
+    grid-row: 1 / 3;
+    margin: calc(var(--u) * -50) 0 !important;
+  }
+  .sol-explore__box-desc { margin: 0 !important; }
+}
+@media (max-width: 500px) {
+  .sol-explore__box {
+    width: calc(var(--u) * 345);
+    min-height: unset;
+    padding-bottom: calc(var(--u) * 48);
+  }
+  .sol-explore__box-title { padding: 0 calc(var(--u) * 10); }
+  .sol-explore__box-title br { display: none; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Template A: 1.3 Support                                             */
+/* ------------------------------------------------------------------ */
+.sol-support {
+  padding-bottom: calc(100lvh + var(--u) * 250);
+  margin-bottom: -100lvh;
+}
+.sol-support::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: calc(var(--u) * 24);
+  background: var(--silver05);
+}
+@media (max-width: 500px) {
+  .sol-support {
+    padding: calc(var(--u) * 100) 0 calc(var(--u) * 180);
+    margin-bottom: 0;
+  }
+  .sol-support__cards {
+    width: 100vw;
+    padding: 0 100vw;
+    margin: 0 -100vw;
+    display: flex;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+    gap: calc(var(--u) * 10);
+    scrollbar-width: none;
+  }
+  .sol-support__cards::-webkit-scrollbar { display: none; }
+}
+/* Mobile "stacked" variant (hover-capable): column instead of a snap carousel */
+@media (max-width: 500px) and (hover: hover) {
+  .sol-support__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sol-support__cards > * {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+.sol-support__card { scroll-snap-stop: always; }
+@media (max-width: 500px) {
+  .sol-support__card {
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+}
+/* 80x80 icon: a 320px image rendered at quarter scale so it stays crisp */
+.sol-support__card-image img {
+  width: calc(var(--u) * 320);
+  margin: calc(var(--u) * -120);
+  scale: 0.25;
+  max-width: unset;
+}
+.sol-support__thermo {
+  position: absolute;
+  top: calc(var(--u) * 1745);
+  right: calc(50vw + var(--u) * 245);
+  width: calc(var(--u) * 388);
+  max-width: unset;
+  z-index: -1;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@media (max-width: 500px) {
+  .sol-support__thermo { display: none; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Template A: 1.4 Platform / Laptop                                   */
+/* ------------------------------------------------------------------ */
+.sol-laptop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: calc(var(--u) * 3000);
+}
+.sol-laptop__top {
+  display: grid;
+  place-items: start center;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+.sol-laptop__top > * { grid-area: 1 / 1 / 2 / 2; }
+/* Original: `LaptopTop svg { width: 875px }` also hits the screen svg, so the screen box is 875x482
+   (822x482 viewBox letterboxed, centred) with the 7px radius on that wider box. */
+.sol-laptop__screen {
+  margin-top: calc(var(--u) * 27);
+  width: calc(var(--u) * 875);
+  height: calc(var(--u) * 482);
+}
+.sol-laptop__screen img {
+  display: block;
+  width: calc(var(--u) * 875);
+  height: calc(var(--u) * 482);
+  border-radius: calc(var(--u) * 7);
+  max-width: unset;
+}
+/* WideAutoAnimate: overflow clip is pushed 50vw out so fades are never cut */
+.sol-wide-animate {
+  margin: -50vw;
+  padding: 50vw;
+  pointer-events: none;
+}
+.sol-wide-animate > * > * { pointer-events: all; }
+.sol-laptop__arrow-prev img { scale: -1; }
+.sol-platform__snippet-link {
+  text-decoration: underline;
+  color: var(--brightTurquoise);
+}
+
+/* ------------------------------------------------------------------ */
+/* Template B: grids, outcomes, carousel                               */
+/* ------------------------------------------------------------------ */
+.cp-outcomes li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--blue03);
+}
+.cp-icon-wrap svg,
+.cp-icon-wrap img {
+  width: calc(var(--u) * 48);
+  height: calc(var(--u) * 48);
+}
+@media (max-width: 500px) {
+  .cp-icon-wrap svg,
+  .cp-icon-wrap img {
+    width: calc(var(--u) * 36);
+    height: calc(var(--u) * 36);
+  }
+}
+@media (max-width: 500px) {
+  /* DMEGrid $center reverts on mobile, but its max-width 600 is kept (measured 624 at 390) */
+  .cp-center-item {
+    grid-column: auto !important;
+    text-align: left !important;
+  }
+}
+
+/* CapabilitiesCarousel AutoAnimate: bleed 100vw so the slide-out isn't clipped */
+.cp-carousel__animate {
+  width: calc(100% + 200vw);
+  padding: 100vw;
+  margin: -100vw;
+  pointer-events: none;
+}
+.cp-carousel__animate > * > * { pointer-events: all; }
+
+.cp-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(var(--u) * 35);
+  height: calc(var(--u) * 35);
+  border-radius: 99vw;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow:
+    0 calc(var(--u) * -1) calc(var(--u) * 1) calc(var(--u) * 1) #fbfaff inset,
+    0 calc(var(--u) * 2) calc(var(--u) * 5) 0 rgb(212 209 242 / 68%),
+    0 0 0 calc(var(--u) * 1) rgb(133 143 172 / 25%);
+}
+.cp-arrow img { width: calc(var(--u) * 7); height: auto; }
+.cp-arrow--prev { left: 0; }
+.cp-arrow--prev img { rotate: 180deg; }
+.cp-arrow--next { right: 0; }
+
+.cp-dot {
+  width: calc(var(--u) * 12);
+  height: calc(var(--u) * 12);
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: var(--blue03);
+  transition: all 0.2s ease;
+}
+.cp-dot[aria-current='true'] { background: var(--silver05); }
+.cp-dot:hover { background: var(--silver04); }

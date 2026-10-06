@@ -1,0 +1,242 @@
+/*
+ * Company / utility page styles (COMPANY_PAGES_SPEC) that Tailwind utilities can't express:
+ * height-based media queries, pseudo-elements, rich text, form states, touch-only layouts.
+ * Rules are scoped under the page root class (.pg-*) so they win over same-property utilities
+ * regardless of stylesheet order. Sizes use the shared fluid unit: calc(var(--u) * N).
+ * No new color tokens were needed; everything references the CLONE_SPEC 0.4 vars.
+ */
+
+/* ------------------------------------------------------------------ */
+/* Shared: white Pill variant (spec 0.2)                               */
+/* ------------------------------------------------------------------ */
+.pill.pill--white { background-color: var(--silver05); }
+.pill.pill--white path { fill: var(--blue01); }
+
+/* Shared: LineFillText lines (spec 0.2) */
+.give-me-clipping-please {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-bottom: -0.1em;
+  padding-bottom: 0.1em;
+  --lf-p: 0%;
+  background-image: linear-gradient(
+    to right,
+    var(--lf-fill) 0%,
+    var(--lf-fill) var(--lf-p),
+    var(--lf-base) var(--lf-p),
+    var(--lf-base) 100%
+  );
+}
+
+/* Shared: TextAnimation line wrappers for page-local headings (data-anim="page-text-lines").
+ * index.css scopes these rules to [data-anim="text-lines"] only, so route pages got neither the
+ * 0.1em/9u line padding (original: 93.6px per h2 line at 1440) nor the hidden start offset. */
+[data-anim='page-text-lines'] .line-wrapper {
+  overflow: clip;
+  margin-bottom: -0.1em;
+  padding-bottom: 0.1em;
+}
+[data-anim='page-text-lines'] .line-inner {
+  transform: translateY(calc(100% + 0.1em));
+  padding-bottom: calc(var(--u) * 9);
+}
+
+/* Shared: Primary button rendered as <button type="submit"> */
+button.btn-primary { border: 0; cursor: pointer; font: inherit; }
+
+/* ------------------------------------------------------------------ */
+/* About (spec A)                                                      */
+/* ------------------------------------------------------------------ */
+.pg-about .about-hero {
+  gap: calc(var(--u) * 94);
+  padding-bottom: calc(var(--u) * 94);
+  min-height: calc(100svh - var(--u) * 113);
+  margin-bottom: 35vh;
+}
+/* Height queries as the original emits them: the fluid helper keeps (height < 900px) / (height < 750px)
+ * in px for every width band, but the tablet-only helper converts its px to vw, so on tablet the
+ * thresholds are (height < 1048/1024*100vw) and (height < 1000/1024*100vw). At 768x1024 neither matches
+ * (gap stays 61u). Mobile overrides the gap below. */
+@media (height < 900px) {
+  .pg-about .about-hero { gap: calc(var(--u) * 24); padding-bottom: calc(var(--u) * 24); }
+}
+@media (height < 750px) {
+  .pg-about .about-hero { transform: scale(0.9); transform-origin: center top; }
+}
+@media (min-width: 501px) and (max-width: 1024px) {
+  .pg-about .about-hero { gap: calc(var(--u) * 61); padding-bottom: calc(var(--u) * 61); }
+}
+@media (min-width: 501px) and (max-width: 1024px) and (height < 102.344vw) {
+  .pg-about .about-hero { gap: calc(var(--u) * 24); padding-bottom: calc(var(--u) * 24); }
+}
+@media (min-width: 501px) and (max-width: 1024px) and (height < 97.656vw) {
+  .pg-about .about-hero { transform: scale(0.9); transform-origin: center top; }
+}
+@media (max-width: 500px) {
+  .pg-about .about-hero {
+    gap: calc(var(--u) * 30);
+    padding: calc(var(--u) * 36) 0 calc(var(--u) * 30);
+    height: auto;
+    margin-bottom: 0; /* min-height calc(100svh - 113u) still applies on mobile in the original */
+    scale: 1 !important;
+  }
+}
+.pg-about .about-hero__box { opacity: 0; --lf-fill: var(--silver05); --lf-base: var(--blue04); }
+.pg-about .about-anywhere__text { --lf-fill: var(--silver05); --lf-base: var(--lavender04); }
+.pg-about .about-photo__img { object-position: left center; } /* leadership only; Founded photos stay centered */
+
+/* ------------------------------------------------------------------ */
+/* Integrations (spec I)                                               */
+/* ------------------------------------------------------------------ */
+.pg-integrations .sdk {
+  padding-bottom: calc(100lvh + var(--u) * 250);
+  margin-bottom: -100lvh;
+}
+.pg-integrations .sdk::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  background: var(--silver05);
+}
+@media (max-width: 500px) {
+  .pg-integrations .sdk { padding-bottom: calc(var(--u) * 180); margin-bottom: 0; }
+  /* Original Sdk__Cards: the carousel box (100vw wide, 100vw side padding, -100vw margins, 10u gap,
+   * overflow scroll) applies in both mobile modes; only the row direction + snapping is touch-only. */
+  .pg-integrations .sdk-cards {
+    width: 100vw;
+    padding: 0 100vw;
+    margin: 0 -100vw;
+    gap: calc(var(--u) * 10);
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+  .pg-integrations .sdk-cards::-webkit-scrollbar { display: none; }
+}
+
+/* Touch-only mobile carousel ("scroll" mode, spec I.2) */
+@media (max-width: 500px) and (hover: none) {
+  .pg-integrations .sdk-cards {
+    flex-direction: row;
+    scroll-snap-type: x mandatory;
+    align-items: stretch;
+  }
+  .pg-integrations .sdk-card { scroll-snap-align: center; flex-shrink: 0; }
+}
+
+/* Laptop showcase (spec I.4) */
+.pg-integrations .laptop { perspective: calc(var(--u) * 3000); } /* fluid like the original: 2250px at 768 */
+.pg-integrations .laptop__top { transform-origin: bottom center; will-change: transform; }
+.pg-integrations .laptop__top > * { grid-area: 1 / 1; }
+.pg-integrations .laptop__screen svg,
+.pg-integrations .laptop__screen img {
+  display: block;
+  margin-top: calc(var(--u) * 27);
+  /* The original's screen <svg> box resolves to the lid's 875 column (822x482 viewBox drawn centred,
+   * "meet"), so its 7u radius clips the box, not the artwork. Same here via object-fit: contain. */
+  width: calc(var(--u) * 875);
+  height: calc(var(--u) * 482);
+  object-fit: contain;
+  border-radius: calc(var(--u) * 7);
+}
+.pg-integrations .laptop__wide { margin: -50vw; padding: 50vw; pointer-events: none; }
+.pg-integrations .laptop__prev { scale: -1; }
+
+/* Devices lists: plain, no bullets */
+.pg-integrations .snippet-list { list-style: none; padding: 0; }
+
+/* ------------------------------------------------------------------ */
+/* Request demo (spec R)                                               */
+/* ------------------------------------------------------------------ */
+/* Header variant: the shared header hides its "Request Demo" CTA on this route.
+ * Requires the router/layout to set data-route="request-demo" on <html> or any ancestor of the
+ * header, OR a Header prop (see handoff). This selector covers the attribute route. */
+[data-route='request-demo'] header nav > .btn-primary { display: none; }
+
+.pg-request-demo .rd-form { transition: opacity 0.2s ease; }
+.pg-request-demo .rd-form[data-submitting] { opacity: 0.5; }
+.pg-request-demo .rd-swap { padding: 1em; margin: -1em; }
+
+.pg-request-demo .field {
+  border: 1px solid var(--blue03);
+  background: var(--blue02);
+  transition: border-color 0.2s ease;
+}
+.pg-request-demo .field:hover { border-color: var(--blue04); }
+.pg-request-demo .field[data-invalid] { border-color: var(--brightTurquoise); }
+.pg-request-demo .field__control {
+  background: transparent;
+  color: var(--silver05);
+  border: 0;
+}
+.pg-request-demo .field__control::placeholder { color: var(--blue07); opacity: 1; }
+.pg-request-demo .field__control:focus,
+.pg-request-demo .field__control:focus-visible { outline: none; }
+.pg-request-demo .field__control:autofill,
+.pg-request-demo .field__control:-webkit-autofill,
+.pg-request-demo .field__control[data-com-onepassword-filled] {
+  color: var(--blue01);
+  -webkit-text-fill-color: var(--blue01);
+  background: var(--blue07);
+  -webkit-box-shadow: 0 0 0 100vmax var(--blue07) inset;
+}
+.pg-request-demo textarea.field__control { resize: none; overflow-wrap: break-word; }
+
+.pg-request-demo .select__trigger { cursor: pointer; text-align: left; }
+.pg-request-demo .select__trigger:focus,
+.pg-request-demo .select__trigger:focus-visible { outline: none; }
+.pg-request-demo .select__value { color: var(--silver05); }
+.pg-request-demo .select__trigger[data-placeholder] .select__value { color: var(--blue07); }
+.pg-request-demo .select__chevron { transition: scale 0.2s ease; }
+.pg-request-demo .select__trigger[data-state='open'] .select__chevron { scale: 1 -1; }
+.pg-request-demo .select__content {
+  border: 1px solid var(--blue03);
+  background: var(--blue02);
+  color: var(--silver05);
+  overflow: clip;
+}
+.pg-request-demo .select__item { cursor: pointer; transition: background 0.2s ease; outline: none; }
+.pg-request-demo .select__item[data-highlighted] { background: #16165855; }
+.pg-request-demo .select__item:first-child { padding-top: calc(var(--u) * 14); }
+.pg-request-demo .select__item:last-child { padding-bottom: calc(var(--u) * 14); }
+
+.pg-request-demo .rd-error a { text-decoration: underline; }
+
+/* Tablet: SubmitRow is the form's last child and sits at the end */
+@media (min-width: 501px) and (max-width: 1024px) {
+  .pg-request-demo .rd-form > :last-child { place-self: end; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Legal template (spec L)                                             */
+/* ------------------------------------------------------------------ */
+.pg-legal .legal-content a { text-decoration: underline; color: var(--blue06); }
+.pg-legal .legal-content h1 {
+  font-size: calc(var(--u) * 46);
+  font-weight: 600;
+  line-height: 92%;
+  letter-spacing: -0.04em;
+  margin-bottom: calc(var(--u) * 35);
+}
+.pg-legal .legal-content h2 { margin-top: calc(var(--u) * 33); font: inherit; }
+.pg-legal .legal-content p { margin: calc(var(--u) * 28) 0; }
+.pg-legal .legal-content li {
+  list-style-type: decimal;
+  padding-left: calc(var(--u) * 5);
+  margin-left: calc(var(--u) * 20);
+}
+.pg-legal .legal-content ol > ol > li {
+  list-style-type: lower-alpha;
+  margin-left: calc(var(--u) * 50);
+}
+
+/* ------------------------------------------------------------------ */
+/* 404 (spec E)                                                        */
+/* ------------------------------------------------------------------ */
+.pg-404 .nf-wrapper { min-height: calc(100lvh - var(--u) * 161); }
+@media (max-width: 500px) {
+  .pg-404 .nf-wrapper { min-height: calc(100lvh - var(--u) * 113); }
+}

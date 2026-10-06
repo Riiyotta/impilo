@@ -1,0 +1,670 @@
+{
+  "$comment": "Derived from src/routes.jsx, src/data/contentPages.js, src/data/posts.js and each page component's render order. Section ids are per content block; light/dark variants of the same grid are separate sections because they render differently. Body copy outside the homepage is original placeholder text.",
+  "meta": {
+    "source": "impilo.health clone (React + Vite) at /, mirroring https://impilo.health/ plus 2 clone-only pages",
+    "status": "measured-from-codebase",
+    "totalRoutes": 30,
+    "totalTemplates": 17
+  },
+  "categories": {
+    "SHELL": "Chrome mounted by the shared Layout on every route: preloader, header, page transition, footer.",
+    "HERO": "Page-opening block directly under the header.",
+    "FEATURES": "Product explanation modules, mostly scroll-driven or illustrated.",
+    "PROOF": "Trust signals: stats, compliance badges, partner logos, leadership, article teasers.",
+    "CONTENT": "Substantive body sections of a route.",
+    "CONVERSION": "Closing calls to action and forms.",
+    "EDITORIAL": "Blog index and article blocks."
+  },
+  "sections": {
+    "shell.preloader": {
+      "category": "SHELL",
+      "description": "First-load overlay: 00→99 counter over the isometric graphic, slides away when loading finishes; never shown again on client-side navigation.",
+      "scope": "Mounted in the shared Layout on all 30 routes; only visible on the first page load of a session.",
+      "implementedBy": "src/components/Preloader.jsx"
+    },
+    "shell.header": {
+      "category": "SHELL",
+      "description": "Non-sticky top bar: logo, 'Our Solutions' and 'Who We Serve' dropdowns, four text links, Request Demo button; hamburger + full-screen dialog menu at ≤500px.",
+      "scope": "Every route; on /request-demo/ the desktop Request Demo button is hidden via a CSS rule.",
+      "implementedBy": "src/components/Header.jsx"
+    },
+    "shell.page-transition": {
+      "category": "SHELL",
+      "description": "Fixed blue overlay with pulse line that slides up over the old page on internal navigation (link click or browser back/forward) and away from the new one.",
+      "scope": "Mounted in the shared Layout on all 30 routes.",
+      "implementedBy": "src/components/PageTransition.jsx"
+    },
+    "shell.footer": {
+      "category": "SHELL",
+      "description": "Fixed footer revealed under the page end: large logo, link columns, mailto/tel contacts, WebGL line field bending around a cursor-following white pill (canvas hidden on mobile).",
+      "scope": "Every route, via the shared Layout and FooterSpacer.",
+      "implementedBy": "src/components/Footer.jsx"
+    },
+    "hero.home": {
+      "category": "HERO",
+      "description": "Homepage hero: headline with rotating word, line-art illustration with mouse parallax, dashboard mock that zooms from 862 to 1340px wide on scroll with rolling counters.",
+      "scope": "Homepage only.",
+      "implementedBy": "src/components/Hero.jsx"
+    },
+    "features.home-focus": {
+      "category": "FEATURES",
+      "description": "'Keep scrolling' marquee pill plus a white panel that grows on scroll; its Request Demo button pins and docks to the top-right through the next section.",
+      "scope": "Homepage only.",
+      "implementedBy": "src/components/Focus.jsx"
+    },
+    "features.home-how-it-works": {
+      "category": "FEATURES",
+      "description": "Four pinned steps, each with text on the left and an animated SVG illustration in a pinned rounded frame on the right.",
+      "scope": "Homepage only.",
+      "implementedBy": "src/components/HowItWorks.jsx"
+    },
+    "proof.compliance-badges": {
+      "category": "PROOF",
+      "description": "White Glove block: intro text plus HIPAA and SOC 2 badges that swap from gray to colour on hover.",
+      "scope": "Homepage only.",
+      "implementedBy": "src/components/WhiteGlove.jsx"
+    },
+    "proof.partner-logos": {
+      "category": "PROOF",
+      "description": "Four partner logos with an oval hover effect; deliberately non-clickable (no outbound links).",
+      "scope": "Homepage only.",
+      "implementedBy": "src/components/Trusted.jsx"
+    },
+    "proof.article-carousel": {
+      "category": "PROOF",
+      "description": "Three-article carousel with prev/next arrows and horizontal slide; links point at internal /blog/ posts.",
+      "scope": "Homepage only.",
+      "implementedBy": "src/components/Articles.jsx"
+    },
+    "features.home-integrations": {
+      "category": "FEATURES",
+      "description": "Three integration cards with floating layered illustrations and an 'Explore Our Integrations' button.",
+      "scope": "Homepage only.",
+      "implementedBy": "src/components/Integrations.jsx"
+    },
+    "conversion.cta-band": {
+      "category": "CONVERSION",
+      "description": "Centred closing band: large heading and a primary button; title/label/href are props (homepage defaults).",
+      "scope": "Homepage plus the 2 clone-only info pages, 3 routes in total.",
+      "implementedBy": "src/components/Cta.jsx"
+    },
+    "hero.solutions": {
+      "category": "HERO",
+      "description": "Solutions overview hero: bobbing line-art devices, four dashboard widget cards and a rolling weight counter; pins while the next section slides over it.",
+      "scope": "/solutions/ only.",
+      "implementedBy": "src/components/solutions/SolutionsHero.jsx"
+    },
+    "features.solutions-explore": {
+      "category": "FEATURES",
+      "description": "Pulse line with a travelling dash, 2×2 illustration boxes with mouse parallax, cart hover bounce and a certification logo row; pins and drifts up 40vh.",
+      "scope": "/solutions/ only.",
+      "implementedBy": "src/components/solutions/Explore.jsx"
+    },
+    "features.solutions-support": {
+      "category": "FEATURES",
+      "description": "Four support cards that pin at the viewport centre and stack, scaling down and stepping up as the next covers them; thermometer parallax decoration.",
+      "scope": "/solutions/ only.",
+      "implementedBy": "src/components/solutions/Support.jsx"
+    },
+    "features.solutions-platform": {
+      "category": "FEATURES",
+      "description": "3D laptop whose lid opens on scroll, with a 3-slide screen/title/text panel and prev/next arrows (1100ms throttle); stacked panels on mobile.",
+      "scope": "/solutions/ only.",
+      "implementedBy": "src/components/solutions/Platform.jsx > SolutionsLaptop"
+    },
+    "features.solutions-api": {
+      "category": "FEATURES",
+      "description": "API platform block: 2×2 grid of icon feature cards with a link to the internal /developers/ page.",
+      "scope": "/solutions/ only.",
+      "implementedBy": "src/components/solutions/ApiPlatform.jsx"
+    },
+    "hero.content": {
+      "category": "HERO",
+      "description": "Blue01 content-page hero: centred title, subtitle, description and a primary button.",
+      "scope": "All 12 solution and use-case detail pages.",
+      "implementedBy": "src/components/content/ContentHero.jsx"
+    },
+    "proof.hero-stats": {
+      "category": "PROOF",
+      "description": "Row of three short stat claims under the content-page hero.",
+      "scope": "9 of the 12 detail pages (absent on digital-health-logistics, clinic-rpm, support-crm).",
+      "implementedBy": "src/components/content/StatsRow.jsx"
+    },
+    "content.bordered-cards-light": {
+      "category": "CONTENT",
+      "description": "Light section with a title and a grid of bordered text cards.",
+      "scope": "impilo-platform and direct-to-patient.",
+      "implementedBy": "src/components/content/Grids.jsx > BorderedCardGrid"
+    },
+    "content.bordered-cards-dark": {
+      "category": "CONTENT",
+      "description": "Dark section with a title and a grid of bordered text cards (lavender04 border, as measured on the original).",
+      "scope": "direct-to-patient only.",
+      "implementedBy": "src/components/content/Grids.jsx > BorderedCardGrid"
+    },
+    "content.icon-cards-light": {
+      "category": "CONTENT",
+      "description": "Light section with centred cards each led by a 48px icon; tighter 14/600 type on mobile.",
+      "scope": "4 solution pages: digital-health-logistics, tech-enabled-services, clinic-rpm, support-crm.",
+      "implementedBy": "src/components/content/Grids.jsx > IconCardGrid"
+    },
+    "content.two-column-dark": {
+      "category": "CONTENT",
+      "description": "Dark section with a two-column layout of headline columns and item lists.",
+      "scope": "impilo-platform only.",
+      "implementedBy": "src/components/content/Grids.jsx > TwoColumnGrid"
+    },
+    "content.text-items-light": {
+      "category": "CONTENT",
+      "description": "Light section with a grid of title + paragraph items (no card chrome).",
+      "scope": "4 solution pages: impilo-platform, tech-enabled-services, direct-to-patient, support-crm.",
+      "implementedBy": "src/components/content/Grids.jsx > TextItemGrid"
+    },
+    "content.text-items-dark": {
+      "category": "CONTENT",
+      "description": "Dark section with a grid of title + paragraph items; title forced white (fixes the original's invisible blue-on-blue title on two pages).",
+      "scope": "4 solution pages: digital-health-logistics, tech-enabled-services, clinic-rpm, support-crm.",
+      "implementedBy": "src/components/content/Grids.jsx > TextItemGrid"
+    },
+    "content.problem-solution-light": {
+      "category": "CONTENT",
+      "description": "Light use-case section: title + paragraph items followed by an inline button row.",
+      "scope": "The 5 use-case pages other than OEMs.",
+      "implementedBy": "src/components/content/Grids.jsx > TextItemGrid + content/CtaRow.jsx"
+    },
+    "content.capabilities-carousel-dark": {
+      "category": "CONTENT",
+      "description": "Dark section with a capabilities carousel: one card at a time, round white arrows and dots, 1s slide-out + fade, no autoplay.",
+      "scope": "All 6 use-case pages.",
+      "implementedBy": "src/components/content/CapabilitiesCarousel.jsx"
+    },
+    "content.outcomes-light": {
+      "category": "CONTENT",
+      "description": "Light section with a bulleted outcomes list (fixed 24px indent) followed by an inline button row.",
+      "scope": "All 6 use-case pages.",
+      "implementedBy": "src/components/content/Grids.jsx > OutcomesList + content/CtaRow.jsx"
+    },
+    "conversion.cta-row-dark": {
+      "category": "CONVERSION",
+      "description": "Dark closing section: title and a button row (buttons only, no paragraph).",
+      "scope": "impilo-platform plus all 6 use-case pages, 7 routes in total.",
+      "implementedBy": "src/components/content/CtaRow.jsx"
+    },
+    "conversion.closing-cta-light": {
+      "category": "CONVERSION",
+      "description": "Light closing block: title, short paragraph and a single button.",
+      "scope": "digital-health-logistics and clinic-rpm.",
+      "implementedBy": "src/components/content/CallToAction.jsx"
+    },
+    "conversion.closing-cta-dark": {
+      "category": "CONVERSION",
+      "description": "Dark closing block: title, short paragraph and a single button.",
+      "scope": "tech-enabled-services, direct-to-patient and support-crm.",
+      "implementedBy": "src/components/content/CallToAction.jsx"
+    },
+    "hero.about": {
+      "category": "HERO",
+      "description": "About hero: large headline that fills white line by line as you scroll, pinned on desktop/tablet, with certification logos.",
+      "scope": "/about/ only.",
+      "implementedBy": "src/components/about/AboutHero.jsx"
+    },
+    "content.about-founded": {
+      "category": "CONTENT",
+      "description": "White 'Founded' panel with a horizontal office-photo marquee that speeds up as it scrolls into view.",
+      "scope": "/about/ only.",
+      "implementedBy": "src/components/about/Founded.jsx"
+    },
+    "content.about-anywhere": {
+      "category": "CONTENT",
+      "description": "Blue section with a line-fill paragraph and a floating stethoscope illustration.",
+      "scope": "/about/ only.",
+      "implementedBy": "src/components/about/Anywhere.jsx"
+    },
+    "proof.leadership": {
+      "category": "PROOF",
+      "description": "Leadership grid of 3 cards: headshot, name, role, short bio, unlinked LinkedIn icon; staggered entrance.",
+      "scope": "/about/ only.",
+      "implementedBy": "src/components/about/Leadership.jsx"
+    },
+    "conversion.about-careers": {
+      "category": "CONVERSION",
+      "description": "White careers card with an animated pulse line and a button to the internal /careers/ page.",
+      "scope": "/about/ only.",
+      "implementedBy": "src/components/about/Careers.jsx"
+    },
+    "hero.integrations": {
+      "category": "HERO",
+      "description": "Integrations hero, pinned at its bottom with content drifting up, plus a half-speed thermometer parallax.",
+      "scope": "/integrations/ only.",
+      "implementedBy": "src/components/integrations/IntegrationsHero.jsx"
+    },
+    "features.integrations-sdk": {
+      "category": "FEATURES",
+      "description": "White SDK panel with 4 cards that pin, stack and shrink on scroll; horizontal snap carousel with a nudge hint on touch phones.",
+      "scope": "/integrations/ only.",
+      "implementedBy": "src/components/integrations/Sdk.jsx"
+    },
+    "features.integrations-devices": {
+      "category": "FEATURES",
+      "description": "Dark devices panel: two device-name lists, a laptop whose lid opens on scroll, and a 3-slide crossfade carousel.",
+      "scope": "/integrations/ only.",
+      "implementedBy": "src/components/integrations/Devices.jsx > shared/LaptopShowcase"
+    },
+    "conversion.demo-form": {
+      "category": "CONVERSION",
+      "description": "Request-demo panel with a custom form (text fields, textarea, custom dropdown with conditional fields, in-field REQUIRED/Invalid errors); submission is simulated locally, no network request.",
+      "scope": "/request-demo/ only.",
+      "implementedBy": "src/components/requestDemo/DemoForm.jsx"
+    },
+    "content.legal-document": {
+      "category": "CONTENT",
+      "description": "White rounded card with a numbered legal outline (sections with lettered sub-items); placeholder text flagged at the top.",
+      "scope": "The 3 legal routes.",
+      "implementedBy": "src/pages/Legal.jsx"
+    },
+    "editorial.blog-featured": {
+      "category": "EDITORIAL",
+      "description": "Featured post card: 920-wide cover, date and author line, h3 title, 'Read Article' pill.",
+      "scope": "Blog index only.",
+      "implementedBy": "src/components/blog/LargeCard.jsx"
+    },
+    "editorial.blog-grid": {
+      "category": "EDITORIAL",
+      "description": "'Previous Articles' heading and a 3-column grid of 290×210 image cards with titles clamped to 3 lines; filtered and empty states.",
+      "scope": "Blog index only.",
+      "implementedBy": "src/components/blog/CardGrid.jsx + blog/SmallCard.jsx"
+    },
+    "editorial.blog-sidebar": {
+      "category": "EDITORIAL",
+      "description": "Sticky sidebar (40 from top): fuzzy search, newsletter signup with simulated submit, category pills driving ?category=.",
+      "scope": "Blog index only.",
+      "implementedBy": "src/components/blog/SearchBar.jsx + blog/EmailInput.jsx + blog/Categories.jsx"
+    },
+    "editorial.post-header": {
+      "category": "EDITORIAL",
+      "description": "Post opening: breadcrumb (desktop), 680-wide hero image, date and author line, h1 and category pills.",
+      "scope": "Every blog post route.",
+      "implementedBy": "src/pages/blog/BlogPost.jsx + src/components/blog/PostMeta.jsx"
+    },
+    "editorial.post-body": {
+      "category": "EDITORIAL",
+      "description": "Rich-text article body (p, h2 at body size, arrow-marker lists, blockquote bar, images, sup/sub); may embed the gated download form.",
+      "scope": "Every blog post route.",
+      "implementedBy": "src/components/blog/RichText.jsx + blog/FileDownload.jsx"
+    },
+    "editorial.post-share": {
+      "category": "EDITORIAL",
+      "description": "Sticky share column (120 from top): four 36px circle buttons with tooltips; X/LinkedIn/Facebook are non-navigating, Copy Link copies the URL; a row under the article on mobile.",
+      "scope": "Every blog post route.",
+      "implementedBy": "src/components/blog/Share.jsx"
+    },
+    "editorial.post-related": {
+      "category": "EDITORIAL",
+      "description": "Two related-article cards, or 'Recent Articles' when a post has none.",
+      "scope": "Every blog post route.",
+      "implementedBy": "src/components/blog/SmallCard.jsx"
+    },
+    "hero.info": {
+      "category": "HERO",
+      "description": "Clone-only info hero: small pill, h2 headline with line reveal and a short intro.",
+      "scope": "The 2 clone-only info pages.",
+      "implementedBy": "src/pages/InfoPage.jsx"
+    },
+    "content.info-cards": {
+      "category": "CONTENT",
+      "description": "Clone-only numbered bordered card grid under a section title.",
+      "scope": "The 2 clone-only info pages.",
+      "implementedBy": "src/pages/InfoPage.jsx > Card"
+    },
+    "content.not-found": {
+      "category": "CONTENT",
+      "description": "Light rounded panel with the small pill, a 4-line heading and a 'Take You Back Home' button.",
+      "scope": "Catch-all 404 for any unknown path.",
+      "implementedBy": "src/pages/NotFound.jsx"
+    }
+  },
+  "templates": [
+    {
+      "id": "template.home",
+      "name": "Home",
+      "routeCount": 1,
+      "routes": [
+        "/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "hero.home",
+        "features.home-focus",
+        "features.home-how-it-works",
+        "proof.compliance-badges",
+        "proof.partner-logos",
+        "proof.article-carousel",
+        "features.home-integrations",
+        "conversion.cta-band",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.solutions-overview",
+      "name": "Solutions overview",
+      "routeCount": 1,
+      "routes": [
+        "/solutions/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "hero.solutions",
+        "features.solutions-explore",
+        "features.solutions-support",
+        "features.solutions-platform",
+        "features.solutions-api",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.solution-platform",
+      "name": "Solution detail: platform",
+      "routeCount": 1,
+      "routes": [
+        "/solutions/impilo-platform/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "hero.content",
+        "proof.hero-stats",
+        "content.bordered-cards-light",
+        "content.two-column-dark",
+        "content.text-items-light",
+        "conversion.cta-row-dark",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.solution-service-short",
+      "name": "Solution detail: short service page",
+      "routeCount": 2,
+      "routes": [
+        "/solutions/digital-health-logistics/",
+        "/solutions/clinic-rpm/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "hero.content",
+        "content.icon-cards-light",
+        "content.text-items-dark",
+        "conversion.closing-cta-light",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.solution-service-stats",
+      "name": "Solution detail: service page with stats",
+      "routeCount": 1,
+      "routes": [
+        "/solutions/tech-enabled-services/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "hero.content",
+        "proof.hero-stats",
+        "content.icon-cards-light",
+        "content.text-items-dark",
+        "content.text-items-light",
+        "conversion.closing-cta-dark",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.solution-service-long",
+      "name": "Solution detail: long service page",
+      "routeCount": 1,
+      "routes": [
+        "/solutions/support-crm/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "hero.content",
+        "content.icon-cards-light",
+        "content.text-items-dark",
+        "content.text-items-light",
+        "conversion.closing-cta-dark",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.solution-direct",
+      "name": "Solution detail: direct-to-patient",
+      "routeCount": 1,
+      "routes": [
+        "/solutions/direct-to-patient/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "hero.content",
+        "proof.hero-stats",
+        "content.bordered-cards-light",
+        "content.bordered-cards-dark",
+        "content.text-items-light",
+        "conversion.closing-cta-dark",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.use-case",
+      "name": "Use case",
+      "routeCount": 5,
+      "routes": [
+        "/use-cases/virtual-care-companies/",
+        "/use-cases/physicians-and-provider-groups/",
+        "/use-cases/health-plans-and-payers/",
+        "/use-cases/health-systems-and-msos/",
+        "/use-cases/value-based-care/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "hero.content",
+        "proof.hero-stats",
+        "content.problem-solution-light",
+        "content.capabilities-carousel-dark",
+        "content.outcomes-light",
+        "conversion.cta-row-dark",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.use-case-oems",
+      "name": "Use case: OEMs",
+      "routeCount": 1,
+      "routes": [
+        "/use-cases/oems/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "hero.content",
+        "proof.hero-stats",
+        "content.outcomes-light",
+        "content.capabilities-carousel-dark",
+        "conversion.cta-row-dark",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.about",
+      "name": "About",
+      "routeCount": 1,
+      "routes": [
+        "/about/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "hero.about",
+        "content.about-founded",
+        "content.about-anywhere",
+        "proof.leadership",
+        "conversion.about-careers",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.integrations",
+      "name": "Integrations",
+      "routeCount": 1,
+      "routes": [
+        "/integrations/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "hero.integrations",
+        "features.integrations-sdk",
+        "features.integrations-devices",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.request-demo",
+      "name": "Request a demo",
+      "routeCount": 1,
+      "routes": [
+        "/request-demo/"
+      ],
+      "chrome": "full, header CTA hidden",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "conversion.demo-form",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.legal",
+      "name": "Legal document",
+      "routeCount": 3,
+      "routes": [
+        "/terms/",
+        "/privacy/",
+        "/app-privacy/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "content.legal-document",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.blog-index",
+      "name": "Blog index",
+      "routeCount": 1,
+      "routes": [
+        "/blog/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "editorial.blog-featured",
+        "editorial.blog-grid",
+        "editorial.blog-sidebar",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.blog-post",
+      "name": "Blog post",
+      "routeCount": 6,
+      "routes": [
+        "/blog/partnering-for-better-at-home-care/",
+        "/blog/remote-monitoring-programs-that-scale/",
+        "/blog/five-lessons-from-shipping-connected-devices/",
+        "/blog/remote-monitoring-for-rural-and-community-clinics/",
+        "/blog/device-data-decoded/",
+        "/blog/before-launching-a-remote-patient-monitoring-program/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "editorial.post-header",
+        "editorial.post-body",
+        "editorial.post-share",
+        "editorial.post-related",
+        "shell.footer"
+      ],
+      "routePattern": "/blog/:slug/"
+    },
+    {
+      "id": "template.info-page",
+      "name": "Info page (clone-only)",
+      "routeCount": 2,
+      "routes": [
+        "/developers/",
+        "/careers/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "hero.info",
+        "content.info-cards",
+        "conversion.cta-band",
+        "shell.footer"
+      ],
+      "origin": "clone-only: replaces outbound Docs and Careers links"
+    },
+    {
+      "id": "template.not-found",
+      "name": "404",
+      "routeCount": 1,
+      "routes": [
+        "*"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.preloader",
+        "shell.page-transition",
+        "shell.header",
+        "content.not-found",
+        "shell.footer"
+      ]
+    }
+  ]
+}

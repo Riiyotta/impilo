@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.vite/
+
+# Reference material kept local only: scraped originals (full stylesheet, screenshots, font copies)
+# and the browser-saved page with its third-party tracker scripts.
+recon/
+Impilo _ Remote Patient Monitoring Devices.html
+Impilo _ Remote Patient Monitoring Devices_files/
+
+# Built by a separate pass; committed on its own once verified.
+design-repo/
+design-repo.zip

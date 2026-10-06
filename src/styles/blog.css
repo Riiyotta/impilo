@@ -1,0 +1,252 @@
+/*
+ * Blog styles (BLOG_SPEC), moved out of index.css. Imported by the blog pages.
+ * Sizes in design px via --u.
+ */
+/* Shared 3-layer shadow (TextArrowButton, category pill) */
+.text-arrow-btn,
+.category-pill {
+  box-shadow:
+    0 calc(var(--u) * -1) calc(var(--u) * 1) calc(var(--u) * 1) #fbfaff inset,
+    0 calc(var(--u) * 2) calc(var(--u) * 5) 0 rgba(212, 209, 242, 0.68),
+    0 0 0 calc(var(--u) * 1) rgba(133, 143, 172, 0.25);
+}
+
+/* TextArrowButton (B1.2) */
+.text-arrow-btn {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 8);
+  width: fit-content;
+  padding: calc(var(--u) * 11) calc(var(--u) * 22);
+  border-radius: 99vw;
+  color: var(--blue02);
+  transition: color 0.5s;
+}
+.text-arrow-btn svg {
+  width: calc(var(--u) * 13);
+  height: auto;
+  flex-shrink: 0;
+  transition: transform 0.5s;
+}
+.text-arrow-btn svg path {
+  stroke: var(--blue02);
+  fill: var(--blue02);
+  transition: stroke 0.5s;
+}
+.text-arrow-btn:hover { color: var(--brightGreen); }
+.text-arrow-btn:hover svg { transform: translateX(4px); }
+.text-arrow-btn:hover svg path { stroke: var(--brightGreen); fill: var(--brightGreen); }
+@media (max-width: 500px) {
+  .text-arrow-btn { padding: 0 calc(var(--u) * 14); height: calc(var(--u) * 29); }
+}
+
+/* Category pill (B1.3). No hover state. */
+.category-pill {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 8);
+  padding: calc(var(--u) * 9) calc(var(--u) * 14);
+  border-radius: 99vw;
+  color: var(--lavender02);
+  cursor: pointer;
+}
+.category-pill svg { width: calc(var(--u) * 18); height: auto; flex-shrink: 0; }
+.category-pill svg path { stroke: var(--lavender02); }
+@media (min-width: 501px) and (max-width: 1024px) {
+  .category-pill svg { width: calc(var(--u) * 14); }
+}
+
+/* Blog search input (B1.3) */
+.blog-search::placeholder { color: var(--lavender03); opacity: 1; }
+.blog-search:focus { outline: none; }
+
+/* Newsletter EmailInput (B1.3) */
+.email-input__field[data-invalid] { outline: 1px solid #f76161; }
+.email-input__input::placeholder { color: var(--silver01); opacity: 1; }
+.email-input__input:focus { outline: none; }
+.email-input__title.auto-animate,
+.email-input__title.auto-animate > * { align-items: start; justify-content: start; }
+
+/* SmallCard title clamp (B1.2) */
+.small-card__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Blog image load fade (B3.4): main <img> opacity 0 -> 1, 250ms linear on load */
+.blog-img { opacity: 0; transition: opacity 250ms linear; }
+.blog-img[data-loaded] { opacity: 1; }
+
+/* Rich text (B2.4). Blocks are direct grid children; rhythm comes only from the gap. */
+.rich-text {
+  display: grid;
+  gap: calc(var(--u) * 28);
+}
+@media (max-width: 500px) {
+  .rich-text { gap: calc(var(--u) * 24); }
+}
+.rich-text > p,
+.rich-text li > p,
+.rich-text .rich-quote > p {
+  font-size: calc(var(--u) * 18);
+  font-weight: 500;
+  line-height: 144%;
+  letter-spacing: -0.04em;
+  color: var(--blue01);
+}
+/* heading-1 -> h4 token; heading-2 is intentionally unstyled (inherits bodyR from the reset). */
+.rich-text > h1 {
+  font-size: calc(var(--u) * 24);
+  font-weight: 500;
+  line-height: 92%;
+  letter-spacing: -0.04em;
+  color: var(--blue01);
+}
+.rich-text strong { font-weight: 600; }
+.rich-text em { font-style: italic; }
+.rich-text u { text-decoration: underline; }
+.rich-text .rich-code {
+  display: inline-block;
+  margin: 0;
+  font-family: monospace;
+  font-size: calc(var(--u) * 18);
+}
+/* Font size is NOT reduced on sup/sub (overrides the Tailwind preflight 75%). */
+.rich-text sup,
+.rich-text sub {
+  font-size: inherit;
+  line-height: inherit;
+  position: static;
+  top: auto;
+  bottom: auto;
+}
+.rich-text sup { vertical-align: super; }
+.rich-text sub { vertical-align: sub; }
+.rich-text a {
+  color: var(--blue06);
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* blockquote: container in h4 typography with the bar; inner p re-applies bodyR */
+.rich-text .rich-quote {
+  display: block;
+  font-size: calc(var(--u) * 24);
+  font-weight: 500;
+  line-height: 92%;
+  letter-spacing: -0.04em;
+  padding: calc(var(--u) * 8) 0 calc(var(--u) * 8) calc(var(--u) * 20);
+  border-left: calc(var(--u) * 3) solid var(--blue05);
+}
+.rich-text ul,
+.rich-text ol {
+  display: grid;
+  gap: calc(var(--u) * 4);
+  padding-inline-start: calc(var(--u) * 50);
+}
+.rich-text ul { list-style: none; }
+.rich-text ol {
+  /* The original sets the unknown counter style "numeric", which falls back to decimal. */
+  list-style-type: numeric;
+  font-size: calc(var(--u) * 18);
+  font-weight: 500;
+  line-height: 144%;
+  letter-spacing: -0.04em;
+  color: var(--blue01);
+}
+.rich-text li { position: relative; }
+.rich-text li > svg {
+  position: absolute;
+  top: calc(var(--u) * 9);
+  right: calc(100% + var(--u) * 18);
+  width: calc(var(--u) * 13);
+  height: auto;
+}
+.rich-text li > svg path { stroke: var(--blue02); }
+.rich-text ol li > svg { display: none; }
+.rich-text hr {
+  height: 1px;
+  border: 0;
+  border-bottom: 1px solid var(--lavender05);
+  overflow: visible;
+}
+.rich-text .rich-image {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: calc(var(--u) * 16);
+  overflow: clip;
+  isolation: isolate;
+}
+.rich-text .rich-image img { display: block; width: 100%; height: auto; }
+
+/* FileDownload (B2.5) */
+.file-download__field {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 8);
+  width: calc(var(--u) * 550);
+  height: calc(var(--u) * 66);
+  border-radius: calc(var(--u) * 12);
+  border: 1px solid var(--blue03);
+  background: var(--blue02);
+  cursor: auto;
+  transition: border-color 0.2s;
+}
+.file-download__field:hover { border-color: var(--blue04); }
+.file-download__field[data-invalid] { border-color: var(--brightTurquoise); }
+.file-download__field--area { height: calc(var(--u) * 176); }
+.file-download__control {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: #fff;
+  padding: 0 calc(var(--u) * 21);
+  border-radius: calc(var(--u) * 12);
+}
+/* Validation message sits inside the field, right of the control (kickerS, brightTurquoise). */
+.file-download__msg {
+  display: block;
+  flex-shrink: 0;
+  padding: 0 calc(var(--u) * 21) 0 calc(var(--u) * 10);
+}
+.file-download__control::placeholder { color: var(--blue07); opacity: 1; }
+.file-download__control:focus { outline: none; }
+textarea.file-download__control { padding: calc(var(--u) * 22); resize: none; }
+@media (min-width: 501px) and (max-width: 1024px) {
+  .file-download__field { width: calc(var(--u) * 560); }
+}
+@media (max-width: 500px) {
+  .file-download__field { width: calc(var(--u) * 265); }
+}
+.file-download__inner { transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1); }
+.file-download__late-link { opacity: 0; animation: fadeIn 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Share hover hint (B2.6) */
+.share-hint {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + var(--u) * 10);
+  translate: 0 -50%;
+  display: flex;
+  align-items: center;
+  height: calc(var(--u) * 30);
+  padding: 0 calc(var(--u) * 10);
+  border-radius: calc(var(--u) * 6);
+  background: var(--blue05);
+  color: #fff;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.share-hint__bit {
+  position: absolute;
+  left: calc(var(--u) * -7);
+  top: 50%;
+  translate: 0 -50%;
+  width: calc(var(--u) * 12);
+  height: calc(var(--u) * 12);
+}
+.share-btn:hover .share-hint { opacity: 1; }

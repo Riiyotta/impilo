@@ -1,0 +1,470 @@
+{
+  "source": "https://impilo.health/",
+  "note": "No <video>, Lottie, or background-image URLs on the homepage. Footer line animation is a PIXI.js canvas (procedural, no asset). Third-party scripts (HubSpot, GTM, Clarity, LinkedIn, Bing, ZoomInfo, reCAPTCHA) intentionally excluded.",
+  "count": 51,
+  "assets": [
+    {
+      "type": "font",
+      "source": "https://impilo.health/static/Gilroy-Regular-2b06ef9a7149fe75bec70640ff338aae.woff2",
+      "localPath": "public/assets/fonts/Gilroy-Regular.woff2",
+      "usedIn": "@font-face Gilroy weight 400 (font-display: swap)",
+      "renderedSize": "n/a",
+      "format": "woff2",
+      "reconCopy": "recon/assets/fonts/Gilroy-Regular-2b06ef9a7149fe75bec70640ff338aae.woff2"
+    },
+    {
+      "type": "font",
+      "source": "https://impilo.health/static/Gilroy-Regular-1af44b448054042ea20a94d2fb819058.woff",
+      "localPath": "public/assets/fonts/Gilroy-Regular.woff",
+      "usedIn": "@font-face Gilroy weight 400 fallback",
+      "renderedSize": "n/a",
+      "format": "woff",
+      "reconCopy": "recon/assets/fonts/Gilroy-Regular-1af44b448054042ea20a94d2fb819058.woff"
+    },
+    {
+      "type": "font",
+      "source": "https://impilo.health/static/Gilroy-Medium-4abcd1e45598b1247446aa7db1e7f16c.woff2",
+      "localPath": "public/assets/fonts/Gilroy-Medium.woff2",
+      "usedIn": "@font-face Gilroy weight 500 (font-display: swap)",
+      "renderedSize": "n/a",
+      "format": "woff2",
+      "reconCopy": "recon/assets/fonts/Gilroy-Medium-4abcd1e45598b1247446aa7db1e7f16c.woff2"
+    },
+    {
+      "type": "font",
+      "source": "https://impilo.health/static/Gilroy-Medium-55796bc0064ff9f7c6f4dd8719e98c14.woff",
+      "localPath": "public/assets/fonts/Gilroy-Medium.woff",
+      "usedIn": "@font-face Gilroy weight 500 fallback",
+      "renderedSize": "n/a",
+      "format": "woff",
+      "reconCopy": "recon/assets/fonts/Gilroy-Medium-55796bc0064ff9f7c6f4dd8719e98c14.woff"
+    },
+    {
+      "type": "font",
+      "source": "https://impilo.health/static/Gilroy-SemiBold-3fe1415afa09c564daaf778f8a3e5d30.woff2",
+      "localPath": "public/assets/fonts/Gilroy-SemiBold.woff2",
+      "usedIn": "@font-face Gilroy weight 600 (font-display: swap)",
+      "renderedSize": "n/a",
+      "format": "woff2",
+      "reconCopy": "recon/assets/fonts/Gilroy-SemiBold-3fe1415afa09c564daaf778f8a3e5d30.woff2"
+    },
+    {
+      "type": "font",
+      "source": "https://impilo.health/static/Gilroy-SemiBold-d9c70b94550e8897c4e1ea2a4133a0dc.woff",
+      "localPath": "public/assets/fonts/Gilroy-SemiBold.woff",
+      "usedIn": "@font-face Gilroy weight 600 fallback",
+      "renderedSize": "n/a",
+      "format": "woff",
+      "reconCopy": "recon/assets/fonts/Gilroy-SemiBold-d9c70b94550e8897c4e1ea2a4133a0dc.woff"
+    },
+    {
+      "type": "image",
+      "source": "https://impilo.health/static/a973d975721b8ac0a1948dfec72d8e55/71c17/hipaa.webp",
+      "localPath": "public/assets/images/hipaa.webp",
+      "usedIn": "WhiteGlove badge 1 (color layer, underneath)",
+      "renderedSize": "186x186 intrinsic; rendered 92x92 @1440 (6.389vw)",
+      "format": "webp",
+      "note": "gatsby-image constrained; srcset 47w/93w/186w (soc2: 46w/92w/184w) available at sibling hash dirs; blurred base64 PNG placeholder fades out 500ms linear",
+      "reconCopy": "recon/assets/images/hipaa.webp"
+    },
+    {
+      "type": "image",
+      "source": "https://impilo.health/static/329c5a719c3d8f7ca5569ceccb575392/71c17/hipaa-gray.webp",
+      "localPath": "public/assets/images/hipaa-gray.webp",
+      "usedIn": "WhiteGlove badge 1 gray overlay (Logo2, absolute top:24 left:32; fades to opacity 0 on hover)",
+      "renderedSize": "186x186 intrinsic; rendered 92x92 @1440",
+      "format": "webp",
+      "note": "gatsby-image constrained; srcset 47w/93w/186w (soc2: 46w/92w/184w) available at sibling hash dirs; blurred base64 PNG placeholder fades out 500ms linear",
+      "reconCopy": "recon/assets/images/hipaa-gray.webp"
+    },
+    {
+      "type": "image",
+      "source": "https://impilo.health/static/1fee7899c0f92cdd10ac6de76a4c0329/d84cd/soc2.webp",
+      "localPath": "public/assets/images/soc2.webp",
+      "usedIn": "WhiteGlove badge 2 (color)",
+      "renderedSize": "184x184 intrinsic; rendered 92x92 @1440",
+      "format": "webp",
+      "note": "gatsby-image constrained; srcset 47w/93w/186w (soc2: 46w/92w/184w) available at sibling hash dirs; blurred base64 PNG placeholder fades out 500ms linear",
+      "reconCopy": "recon/assets/images/soc2.webp"
+    },
+    {
+      "type": "image",
+      "source": "https://impilo.health/static/53ffc58e8c0d835eea4ec9a0e9b60832/d84cd/soc2-gray.webp",
+      "localPath": "public/assets/images/soc2-gray.webp",
+      "usedIn": "WhiteGlove badge 2 gray overlay",
+      "renderedSize": "184x184 intrinsic; rendered 92x92 @1440",
+      "format": "webp",
+      "note": "gatsby-image constrained; srcset 47w/93w/186w (soc2: 46w/92w/184w) available at sibling hash dirs; blurred base64 PNG placeholder fades out 500ms linear",
+      "reconCopy": "recon/assets/images/soc2-gray.webp"
+    },
+    {
+      "type": "image",
+      "source": "data:image/png;base64 (inline in IllustrationThree)",
+      "localPath": "public/assets/images/ill3-background.png",
+      "usedIn": "How It Works step 03 illustration background <img> (object-fit: contain), stacked under ill3 SVG",
+      "renderedSize": "680x760 intrinsic; 680x760 @1440",
+      "format": "png",
+      "reconCopy": "recon/assets/images/ill3-background.png"
+    },
+    {
+      "type": "favicon",
+      "source": "https://impilo.health/favicon-32x32.png?v=06dd64c929e8c27f8e3c8c74ce2ebe36",
+      "localPath": "public/favicon-32x32.png",
+      "usedIn": "<link rel=icon type=image/png>",
+      "renderedSize": "32x32",
+      "format": "png",
+      "reconCopy": "recon/assets/icons/favicon-32x32.png"
+    },
+    {
+      "type": "favicon",
+      "source": "https://impilo.health/icons/icon-48x48.png?v=06dd64c929e8c27f8e3c8c74ce2ebe36",
+      "localPath": "public/icons/icon-48x48.png",
+      "usedIn": "<link rel=apple-touch-icon> / manifest",
+      "renderedSize": "48x48",
+      "format": "png",
+      "reconCopy": "recon/assets/icons/icon-48x48.png"
+    },
+    {
+      "type": "favicon",
+      "source": "https://impilo.health/icons/icon-72x72.png?v=06dd64c929e8c27f8e3c8c74ce2ebe36",
+      "localPath": "public/icons/icon-72x72.png",
+      "usedIn": "<link rel=apple-touch-icon> / manifest",
+      "renderedSize": "72x72",
+      "format": "png",
+      "reconCopy": "recon/assets/icons/icon-72x72.png"
+    },
+    {
+      "type": "favicon",
+      "source": "https://impilo.health/icons/icon-96x96.png?v=06dd64c929e8c27f8e3c8c74ce2ebe36",
+      "localPath": "public/icons/icon-96x96.png",
+      "usedIn": "<link rel=apple-touch-icon> / manifest",
+      "renderedSize": "96x96",
+      "format": "png",
+      "reconCopy": "recon/assets/icons/icon-96x96.png"
+    },
+    {
+      "type": "favicon",
+      "source": "https://impilo.health/icons/icon-144x144.png?v=06dd64c929e8c27f8e3c8c74ce2ebe36",
+      "localPath": "public/icons/icon-144x144.png",
+      "usedIn": "<link rel=apple-touch-icon> / manifest",
+      "renderedSize": "144x144",
+      "format": "png",
+      "reconCopy": "recon/assets/icons/icon-144x144.png"
+    },
+    {
+      "type": "favicon",
+      "source": "https://impilo.health/icons/icon-192x192.png?v=06dd64c929e8c27f8e3c8c74ce2ebe36",
+      "localPath": "public/icons/icon-192x192.png",
+      "usedIn": "<link rel=apple-touch-icon> / manifest",
+      "renderedSize": "192x192",
+      "format": "png",
+      "reconCopy": "recon/assets/icons/icon-192x192.png"
+    },
+    {
+      "type": "favicon",
+      "source": "https://impilo.health/icons/icon-256x256.png?v=06dd64c929e8c27f8e3c8c74ce2ebe36",
+      "localPath": "public/icons/icon-256x256.png",
+      "usedIn": "<link rel=apple-touch-icon> / manifest",
+      "renderedSize": "256x256",
+      "format": "png",
+      "reconCopy": "recon/assets/icons/icon-256x256.png"
+    },
+    {
+      "type": "favicon",
+      "source": "https://impilo.health/icons/icon-384x384.png?v=06dd64c929e8c27f8e3c8c74ce2ebe36",
+      "localPath": "public/icons/icon-384x384.png",
+      "usedIn": "<link rel=apple-touch-icon> / manifest",
+      "renderedSize": "384x384",
+      "format": "png",
+      "reconCopy": "recon/assets/icons/icon-384x384.png"
+    },
+    {
+      "type": "favicon",
+      "source": "https://impilo.health/icons/icon-512x512.png?v=06dd64c929e8c27f8e3c8c74ce2ebe36",
+      "localPath": "public/icons/icon-512x512.png",
+      "usedIn": "<link rel=apple-touch-icon> / manifest",
+      "renderedSize": "512x512",
+      "format": "png",
+      "reconCopy": "recon/assets/icons/icon-512x512.png"
+    },
+    {
+      "type": "image",
+      "source": "https://impilo.health/og-image.png",
+      "localPath": "public/og-image.png",
+      "usedIn": "og:image / twitter:image meta",
+      "renderedSize": "2400x1260",
+      "format": "png",
+      "reconCopy": "recon/assets/icons/og-image.png"
+    },
+    {
+      "type": "manifest",
+      "source": "https://impilo.health/manifest.webmanifest",
+      "localPath": "public/manifest.webmanifest",
+      "usedIn": "<link rel=manifest>; theme-color #524FD9",
+      "renderedSize": "n/a",
+      "format": "json",
+      "reconCopy": "recon/assets/icons/manifest.webmanifest"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/logo-header.svg (or inline JSX)",
+      "usedIn": "Header logo (desktop/tablet), white fill",
+      "renderedSize": "69.3x40.6 @1440 (4.813vw)",
+      "format": "svg",
+      "reconCopy": "recon/svgs/logo-header.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/logo-mobile-header.svg (or inline JSX)",
+      "usedIn": "Mobile header logo",
+      "renderedSize": "72.1x42.2 @390 (18.48vw)",
+      "format": "svg",
+      "reconCopy": "recon/svgs/logo-mobile-header.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/logo-footer.svg (or inline JSX)",
+      "usedIn": "Footer big logo, white",
+      "renderedSize": "386x226 @1440 (26.806vw); 221.5 wide @390 (56.8vw)",
+      "format": "svg",
+      "reconCopy": "recon/svgs/logo-footer.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/icon-chevron-down.svg (or inline JSX)",
+      "usedIn": "Nav dropdown trigger chevron (rotates 180deg when open, 0.2s)",
+      "renderedSize": "13px wide",
+      "format": "svg",
+      "reconCopy": "recon/svgs/icon-chevron-down.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/icon-link-arrow.svg (or inline JSX)",
+      "usedIn": "Arrow before nav/footer text links (Link component); hover translateX(4px)",
+      "renderedSize": "13x~7.8 @1440 (0.903vw)",
+      "format": "svg",
+      "reconCopy": "recon/svgs/icon-link-arrow.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/hero-illustration.svg (or inline JSX)",
+      "usedIn": "Hero left line-art illustration (groups .scale .stetho .thermo .watch .pills; paths .line/.line.animate)",
+      "renderedSize": "512x641 @1440 (height 44.514vw; width auto)",
+      "format": "svg",
+      "reconCopy": "recon/svgs/hero-illustration.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/hero-interface.svg (or inline JSX)",
+      "usedIn": "Hero dashboard mock (zooms 862->1340 wide on scroll); contains .top-animated-line/.bottom-animated-line",
+      "renderedSize": "1340x870 natural (93.056vw); starts 862x560 @1440",
+      "format": "svg",
+      "reconCopy": "recon/svgs/hero-interface.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/marquee-logo.svg (or inline JSX)",
+      "usedIn": "'Keep Scrolling' marquee pill logo (blue)",
+      "renderedSize": "106x20.8 @1440 (7.361vw)",
+      "format": "svg",
+      "reconCopy": "recon/svgs/marquee-logo.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/step-icon-01.svg (or inline JSX)",
+      "usedIn": "How It Works step 01 icon tile",
+      "renderedSize": "46x46 @1440 (3.194vw)",
+      "format": "svg",
+      "reconCopy": "recon/svgs/step-icon-01.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/step-icon-02.svg (or inline JSX)",
+      "usedIn": "Step 02 icon",
+      "renderedSize": "46x46",
+      "format": "svg",
+      "reconCopy": "recon/svgs/step-icon-02.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/step-icon-03.svg (or inline JSX)",
+      "usedIn": "Step 03 icon",
+      "renderedSize": "46x46",
+      "format": "svg",
+      "reconCopy": "recon/svgs/step-icon-03.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/step-icon-04.svg (or inline JSX)",
+      "usedIn": "Step 04 icon",
+      "renderedSize": "46x46",
+      "format": "svg",
+      "reconCopy": "recon/svgs/step-icon-04.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/ill1-background.svg (or inline JSX)",
+      "usedIn": "Step 01 illustration background layer",
+      "renderedSize": "650x614 @1440 (45.139vw)",
+      "format": "svg",
+      "reconCopy": "recon/svgs/ill1-background.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/ill1-row.svg (or inline JSX)",
+      "usedIn": "Step 01 animated list row (rendered 11x, opacity .3 wrapper, infinite y scroll)",
+      "renderedSize": "469x72 @1440",
+      "format": "svg",
+      "reconCopy": "recon/svgs/ill1-row.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/ill1-foreground.svg (or inline JSX)",
+      "usedIn": "Step 01 foreground (.top-head .top-card .bottom-head .bottom-card)",
+      "renderedSize": "650x615 @1440",
+      "format": "svg",
+      "reconCopy": "recon/svgs/ill1-foreground.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/ill2-illustration.svg (or inline JSX)",
+      "usedIn": "Step 02 illustration (.scale .thermo .glucose .pressure .desktop-tube/.tablet-tube)",
+      "renderedSize": "680x760 @1440 (47.222vw)",
+      "format": "svg",
+      "reconCopy": "recon/svgs/ill2-illustration.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/ill3-illustration.svg (or inline JSX)",
+      "usedIn": "Step 03 illustration (.panel.pressure .panel.graph .stetho .glucose .medicine .graph.line)",
+      "renderedSize": "680x760 @1440",
+      "format": "svg",
+      "reconCopy": "recon/svgs/ill3-illustration.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/ill4-illustration.svg (or inline JSX)",
+      "usedIn": "Step 04 illustration (.sliders .waves .card .panel .highlight)",
+      "renderedSize": "680x760 @1440",
+      "format": "svg",
+      "reconCopy": "recon/svgs/ill4-illustration.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/pill-logo.svg (or inline JSX)",
+      "usedIn": "Small Impilo pulse logo inside dark Pill (WhiteGlove, Integrations, footer white pill)",
+      "renderedSize": "38x? in 64x28 pill @1440",
+      "format": "svg",
+      "reconCopy": "recon/svgs/pill-logo.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/trusted-brook.svg (or inline JSX)",
+      "usedIn": "Trusted logo brook.ai (link https://brook.ai/)",
+      "renderedSize": "max 180x48 @1440 inside 314x158 cell",
+      "format": "svg",
+      "reconCopy": "recon/svgs/trusted-brook.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/trusted-firefly.svg (or inline JSX)",
+      "usedIn": "Trusted logo Firefly Health (https://www.fireflyhealth.com/)",
+      "renderedSize": "max 180x48",
+      "format": "svg",
+      "reconCopy": "recon/svgs/trusted-firefly.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/trusted-pennmedicine.svg (or inline JSX)",
+      "usedIn": "Trusted logo Penn Medicine (https://www.pennmedicine.org/)",
+      "renderedSize": "max 180x48",
+      "format": "svg",
+      "reconCopy": "recon/svgs/trusted-pennmedicine.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/trusted-dreem.svg (or inline JSX)",
+      "usedIn": "Trusted logo Dreem Health (https://dreemhealth.com/)",
+      "renderedSize": "max 180x48",
+      "format": "svg",
+      "reconCopy": "recon/svgs/trusted-dreem.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/icon-arrow-chevron.svg (or inline JSX)",
+      "usedIn": "Quotes carousel arrow chevron (left one rotated 180deg)",
+      "renderedSize": "7px wide in 35x35 circle",
+      "format": "svg",
+      "reconCopy": "recon/svgs/icon-arrow-chevron.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/integration-1.svg (or inline JSX)",
+      "usedIn": "Integrations card 1 'Comprehensive Integration' (.layer-1/.layer-2 float)",
+      "renderedSize": "248x240 @1440 (17.222vw x 16.667vw)",
+      "format": "svg",
+      "reconCopy": "recon/svgs/integration-1.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/integration-2.svg (or inline JSX)",
+      "usedIn": "Integrations card 2 'Data Synchronization'",
+      "renderedSize": "248x240",
+      "format": "svg",
+      "reconCopy": "recon/svgs/integration-2.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/integration-3.svg (or inline JSX)",
+      "usedIn": "Integrations card 3 'Data Visualizations and Reporting'",
+      "renderedSize": "248x240",
+      "format": "svg",
+      "reconCopy": "recon/svgs/integration-3.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/preloader-graphic.svg (or inline JSX)",
+      "usedIn": "Preloader isometric graphic (path .animate draws)",
+      "renderedSize": "344 wide @1440 (23.889vw)",
+      "format": "svg",
+      "reconCopy": "recon/svgs/preloader-graphic.svg"
+    },
+    {
+      "type": "inline-svg",
+      "source": "inline <svg> in DOM (no URL)",
+      "localPath": "src/assets/svg/transition-pulse.svg (or inline JSX)",
+      "usedIn": "Page-transition pulse svg (route transitions only)",
+      "renderedSize": "168 wide @1440",
+      "format": "svg",
+      "reconCopy": "recon/svgs/transition-pulse.svg"
+    }
+  ]
+}
