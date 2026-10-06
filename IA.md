@@ -51,12 +51,12 @@ component library or stays local to its page.
 | `proof.hero-stats` | PROOF | 5 | 9 | `src/components/content/StatsRow.jsx` | 9 of the 12 detail pages (absent on digital-health-logistics, clinic-rpm, support-crm). |
 | `conversion.cta-row-dark` | CONVERSION | 3 | 7 | `src/components/content/CtaRow.jsx` | impilo-platform plus all 6 use-case pages, 7 routes in total. |
 | `content.capabilities-carousel-dark` | CONTENT | 2 | 6 | `src/components/content/CapabilitiesCarousel.jsx` | All 6 use-case pages. |
-| `content.outcomes-light` | CONTENT | 2 | 6 | `src/components/content/Grids.jsx > OutcomesList + content/CtaRow.jsx` | All 6 use-case pages. |
+| `content.outcomes-light` | CONTENT | 2 | 6 | `src/components/content/Grids.jsx > OutcomesList + src/components/content/CtaRow.jsx` | All 6 use-case pages. |
 | `editorial.post-header` | EDITORIAL | 1 | 6 | `src/pages/blog/BlogPost.jsx + src/components/blog/PostMeta.jsx` | Every blog post route. |
-| `editorial.post-body` | EDITORIAL | 1 | 6 | `src/components/blog/RichText.jsx + blog/FileDownload.jsx` | Every blog post route. |
+| `editorial.post-body` | EDITORIAL | 1 | 6 | `src/components/blog/RichText.jsx + src/components/blog/FileDownload.jsx` | Every blog post route. |
 | `editorial.post-share` | EDITORIAL | 1 | 6 | `src/components/blog/Share.jsx` | Every blog post route. |
 | `editorial.post-related` | EDITORIAL | 1 | 6 | `src/components/blog/SmallCard.jsx` | Every blog post route. |
-| `content.problem-solution-light` | CONTENT | 1 | 5 | `src/components/content/Grids.jsx > TextItemGrid + content/CtaRow.jsx` | The 5 use-case pages other than OEMs. |
+| `content.problem-solution-light` | CONTENT | 1 | 5 | `src/components/content/Grids.jsx > TextItemGrid + src/components/content/CtaRow.jsx` | The 5 use-case pages other than OEMs. |
 | `content.text-items-light` | CONTENT | 4 | 4 | `src/components/content/Grids.jsx > TextItemGrid` | 4 solution pages: impilo-platform, tech-enabled-services, direct-to-patient, support-crm. |
 | `content.icon-cards-light` | CONTENT | 3 | 4 | `src/components/content/Grids.jsx > IconCardGrid` | 4 solution pages: digital-health-logistics, tech-enabled-services, clinic-rpm, support-crm. |
 | `content.text-items-dark` | CONTENT | 3 | 4 | `src/components/content/Grids.jsx > TextItemGrid` | 4 solution pages: digital-health-logistics, tech-enabled-services, clinic-rpm, support-crm. |
@@ -91,8 +91,8 @@ component library or stays local to its page.
 | `features.integrations-devices` | FEATURES | 1 | 1 | `src/components/integrations/Devices.jsx > shared/LaptopShowcase` | /integrations/ only. |
 | `conversion.demo-form` | CONVERSION | 1 | 1 | `src/components/requestDemo/DemoForm.jsx` | /request-demo/ only. |
 | `editorial.blog-featured` | EDITORIAL | 1 | 1 | `src/components/blog/LargeCard.jsx` | Blog index only. |
-| `editorial.blog-grid` | EDITORIAL | 1 | 1 | `src/components/blog/CardGrid.jsx + blog/SmallCard.jsx` | Blog index only. |
-| `editorial.blog-sidebar` | EDITORIAL | 1 | 1 | `src/components/blog/SearchBar.jsx + blog/EmailInput.jsx + blog/Categories.jsx` | Blog index only. |
+| `editorial.blog-grid` | EDITORIAL | 1 | 1 | `src/components/blog/CardGrid.jsx + src/components/blog/SmallCard.jsx` | Blog index only. |
+| `editorial.blog-sidebar` | EDITORIAL | 1 | 1 | `src/components/blog/SearchBar.jsx + src/components/blog/EmailInput.jsx + src/components/blog/Categories.jsx` | Blog index only. |
 | `content.not-found` | CONTENT | 1 | 1 | `src/pages/NotFound.jsx` | Catch-all 404 for any unknown path. |
 
 **15 shared sections** appear in more than one template and belong in a component library.
@@ -506,7 +506,7 @@ _Substantive body sections of a route._
 
 **`content.problem-solution-light`** — Light use-case section: title + paragraph items followed by an inline button row.
 
-· The 5 use-case pages other than OEMs. · appears on 5 routes · implemented by `src/components/content/Grids.jsx > TextItemGrid + content/CtaRow.jsx`
+· The 5 use-case pages other than OEMs. · appears on 5 routes · implemented by `src/components/content/Grids.jsx > TextItemGrid + src/components/content/CtaRow.jsx`
 
 **`content.capabilities-carousel-dark`** — Dark section with a capabilities carousel: one card at a time, round white arrows and dots, 1s slide-out + fade, no autoplay.
 
@@ -514,7 +514,7 @@ _Substantive body sections of a route._
 
 **`content.outcomes-light`** — Light section with a bulleted outcomes list (fixed 24px indent) followed by an inline button row.
 
-· All 6 use-case pages. · appears on 6 routes · implemented by `src/components/content/Grids.jsx > OutcomesList + content/CtaRow.jsx`
+· All 6 use-case pages. · appears on 6 routes · implemented by `src/components/content/Grids.jsx > OutcomesList + src/components/content/CtaRow.jsx`
 
 **`content.about-founded`** — White 'Founded' panel with a horizontal office-photo marquee that speeds up as it scrolls into view.
 
@@ -574,11 +574,11 @@ _Blog index and article blocks._
 
 **`editorial.blog-grid`** — 'Previous Articles' heading and a 3-column grid of 290×210 image cards with titles clamped to 3 lines; filtered and empty states.
 
-· Blog index only. · appears on 1 routes · implemented by `src/components/blog/CardGrid.jsx + blog/SmallCard.jsx`
+· Blog index only. · appears on 1 routes · implemented by `src/components/blog/CardGrid.jsx + src/components/blog/SmallCard.jsx`
 
 **`editorial.blog-sidebar`** — Sticky sidebar (40 from top): fuzzy search, newsletter signup with simulated submit, category pills driving ?category=.
 
-· Blog index only. · appears on 1 routes · implemented by `src/components/blog/SearchBar.jsx + blog/EmailInput.jsx + blog/Categories.jsx`
+· Blog index only. · appears on 1 routes · implemented by `src/components/blog/SearchBar.jsx + src/components/blog/EmailInput.jsx + src/components/blog/Categories.jsx`
 
 **`editorial.post-header`** — Post opening: breadcrumb (desktop), 680-wide hero image, date and author line, h1 and category pills.
 
@@ -586,7 +586,7 @@ _Blog index and article blocks._
 
 **`editorial.post-body`** — Rich-text article body (p, h2 at body size, arrow-marker lists, blockquote bar, images, sup/sub); may embed the gated download form.
 
-· Every blog post route. · appears on 6 routes · implemented by `src/components/blog/RichText.jsx + blog/FileDownload.jsx`
+· Every blog post route. · appears on 6 routes · implemented by `src/components/blog/RichText.jsx + src/components/blog/FileDownload.jsx`
 
 **`editorial.post-share`** — Sticky share column (120 from top): four 36px circle buttons with tooltips; X/LinkedIn/Facebook are non-navigating, Copy Link copies the URL; a row under the article on mobile.
 

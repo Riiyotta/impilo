@@ -170,7 +170,7 @@
       "category": "CONTENT",
       "description": "Light use-case section: title + paragraph items followed by an inline button row.",
       "scope": "The 5 use-case pages other than OEMs.",
-      "implementedBy": "src/components/content/Grids.jsx > TextItemGrid + content/CtaRow.jsx"
+      "implementedBy": "src/components/content/Grids.jsx > TextItemGrid + src/components/content/CtaRow.jsx"
     },
     "content.capabilities-carousel-dark": {
       "category": "CONTENT",
@@ -182,7 +182,7 @@
       "category": "CONTENT",
       "description": "Light section with a bulleted outcomes list (fixed 24px indent) followed by an inline button row.",
       "scope": "All 6 use-case pages.",
-      "implementedBy": "src/components/content/Grids.jsx > OutcomesList + content/CtaRow.jsx"
+      "implementedBy": "src/components/content/Grids.jsx > OutcomesList + src/components/content/CtaRow.jsx"
     },
     "conversion.cta-row-dark": {
       "category": "CONVERSION",
@@ -272,13 +272,13 @@
       "category": "EDITORIAL",
       "description": "'Previous Articles' heading and a 3-column grid of 290×210 image cards with titles clamped to 3 lines; filtered and empty states.",
       "scope": "Blog index only.",
-      "implementedBy": "src/components/blog/CardGrid.jsx + blog/SmallCard.jsx"
+      "implementedBy": "src/components/blog/CardGrid.jsx + src/components/blog/SmallCard.jsx"
     },
     "editorial.blog-sidebar": {
       "category": "EDITORIAL",
       "description": "Sticky sidebar (40 from top): fuzzy search, newsletter signup with simulated submit, category pills driving ?category=.",
       "scope": "Blog index only.",
-      "implementedBy": "src/components/blog/SearchBar.jsx + blog/EmailInput.jsx + blog/Categories.jsx"
+      "implementedBy": "src/components/blog/SearchBar.jsx + src/components/blog/EmailInput.jsx + src/components/blog/Categories.jsx"
     },
     "editorial.post-header": {
       "category": "EDITORIAL",
@@ -290,7 +290,7 @@
       "category": "EDITORIAL",
       "description": "Rich-text article body (p, h2 at body size, arrow-marker lists, blockquote bar, images, sup/sub); may embed the gated download form.",
       "scope": "Every blog post route.",
-      "implementedBy": "src/components/blog/RichText.jsx + blog/FileDownload.jsx"
+      "implementedBy": "src/components/blog/RichText.jsx + src/components/blog/FileDownload.jsx"
     },
     "editorial.post-share": {
       "category": "EDITORIAL",
